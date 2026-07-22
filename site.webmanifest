@@ -1,0 +1,8 @@
+{
+  "name": "Somchai Sompiew Portfolio",
+  "short_name": "Somchai Portfolio",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f2ec",
+  "theme_color": "#f4f2ec"
+}
