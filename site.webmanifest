@@ -1,8 +1,15 @@
 {
-  "name": "Somchai Sompiew Portfolio",
-  "short_name": "Somchai Portfolio",
+  "name": "Somchai Sompiew — Graphic & Packaging Designer",
+  "short_name": "Somchai Sompiew",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f4f2ec",
-  "theme_color": "#f4f2ec"
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
 }

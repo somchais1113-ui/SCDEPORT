@@ -1,70 +1,206 @@
-/*
-  PROJECT DATA
-  1. Upload images to assets/images/projects/your-project-slug/
-  2. Copy one project object below and update its information.
-  3. Categories may contain: Packaging, Identity, Campaign.
-  4. Keep every slug lowercase and use hyphens instead of spaces.
-*/
-
-window.PORTFOLIO_PROJECTS = [
+window.PORTFOLIO_PROJECTS = Object.freeze([
   {
-    slug: "botanical-skincare",
-    order: 1,
-    title: "Botanical Skincare System",
-    sector: "Beauty",
+    id: "urban-signals",
+    category: "advertising",
+    title: "Urban Signals",
+    subtitle: "An adaptable advertising system for fast-moving city audiences.",
     year: "2026",
-    categories: ["Packaging", "Identity"],
-    cover: "assets/images/projects/botanical-skincare/cover.webp",
-    alt: "Ivory and pale jade botanical skincare packaging on a warm stone surface",
-    summary:
-      "A quiet, tactile packaging family built to feel premium at first touch and consistent across every format.",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/advertising/urban-signals/cover.webp",
+    coverAlt: "Urban Signals advertising mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-01.webp",
+        alt: "Full advertising system with poster, billboard and digital screen",
+        caption: "Campaign system overview"
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-02.webp",
+        alt: "Close detail of the outdoor advertising formats",
+        caption: "Outdoor format detail"
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-03.webp",
+        alt: "Close detail of the digital advertising screen",
+        caption: "Digital placement detail"
+      }
+    ],
+    services: ["Art Direction", "Advertising", "Digital & OOH"],
     challenge:
-      "Create a calm premium system that remains recognisable across bottles, cartons and future range extensions.",
+      "Create a bold system that could hold attention at different scales without relying on dense messaging.",
     solution:
-      "A restrained material palette, botanical embossing and repeatable geometric fields create unity without making every pack identical.",
-    scope: ["Brand direction", "Packaging system", "Art direction", "Production guide"],
-    direction: "Quiet luxury / Natural tactility",
-    gallery: ["assets/images/projects/botanical-skincare/cover.webp"],
-    demo: true
+      "A modular visual language uses high-contrast colour, repeated geometry and generous space to stay recognisable from poster to screen.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
   },
   {
-    slug: "tea-ritual",
-    order: 2,
-    title: "Tea Ritual Packaging",
-    sector: "Food & Beverage",
+    id: "good-daily",
+    category: "packaging-design",
+    title: "Good Daily",
+    subtitle: "A modular packaging family designed for clarity and shelf recognition.",
     year: "2026",
-    categories: ["Packaging", "Campaign"],
-    cover: "assets/images/projects/tea-ritual/cover.webp",
-    alt: "Deep red tea and confectionery packaging arranged in an editorial studio setting",
-    summary:
-      "A bold shelf system that turns a daily tea ritual into a distinctive gift and retail experience.",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/packaging-design/good-daily/cover.webp",
+    coverAlt: "Good Daily packaging family mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-01.webp",
+        alt: "Full packaging family in white, blue, red and lime",
+        caption: "Packaging family overview"
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-02.webp",
+        alt: "Close detail of cartons and containers",
+        caption: "Structure and colour detail"
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-03.webp",
+        alt: "Close detail of the packaging range",
+        caption: "Range architecture"
+      }
+    ],
+    services: ["Packaging Design", "Identity System", "Art Direction"],
     challenge:
-      "Build a premium gift-ready range with enough energy for retail while retaining a refined cultural character.",
+      "Build a broad product family that feels energetic while remaining easy to scan and organise.",
     solution:
-      "Oxblood color blocking, tactile paper and a modular circular motif connect multiple packaging formats as one family.",
-    scope: ["Packaging architecture", "Gift set", "Retail visual", "Launch toolkit"],
-    direction: "Cultural warmth / Modern appetite",
-    gallery: ["assets/images/projects/tea-ritual/cover.webp"],
-    demo: true
+      "A restrained base palette, strong colour blocks and shared graphic rules connect different formats without making them identical.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
   },
   {
-    slug: "writing-culture",
-    order: 3,
-    title: "Writing Culture Identity",
-    sector: "Lifestyle & Stationery",
+    id: "everyday-forms",
+    category: "product-design",
+    title: "Everyday Forms",
+    subtitle: "A compact family of useful objects with one recognisable form language.",
     year: "2026",
-    categories: ["Identity", "Packaging"],
-    cover: "assets/images/projects/writing-culture/cover.webp",
-    alt: "Cobalt stationery and writing instrument packaging in a modular grid composition",
-    summary:
-      "A modular visual system designed to make writing tools feel considered, collectible and easy to navigate.",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/product-design/everyday-forms/cover.webp",
+    coverAlt: "Everyday Forms product collection mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-01.webp",
+        alt: "Product design family with tumbler, pen and compact objects",
+        caption: "Product family overview"
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-02.webp",
+        alt: "Close detail of the product forms and materials",
+        caption: "Form and material detail"
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-03.webp",
+        alt: "Close detail of the lifestyle objects",
+        caption: "Everyday use cases"
+      }
+    ],
+    services: ["Product Concept", "CMF Direction", "Visualisation"],
     challenge:
-      "Organise many formats and product tiers without losing the expressive character expected from a stationery brand.",
+      "Give small daily objects a shared personality without reducing their individual usefulness.",
     solution:
-      "A cobalt-led grid system gives the range a clear shelf rhythm while material shifts signal different product tiers.",
-    scope: ["Identity system", "Pack structure", "Range navigation", "Retail guideline"],
-    direction: "Precise / Useful / Collectible",
-    gallery: ["assets/images/projects/writing-culture/cover.webp"],
-    demo: true
+      "Rounded proportions, precise colour accents and a consistent material approach create a family that feels calm and distinctive.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
+  },
+  {
+    id: "open-shelf",
+    category: "display-retail",
+    title: "Open Shelf",
+    subtitle: "A flexible retail display that turns product browsing into a clear rhythm.",
+    year: "2026",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/display-retail/open-shelf/cover.webp",
+    coverAlt: "Open Shelf retail display mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-01.webp",
+        alt: "Full modular retail display on a white background",
+        caption: "Display system overview"
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-02.webp",
+        alt: "Close detail of product shelves and colour accents",
+        caption: "Shelf and fixture detail"
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-03.webp",
+        alt: "Close detail of the modular display structure",
+        caption: "Modular construction"
+      }
+    ],
+    services: ["Retail Concept", "Display Design", "Spatial Graphics"],
+    challenge:
+      "Organise several product stories in a compact footprint while keeping the overall fixture light and approachable.",
+    solution:
+      "An open modular frame, varied shelf heights and focused colour moments guide attention without visually crowding the space.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
+  },
+  {
+    id: "make-it-move",
+    category: "campaign",
+    title: "Make It Move",
+    subtitle: "A campaign toolkit designed to stay coherent from launch to live event.",
+    year: "2026",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/campaign/make-it-move/cover.webp",
+    coverAlt: "Make It Move campaign toolkit mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-01.webp",
+        alt: "Full campaign toolkit with poster, laptop, cards and event pass",
+        caption: "Cross-channel campaign overview"
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-02.webp",
+        alt: "Close detail of campaign print and event assets",
+        caption: "Print and event touchpoints"
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-03.webp",
+        alt: "Close detail of the digital campaign assets",
+        caption: "Digital campaign detail"
+      }
+    ],
+    services: ["Campaign Identity", "Key Visual", "Content Toolkit"],
+    challenge:
+      "Translate one energetic idea across digital, print and event formats without losing clarity.",
+    solution:
+      "A simple graphic engine combines scale shifts, cropped forms and a controlled palette so every output feels related but not repetitive.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
+  },
+  {
+    id: "off-grid-studies",
+    category: "other-creative",
+    title: "Off Grid Studies",
+    subtitle: "Editorial, material and form experiments gathered into an open-ended series.",
+    year: "2026",
+    location: "Asia / Europe",
+    client: "Self-initiated concept",
+    cover: "assets/images/projects/other-creative/off-grid-studies/cover.webp",
+    coverAlt: "Off Grid Studies editorial and material mockup",
+    gallery: [
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-01.webp",
+        alt: "Editorial book, material swatches and paper sculpture",
+        caption: "Experimental series overview"
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-02.webp",
+        alt: "Close detail of editorial and material studies",
+        caption: "Editorial and material detail"
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-03.webp",
+        alt: "Close detail of the paper form experiments",
+        caption: "Form exploration"
+      }
+    ],
+    services: ["Creative Direction", "Editorial", "Material Studies"],
+    challenge:
+      "Create a useful home for exploratory work that does not belong to one commercial discipline.",
+    solution:
+      "A flexible study format allows different materials and visual approaches to coexist while a shared colour logic holds the series together.",
+    note: "Concept project created to demonstrate the portfolio structure. Replace the copy and images with your finished work."
   }
-];
+]);

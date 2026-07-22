@@ -1,58 +1,79 @@
-# Somchai Sompiew Portfolio
+# Somchai Sompiew — Graphic & Packaging Design Portfolio
 
-A lightweight HTML, CSS and JavaScript portfolio for packaging and graphic design. It is ready for GitHub Pages and does not require a framework, database or paid hosting.
+A fast, framework-free portfolio prepared for GitHub Pages. The visual system uses a clean white background, strong typography and a compact cobalt / orange / lime accent palette.
 
 ## Included
 
-- Responsive home page
-- Project category filters
-- Reusable project detail page
-- Project data stored in one editable file
-- Optimized WebP sample images
+- Six work categories: Advertising, Packaging Design, Product Design, Display & Retail, Campaign and Other Creative Works
+- Category pages with project listings
+- Individual project pages with multi-image galleries and a click-to-expand lightbox
+- Six original concept mockups plus cropped gallery details
+- Responsive layouts for desktop, tablet and mobile
+- WebP images, lazy loading and no external font or JavaScript dependencies
 - GitHub Pages deployment workflow
-- Thai upload and editing guide
-- Accessibility and reduced-motion support
+- Thai upload guide in `docs/UPLOAD_GUIDE_TH.md`
 
-## Quick preview
+## Quick start
 
-You may open `index.html` directly in a browser. For the closest result to GitHub Pages, run a local web server from this folder:
+Open `index.html` directly in a browser, or serve the folder locally:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8080`.
+Then visit `http://localhost:8000`.
+
+## Folder structure
+
+```text
+Somchai-Sompiew-Portfolio/
+├── index.html                     # Homepage and category overview
+├── category.html                  # Category page (?category=...)
+├── project.html                   # Project detail (?id=...)
+├── 404.html
+├── data/
+│   ├── categories.js              # Category titles, descriptions and covers
+│   └── projects.js                # Projects, copy and gallery image lists
+├── assets/
+│   ├── css/main.css
+│   ├── js/
+│   │   ├── shared.js
+│   │   ├── home.js
+│   │   ├── category.js
+│   │   └── project.js
+│   └── images/
+│       ├── categories/<category>/cover.webp
+│       └── projects/<category>/<project>/
+│           ├── cover.webp
+│           ├── gallery-01.webp
+│           ├── gallery-02.webp
+│           └── gallery-03.webp
+├── docs/UPLOAD_GUIDE_TH.md
+├── .github/workflows/deploy.yml
+├── .nojekyll
+├── favicon.svg
+├── site.webmanifest
+└── robots.txt
+```
+
+## Editing content
+
+- Edit category names and descriptions in `data/categories.js`.
+- Add, remove or reorder projects in `data/projects.js`.
+- Store project images inside the matching project folder.
+- Keep IDs and folder names lowercase with hyphens, for example `coffee-packaging`.
+
+The included images and case-study copy are clearly labelled concept placeholders. Replace them with Somchai’s completed work before publishing the final portfolio.
 
 ## Publish with GitHub Pages
 
-1. Create a new public GitHub repository.
-2. Upload every file and folder from this package to the repository root.
+1. Create a new GitHub repository.
+2. Upload the contents of this folder to the repository root.
 3. Open **Settings → Pages**.
 4. Under **Build and deployment**, choose **GitHub Actions**.
-5. Push a change or run the included workflow manually.
-6. GitHub will provide the public portfolio URL after deployment finishes.
+5. Push to the `main` branch. The included workflow will deploy the site.
 
-The included workflow is located at `.github/workflows/deploy.yml`.
+## Contact configured in the site
 
-## Main files
-
-| File | Purpose |
-| --- | --- |
-| `index.html` | Home page and project grid |
-| `project.html` | Reusable detail page driven by `?id=project-slug` |
-| `data/projects.js` | Titles, categories, descriptions and image paths |
-| `assets/css/main.css` | Entire visual system and responsive layout |
-| `assets/js/app.js` | Project grid, filters and mobile menu |
-| `assets/js/project.js` | Individual project page rendering |
-| `UPLOAD_GUIDE_TH.md` | Detailed Thai editing instructions |
-
-## Contact currently configured
-
-- Name: Somchai Sompiew
-- Email: Somchai.s1113@gmail.com
-
-## Important
-
-The three included case studies use demo content and generated sample visuals. Replace both the text and images with actual portfolio work before publishing professionally.
-
-Pure GitHub Pages cannot receive image uploads from a public web form. In this version, images are uploaded through the GitHub repository. A future admin dashboard requires external storage such as Supabase or Cloudinary.
+- Somchai Sompiew
+- Somchai.s1113@gmail.com
