@@ -3,143 +3,80 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio of Somchai Sompiew, a graphic and packaging designer creating clear, contemporary design systems for audiences across Asia and Europe.">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Somchai Sompiew — Graphic & Packaging Designer">
-    <meta property="og:description" content="Advertising, packaging, product, display and campaign design.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/images/categories/packaging-design/cover.webp">
-    <title>Somchai Sompiew — Graphic &amp; Packaging Designer</title>
+    <meta name="theme-color" content="#f7f7f4">
+    <meta
+      name="description"
+      content="Somchai Sompiew — independent packaging and graphic design practice in Bangkok."
+    >
+    <title>Somchai Sompiew | Independent Design Practice</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="site.webmanifest">
+    <script>document.documentElement.classList.add("motion-enabled");</script>
     <link rel="stylesheet" href="assets/css/main.css">
-    <script defer src="data/categories.js"></script>
-    <script defer src="data/projects.js"></script>
-    <script defer src="assets/js/shared.js"></script>
-    <script defer src="assets/js/home.js"></script>
+    <script src="assets/js/motion.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <div class="site-header__inner shell">
-        <a class="brand" href="index.html" aria-label="Somchai Sompiew, home">
-          <span class="brand__mark">SS</span>
-          <span class="brand__name">Somchai<br>Sompiew</span>
+  <body class="landing-page">
+    <a class="skip-link" href="#landing-content">Skip to introduction</a>
+
+    <main class="landing" id="landing-content">
+      <div class="landing-frame" aria-hidden="true"></div>
+
+      <header class="landing-header landing-reveal" style="--reveal-delay: 80ms">
+        <a class="wordmark landing-wordmark" href="#landing-content" aria-label="Somchai Sompiew introduction">
+          <strong>SOMCHAI</strong>
+          <span>/ SOMPIEW</span>
         </a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu" data-menu-button>
-          <span></span><span></span>
-        </button>
-        <nav class="site-nav" aria-label="Primary navigation" data-menu>
-          <a href="#work">Work</a>
-          <a href="#approach">Approach</a>
-          <a href="#about">About</a>
-          <a class="nav-contact" href="mailto:Somchai.s1113@gmail.com">Start a project <span aria-hidden="true">↗</span></a>
-        </nav>
-      </div>
-    </header>
+        <p>Independent design practice</p>
+        <p>Bangkok · Worldwide</p>
+      </header>
 
-    <main id="main-content">
-      <section class="hero shell">
-        <div class="hero__copy">
-          <p class="eyebrow">Graphic &amp; Packaging Designer · Asia / Europe</p>
-          <h1>Graphic ideas.<br><span>Made tangible.</span></h1>
-          <p class="hero__intro">I create clear, contemporary design systems that work across packaging, products, campaigns and physical spaces.</p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#work">Explore selected work</a>
-            <a class="button button--text" href="mailto:Somchai.s1113@gmail.com">Somchai.s1113@gmail.com <span aria-hidden="true">↗</span></a>
-          </div>
-          <ul class="service-strip" aria-label="Design services">
-            <li>Strategy</li>
-            <li>Identity</li>
-            <li>Packaging</li>
-            <li>Campaign</li>
-          </ul>
+      <section class="landing-stage" aria-labelledby="landing-title">
+        <div class="landing-title-wrap">
+          <p class="landing-index landing-reveal" style="--reveal-delay: 160ms">Portfolio / Selected works 2026</p>
+          <h1 id="landing-title" aria-label="Somchai Sompiew">
+            <span class="landing-title-line"><span>SOMCHAI</span></span>
+            <span class="landing-title-line serif"><span>SOMPIEW</span></span>
+          </h1>
+          <p class="landing-role landing-reveal" style="--reveal-delay: 760ms">
+            Packaging · Brand identity · Graphic design
+          </p>
         </div>
-        <a class="hero__visual image-frame" href="category.html?category=packaging-design" aria-label="View Packaging Design category">
-          <img src="assets/images/categories/packaging-design/cover.webp" alt="Colourful packaging design collection on a white background" width="1200" height="900" fetchpriority="high">
-          <span class="hero__badge">Featured category<br><strong>Packaging Design</strong></span>
-          <span class="hero__arrow" aria-hidden="true">↗</span>
+
+        <figure class="landing-visual landing-reveal" style="--reveal-delay: 300ms">
+          <div class="landing-image-mask">
+            <img
+              src="assets/images/hero/writing-culture.webp"
+              alt="Contemporary stationery packaging arranged in a studio"
+              width="1448"
+              height="1086"
+              fetchpriority="high"
+            >
+          </div>
+          <figcaption>
+            <span>Strategy to production</span>
+            <span>01 / 01</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <footer class="landing-footer landing-reveal" style="--reveal-delay: 880ms">
+        <p>
+          Clear ideas, calm systems and production-ready design for consumer
+          and lifestyle brands.
+        </p>
+        <a class="landing-enter" href="home.html" data-page-transition="enter">
+          <span>Enter portfolio</span>
+          <b aria-hidden="true">↗</b>
         </a>
-      </section>
+      </footer>
 
-      <section class="section section--tint" id="work">
-        <div class="shell">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Work by discipline</p>
-              <h2>Choose a category.<br>See the complete work.</h2>
-            </div>
-            <p>Each category opens into its own project index. Every project then has a dedicated case-study page and an expandable image gallery.</p>
-          </div>
-          <div class="category-grid" data-category-grid aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="section shell" aria-labelledby="featured-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Featured projects</p>
-            <h2 id="featured-title">A closer look.</h2>
-          </div>
-          <p>Concept mockups are included as ready-to-replace examples, so the portfolio already works before final project images are uploaded.</p>
-        </div>
-        <div class="featured-grid" data-featured-grid aria-live="polite"></div>
-      </section>
-
-      <section class="section approach" id="approach">
-        <div class="shell approach__inner">
-          <div class="approach__intro">
-            <p class="eyebrow">Approach</p>
-            <h2>Built as one system,<br>not isolated pieces.</h2>
-          </div>
-          <ol class="process-list">
-            <li>
-              <span>01</span>
-              <div><h3>Frame</h3><p>Clarify the audience, context and decision the work needs to support.</p></div>
-            </li>
-            <li>
-              <span>02</span>
-              <div><h3>Shape</h3><p>Develop a visual logic that can move confidently across formats and markets.</p></div>
-            </li>
-            <li>
-              <span>03</span>
-              <div><h3>Refine</h3><p>Test hierarchy, materials and production details until the system feels effortless.</p></div>
-            </li>
-            <li>
-              <span>04</span>
-              <div><h3>Deliver</h3><p>Organise practical files and guidance so the work stays consistent in use.</p></div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section shell about" id="about">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>Thoughtful design with a practical finish.</h2>
-        </div>
-        <div class="about__copy">
-          <p class="lede">I’m Somchai Sompiew, a graphic designer focused on packaging, visual identity and brand experiences that can communicate naturally across Asia and Europe.</p>
-          <p>The work balances strong visual character with clear information, scalable systems and real production needs.</p>
-          <div class="availability"><span></span> Available for selected collaborations</div>
-        </div>
-      </section>
-
-      <section class="contact-panel">
-        <div class="shell contact-panel__inner">
-          <p class="eyebrow">Have a project in mind?</p>
-          <a href="mailto:Somchai.s1113@gmail.com">Let’s make it clear,<br>useful and memorable. <span aria-hidden="true">↗</span></a>
-          <p>Somchai.s1113@gmail.com</p>
-        </div>
-      </section>
+      <p class="landing-counter landing-reveal" style="--reveal-delay: 980ms" aria-hidden="true">
+        13°45′N / 100°30′E
+      </p>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell">
-        <p>© <span data-year>2026</span> Somchai Sompiew</p>
-        <p>Graphic &amp; Packaging Designer</p>
-        <a href="#main-content">Back to top ↑</a>
-      </div>
-    </footer>
+    <div class="page-transition" aria-hidden="true">
+      <span>SOMCHAI / SOMPIEW</span>
+    </div>
   </body>
 </html>
