@@ -11,6 +11,9 @@
     <title>Somchai Sompiew | Packaging &amp; Graphic Designer</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" href="assets/fonts/SpecialGothicExpandedOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/GoogleSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/GoogleSans-Medium.ttf" as="font" type="font/ttf" crossorigin>
     <script>document.documentElement.classList.add("motion-enabled");</script>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/ui-controls.css">
@@ -19,6 +22,7 @@
     <script src="assets/js/shared.js" defer></script>
     <script src="assets/js/motion.js" defer></script>
     <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/pen-preview.js" defer></script>
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main-content" data-i18n-en="Skip to content" data-i18n-th="ข้ามไปยังเนื้อหา">Skip to content</a>
@@ -31,7 +35,7 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="#work" data-i18n-en="Work" data-i18n-th="ผลงาน">Work</a>
-        <a href="object-study.html" data-i18n-en="Object Study" data-i18n-th="ศึกษาผลิตภัณฑ์">Object Study</a>
+        <a href="#object-study-preview" data-i18n-en="Object Study" data-i18n-th="ศึกษาผลิตภัณฑ์">Object Study</a>
         <a href="#profile" data-i18n-en="Profile" data-i18n-th="โปรไฟล์">Profile</a>
         <a class="nav-contact icon-link" href="mailto:Somchai.s1113@gmail.com">
           <span data-i18n-en="Start a project" data-i18n-th="เริ่มโปรเจกต์">Start a project</span>
@@ -172,30 +176,67 @@
         </div>
       </section>
 
-      <section class="about-section" id="profile">
+      <section class="pen-preview-section" id="object-study-preview" data-pen-preview>
+        <header class="pen-preview-heading">
+          <div>
+            <p class="eyebrow"><span></span> <b data-i18n-en="Object study / Ballpoint pen" data-i18n-th="ศึกษาผลิตภัณฑ์ / ปากกาลูกลื่น">Object study / Ballpoint pen</b></p>
+            <h2><span data-i18n-en="One object." data-i18n-th="หนึ่งผลิตภัณฑ์">One object.</span><br><em data-i18n-en="Five clear parts." data-i18n-th="ห้าส่วนที่ชัดเจน">Five clear parts.</em></h2>
+          </div>
+          <div class="pen-preview-intro">
+            <p data-i18n-en="Move across the model. Each component reveals one precise line, keeping the anatomy easy to read without covering the product." data-i18n-th="เลื่อนเมาส์ไปบนโมเดล แต่ละชิ้นส่วนจะแสดงเส้นชี้เพียงหนึ่งเส้น ทำให้เข้าใจโครงสร้างได้ง่ายโดยไม่บดบังตัวผลิตภัณฑ์">Move across the model. Each component reveals one precise line, keeping the anatomy easy to read without covering the product.</p>
+            <a class="icon-link" href="object-study.html"><span data-i18n-en="Open full object study" data-i18n-th="เปิดหน้าศึกษาผลิตภัณฑ์เต็มรูปแบบ">Open full object study</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+          </div>
+        </header>
+
+        <div class="pen-preview-stage" data-pen-preview-stage>
+          <div class="pen-preview-meta">
+            <span data-i18n-en="Interactive anatomy" data-i18n-th="โครงสร้างแบบโต้ตอบ">Interactive anatomy</span>
+            <span data-pen-preview-status data-status-en="Hover a component" data-status-th="ชี้ไปที่ชิ้นส่วน">Hover a component</span>
+          </div>
+
+          <div class="pen-preview-model" data-pen-preview-model>
+            <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Neutral grey ballpoint pen with five interactive external components" width="1620" height="316" loading="lazy" draggable="false">
+
+            <button class="pen-preview-hotspot pen-preview-hotspot--pusher" type="button" data-preview-part="Pusher" aria-label="Pusher">
+              <i aria-hidden="true"></i><b aria-hidden="true"></b><span><small>01</small>Pusher</span>
+            </button>
+            <button class="pen-preview-hotspot pen-preview-hotspot--clip" type="button" data-preview-part="Clip" aria-label="Clip">
+              <i aria-hidden="true"></i><b aria-hidden="true"></b><span><small>02</small>Clip</span>
+            </button>
+            <button class="pen-preview-hotspot pen-preview-hotspot--barrel" type="button" data-preview-part="Barrel" aria-label="Barrel">
+              <i aria-hidden="true"></i><b aria-hidden="true"></b><span><small>03</small>Barrel</span>
+            </button>
+            <button class="pen-preview-hotspot pen-preview-hotspot--grip" type="button" data-preview-part="Grip" aria-label="Grip">
+              <i aria-hidden="true"></i><b aria-hidden="true"></b><span><small>04</small>Grip</span>
+            </button>
+            <button class="pen-preview-hotspot pen-preview-hotspot--cone" type="button" data-preview-part="Cone" aria-label="Cone">
+              <i aria-hidden="true"></i><b aria-hidden="true"></b><span><small>05</small>Cone</span>
+            </button>
+          </div>
+
+          <p class="pen-preview-hint"><span aria-hidden="true">↔</span> <span data-i18n-en="Move to inspect · Tap to hold a label" data-i18n-th="เลื่อนเพื่อดู · แตะเพื่อล็อกชื่อชิ้นส่วน">Move to inspect · Tap to hold a label</span></p>
+        </div>
+      </section>
+
+      <section class="about-section about-section--refined" id="profile">
         <div class="about-lead">
           <p class="eyebrow"><span></span> Somchai Sompiew</p>
-          <h2><span data-i18n-en="Global clarity," data-i18n-th="สื่อสารชัดในระดับสากล">Global clarity,</span><br><span data-i18n-en="local sensitivity." data-i18n-th="ละเอียดอ่อนกับทุกบริบท">local sensitivity.</span></h2>
+          <h2><span data-i18n-en="Global clarity." data-i18n-th="สื่อสารชัดในระดับสากล">Global clarity.</span><br><em data-i18n-en="Local sensitivity." data-i18n-th="ละเอียดอ่อนกับทุกบริบท">Local sensitivity.</em></h2>
+          <p class="about-location" data-i18n-en="Bangkok · Working worldwide" data-i18n-th="กรุงเทพฯ · ร่วมงานได้ทั่วโลก">Bangkok · Working worldwide</p>
         </div>
+
         <div class="about-copy">
-          <p class="about-large" data-i18n-en="I help consumer and lifestyle brands turn strategy into packaging people can understand, desire and trust." data-i18n-th="ผมช่วยแบรนด์สินค้าและไลฟ์สไตล์ เปลี่ยนกลยุทธ์ให้เป็นบรรจุภัณฑ์ที่ผู้คนเข้าใจ อยากหยิบ และเชื่อมั่น">
-            I help consumer and lifestyle brands turn strategy into packaging
-            people can understand, desire and trust.
-          </p>
-          <p data-i18n-en="The visual language is designed to travel well across Asian and European markets while staying culturally aware, commercially useful and production-ready." data-i18n-th="ภาษาภาพถูกออกแบบให้เดินทางได้ดีทั้งตลาดเอเชียและยุโรป โดยยังเข้าใจวัฒนธรรม ตอบโจทย์ธุรกิจ และพร้อมนำไปผลิตจริง">
-            The visual language is designed to travel well across Asian and
-            European markets while staying culturally aware, commercially
-            useful and production-ready.
-          </p>
-          <p class="thai-copy" data-i18n-en="Beautiful with reason. Easy to understand. Ready to produce from concept to completion." data-i18n-th="ออกแบบให้สวยอย่างมีเหตุผล อ่านง่าย และนำไปใช้จริงได้ตั้งแต่แนวคิดจนถึงการผลิต">
-            ออกแบบให้สวยอย่างมีเหตุผล อ่านง่าย และนำไปใช้จริงได้ตั้งแต่แนวคิดจนถึงการผลิต
-          </p>
-          <div class="service-list">
-            <div><small>01</small><span data-i18n-en="Brand &amp; packaging strategy" data-i18n-th="กลยุทธ์แบรนด์และบรรจุภัณฑ์">Brand &amp; packaging strategy</span></div>
-            <div><small>02</small><span data-i18n-en="Visual identity systems" data-i18n-th="ระบบอัตลักษณ์ทางภาพ">Visual identity systems</span></div>
-            <div><small>03</small><span data-i18n-en="Packaging design &amp; range architecture" data-i18n-th="ออกแบบบรรจุภัณฑ์และโครงสร้างกลุ่มสินค้า">Packaging design &amp; range architecture</span></div>
-            <div><small>04</small><span data-i18n-en="Campaign &amp; retail visuals" data-i18n-th="ภาพสื่อสารแคมเปญและพื้นที่ขาย">Campaign &amp; retail visuals</span></div>
-            <div><small>05</small><span data-i18n-en="Artwork direction &amp; production guide" data-i18n-th="กำกับอาร์ตเวิร์กและคู่มือการผลิต">Artwork direction &amp; production guide</span></div>
+          <p class="about-large" data-i18n-en="I turn brand strategy into packaging and visual systems people can understand, desire and trust." data-i18n-th="ผมเปลี่ยนกลยุทธ์ของแบรนด์ให้เป็นบรรจุภัณฑ์และระบบภาพที่ผู้คนเข้าใจ อยากหยิบ และเชื่อมั่น">I turn brand strategy into packaging and visual systems people can understand, desire and trust.</p>
+
+          <div class="about-summary">
+            <p data-i18n-en="Designed to work across Asian and European markets while staying culturally aware, commercially useful and ready for production." data-i18n-th="งานถูกออกแบบให้ใช้ได้ทั้งตลาดเอเชียและยุโรป โดยยังเข้าใจวัฒนธรรม ตอบโจทย์ธุรกิจ และพร้อมผลิตจริง">Designed to work across Asian and European markets while staying culturally aware, commercially useful and ready for production.</p>
+            <p class="about-principle"><small data-i18n-en="Principle" data-i18n-th="หลักการทำงาน">Principle</small><strong data-i18n-en="Beautiful with reason. Clear by design." data-i18n-th="สวยอย่างมีเหตุผล และชัดเจนด้วยการออกแบบ">Beautiful with reason. Clear by design.</strong></p>
+          </div>
+
+          <div class="profile-capabilities">
+            <article><small>01</small><div><strong data-i18n-en="Think" data-i18n-th="วางแก่น">Think</strong><span data-i18n-en="Brand strategy · Packaging direction" data-i18n-th="กลยุทธ์แบรนด์ · ทิศทางบรรจุภัณฑ์">Brand strategy · Packaging direction</span></div></article>
+            <article><small>02</small><div><strong data-i18n-en="Build" data-i18n-th="สร้างระบบ">Build</strong><span data-i18n-en="Identity · Packaging · Range systems" data-i18n-th="อัตลักษณ์ · บรรจุภัณฑ์ · ระบบกลุ่มสินค้า">Identity · Packaging · Range systems</span></div></article>
+            <article><small>03</small><div><strong data-i18n-en="Deliver" data-i18n-th="ส่งมอบจริง">Deliver</strong><span data-i18n-en="Campaign · Retail · Production guide" data-i18n-th="แคมเปญ · พื้นที่ขาย · คู่มือการผลิต">Campaign · Retail · Production guide</span></div></article>
           </div>
         </div>
       </section>

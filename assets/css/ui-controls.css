@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "SC Google Sans";
-  src: url("/portfolio/assets/fonts/GoogleSans-Regular.ttf") format("truetype");
+  src: url("../fonts/GoogleSans-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -10,23 +10,7 @@
 
 @font-face {
   font-family: "SC Google Sans";
-  src: url("/portfolio/assets/fonts/GoogleSans-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SC Prompt";
-  src: url("/portfolio/assets/fonts/Prompt-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SC Prompt";
-  src: url("/portfolio/assets/fonts/Prompt-Medium.ttf") format("truetype");
+  src: url("../fonts/GoogleSans-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -34,18 +18,34 @@
 
 @font-face {
   font-family: "SC Prompt";
-  src: url("/portfolio/assets/fonts/Prompt-SemiBold.ttf") format("truetype");
+  src: url("../fonts/Prompt-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: 600 800;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SC Prompt";
+  src: url("../fonts/Prompt-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SC Prompt";
+  src: url("../fonts/Prompt-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "SC Special Gothic";
-  src: url("/portfolio/assets/fonts/SpecialGothicExpandedOne-Regular.ttf") format("truetype");
+  src: url("../fonts/SpecialGothicExpandedOne-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 body {
@@ -1774,4 +1774,15 @@ body.home-page[data-language="th"] .project-card-summary {
     grid-column: 1 / -1;
     grid-row: 2;
   }
+}
+
+/* Font rendering lock: keep the landing identity in its intended display face. */
+.landing-page .landing-title-line,
+.landing-page .landing-title-line.serif,
+.home-page .hero-name-title,
+.page-transition > span {
+  font-family: "SC Special Gothic", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
 }
