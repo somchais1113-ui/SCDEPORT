@@ -186,7 +186,10 @@
     if (stageCount) stageCount.textContent = modeOrder[mode];
 
     if (mode === "anatomy") selectPart(activePart, false);
-    else renderInfo(modeContent[mode]);
+    else if (mode === "exploded") {
+      setExplodedActive(activePart);
+      renderInfo(partContent[activePart] || modeContent.exploded);
+    } else renderInfo(modeContent[mode]);
 
     if (settings.scrollIntoView) {
       const shell = document.querySelector(".study-shell");
@@ -206,6 +209,14 @@
 
     if (updateMode !== false && activeMode !== "anatomy") setMode("anatomy");
     renderInfo(partContent[part]);
+  }
+
+  function setExplodedActive(part) {
+    explodedCards.forEach(function (card) {
+      const selected = card.dataset.explodedPart === part;
+      card.classList.toggle("is-active", selected);
+      card.setAttribute("aria-pressed", String(selected));
+    });
   }
 
   function selectColour(button) {
@@ -264,15 +275,27 @@
     function activate() {
       const key = card.dataset.explodedPart;
       if (!partContent[key]) return;
+      setExplodedActive(key);
+      activePart = key;
       renderInfo(partContent[key]);
     }
     function reset() {
-      if (activeMode === "exploded") renderInfo(modeContent.exploded);
+      if (activeMode === "exploded") {
+        setExplodedActive(activePart);
+        renderInfo(partContent[activePart] || modeContent.exploded);
+      }
     }
     card.addEventListener("mouseenter", activate);
     card.addEventListener("focus", activate);
+    card.addEventListener("click", activate);
     card.addEventListener("mouseleave", reset);
     card.addEventListener("blur", reset);
+    card.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activate();
+      }
+    });
   });
 
   if (model && window.PointerEvent && !reduceMotion) {
