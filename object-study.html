@@ -6,16 +6,17 @@
     <meta name="theme-color" content="#f7f7f4">
     <meta name="description" content="Interactive ballpoint pen anatomy study by Somchai Sompiew.">
     <title>Object Study 01 | Somchai Sompiew</title>
+    <meta name="build-version" content="v32-detail-refine">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>document.documentElement.classList.add("motion-enabled");</script>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/ui-controls.css">
-    <link rel="stylesheet" href="assets/css/object-study.css">
-    <script src="assets/js/shared.js" defer></script>
-    <script src="assets/js/motion.js" defer></script>
-    <script src="assets/js/pen-study.js" defer></script>
+    <link rel="stylesheet" href="assets/css/main.css?v=32">
+    <link rel="stylesheet" href="assets/css/ui-controls.css?v=32">
+    <link rel="stylesheet" href="assets/css/object-study.css?v=32">
+    <script src="assets/js/shared.js?v=32" defer></script>
+    <script src="assets/js/motion.js?v=32" defer></script>
+    <script src="assets/js/pen-study.js?v=32" defer></script>
   </head>
-  <body class="object-study-page" data-pen-mode="overview">
+  <body data-build="v32-detail-refine" class="object-study-page" data-pen-mode="overview">
     <a class="skip-link" href="#study-content" data-i18n-en="Skip to object study" data-i18n-th="ข้ามไปยังส่วนศึกษาผลิตภัณฑ์">Skip to object study</a>
 
     <header class="site-header">
@@ -104,12 +105,12 @@
             <section class="stage-mode stage-mode--anatomy" data-mode-panel="anatomy" aria-hidden="true" hidden>
               <div class="anatomy-board">
                 <img class="anatomy-pen" src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Ballpoint pen anatomy" width="1672" height="941" draggable="false">
-                <svg class="anatomy-lines" viewBox="0 0 1000 520"  aria-hidden="true">
-                  <path d="M122 120 H205 V262"/><circle cx="205" cy="262" r="6"/>
-                  <path d="M352 96 V226 H315"/><circle cx="315" cy="226" r="6"/>
-                  <path d="M545 82 V250"/><circle cx="545" cy="250" r="6"/>
-                  <path d="M748 408 V310 H770"/><circle cx="770" cy="310" r="6"/>
-                  <path d="M910 392 H855 V316"/><circle cx="855" cy="316" r="6"/>
+                <svg class="anatomy-lines" viewBox="0 0 1000 520" aria-hidden="true">
+                  <path d="M118 121 H208 V265"/><circle cx="208" cy="265" r="6"/>
+                  <path d="M320 104 V222 H288"/><circle cx="288" cy="222" r="6"/>
+                  <path d="M510 92 V252"/><circle cx="510" cy="252" r="6"/>
+                  <path d="M746 382 V312 H770"/><circle cx="770" cy="312" r="6"/>
+                  <path d="M874 380 V330 H844"/><circle cx="844" cy="330" r="6"/>
                 </svg>
                 <button class="anatomy-label anatomy-label--pusher" type="button" data-pen-part="pusher" aria-pressed="false"><small>01</small><strong>Pusher</strong></button>
                 <button class="anatomy-label anatomy-label--clip" type="button" data-pen-part="clip" aria-pressed="false"><small>02</small><strong>Clip</strong></button>
@@ -133,7 +134,7 @@
               <div class="exploded-sequence" aria-label="Five external pen components">
                 <article tabindex="0" data-exploded-part="pusher" style="--part-scale:.65"><span>01</span><i></i><strong>Pusher</strong><p data-i18n-en="Start point for the click action." data-i18n-th="จุดเริ่มต้นของการกดใช้งาน">Start point for the click action.</p></article>
                 <article tabindex="0" data-exploded-part="clip" style="--part-scale:.78"><span>02</span><i></i><strong>Clip</strong><p data-i18n-en="Retention element and accent." data-i18n-th="ชิ้นส่วนยึดเก็บและสร้างจุดเด่น">Retention element and accent.</p></article>
-                <article tabindex="0" data-exploded-part="barrel" style="--part-scale:1.7"><span>03</span><i></i><strong>Barrel</strong><p data-i18n-en="Primary structural housing." data-i18n-th="โครงสร้างหลักของตัวด้าม">Primary structural housing.</p></article>
+                <article tabindex="0" data-exploded-part="barrel" class="is-active" style="--part-scale:1.7"><span>03</span><i></i><strong>Barrel</strong><p data-i18n-en="Primary structural housing." data-i18n-th="โครงสร้างหลักของตัวด้าม">Primary structural housing.</p></article>
                 <article tabindex="0" data-exploded-part="grip" style="--part-scale:1.05"><span>04</span><i></i><strong>Grip</strong><p data-i18n-en="Control zone for the fingers." data-i18n-th="พื้นที่ควบคุมสำหรับนิ้วมือ">Control zone for the fingers.</p></article>
                 <article tabindex="0" data-exploded-part="cone" style="--part-scale:.9"><span>05</span><i></i><strong>Cone</strong><p data-i18n-en="Guides the writing tip." data-i18n-th="จัดแนวและนำหัวเขียน">Guides the writing tip.</p></article>
               </div>
