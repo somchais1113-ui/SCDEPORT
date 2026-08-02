@@ -192,8 +192,8 @@
         button.setAttribute("aria-pressed", String(button.dataset.language === nextLanguage));
       });
 
-      document.querySelectorAll("[data-carousel-root]").forEach(function (carousel) {
-        const activeSlide = carousel.querySelector("[data-carousel-slide].is-active");
+      document.querySelectorAll("[data-carousel-root], [data-carousel]").forEach(function (carousel) {
+        const activeSlide = carousel.querySelector("[data-carousel-slide].is-active, .landing-slide.is-active");
         updateCarouselCopy(carousel, activeSlide);
       });
 
@@ -225,8 +225,8 @@
   }
 
   function setupCarousels() {
-    document.querySelectorAll("[data-carousel-root]").forEach(function (carousel) {
-      const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+    document.querySelectorAll("[data-carousel-root], [data-carousel]").forEach(function (carousel) {
+      const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide], .landing-slide"));
       const currentLabels = carousel.querySelectorAll("[data-carousel-current]");
       const caption = carousel.querySelector("[data-carousel-caption]");
       const previousButton = carousel.querySelector("[data-carousel-prev]");
@@ -317,6 +317,7 @@
 
       if (dragSurface && window.PointerEvent) {
         dragSurface.addEventListener("pointerdown", function (event) {
+          if (event.target.closest("button, a, input, select, textarea")) return;
           if (event.pointerType === "mouse" && event.button !== 0) return;
           pointerId = event.pointerId;
           pointerStartX = event.clientX;

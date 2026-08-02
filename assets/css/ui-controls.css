@@ -1786,3 +1786,50 @@ body.home-page[data-language="th"] .project-card-summary {
   font-weight: 400;
   font-synthesis: none;
 }
+
+
+/* --------------------------------------------------------------------------
+   v20 home-page refinement — better spacing / logo scale / statement position
+   -------------------------------------------------------------------------- */
+.home-page .hero-name-title {
+  margin: clamp(18px, 2.2vw, 30px) 0 clamp(18px, 2vw, 28px);
+  font-size: clamp(72px, 6.1vw, 114px);
+  line-height: 0.89;
+  letter-spacing: -0.032em;
+}
+
+.home-page .hero-name-line--outline {
+  margin-top: 0.16em;
+  margin-left: clamp(14px, 2.2vw, 34px);
+}
+
+.home-page .hero-name-bottom {
+  gap: clamp(20px, 2.2vw, 34px);
+  padding-top: clamp(14px, 1.4vw, 20px);
+}
+
+.home-page .hero-name-statement {
+  max-width: 31ch;
+  font-size: clamp(15px, 1.18vw, 19px);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.home-page .footer-top a {
+  max-width: 10.5ch;
+  font-size: clamp(42px, 4.9vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 999px) {
+  .home-page .hero-name-title {
+    font-size: clamp(58px, 10vw, 92px);
+    margin: clamp(14px, 2.2vw, 24px) 0 18px;
+  }
+
+  .home-page .hero-name-statement {
+    max-width: 34ch;
+    font-size: 15px;
+  }
+}

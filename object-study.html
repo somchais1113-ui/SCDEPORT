@@ -55,104 +55,142 @@
     </header>
 
     <main id="study-content">
-      <section class="pen-study-hero" id="overview">
-        <div class="pen-study-heading">
-          <p class="eyebrow"><span></span> <span data-i18n-en="Object Study 01 / Ballpoint Pen" data-i18n-th="Object Study 01 / ปากกาลูกลื่น">Object Study 01 / Ballpoint Pen</span></p>
+      <section class="study-intro" id="overview">
+        <p class="eyebrow"><span></span><span data-i18n-en="Object Study 01 / Ballpoint Pen" data-i18n-th="Object Study 01 / ปากกาลูกลื่น">Object Study 01 / Ballpoint Pen</span></p>
+        <div class="study-intro__grid">
           <h1>
-            <span data-i18n-en="From parts," data-i18n-th="จากชิ้นส่วน">From parts,</span>
-            <em data-i18n-en="to the rhythm of writing." data-i18n-th="สู่จังหวะการเขียน">to the rhythm of writing.</em>
+            <span data-i18n-en="One object." data-i18n-th="หนึ่งวัตถุ">One object.</span>
+            <em data-i18n-en="Five clear parts." data-i18n-th="ห้าส่วนที่ชัดเจน">Five clear parts.</em>
           </h1>
-          <p data-i18n-en="A visual prototype that studies how five external components work together as one calm, useful object." data-i18n-th="ต้นแบบเชิงภาพที่สำรวจว่าองค์ประกอบภายนอกทั้งห้าส่วน ทำงานร่วมกันจนกลายเป็นวัตถุที่เรียบง่ายและใช้งานได้อย่างไร">
-            A visual prototype that studies how five external components work together as one calm, useful object.
+          <p data-i18n-en="A clean visual study of how Pusher, Clip, Barrel, Grip and Cone work together as one useful writing tool." data-i18n-th="การศึกษารูปทรงอย่างเป็นระบบ เพื่อให้เห็นว่า Pusher, Clip, Barrel, Grip และ Cone ทำงานร่วมกันเป็นอุปกรณ์การเขียนหนึ่งชิ้นได้อย่างไร">
+            A clean visual study of how Pusher, Clip, Barrel, Grip and Cone work together as one useful writing tool.
           </p>
         </div>
+      </section>
 
-        <div class="pen-study-layout">
-          <nav class="pen-side-menu" aria-label="Object study modes">
-            <p data-i18n-en="Explore" data-i18n-th="สำรวจ">Explore</p>
-            <button type="button" class="is-active" data-pen-mode-button="overview" aria-pressed="true">
-              <small>01</small><span data-i18n-en="Overview" data-i18n-th="ภาพรวม">Overview</span>
-            </button>
-            <button type="button" data-pen-mode-button="anatomy" aria-pressed="false">
-              <small>02</small><span data-i18n-en="Anatomy" data-i18n-th="ส่วนประกอบ">Anatomy</span>
-            </button>
-            <button type="button" data-pen-mode-button="exploded" aria-pressed="false">
-              <small>03</small><span data-i18n-en="Exploded View" data-i18n-th="แยกโครงสร้าง">Exploded View</span>
-            </button>
-            <button type="button" data-pen-mode-button="material" aria-pressed="false">
-              <small>04</small><span data-i18n-en="Material & Finish" data-i18n-th="วัสดุและผิวสัมผัส">Material &amp; Finish</span>
-            </button>
-            <button type="button" data-pen-mode-button="colour" aria-pressed="false">
-              <small>05</small><span data-i18n-en="Colour System" data-i18n-th="ระบบสี">Colour System</span>
-            </button>
-          </nav>
+      <section class="study-shell" aria-label="Interactive pen presentation">
+        <nav class="study-modes" aria-label="Object study modes">
+          <p data-i18n-en="Explore" data-i18n-th="สำรวจ">Explore</p>
+          <button type="button" class="is-active" data-mode-button="overview" aria-pressed="true"><small>01</small><span data-i18n-en="Overview" data-i18n-th="ภาพรวม">Overview</span></button>
+          <button type="button" data-mode-button="anatomy" aria-pressed="false"><small>02</small><span data-i18n-en="Anatomy" data-i18n-th="ส่วนประกอบ">Anatomy</span></button>
+          <button type="button" data-mode-button="exploded" aria-pressed="false"><small>03</small><span data-i18n-en="Exploded View" data-i18n-th="แยกโครงสร้าง">Exploded View</span></button>
+          <button type="button" data-mode-button="material" aria-pressed="false"><small>04</small><span data-i18n-en="Material & Finish" data-i18n-th="วัสดุและผิวสัมผัส">Material &amp; Finish</span></button>
+          <button type="button" data-mode-button="colour" aria-pressed="false"><small>05</small><span data-i18n-en="Colour System" data-i18n-th="ระบบสี">Colour System</span></button>
+        </nav>
 
-          <div class="pen-stage" data-pen-stage>
-            <div class="pen-stage-grid" aria-hidden="true"></div>
-            <div class="pen-stage-meta">
-              <span data-i18n-en="2.5D visual prototype" data-i18n-th="ต้นแบบภาพ 2.5D">2.5D visual prototype</span>
-              <span>01 / 05</span>
-            </div>
+        <section class="study-stage" data-study-stage style="--active-colour:#7c7d7a">
+          <header class="stage-header">
+            <span data-i18n-en="2.5D visual prototype" data-i18n-th="ต้นแบบภาพ 2.5D">2.5D visual prototype</span>
+            <span data-stage-count>01 / 05</span>
+          </header>
 
-            <div class="pen-object" data-pen-object tabindex="0" aria-label="Interactive neutral grey ballpoint pen" data-aria-en="Interactive neutral grey ballpoint pen" data-aria-th="ปากกาลูกลื่นสีเทาแบบโต้ตอบ">
-              <img
-                src="assets/images/object-study/neutral-grey-ballpoint-hero.webp"
-                alt="Neutral grey retractable ballpoint pen showing pusher, clip, barrel, grip and cone"
-                width="1672"
-                height="941"
-                fetchpriority="high"
-                draggable="false"
-              >
-              <button class="pen-hotspot pen-hotspot--pusher" type="button" data-pen-part="pusher" aria-label="Pusher"><span>01</span></button>
-              <button class="pen-hotspot pen-hotspot--clip" type="button" data-pen-part="clip" aria-label="Clip"><span>02</span></button>
-              <button class="pen-hotspot pen-hotspot--barrel" type="button" data-pen-part="barrel" aria-label="Barrel"><span>03</span></button>
-              <button class="pen-hotspot pen-hotspot--grip" type="button" data-pen-part="grip" aria-label="Grip"><span>04</span></button>
-              <button class="pen-hotspot pen-hotspot--cone" type="button" data-pen-part="cone" aria-label="Cone"><span>05</span></button>
-            </div>
+          <div class="stage-viewport">
+            <section class="stage-mode stage-mode--overview is-active" data-mode-panel="overview" aria-hidden="false">
+              <div class="stage-aura" aria-hidden="true"></div>
+              <div class="pen-model pen-model--draggable" data-pen-model tabindex="0" aria-label="Interactive neutral grey ballpoint pen" data-aria-en="Interactive neutral grey ballpoint pen" data-aria-th="ปากกาลูกลื่นสีเทาแบบโต้ตอบ">
+                <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Neutral grey retractable ballpoint pen" width="1672" height="941" fetchpriority="high" draggable="false">
+              </div>
+              <p class="stage-hint">
+                <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="M2 10h16M6 6l-4 4 4 4M14 6l4 4-4 4"/></svg>
+                <span data-i18n-en="Drag or use arrow keys" data-i18n-th="ลากหรือใช้ปุ่มลูกศร">Drag or use arrow keys</span>
+              </p>
+            </section>
 
-            <div class="pen-exploded-rail" aria-hidden="true">
-              <span><i>01</i>Pusher</span>
-              <span><i>02</i>Clip</span>
-              <span><i>03</i>Barrel</span>
-              <span><i>04</i>Grip</span>
-              <span><i>05</i>Cone</span>
-            </div>
+            <section class="stage-mode stage-mode--anatomy" data-mode-panel="anatomy" aria-hidden="true" hidden>
+              <div class="anatomy-board">
+                <img class="anatomy-pen" src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Ballpoint pen anatomy" width="1672" height="941" draggable="false">
+                <svg class="anatomy-lines" viewBox="0 0 1000 520"  aria-hidden="true">
+                  <path d="M122 120 H205 V262"/><circle cx="205" cy="262" r="6"/>
+                  <path d="M352 96 V226 H315"/><circle cx="315" cy="226" r="6"/>
+                  <path d="M545 82 V250"/><circle cx="545" cy="250" r="6"/>
+                  <path d="M748 408 V310 H770"/><circle cx="770" cy="310" r="6"/>
+                  <path d="M910 392 H855 V316"/><circle cx="855" cy="316" r="6"/>
+                </svg>
+                <button class="anatomy-label anatomy-label--pusher" type="button" data-pen-part="pusher" aria-pressed="false"><small>01</small><strong>Pusher</strong></button>
+                <button class="anatomy-label anatomy-label--clip" type="button" data-pen-part="clip" aria-pressed="false"><small>02</small><strong>Clip</strong></button>
+                <button class="anatomy-label anatomy-label--barrel is-active" type="button" data-pen-part="barrel" aria-pressed="true"><small>03</small><strong>Barrel</strong></button>
+                <button class="anatomy-label anatomy-label--grip" type="button" data-pen-part="grip" aria-pressed="false"><small>04</small><strong>Grip</strong></button>
+                <button class="anatomy-label anatomy-label--cone" type="button" data-pen-part="cone" aria-pressed="false"><small>05</small><strong>Cone</strong></button>
+              </div>
+              <div class="anatomy-mobile-list" aria-label="Pen parts">
+                <button type="button" data-pen-part="pusher"><small>01</small><span>Pusher</span></button>
+                <button type="button" data-pen-part="clip"><small>02</small><span>Clip</span></button>
+                <button type="button" data-pen-part="barrel" class="is-active"><small>03</small><span>Barrel</span></button>
+                <button type="button" data-pen-part="grip"><small>04</small><span>Grip</span></button>
+                <button type="button" data-pen-part="cone"><small>05</small><span>Cone</span></button>
+              </div>
+            </section>
 
-            <div class="pen-material-board" aria-hidden="true">
-              <span class="finish-chip finish-chip--satin"><i></i><b>01</b><small>Satin barrel</small></span>
-              <span class="finish-chip finish-chip--semi"><i></i><b>02</b><small>Semi-gloss grip</small></span>
-              <span class="finish-chip finish-chip--metal"><i></i><b>03</b><small>Metal detail</small></span>
-            </div>
+            <section class="stage-mode stage-mode--exploded" data-mode-panel="exploded" aria-hidden="true" hidden>
+              <div class="exploded-pen-wrap" aria-hidden="true">
+                <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+              </div>
+              <div class="exploded-sequence" aria-label="Five external pen components">
+                <article tabindex="0" data-exploded-part="pusher" style="--part-scale:.65"><span>01</span><i></i><strong>Pusher</strong><p data-i18n-en="Start point for the click action." data-i18n-th="จุดเริ่มต้นของการกดใช้งาน">Start point for the click action.</p></article>
+                <article tabindex="0" data-exploded-part="clip" style="--part-scale:.78"><span>02</span><i></i><strong>Clip</strong><p data-i18n-en="Retention element and accent." data-i18n-th="ชิ้นส่วนยึดเก็บและสร้างจุดเด่น">Retention element and accent.</p></article>
+                <article tabindex="0" data-exploded-part="barrel" style="--part-scale:1.7"><span>03</span><i></i><strong>Barrel</strong><p data-i18n-en="Primary structural housing." data-i18n-th="โครงสร้างหลักของตัวด้าม">Primary structural housing.</p></article>
+                <article tabindex="0" data-exploded-part="grip" style="--part-scale:1.05"><span>04</span><i></i><strong>Grip</strong><p data-i18n-en="Control zone for the fingers." data-i18n-th="พื้นที่ควบคุมสำหรับนิ้วมือ">Control zone for the fingers.</p></article>
+                <article tabindex="0" data-exploded-part="cone" style="--part-scale:.9"><span>05</span><i></i><strong>Cone</strong><p data-i18n-en="Guides the writing tip." data-i18n-th="จัดแนวและนำหัวเขียน">Guides the writing tip.</p></article>
+              </div>
+              <p class="mode-note" data-i18n-en="A structural sequence, separated without covering the product." data-i18n-th="ลำดับโครงสร้างที่แยกออกจากกัน โดยไม่วางองค์ประกอบทับบนตัวสินค้า">A structural sequence, separated without covering the product.</p>
+            </section>
 
-            <div class="pen-colour-board" aria-hidden="true">
-              <span style="--swatch:#2f302f"><i>01</i></span>
-              <span style="--swatch:#555654"><i>02</i></span>
-              <span style="--swatch:#7c7d7a"><i>03</i></span>
-              <span style="--swatch:#a7a8a4"><i>04</i></span>
-              <span style="--swatch:#d6d6d2"><i>05</i></span>
-            </div>
+            <section class="stage-mode stage-mode--material" data-mode-panel="material" aria-hidden="true" hidden>
+              <div class="material-product">
+                <div class="material-product__halo" aria-hidden="true"></div>
+                <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Neutral grey pen material study" width="1672" height="941" draggable="false">
+                <span data-i18n-en="Neutral geometry" data-i18n-th="รูปทรงสีเทากลาง">Neutral geometry</span>
+              </div>
+              <div class="material-samples">
+                <article class="material-card material-card--satin">
+                  <div class="material-card__preview material-card__preview--barrel" aria-hidden="true"><img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false"></div>
+                  <div><small>01 / Barrel</small><strong data-i18n-en="Satin polymer" data-i18n-th="พอลิเมอร์ผิวซาติน">Satin polymer</strong><p data-i18n-en="Soft reflection, low visual noise." data-i18n-th="สะท้อนแสงนุ่ม ลดความรบกวนทางสายตา">Soft reflection, low visual noise.</p></div>
+                </article>
+                <article class="material-card material-card--semi">
+                  <div class="material-card__preview material-card__preview--grip" aria-hidden="true"><img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false"></div>
+                  <div><small>02 / Grip</small><strong data-i18n-en="Semi-gloss surface" data-i18n-th="พื้นผิวกึ่งเงา">Semi-gloss surface</strong><p data-i18n-en="Clearer highlights around the control zone." data-i18n-th="ไฮไลต์ชัดขึ้นบริเวณพื้นที่ควบคุม">Clearer highlights around the control zone.</p></div>
+                </article>
+                <article class="material-card material-card--metal">
+                  <div class="material-card__preview material-card__preview--detail" aria-hidden="true"><img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false"></div>
+                  <div><small>03 / Detail</small><strong data-i18n-en="Brushed metal" data-i18n-th="โลหะปัดลาย">Brushed metal</strong><p data-i18n-en="A precise accent at functional points." data-i18n-th="จุดเน้นที่แม่นยำบริเวณส่วนใช้งาน">A precise accent at functional points.</p></div>
+                </article>
+              </div>
+            </section>
 
-            <p class="pen-drag-hint">
-              <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M2 10h16M6 6l-4 4 4 4M14 6l4 4-4 4"/></svg>
-              <span data-i18n-en="Drag to inspect" data-i18n-th="ลากเพื่อดูมิติ">Drag to inspect</span>
-            </p>
+            <section class="stage-mode stage-mode--colour" data-mode-panel="colour" aria-hidden="true" hidden>
+              <div class="colour-product">
+                <div class="colour-glow" aria-hidden="true"></div>
+                <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Pen colour system study" width="1672" height="941" draggable="false">
+              </div>
+              <div class="colour-controls" role="group" aria-label="Neutral colour values">
+                <button type="button" class="is-active" data-colour="#2f302f" aria-pressed="true" style="--swatch:#2f302f"><i>01</i><span>#2F302F</span></button>
+                <button type="button" data-colour="#555654" aria-pressed="false" style="--swatch:#555654"><i>02</i><span>#555654</span></button>
+                <button type="button" data-colour="#7c7d7a" aria-pressed="false" style="--swatch:#7c7d7a"><i>03</i><span>#7C7D7A</span></button>
+                <button type="button" data-colour="#a7a8a4" aria-pressed="false" style="--swatch:#a7a8a4"><i>04</i><span>#A7A8A4</span></button>
+                <button type="button" data-colour="#d6d6d2" aria-pressed="false" style="--swatch:#d6d6d2"><i>05</i><span>#D6D6D2</span></button>
+              </div>
+              <p class="mode-note" data-i18n-en="Select a value to shift the atmosphere without changing the product geometry." data-i18n-th="เลือกค่าสีเพื่อเปลี่ยนบรรยากาศ โดยไม่เปลี่ยนรูปทรงของผลิตภัณฑ์">Select a value to shift the atmosphere without changing the product geometry.</p>
+            </section>
           </div>
+        </section>
 
-          <aside class="pen-info-panel" aria-live="polite">
-            <p class="pen-info-index">01 / Overview</p>
-            <h2 data-pen-info-title>One object.<br>Five visible parts.</h2>
-            <p data-pen-info-copy>A neutral-grey mockup establishes the overall proportion before colour, materials and production details are developed.</p>
-            <dl>
-              <div><dt data-i18n-en="Status" data-i18n-th="สถานะ">Status</dt><dd data-pen-info-status>Visual prototype</dd></div>
-              <div><dt data-i18n-en="Interaction" data-i18n-th="การโต้ตอบ">Interaction</dt><dd data-pen-info-action>Drag / Select a mode</dd></div>
-            </dl>
-          </aside>
-        </div>
+        <aside class="study-info" aria-live="polite">
+          <p class="study-info__index" data-info-index>01 / Overview</p>
+          <div class="study-info__body">
+            <h2 data-info-title>One object.
+Five visible parts.</h2>
+            <p data-info-copy>A neutral-grey prototype establishes proportion before colour, materials and production details are developed.</p>
+          </div>
+          <dl>
+            <div><dt data-i18n-en="Status" data-i18n-th="สถานะ">Status</dt><dd data-info-status>Visual prototype</dd></div>
+            <div><dt data-i18n-en="Interaction" data-i18n-th="การโต้ตอบ">Interaction</dt><dd data-info-action>Drag / Select a mode</dd></div>
+          </dl>
+        </aside>
       </section>
 
       <section class="pen-parts-section" id="components">
         <div class="pen-parts-heading">
-          <p class="eyebrow"><span></span> <span data-i18n-en="External anatomy" data-i18n-th="โครงสร้างภายนอก">External anatomy</span></p>
+          <p class="eyebrow"><span></span><span data-i18n-en="External anatomy" data-i18n-th="โครงสร้างภายนอก">External anatomy</span></p>
           <h2 data-i18n-en="Five parts. One clear silhouette." data-i18n-th="ห้าส่วนประกอบ หนึ่งรูปทรงที่ชัดเจน">Five parts. One clear silhouette.</h2>
         </div>
         <div class="pen-parts-list">
@@ -165,9 +203,9 @@
       </section>
 
       <section class="pen-mechanism-section" id="mechanism">
-        <div>
-          <p class="eyebrow light"><span></span> <span data-i18n-en="Inside the barrel" data-i18n-th="ภายในตัวด้าม">Inside the barrel</span></p>
-          <h2><span data-i18n-en="The quiet mechanism" data-i18n-th="กลไกที่ซ่อนอยู่">The quiet mechanism</span><br><em data-i18n-en="behind one click." data-i18n-th="เบื้องหลังหนึ่งจังหวะกด">behind one click.</em></h2>
+        <div class="pen-mechanism-copy">
+          <p class="eyebrow light"><span></span><span data-i18n-en="Inside the barrel" data-i18n-th="ภายในตัวด้าม">Inside the barrel</span></p>
+          <h2><span data-i18n-en="The quiet mechanism" data-i18n-th="กลไกที่ซ่อนอยู่">The quiet mechanism</span><em data-i18n-en="behind one click." data-i18n-th="เบื้องหลังหนึ่งจังหวะกด">behind one click.</em></h2>
         </div>
         <div class="pen-mechanism-grid">
           <article><span>01</span><h3>Cam / Ratchet</h3><p data-i18n-en="Locks the refill in writing or resting position." data-i18n-th="ล็อกไส้ปากกาให้อยู่ในตำแหน่งเขียนหรือพัก">Locks the refill in writing or resting position.</p></article>
@@ -181,12 +219,12 @@
     <footer>
       <div class="footer-top compact">
         <p data-i18n-en="Object Study 01 / Visual prototype" data-i18n-th="Object Study 01 / ต้นแบบเชิงภาพ">Object Study 01 / Visual prototype</p>
-        <a class="icon-link" href="home.html#profile"><span data-i18n-en="Meet the designer" data-i18n-th="รู้จักนักออกแบบ">Meet the designer</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+        <a class="icon-link" href="home.html#profile"><span data-i18n-en="Meet the designer" data-i18n-th="รู้จักนักออกแบบ">Meet the designer</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Somchai Sompiew</p>
         <a href="mailto:Somchai.s1113@gmail.com">Somchai.s1113@gmail.com</a>
-        <a class="icon-link" href="#overview"><span data-i18n-en="Back to top" data-i18n-th="กลับขึ้นด้านบน">Back to top</span><svg class="ui-icon ui-icon--up" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M10 17V3M4 9l6-6 6 6"/></svg></a>
+        <a class="icon-link" href="#overview"><span data-i18n-en="Back to top" data-i18n-th="กลับขึ้นด้านบน">Back to top</span><svg class="ui-icon ui-icon--up" aria-hidden="true" viewBox="0 0 20 20"><path d="M10 17V3M4 9l6-6 6 6"/></svg></a>
       </div>
     </footer>
 

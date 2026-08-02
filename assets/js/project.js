@@ -36,8 +36,9 @@
             ? `${project.coverAlt}, view ${index + 1}`
             : image.alt || `${project.coverAlt}, view ${index + 1}`;
 
+          const itemClass = index === 0 ? "case-gallery-item case-gallery-item--hero" : (index % 3 === 0 ? "case-gallery-item case-gallery-item--wide" : "case-gallery-item");
           return `
-            <figure class="case-gallery-item">
+            <figure class="${itemClass}">
               <a href="${portfolio.escapeHtml(source)}" target="_blank" rel="noopener" aria-label="Open image ${index + 1} at full size">
                 <img
                   src="${portfolio.escapeHtml(source)}"
@@ -55,7 +56,8 @@
     : "";
 
   view.innerHTML = `
-    <div class="case-heading">
+    <div class="project-shell">
+      <div class="case-heading">
       <p class="eyebrow"><span></span> ${portfolio.escapeHtml(project.sector)} · ${portfolio.escapeHtml(project.year)}</p>
       <h1>${portfolio.escapeHtml(project.title)}</h1>
       <p class="case-summary">${portfolio.escapeHtml(project.summary)}</p>
@@ -82,7 +84,8 @@
       </div>
     </div>
 
-    ${project.demo ? '<p class="demo-note">Demo project content. Replace this information and imagery with your actual work before publishing.</p>' : ""}
+      ${project.demo ? '<p class="demo-note">Demo project content. Replace this information and imagery with your actual work before publishing.</p>' : ""}
+    </div>
   `;
 
   if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
