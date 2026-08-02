@@ -25,10 +25,10 @@ assets/images/projects/ocean-pen-collection/
 จากนั้นอัปโหลดรูป โดยแนะนำชื่อดังนี้:
 
 ```text
-cover.webp
-gallery-01.webp
-gallery-02.webp
-gallery-03.webp
+cover-1200x900.webp
+gallery-01-1440x1080.webp
+gallery-02-1100x825.webp
+gallery-03-1100x825.webp
 ```
 
 ข้อแนะนำสำหรับรูป:
@@ -51,7 +51,7 @@ gallery-03.webp
   sector: "Writing Instrument",
   year: "2026",
   categories: ["Packaging", "Identity"],
-  cover: "assets/images/projects/ocean-pen-collection/cover.webp",
+  cover: "assets/images/projects/ocean-pen-collection/cover-1200x900.webp",
   alt: "Blue writing instrument packaging arranged on a clean studio background",
   summary: "คำสรุปโปรเจกต์สั้น ๆ",
   challenge: "โจทย์หรือปัญหาที่ต้องแก้",
@@ -59,9 +59,9 @@ gallery-03.webp
   scope: ["Packaging design", "Art direction", "Production guide"],
   direction: "Precise / Contemporary / Useful",
   gallery: [
-    "assets/images/projects/ocean-pen-collection/cover.webp",
-    "assets/images/projects/ocean-pen-collection/gallery-01.webp",
-    "assets/images/projects/ocean-pen-collection/gallery-02.webp"
+    "assets/images/projects/ocean-pen-collection/cover-1200x900.webp",
+    "assets/images/projects/ocean-pen-collection/gallery-01-1440x1080.webp",
+    "assets/images/projects/ocean-pen-collection/gallery-02-1100x825.webp"
   ],
   demo: false
 }

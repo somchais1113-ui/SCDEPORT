@@ -30,6 +30,11 @@
       </nav>
     </header>
 
+    <section class="page-context shell" aria-label="Current page location">
+      <p class="page-context__path" data-page-address="project"><a href="home.html">Home</a><span>/</span><span>Work</span><span>/</span><strong>Project</strong></p>
+      <a class="page-context__home icon-link stroke-flow-button" href="home.html"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span>Back to homepage</span></a>
+    </section>
+
     <main id="project-content">
       <section class="project-hero" id="project-view" aria-live="polite">
         <p class="notice">Loading project…</p>
@@ -38,17 +43,65 @@
       <section class="next-project" id="next-project" hidden></section>
     </main>
 
-    <footer>
-      <div class="footer-top compact">
-        <p>Have a product worth remembering?</p>
-        <a class="icon-link" href="mailto:Somchai.s1113@gmail.com"><span>Let&apos;s make it visible.</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+    <footer class="portfolio-footer" id="contact">
+      <div class="footer-top footer-contact-head">
+        <div>
+          <p class="footer-label" data-i18n-en="Contact / Start a project" data-i18n-th="ติดต่อ / เริ่มต้นโปรเจกต์">Contact / Start a project</p>
+          <h2 data-i18n-en="Good work starts with a clear conversation." data-i18n-th="งานที่ดี เริ่มต้นจากบทสนทนาที่ชัดเจน">Good work starts with a clear conversation.</h2>
+        </div>
+        <a class="footer-contact-cta icon-link stroke-flow-button" href="mailto:Somchai.s1113@gmail.com">
+          <span data-i18n-en="Start a conversation" data-i18n-th="เริ่มต้นพูดคุย">Start a conversation</span>
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>
+        </a>
       </div>
-      <div class="footer-bottom">
-        <p>Somchai Sompiew · Bangkok / Worldwide</p>
-        <a href="mailto:Somchai.s1113@gmail.com">Somchai.s1113@gmail.com</a>
-        <a class="icon-link" href="home.html#work"><span>All work</span><svg class="ui-icon ui-icon--up" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M10 17V3M4 9l6-6 6 6"/></svg></a>
+      <div class="footer-directory">
+        <section>
+          <span data-i18n-en="Name" data-i18n-th="ชื่อ">Name</span>
+          <strong>Somchai Sompiew</strong>
+          <p data-i18n-en="Independent Design Practice" data-i18n-th="สตูดิโอออกแบบอิสระ">Independent Design Practice</p>
+        </section>
+        <section>
+          <span data-i18n-en="Studio / Address" data-i18n-th="สตูดิโอ / ที่อยู่">Studio / Address</span>
+          <strong data-i18n-en="Bangkok, Thailand" data-i18n-th="กรุงเทพมหานคร ประเทศไทย">Bangkok, Thailand</strong>
+          <p data-i18n-en="Full studio address can be added here." data-i18n-th="เพิ่มรายละเอียดที่อยู่สตูดิโอได้ในส่วนนี้">Full studio address can be added here.</p>
+        </section>
+        <section>
+          <span data-i18n-en="Email" data-i18n-th="อีเมล">Email</span>
+          <a href="mailto:Somchai.s1113@gmail.com">Somchai.s1113@gmail.com</a>
+          <p data-i18n-en="New projects · Collaboration · Production" data-i18n-th="โปรเจกต์ใหม่ · งานร่วมมือ · การผลิต">New projects · Collaboration · Production</p>
+        </section>
+        <section>
+          <span data-i18n-en="Working area" data-i18n-th="พื้นที่รับงาน">Working area</span>
+          <strong data-i18n-en="Bangkok · Worldwide" data-i18n-th="กรุงเทพฯ · ร่วมงานทั่วโลก">Bangkok · Worldwide</strong>
+          <p data-i18n-en="Asia · Europe · Remote collaboration" data-i18n-th="เอเชีย · ยุโรป · ทำงานร่วมกันทางไกล">Asia · Europe · Remote collaboration</p>
+        </section>
+      </div>
+      <div class="footer-bottom portfolio-footer__bottom">
+        <p>© 2026 Somchai Sompiew</p>
+        <span data-i18n-en="Independent Design Practice" data-i18n-th="สตูดิโอออกแบบอิสระ">Independent Design Practice</span>
+        <a class="icon-link" href="home.html">
+          <span data-i18n-en="Back to homepage" data-i18n-th="กลับหน้าหลัก">Back to homepage</span>
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg>
+        </a>
       </div>
     </footer>
+
+    <div class="project-lightbox" id="project-lightbox" hidden aria-hidden="true">
+      <div class="project-lightbox__backdrop" data-lightbox-close></div>
+      <div class="project-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Project image preview">
+        <button class="project-lightbox__close" type="button" data-lightbox-close aria-label="Close image preview">×</button>
+        <button class="project-lightbox__nav project-lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous image">
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg>
+        </button>
+        <figure class="project-lightbox__figure">
+          <img id="project-lightbox-image" src="" alt="">
+          <figcaption id="project-lightbox-caption"></figcaption>
+        </figure>
+        <button class="project-lightbox__nav project-lightbox__nav--next" type="button" data-lightbox-next aria-label="Next image">
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="page-transition" aria-hidden="true"><span>SOMCHAI / SOMPIEW</span></div>
   </body>
 </html>

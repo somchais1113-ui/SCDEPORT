@@ -12,10 +12,10 @@
 
 ```text
 assets/images/projects/packaging-design/good-daily/
-├── cover.webp
-├── gallery-01.webp
-├── gallery-02.webp
-└── gallery-03.webp
+├── cover-1200x900.webp
+├── gallery-01-1440x1080.webp
+├── gallery-02-1100x825.webp
+└── gallery-03-1100x825.webp
 ```
 
 1. เตรียมรูปเป็น `.webp` กว้างประมาณ 1600–2000 px
@@ -26,11 +26,11 @@ assets/images/projects/packaging-design/good-daily/
 ```javascript
 gallery: [
   {
-    src: "assets/images/projects/packaging-design/good-daily/gallery-01.webp",
+    src: "assets/images/projects/packaging-design/good-daily/gallery-01-1440x1080.webp",
     alt: "Good Daily packaging family overview"
   },
   {
-    src: "assets/images/projects/packaging-design/good-daily/gallery-02.webp",
+    src: "assets/images/projects/packaging-design/good-daily/gallery-02-1100x825.webp",
     alt: "Close view of Good Daily cartons and containers"
   }
 ]
@@ -46,7 +46,7 @@ gallery: [
 assets/images/projects/advertising/new-campaign/
 ```
 
-2. ใส่ `cover.webp` และรูป `gallery-01.webp`, `gallery-02.webp` เป็นต้น
+2. ใส่ `cover-1200x900.webp` และรูป `gallery-01-1440x1080.webp`, `gallery-02-1100x825.webp` เป็นต้น
 3. เปิด `data/projects.js`
 4. คัดลอกข้อมูลโปรเจกต์หนึ่งชุด แล้วเปลี่ยน:
 
@@ -68,7 +68,7 @@ assets/images/projects/advertising/new-campaign/
   title: "New Campaign",
   sector: "Advertising",
   year: "2026",
-  cover: "assets/images/projects/advertising/new-campaign/cover.webp",
+  cover: "assets/images/projects/advertising/new-campaign/cover-1200x900.webp",
   coverAlt: "New Campaign advertising system overview",
   summary: "Project summary",
   challenge: "Project challenge",
@@ -77,7 +77,7 @@ assets/images/projects/advertising/new-campaign/
   direction: "Clear / Bold / Flexible",
   gallery: [
     {
-      src: "assets/images/projects/advertising/new-campaign/gallery-01.webp",
+      src: "assets/images/projects/advertising/new-campaign/gallery-01-1440x1080.webp",
       alt: "New Campaign project overview"
     }
   ],

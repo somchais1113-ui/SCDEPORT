@@ -15,7 +15,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Advertising",
     sectorTh: "งานโฆษณา",
     year: "2026",
-    cover: "assets/images/projects/advertising/urban-signals/cover.webp",
+    cover: "assets/images/projects/advertising/urban-signals/cover-1200x900.webp",
     coverAlt: "Advertising system with poster, billboard and digital screen on a white background",
     summary:
       "An adaptable advertising system built to stay recognisable across print, outdoor and digital formats.",
@@ -29,15 +29,15 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Direct / Graphic / Scalable",
     gallery: [
       {
-        src: "assets/images/projects/advertising/urban-signals/gallery-01.webp",
+        src: "assets/images/projects/advertising/urban-signals/gallery-01-1440x1080.webp",
         alt: "Urban Signals advertising system overview"
       },
       {
-        src: "assets/images/projects/advertising/urban-signals/gallery-02.webp",
+        src: "assets/images/projects/advertising/urban-signals/gallery-02-1100x825.webp",
         alt: "Close view of the Urban Signals poster and billboard composition"
       },
       {
-        src: "assets/images/projects/advertising/urban-signals/gallery-03.webp",
+        src: "assets/images/projects/advertising/urban-signals/gallery-03-1100x825.webp",
         alt: "Close view of the Urban Signals digital advertising format"
       }
     ],
@@ -51,7 +51,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Packaging",
     sectorTh: "บรรจุภัณฑ์",
     year: "2026",
-    cover: "assets/images/projects/packaging-design/good-daily/cover.webp",
+    cover: "assets/images/projects/packaging-design/good-daily/cover-1200x900.webp",
     coverAlt: "A coordinated packaging family in white, cobalt, red and lime",
     summary:
       "A modular packaging family designed for clarity, shelf recognition and consistent range growth.",
@@ -65,15 +65,15 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Clear / Energetic / Systematic",
     gallery: [
       {
-        src: "assets/images/projects/packaging-design/good-daily/gallery-01.webp",
+        src: "assets/images/projects/packaging-design/good-daily/gallery-01-1440x1080.webp",
         alt: "Good Daily packaging family overview"
       },
       {
-        src: "assets/images/projects/packaging-design/good-daily/gallery-02.webp",
+        src: "assets/images/projects/packaging-design/good-daily/gallery-02-1100x825.webp",
         alt: "Close view of Good Daily cartons and containers"
       },
       {
-        src: "assets/images/projects/packaging-design/good-daily/gallery-03.webp",
+        src: "assets/images/projects/packaging-design/good-daily/gallery-03-1100x825.webp",
         alt: "Good Daily packaging range and colour-system detail"
       }
     ],
@@ -87,7 +87,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Product",
     sectorTh: "ผลิตภัณฑ์",
     year: "2026",
-    cover: "assets/images/projects/product-design/everyday-forms/cover.webp",
+    cover: "assets/images/projects/product-design/everyday-forms/cover-1200x900.webp",
     coverAlt: "A family of writing and lifestyle products on a clean white background",
     summary:
       "A compact collection of useful everyday objects shaped by one calm, recognisable form language.",
@@ -101,15 +101,15 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Useful / Calm / Distinctive",
     gallery: [
       {
-        src: "assets/images/projects/product-design/everyday-forms/gallery-01.webp",
+        src: "assets/images/projects/product-design/everyday-forms/gallery-01-1440x1080.webp",
         alt: "Everyday Forms product family overview"
       },
       {
-        src: "assets/images/projects/product-design/everyday-forms/gallery-02.webp",
+        src: "assets/images/projects/product-design/everyday-forms/gallery-02-1100x825.webp",
         alt: "Close view of Everyday Forms materials and product proportions"
       },
       {
-        src: "assets/images/projects/product-design/everyday-forms/gallery-03.webp",
+        src: "assets/images/projects/product-design/everyday-forms/gallery-03-1100x825.webp",
         alt: "Everyday Forms writing and lifestyle object detail"
       }
     ],
@@ -123,7 +123,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Display & Retail",
     sectorTh: "ดิสเพลย์และพื้นที่ขาย",
     year: "2026",
-    cover: "assets/images/projects/display-retail/open-shelf/cover.webp",
+    cover: "assets/images/projects/display-retail/open-shelf/cover-1200x900.webp",
     coverAlt: "Modular cobalt retail display on a white background",
     summary:
       "A flexible retail fixture that turns product browsing into a clear, light and approachable rhythm.",
@@ -137,15 +137,15 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Open / Modular / Approachable",
     gallery: [
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-01.webp",
+        src: "assets/images/projects/display-retail/open-shelf/gallery-01-1440x1080.webp",
         alt: "Open Shelf modular retail display overview"
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-02.webp",
+        src: "assets/images/projects/display-retail/open-shelf/gallery-02-1100x825.webp",
         alt: "Close view of the Open Shelf fixture and shelf levels"
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-03.webp",
+        src: "assets/images/projects/display-retail/open-shelf/gallery-03-1100x825.webp",
         alt: "Open Shelf modular construction and colour detail"
       }
     ],
@@ -159,7 +159,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Campaign",
     sectorTh: "แคมเปญ",
     year: "2026",
-    cover: "assets/images/projects/campaign/make-it-move/cover.webp",
+    cover: "assets/images/projects/campaign/make-it-move/cover-1200x900.webp",
     coverAlt: "Campaign toolkit with poster, laptop, printed matter and event pass",
     summary:
       "A connected campaign toolkit designed to stay coherent from digital launch to physical event.",
@@ -173,15 +173,15 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Connected / Energetic / Flexible",
     gallery: [
       {
-        src: "assets/images/projects/campaign/make-it-move/gallery-01.webp",
+        src: "assets/images/projects/campaign/make-it-move/gallery-01-1440x1080.webp",
         alt: "Make It Move cross-channel campaign overview"
       },
       {
-        src: "assets/images/projects/campaign/make-it-move/gallery-02.webp",
+        src: "assets/images/projects/campaign/make-it-move/gallery-02-1100x825.webp",
         alt: "Close view of Make It Move print and event assets"
       },
       {
-        src: "assets/images/projects/campaign/make-it-move/gallery-03.webp",
+        src: "assets/images/projects/campaign/make-it-move/gallery-03-1100x825.webp",
         alt: "Make It Move digital campaign and graphic-system detail"
       }
     ],
@@ -195,7 +195,7 @@ window.PORTFOLIO_PROJECTS = [
     sector: "Other Creative",
     sectorTh: "งานสร้างสรรค์",
     year: "2026",
-    cover: "assets/images/projects/other-creative/off-grid-studies/cover.webp",
+    cover: "assets/images/projects/other-creative/off-grid-studies/cover-1200x900.webp",
     coverAlt: "Editorial, material and paper-form experiments on a white background",
     summary:
       "Editorial, material and form experiments collected into one open-ended creative study.",
@@ -209,18 +209,75 @@ window.PORTFOLIO_PROJECTS = [
     direction: "Curious / Material / Experimental",
     gallery: [
       {
-        src: "assets/images/projects/other-creative/off-grid-studies/gallery-01.webp",
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-01-1440x1080.webp",
         alt: "Off Grid Studies editorial and material experiment overview"
       },
       {
-        src: "assets/images/projects/other-creative/off-grid-studies/gallery-02.webp",
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-02-1100x825.webp",
         alt: "Close view of Off Grid Studies material and editorial samples"
       },
       {
-        src: "assets/images/projects/other-creative/off-grid-studies/gallery-03.webp",
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-03-1100x825.webp",
         alt: "Off Grid Studies paper-form and colour exploration detail"
       }
     ],
     demo: true
   }
 ];
+
+/*
+  FLEXIBLE GALLERY SYSTEM
+  Every project is prepared for up to 10 gallery images.
+  Upload files as gallery-01-1440x1080.webp ... gallery-10-1200x1500.webp in each project folder.
+  Missing optional files are ignored automatically on the project page.
+*/
+(function prepareFlexibleGalleries() {
+  const layoutSequence = [
+    "hero",
+    "half",
+    "half",
+    "medium",
+    "third",
+    "third",
+    "third",
+    "wide",
+    "half",
+    "half"
+  ];
+
+  window.PORTFOLIO_PROJECTS.forEach(function (project) {
+    const existingGallery = Array.isArray(project.gallery) ? project.gallery : [];
+    const baseFolder = String(project.cover || "").replace(/\/cover\.[^/.]+$/, "");
+    const totalSlots = Math.max(10, existingGallery.length);
+
+    project.gallery = Array.from({ length: totalSlots }, function (_, index) {
+      const existingImage = existingGallery[index];
+      const number = String(index + 1).padStart(2, "0");
+      const fallbackLayout = layoutSequence[index] || "half";
+
+      if (existingImage) {
+        if (typeof existingImage === "string") {
+          return {
+            src: existingImage,
+            alt: project.title + " project image " + number,
+            layout: fallbackLayout,
+            optional: false
+          };
+        }
+
+        return Object.assign({}, existingImage, {
+          layout: existingImage.layout || fallbackLayout,
+          optional: Boolean(existingImage.optional)
+        });
+      }
+
+      return {
+        src: baseFolder + "/gallery-" + number + ".webp",
+        alt: project.title + " project image " + number,
+        layout: fallbackLayout,
+        optional: true
+      };
+    });
+  });
+})();
+

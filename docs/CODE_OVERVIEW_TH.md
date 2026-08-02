@@ -31,10 +31,10 @@ projects.js    ─┘             └→ project.js ─→ หน้าโปร
   slug: "good-daily",
   category: "packaging-design",
   title: "Good Daily",
-  cover: "assets/images/projects/packaging-design/good-daily/cover.webp",
+  cover: "assets/images/projects/packaging-design/good-daily/cover-1200x900.webp",
   gallery: [
     {
-      src: "assets/images/projects/packaging-design/good-daily/gallery-01.webp",
+      src: "assets/images/projects/packaging-design/good-daily/gallery-01-1440x1080.webp",
       alt: "Good Daily packaging family overview"
     }
   ]
