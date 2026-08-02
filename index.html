@@ -13,60 +13,88 @@
     <link rel="manifest" href="site.webmanifest">
     <script>document.documentElement.classList.add("motion-enabled");</script>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/ui-controls.css">
     <script src="assets/js/motion.js" defer></script>
   </head>
   <body class="landing-page">
-    <a class="skip-link" href="#landing-content">Skip to introduction</a>
+    <a class="skip-link" href="#landing-content" data-i18n-en="Skip to introduction" data-i18n-th="ข้ามไปยังบทนำ">Skip to introduction</a>
 
     <main class="landing" id="landing-content">
-      <div class="landing-frame" aria-hidden="true"></div>
+      <div class="landing-frame" aria-hidden="true">
+        <span class="frame-corner frame-corner--top"></span>
+        <span class="frame-corner frame-corner--bottom"></span>
+      </div>
 
       <header class="landing-header landing-reveal" style="--reveal-delay: 80ms">
         <a class="wordmark landing-wordmark" href="#landing-content" aria-label="Somchai Sompiew introduction">
           <strong>SOMCHAI</strong>
           <span>/ SOMPIEW</span>
         </a>
-        <p>Independent design practice</p>
-        <p>Bangkok · Worldwide</p>
+        <p data-i18n-en="Independent design practice" data-i18n-th="สตูดิโอออกแบบอิสระ">Independent design practice</p>
+        <div class="landing-header-actions">
+          <p data-i18n-en="Bangkok · Worldwide" data-i18n-th="กรุงเทพฯ · ร่วมงานทั่วโลก">Bangkok · Worldwide</p>
+          <div class="language-toggle" role="group" aria-label="Language">
+            <button type="button" data-language="th" aria-pressed="false">TH</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-language="en" aria-pressed="true">EN</button>
+          </div>
+        </div>
       </header>
 
       <section class="landing-stage" aria-labelledby="landing-title">
         <div class="landing-title-wrap">
-          <p class="landing-index landing-reveal" style="--reveal-delay: 160ms">Portfolio / Selected works 2026</p>
+          <p class="landing-index landing-reveal" style="--reveal-delay: 160ms">
+            <span class="landing-index-mark" aria-hidden="true"></span>
+            <span data-i18n-en="Portfolio / Selected works 2026" data-i18n-th="พอร์ตโฟลิโอ / ผลงานคัดสรร 2026">Portfolio / Selected works 2026</span>
+          </p>
           <h1 id="landing-title" aria-label="Somchai Sompiew">
             <span class="landing-title-line"><span>SOMCHAI</span></span>
             <span class="landing-title-line serif"><span>SOMPIEW</span></span>
           </h1>
           <p class="landing-role landing-reveal" style="--reveal-delay: 760ms">
-            Packaging · Brand identity · Graphic design
+            <span data-i18n-en="Advertising" data-i18n-th="โฆษณา">Advertising</span>
+            <span data-i18n-en="Branding" data-i18n-th="สร้างแบรนด์">Branding</span>
+            <span data-i18n-en="Campaign" data-i18n-th="แคมเปญ">Campaign</span>
+            <span data-i18n-en="Display &amp; Retail" data-i18n-th="ดิสเพลย์และพื้นที่ขาย">Display &amp; Retail</span>
+            <span data-i18n-en="Other Creative" data-i18n-th="งานสร้างสรรค์">Other Creative</span>
+            <span data-i18n-en="Packaging Design" data-i18n-th="ออกแบบบรรจุภัณฑ์">Packaging Design</span>
+            <span data-i18n-en="Printing" data-i18n-th="งานพิมพ์">Printing</span>
+            <span data-i18n-en="Product Design" data-i18n-th="ออกแบบผลิตภัณฑ์">Product Design</span>
           </p>
         </div>
 
         <figure class="landing-visual landing-reveal" style="--reveal-delay: 300ms">
-          <div class="landing-image-mask">
-            <img
-              src="assets/images/hero/writing-culture.webp"
-              alt="Contemporary stationery packaging arranged in a studio"
-              width="1448"
-              height="1086"
-              fetchpriority="high"
-            >
+          <div class="landing-image-mask" data-carousel>
+            <div class="landing-slides">
+              <img class="landing-slide is-active" src="assets/images/hero/writing-culture.webp" alt="Contemporary stationery packaging arranged in a studio" data-carousel-label-en="Strategy to production" data-carousel-label-th="จากกลยุทธ์สู่การผลิตจริง" width="1448" height="1086" fetchpriority="high">
+              <img class="landing-slide" src="assets/images/projects/advertising/urban-signals/cover.webp" alt="Urban Signals advertising design project" data-carousel-label-en="Urban signals / Advertising" data-carousel-label-th="Urban Signals / งานโฆษณา" width="1448" height="1086" aria-hidden="true">
+              <img class="landing-slide" src="assets/images/projects/campaign/make-it-move/cover.webp" alt="Make It Move campaign design project" data-carousel-label-en="Make it move / Campaign" data-carousel-label-th="Make It Move / แคมเปญสร้างสรรค์" width="1448" height="1086" aria-hidden="true">
+              <img class="landing-slide" src="assets/images/projects/display-retail/open-shelf/cover.webp" alt="Open Shelf display and retail design project" data-carousel-label-en="Open shelf / Display &amp; retail" data-carousel-label-th="Open Shelf / ดิสเพลย์และพื้นที่ขาย" width="1448" height="1086" aria-hidden="true">
+              <img class="landing-slide" src="assets/images/projects/packaging-design/good-daily/cover.webp" alt="Good Daily packaging design project" data-carousel-label-en="Good daily / Packaging design" data-carousel-label-th="Good Daily / ออกแบบบรรจุภัณฑ์" width="1448" height="1086" aria-hidden="true">
+              <img class="landing-slide" src="assets/images/projects/product-design/everyday-forms/cover.webp" alt="Everyday Forms product design project" data-carousel-label-en="Everyday forms / Product design" data-carousel-label-th="Everyday Forms / ออกแบบผลิตภัณฑ์" width="1448" height="1086" aria-hidden="true">
+            </div>
+            <span class="landing-image-index" aria-hidden="true"><span data-carousel-current>01</span></span>
+            <div class="landing-carousel-controls">
+              <button type="button" data-carousel-prev aria-label="Previous image" data-aria-en="Previous image" data-aria-th="ภาพก่อนหน้า"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg></button>
+              <button type="button" data-carousel-next aria-label="Next image" data-aria-en="Next image" data-aria-th="ภาพถัดไป"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M3 10h14M11 4l6 6-6 6"/></svg></button>
+            </div>
           </div>
           <figcaption>
-            <span>Strategy to production</span>
-            <span>01 / 01</span>
+            <span data-carousel-caption>Strategy to production</span>
+            <span><span data-carousel-current>01</span> / 06</span>
           </figcaption>
         </figure>
       </section>
 
       <footer class="landing-footer landing-reveal" style="--reveal-delay: 880ms">
-        <p>
+        <p data-i18n-en="Clear ideas, calm systems and production-ready design for consumer and lifestyle brands." data-i18n-th="เปลี่ยนความคิดให้ชัด วางระบบให้เรียบง่าย และพางานออกแบบไปถึงการผลิตจริง สำหรับแบรนด์สินค้าและไลฟ์สไตล์">
           Clear ideas, calm systems and production-ready design for consumer
           and lifestyle brands.
         </p>
         <a class="landing-enter" href="home.html" data-page-transition="enter">
-          <span>Enter portfolio</span>
-          <b aria-hidden="true">↗</b>
+          <i aria-hidden="true"></i>
+          <span data-i18n-en="Enter portfolio" data-i18n-th="ชมผลงานทั้งหมด" data-loading-en="Opening portfolio" data-loading-th="กำลังเปิดผลงาน">Enter portfolio</span>
+          <b aria-hidden="true"><svg class="ui-icon" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></b>
         </a>
       </footer>
 

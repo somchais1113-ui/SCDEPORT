@@ -24,7 +24,13 @@
     [".demo-note", 0],
     [".next-project > *", 70],
     [".footer-top > *", 80],
-    [".footer-bottom > *", 50]
+    [".footer-directory > *", 55],
+    [".footer-bottom > *", 50],
+    [".pen-study-heading > *", 55],
+    [".pen-side-menu button", 38],
+    [".pen-parts-heading > *", 55],
+    [".pen-parts-list button", 45],
+    [".pen-mechanism-grid article", 55]
   ];
 
   function markRevealElements(scope) {
@@ -98,18 +104,265 @@
   function setupLandingParallax() {
     const landing = document.querySelector(".landing");
     const visual = document.querySelector(".landing-visual");
+    const drawing = document.querySelector(".landing-drawing");
     if (!landing || !visual || !finePointer || reduceMotion) return;
 
     landing.addEventListener("pointermove", function (event) {
       const x = event.clientX / window.innerWidth - 0.5;
       const y = event.clientY / window.innerHeight - 0.5;
-      visual.style.setProperty("--pointer-x", `${x * 8}px`);
-      visual.style.setProperty("--pointer-y", `${y * 8}px`);
+      visual.style.setProperty("--pointer-x", `${x * 9}px`);
+      visual.style.setProperty("--pointer-y", `${y * 9}px`);
+      if (drawing) {
+        drawing.style.setProperty("--drawing-x", `${x * -5}px`);
+        drawing.style.setProperty("--drawing-y", `${y * -5}px`);
+      }
     });
 
     landing.addEventListener("pointerleave", function () {
       visual.style.setProperty("--pointer-x", "0px");
       visual.style.setProperty("--pointer-y", "0px");
+      if (drawing) {
+        drawing.style.setProperty("--drawing-x", "0px");
+        drawing.style.setProperty("--drawing-y", "0px");
+      }
+    });
+  }
+
+  function updateCarouselCopy(carousel, activeSlide) {
+    if (!carousel || !activeSlide) return;
+
+    const language = body.dataset.language === "th" ? "th" : "en";
+    const caption = carousel.querySelector("[data-carousel-caption]");
+    const sector = carousel.querySelector("[data-carousel-sector]");
+    const year = carousel.querySelector("[data-carousel-year]");
+    const title = carousel.querySelector("[data-carousel-title]:not([data-carousel-slide])");
+    const summary = carousel.querySelector("[data-carousel-summary]:not([data-carousel-slide])");
+    const projectLink = carousel.querySelector("[data-carousel-link]");
+
+    if (caption) {
+      caption.textContent = language === "th"
+        ? activeSlide.dataset.carouselLabelTh || ""
+        : activeSlide.dataset.carouselLabelEn || "";
+    }
+
+    if (sector) {
+      sector.textContent = language === "th"
+        ? activeSlide.dataset.carouselSectorTh || ""
+        : activeSlide.dataset.carouselSectorEn || "";
+    }
+
+    if (year) year.textContent = activeSlide.dataset.carouselYear || "";
+    if (title) title.textContent = activeSlide.dataset.carouselTitle || "";
+
+    if (summary) {
+      summary.textContent = language === "th"
+        ? activeSlide.dataset.carouselSummaryTh || ""
+        : activeSlide.dataset.carouselSummaryEn || "";
+    }
+
+    if (projectLink && activeSlide.dataset.carouselHref) {
+      projectLink.setAttribute("href", activeSlide.dataset.carouselHref);
+      const projectTitle = activeSlide.dataset.carouselTitle || "project";
+      projectLink.setAttribute(
+        "aria-label",
+        language === "th" ? `ดูโปรเจกต์ ${projectTitle}` : `View ${projectTitle} project`
+      );
+    }
+  }
+
+  function setupLanguageToggle() {
+    const languageButtons = document.querySelectorAll("[data-language]");
+    if (!languageButtons.length) return;
+
+    function applyLanguage(language) {
+      const nextLanguage = language === "th" ? "th" : "en";
+      body.dataset.language = nextLanguage;
+      root.lang = nextLanguage;
+
+      document.querySelectorAll("[data-i18n-en][data-i18n-th]").forEach(function (element) {
+        element.textContent = nextLanguage === "th" ? element.dataset.i18nTh : element.dataset.i18nEn;
+      });
+
+      document.querySelectorAll("[data-aria-en][data-aria-th]").forEach(function (element) {
+        const label = nextLanguage === "th" ? element.dataset.ariaTh : element.dataset.ariaEn;
+        if (label) element.setAttribute("aria-label", label);
+      });
+
+      languageButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed", String(button.dataset.language === nextLanguage));
+      });
+
+      document.querySelectorAll("[data-carousel-root]").forEach(function (carousel) {
+        const activeSlide = carousel.querySelector("[data-carousel-slide].is-active");
+        updateCarouselCopy(carousel, activeSlide);
+      });
+
+      try {
+        window.localStorage.setItem("portfolio-language", nextLanguage);
+      } catch {
+        // Language still works when storage is unavailable.
+      }
+
+      document.dispatchEvent(new CustomEvent("portfolio:languagechange", {
+        detail: { language: nextLanguage }
+      }));
+    }
+
+    let savedLanguage = "en";
+    try {
+      savedLanguage = window.localStorage.getItem("portfolio-language") || "en";
+    } catch {
+      savedLanguage = "en";
+    }
+
+    languageButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        applyLanguage(button.dataset.language);
+      });
+    });
+
+    applyLanguage(savedLanguage);
+  }
+
+  function setupCarousels() {
+    document.querySelectorAll("[data-carousel-root]").forEach(function (carousel) {
+      const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+      const currentLabels = carousel.querySelectorAll("[data-carousel-current]");
+      const caption = carousel.querySelector("[data-carousel-caption]");
+      const previousButton = carousel.querySelector("[data-carousel-prev]");
+      const nextButton = carousel.querySelector("[data-carousel-next]");
+      const dragSurface = carousel.querySelector("[data-carousel-drag-surface]");
+      const delay = Number(carousel.dataset.carouselDelay) || 4200;
+      if (slides.length < 2) return;
+
+      let activeIndex = 0;
+      let timer = null;
+      let pointerId = null;
+      let pointerStartX = 0;
+      let pointerDeltaX = 0;
+
+      function animateEditorialCopy() {
+        if (!carousel.querySelector(".hero-carousel-editorial")) return;
+        carousel.classList.remove("is-updating");
+        window.requestAnimationFrame(function () {
+          carousel.classList.add("is-updating");
+        });
+      }
+
+      function showSlide(nextIndex) {
+        activeIndex = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach(function (slide, index) {
+          const isActive = index === activeIndex;
+          slide.classList.toggle("is-active", isActive);
+          if (isActive) slide.removeAttribute("aria-hidden");
+          else slide.setAttribute("aria-hidden", "true");
+        });
+
+        const number = String(activeIndex + 1).padStart(2, "0");
+        currentLabels.forEach(function (label) {
+          label.textContent = number;
+        });
+
+        updateCarouselCopy(carousel, slides[activeIndex]);
+        animateEditorialCopy();
+      }
+
+      function stopAutoplay() {
+        if (!timer) return;
+        window.clearInterval(timer);
+        timer = null;
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (reduceMotion || document.hidden) return;
+        timer = window.setInterval(function () {
+          showSlide(activeIndex + 1);
+        }, delay);
+      }
+
+      if (previousButton) {
+        previousButton.addEventListener("click", function () {
+          showSlide(activeIndex - 1);
+          startAutoplay();
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener("click", function () {
+          showSlide(activeIndex + 1);
+          startAutoplay();
+        });
+      }
+
+      function clearDragState() {
+        if (!dragSurface) return;
+        dragSurface.style.removeProperty("--carousel-drag-x");
+        carousel.classList.remove("is-dragging");
+        pointerId = null;
+        pointerDeltaX = 0;
+      }
+
+      function finishDrag(event) {
+        if (pointerId === null || (event.pointerId !== undefined && event.pointerId !== pointerId)) return;
+        const threshold = Math.max(45, Math.min(90, carousel.clientWidth * 0.12));
+        const direction = pointerDeltaX < 0 ? 1 : -1;
+        const shouldAdvance = Math.abs(pointerDeltaX) >= threshold;
+
+        clearDragState();
+        if (shouldAdvance) showSlide(activeIndex + direction);
+        startAutoplay();
+      }
+
+      if (dragSurface && window.PointerEvent) {
+        dragSurface.addEventListener("pointerdown", function (event) {
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          pointerId = event.pointerId;
+          pointerStartX = event.clientX;
+          pointerDeltaX = 0;
+          stopAutoplay();
+          if (dragSurface.setPointerCapture) dragSurface.setPointerCapture(pointerId);
+        });
+
+        dragSurface.addEventListener("pointermove", function (event) {
+          if (pointerId === null || event.pointerId !== pointerId) return;
+          pointerDeltaX = event.clientX - pointerStartX;
+          if (Math.abs(pointerDeltaX) < 4) return;
+          carousel.classList.add("is-dragging");
+          const restrainedDelta = Math.max(-110, Math.min(110, pointerDeltaX * 0.72));
+          dragSurface.style.setProperty("--carousel-drag-x", `${restrainedDelta}px`);
+        });
+
+        dragSurface.addEventListener("pointerup", finishDrag);
+        dragSurface.addEventListener("pointercancel", finishDrag);
+        dragSurface.addEventListener("lostpointercapture", function () {
+          if (pointerId !== null) finishDrag({ pointerId: pointerId });
+        });
+      }
+
+      carousel.addEventListener("mouseenter", stopAutoplay);
+      carousel.addEventListener("mouseleave", startAutoplay);
+      carousel.addEventListener("focusin", stopAutoplay);
+      carousel.addEventListener("focusout", startAutoplay);
+      carousel.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+          showSlide(activeIndex - 1);
+          startAutoplay();
+        }
+        if (event.key === "ArrowRight") {
+          showSlide(activeIndex + 1);
+          startAutoplay();
+        }
+      });
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stopAutoplay();
+        else startAutoplay();
+      });
+
+      showSlide(0);
+      startAutoplay();
     });
   }
 
@@ -142,11 +395,20 @@
 
       event.preventDefault();
       body.classList.add("is-leaving");
+      link.classList.add("is-transitioning");
       if (link.dataset.pageTransition === "enter") {
         body.classList.add("is-entering-portfolio");
+        link.classList.add("is-loading");
+        const label = link.querySelector("span");
+        if (label) {
+          link.dataset.idleLabel = label.textContent;
+          label.textContent = body.dataset.language === "th"
+            ? label.dataset.loadingTh
+            : label.dataset.loadingEn;
+        }
       }
 
-      const delay = link.dataset.pageTransition === "enter" ? 720 : 460;
+      const delay = link.dataset.pageTransition === "enter" ? 720 : 620;
       window.setTimeout(function () {
         window.location.href = link.href;
       }, delay);
@@ -154,6 +416,14 @@
 
     window.addEventListener("pageshow", function () {
       body.classList.remove("is-leaving", "is-entering-portfolio");
+      document.querySelectorAll("a.is-transitioning").forEach(function (link) {
+        link.classList.remove("is-transitioning");
+      });
+      document.querySelectorAll(".landing-enter.is-loading").forEach(function (link) {
+        const label = link.querySelector("span");
+        if (label && link.dataset.idleLabel) label.textContent = link.dataset.idleLabel;
+        link.classList.remove("is-loading");
+      });
     });
   }
 
@@ -162,6 +432,8 @@
   refresh(document);
   prepareIntro();
   setupLandingParallax();
+  setupLanguageToggle();
+  setupCarousels();
   setupPageTransitions();
   updateHeader();
 

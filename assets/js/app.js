@@ -9,8 +9,26 @@
   const navigation = document.querySelector("#site-nav");
   const allCategoryId = "all";
   let filterTimer = null;
+  let activeCategoryId = allCategoryId;
 
   if (!portfolio || !grid || !filters) return;
+
+  function currentLanguage() {
+    return document.body.dataset.language === "th" ? "th" : "en";
+  }
+
+  function translated(english, thai) {
+    return currentLanguage() === "th" ? thai : english;
+  }
+
+  function categoryLabel(category) {
+    if (!category) return translated("All disciplines", "ทุกศาสตร์การออกแบบ");
+    return currentLanguage() === "th" && category.labelTh ? category.labelTh : category.label;
+  }
+
+  function northeastIcon() {
+    return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
+  }
 
   function requestedCategoryId() {
     const categoryId = new URLSearchParams(window.location.search).get("category");
@@ -19,7 +37,7 @@
 
   function filterMarkup(activeCategoryId) {
     const filterItems = [
-      { id: allCategoryId, label: "All" },
+      { id: allCategoryId, label: translated("All", "ทั้งหมด") },
       ...portfolio.categories
     ];
 
@@ -31,7 +49,7 @@
             type="button"
             data-filter="${portfolio.escapeHtml(category.id)}"
             aria-pressed="${String(isActive)}"
-          >${portfolio.escapeHtml(category.label)}</button>
+          >${portfolio.escapeHtml(category.id === allCategoryId ? category.label : categoryLabel(category))}</button>
         `;
       })
       .join("");
@@ -39,7 +57,8 @@
 
   function projectMarkup(project, index) {
     const category = portfolio.categoryById(project.category);
-    const categoryLabel = category ? category.label : project.sector;
+    const resolvedCategoryLabel = category ? categoryLabel(category) : project.sector;
+    const sectorLabel = currentLanguage() === "th" && project.sectorTh ? project.sectorTh : project.sector;
     const projectNumber = String(project.order).padStart(2, "0");
 
     return `
@@ -54,14 +73,15 @@
               loading="lazy"
               decoding="async"
             >
-            <span class="view-pill">View case ↗</span>
+            <span class="view-pill icon-link">${translated("View case", "ดูโปรเจกต์")} ${northeastIcon()}</span>
           </div>
           <div class="project-meta">
             <div>
-              <p>${projectNumber} / ${portfolio.escapeHtml(project.sector)}</p>
+              <p>${projectNumber} / ${portfolio.escapeHtml(sectorLabel)}</p>
               <h3>${portfolio.escapeHtml(project.title)}</h3>
             </div>
-            <p>${portfolio.escapeHtml(categoryLabel)}</p>
+            <p class="project-card-summary">${portfolio.escapeHtml(translated(project.summary, project.summaryTh || project.summary))}</p>
+            <p class="project-meta-category">${portfolio.escapeHtml(resolvedCategoryLabel)}</p>
           </div>
         </a>
       </article>
@@ -75,13 +95,15 @@
 
     grid.innerHTML = visibleProjects.length
       ? visibleProjects.map(projectMarkup).join("")
-      : '<p class="notice">No projects in this category yet.</p>';
+      : `<p class="notice">${translated("No projects in this category yet.", "ยังไม่มีโปรเจกต์ในหมวดนี้")}</p>`;
 
     if (filterSummary) {
       const category = portfolio.categoryById(categoryId);
-      const categoryLabel = category ? category.label : "All disciplines";
-      const projectWord = visibleProjects.length === 1 ? "project" : "projects";
-      filterSummary.textContent = `${String(visibleProjects.length).padStart(2, "0")} ${projectWord} · ${categoryLabel}`;
+      const label = categoryLabel(category);
+      const projectWord = currentLanguage() === "th"
+        ? "โปรเจกต์"
+        : visibleProjects.length === 1 ? "project" : "projects";
+      filterSummary.textContent = `${String(visibleProjects.length).padStart(2, "0")} ${projectWord} · ${label}`;
     }
 
     window.requestAnimationFrame(function () {
@@ -117,7 +139,7 @@
 
     try {
       window.history.replaceState({}, "", url);
-    } catch (error) {
+    } catch {
       // Direct file previews can restrict History API changes in some browsers.
     }
   }
@@ -126,18 +148,23 @@
     if (!menuButton || !navigation) return;
     navigation.classList.remove("is-open");
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "Menu";
+    menuButton.textContent = currentLanguage() === "th"
+      ? menuButton.dataset.i18nMenuTh
+      : menuButton.dataset.i18nMenuEn;
   }
 
   const initialCategoryId = requestedCategoryId();
+  activeCategoryId = initialCategoryId;
   filters.innerHTML = filterMarkup(initialCategoryId);
   renderProjects(initialCategoryId);
+  if (menuButton) closeMenu();
 
   filters.addEventListener("click", function (event) {
     const button = event.target.closest("button[data-filter]");
     if (!button) return;
 
     const categoryId = button.dataset.filter || allCategoryId;
+    activeCategoryId = categoryId;
     setActiveFilter(categoryId);
     transitionProjects(categoryId);
     updateShareableUrl(categoryId);
@@ -147,7 +174,10 @@
     menuButton.addEventListener("click", function () {
       const isOpen = navigation.classList.toggle("is-open");
       menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.textContent = isOpen ? "Close" : "Menu";
+      const language = currentLanguage();
+      menuButton.textContent = isOpen
+        ? language === "th" ? menuButton.dataset.i18nCloseTh : menuButton.dataset.i18nCloseEn
+        : language === "th" ? menuButton.dataset.i18nMenuTh : menuButton.dataset.i18nMenuEn;
     });
 
     navigation.addEventListener("click", function (event) {
@@ -158,4 +188,10 @@
       if (event.key === "Escape") closeMenu();
     });
   }
+
+  document.addEventListener("portfolio:languagechange", function () {
+    filters.innerHTML = filterMarkup(activeCategoryId);
+    renderProjects(activeCategoryId);
+    if (menuButton && menuButton.getAttribute("aria-expanded") !== "true") closeMenu();
+  });
 })();

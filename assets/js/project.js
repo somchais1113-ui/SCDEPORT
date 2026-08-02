@@ -6,6 +6,7 @@
   const nextSection = document.querySelector("#next-project");
   const projectId = new URLSearchParams(window.location.search).get("id");
   const project = portfolio ? portfolio.projectBySlug(projectId) : null;
+  const northeastIcon = '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
 
   if (!view || !portfolio || !project) {
     if (view) {
@@ -13,7 +14,7 @@
         <div class="project-not-found">
           <p class="eyebrow"><span></span> Project not found</p>
           <h1>Nothing on<br>this shelf.</h1>
-          <a class="button-link" href="home.html#work">Return to work ↗</a>
+          <a class="button-link icon-link" href="home.html#work"><span>Return to work</span>${northeastIcon}</a>
         </div>
       `;
     }
@@ -93,7 +94,7 @@
     nextSection.innerHTML = `
       <p>Next project</p>
       <a href="project.html?id=${encodeURIComponent(nextProject.slug)}">
-        ${portfolio.escapeHtml(nextProject.title)} <span>↗</span>
+        ${portfolio.escapeHtml(nextProject.title)} <span class="icon-link">${northeastIcon}</span>
       </a>
     `;
     if (window.PortfolioMotion) window.PortfolioMotion.refresh(nextSection);

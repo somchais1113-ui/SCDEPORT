@@ -13,11 +13,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "advertising",
     title: "Urban Signals",
     sector: "Advertising",
+    sectorTh: "งานโฆษณา",
     year: "2026",
     cover: "assets/images/projects/advertising/urban-signals/cover.webp",
     coverAlt: "Advertising system with poster, billboard and digital screen on a white background",
     summary:
       "An adaptable advertising system built to stay recognisable across print, outdoor and digital formats.",
+    summaryTh:
+      "ระบบโฆษณาที่ยืดหยุ่น แต่ยังรักษาภาพจำเดียวกันได้ทั้งสื่อสิ่งพิมพ์ สื่อนอกบ้าน และดิจิทัล",
     challenge:
       "Create a bold campaign language that can hold attention at different scales without relying on dense messaging.",
     solution:
@@ -46,11 +49,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "packaging-design",
     title: "Good Daily",
     sector: "Packaging",
+    sectorTh: "บรรจุภัณฑ์",
     year: "2026",
     cover: "assets/images/projects/packaging-design/good-daily/cover.webp",
     coverAlt: "A coordinated packaging family in white, cobalt, red and lime",
     summary:
       "A modular packaging family designed for clarity, shelf recognition and consistent range growth.",
+    summaryTh:
+      "ระบบบรรจุภัณฑ์แบบโมดูลาร์ที่อ่านง่าย โดดเด่นบนชั้นวาง และพร้อมเติบโตไปกับกลุ่มสินค้า",
     challenge:
       "Build a broad product family that feels energetic while remaining easy to scan and organise at retail.",
     solution:
@@ -79,11 +85,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "product-design",
     title: "Everyday Forms",
     sector: "Product",
+    sectorTh: "ผลิตภัณฑ์",
     year: "2026",
     cover: "assets/images/projects/product-design/everyday-forms/cover.webp",
     coverAlt: "A family of writing and lifestyle products on a clean white background",
     summary:
       "A compact collection of useful everyday objects shaped by one calm, recognisable form language.",
+    summaryTh:
+      "กลุ่มผลิตภัณฑ์ในชีวิตประจำวันที่ใช้งานง่าย เชื่อมกันด้วยภาษารูปทรงที่สงบและจดจำได้",
     challenge:
       "Give small daily objects a shared personality without reducing the usefulness of each individual item.",
     solution:
@@ -112,11 +121,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "display-retail",
     title: "Open Shelf",
     sector: "Display & Retail",
+    sectorTh: "ดิสเพลย์และพื้นที่ขาย",
     year: "2026",
     cover: "assets/images/projects/display-retail/open-shelf/cover.webp",
     coverAlt: "Modular cobalt retail display on a white background",
     summary:
       "A flexible retail fixture that turns product browsing into a clear, light and approachable rhythm.",
+    summaryTh:
+      "ระบบดิสเพลย์ที่ยืดหยุ่น เปลี่ยนการเลือกชมสินค้าให้ชัดเจน เบาสบาย และเข้าถึงง่าย",
     challenge:
       "Organise several product stories in a compact footprint without making the overall fixture feel crowded.",
     solution:
@@ -145,11 +157,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "campaign",
     title: "Make It Move",
     sector: "Campaign",
+    sectorTh: "แคมเปญ",
     year: "2026",
     cover: "assets/images/projects/campaign/make-it-move/cover.webp",
     coverAlt: "Campaign toolkit with poster, laptop, printed matter and event pass",
     summary:
       "A connected campaign toolkit designed to stay coherent from digital launch to physical event.",
+    summaryTh:
+      "ชุดเครื่องมือแคมเปญที่รักษาภาพจำเดียวกัน ตั้งแต่การเปิดตัวออนไลน์ไปจนถึงกิจกรรมจริง",
     challenge:
       "Translate one energetic idea across digital, print and event formats without losing clarity or becoming repetitive.",
     solution:
@@ -178,11 +193,14 @@ window.PORTFOLIO_PROJECTS = [
     category: "other-creative",
     title: "Off Grid Studies",
     sector: "Other Creative",
+    sectorTh: "งานสร้างสรรค์",
     year: "2026",
     cover: "assets/images/projects/other-creative/off-grid-studies/cover.webp",
     coverAlt: "Editorial, material and paper-form experiments on a white background",
     summary:
       "Editorial, material and form experiments collected into one open-ended creative study.",
+    summaryTh:
+      "การทดลองด้านบรรณาธิการ วัสดุ และรูปทรง ที่รวมกันเป็นพื้นที่ศึกษาความคิดสร้างสรรค์แบบเปิด",
     challenge:
       "Create a useful home for exploratory work that does not belong to one commercial design discipline.",
     solution:

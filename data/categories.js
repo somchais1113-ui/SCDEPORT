@@ -6,10 +6,10 @@
 */
 
 window.PORTFOLIO_CATEGORIES = [
-  { id: "advertising", label: "Advertising", folder: "advertising" },
-  { id: "packaging-design", label: "Packaging Design", folder: "packaging-design" },
-  { id: "product-design", label: "Product Design", folder: "product-design" },
-  { id: "display-retail", label: "Display & Retail", folder: "display-retail" },
-  { id: "campaign", label: "Campaign", folder: "campaign" },
-  { id: "other-creative", label: "Other Creative", folder: "other-creative" }
+  { id: "advertising", label: "Advertising", labelTh: "งานโฆษณา", folder: "advertising" },
+  { id: "packaging-design", label: "Packaging Design", labelTh: "ออกแบบบรรจุภัณฑ์", folder: "packaging-design" },
+  { id: "product-design", label: "Product Design", labelTh: "ออกแบบผลิตภัณฑ์", folder: "product-design" },
+  { id: "display-retail", label: "Display & Retail", labelTh: "ดิสเพลย์และพื้นที่ขาย", folder: "display-retail" },
+  { id: "campaign", label: "Campaign", labelTh: "แคมเปญ", folder: "campaign" },
+  { id: "other-creative", label: "Other Creative", labelTh: "งานสร้างสรรค์", folder: "other-creative" }
 ];

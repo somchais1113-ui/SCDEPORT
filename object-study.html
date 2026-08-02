@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Interactive ballpoint pen anatomy study by Somchai Sompiew.">
+    <title>Object Study 01 | Somchai Sompiew</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script>document.documentElement.classList.add("motion-enabled");</script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/ui-controls.css">
+    <link rel="stylesheet" href="assets/css/object-study.css">
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/motion.js" defer></script>
+    <script src="assets/js/pen-study.js" defer></script>
+  </head>
+  <body class="object-study-page" data-pen-mode="overview">
+    <a class="skip-link" href="#study-content" data-i18n-en="Skip to object study" data-i18n-th="ข้ามไปยังส่วนศึกษาผลิตภัณฑ์">Skip to object study</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="home.html" aria-label="Somchai Sompiew portfolio home">
+        <strong>SOMCHAI</strong>
+        <span>/ SOMPIEW</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="home.html#work" data-i18n-en="Work" data-i18n-th="ผลงาน">Work</a>
+        <a href="object-study.html" aria-current="page" data-i18n-en="Object Study" data-i18n-th="ศึกษาผลิตภัณฑ์">Object Study</a>
+        <a href="home.html#profile" data-i18n-en="Profile" data-i18n-th="โปรไฟล์">Profile</a>
+        <a class="nav-contact icon-link" href="mailto:Somchai.s1113@gmail.com">
+          <span data-i18n-en="Start a project" data-i18n-th="เริ่มโปรเจกต์">Start a project</span>
+          <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>
+        </a>
+      </nav>
+
+      <div class="site-header-tools">
+        <div class="language-toggle" role="group" aria-label="Language">
+          <button type="button" data-language="th" aria-pressed="false">TH</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-language="en" aria-pressed="true">EN</button>
+        </div>
+        <button
+          class="menu-button"
+          id="menu-button"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          data-i18n-menu-en="Menu"
+          data-i18n-menu-th="เมนู"
+          data-i18n-close-en="Close"
+          data-i18n-close-th="ปิด"
+        >Menu</button>
+      </div>
+    </header>
+
+    <main id="study-content">
+      <section class="pen-study-hero" id="overview">
+        <div class="pen-study-heading">
+          <p class="eyebrow"><span></span> <span data-i18n-en="Object Study 01 / Ballpoint Pen" data-i18n-th="Object Study 01 / ปากกาลูกลื่น">Object Study 01 / Ballpoint Pen</span></p>
+          <h1>
+            <span data-i18n-en="From parts," data-i18n-th="จากชิ้นส่วน">From parts,</span>
+            <em data-i18n-en="to the rhythm of writing." data-i18n-th="สู่จังหวะการเขียน">to the rhythm of writing.</em>
+          </h1>
+          <p data-i18n-en="A visual prototype that studies how five external components work together as one calm, useful object." data-i18n-th="ต้นแบบเชิงภาพที่สำรวจว่าองค์ประกอบภายนอกทั้งห้าส่วน ทำงานร่วมกันจนกลายเป็นวัตถุที่เรียบง่ายและใช้งานได้อย่างไร">
+            A visual prototype that studies how five external components work together as one calm, useful object.
+          </p>
+        </div>
+
+        <div class="pen-study-layout">
+          <nav class="pen-side-menu" aria-label="Object study modes">
+            <p data-i18n-en="Explore" data-i18n-th="สำรวจ">Explore</p>
+            <button type="button" class="is-active" data-pen-mode-button="overview" aria-pressed="true">
+              <small>01</small><span data-i18n-en="Overview" data-i18n-th="ภาพรวม">Overview</span>
+            </button>
+            <button type="button" data-pen-mode-button="anatomy" aria-pressed="false">
+              <small>02</small><span data-i18n-en="Anatomy" data-i18n-th="ส่วนประกอบ">Anatomy</span>
+            </button>
+            <button type="button" data-pen-mode-button="exploded" aria-pressed="false">
+              <small>03</small><span data-i18n-en="Exploded View" data-i18n-th="แยกโครงสร้าง">Exploded View</span>
+            </button>
+            <button type="button" data-pen-mode-button="material" aria-pressed="false">
+              <small>04</small><span data-i18n-en="Material & Finish" data-i18n-th="วัสดุและผิวสัมผัส">Material &amp; Finish</span>
+            </button>
+            <button type="button" data-pen-mode-button="colour" aria-pressed="false">
+              <small>05</small><span data-i18n-en="Colour System" data-i18n-th="ระบบสี">Colour System</span>
+            </button>
+          </nav>
+
+          <div class="pen-stage" data-pen-stage>
+            <div class="pen-stage-grid" aria-hidden="true"></div>
+            <div class="pen-stage-meta">
+              <span data-i18n-en="2.5D visual prototype" data-i18n-th="ต้นแบบภาพ 2.5D">2.5D visual prototype</span>
+              <span>01 / 05</span>
+            </div>
+
+            <div class="pen-object" data-pen-object tabindex="0" aria-label="Interactive neutral grey ballpoint pen" data-aria-en="Interactive neutral grey ballpoint pen" data-aria-th="ปากกาลูกลื่นสีเทาแบบโต้ตอบ">
+              <img
+                src="assets/images/object-study/neutral-grey-ballpoint-hero.webp"
+                alt="Neutral grey retractable ballpoint pen showing pusher, clip, barrel, grip and cone"
+                width="1672"
+                height="941"
+                fetchpriority="high"
+                draggable="false"
+              >
+              <button class="pen-hotspot pen-hotspot--pusher" type="button" data-pen-part="pusher" aria-label="Pusher"><span>01</span></button>
+              <button class="pen-hotspot pen-hotspot--clip" type="button" data-pen-part="clip" aria-label="Clip"><span>02</span></button>
+              <button class="pen-hotspot pen-hotspot--barrel" type="button" data-pen-part="barrel" aria-label="Barrel"><span>03</span></button>
+              <button class="pen-hotspot pen-hotspot--grip" type="button" data-pen-part="grip" aria-label="Grip"><span>04</span></button>
+              <button class="pen-hotspot pen-hotspot--cone" type="button" data-pen-part="cone" aria-label="Cone"><span>05</span></button>
+            </div>
+
+            <div class="pen-exploded-rail" aria-hidden="true">
+              <span><i>01</i>Pusher</span>
+              <span><i>02</i>Clip</span>
+              <span><i>03</i>Barrel</span>
+              <span><i>04</i>Grip</span>
+              <span><i>05</i>Cone</span>
+            </div>
+
+            <div class="pen-material-board" aria-hidden="true">
+              <span class="finish-chip finish-chip--satin"><i></i><b>01</b><small>Satin barrel</small></span>
+              <span class="finish-chip finish-chip--semi"><i></i><b>02</b><small>Semi-gloss grip</small></span>
+              <span class="finish-chip finish-chip--metal"><i></i><b>03</b><small>Metal detail</small></span>
+            </div>
+
+            <div class="pen-colour-board" aria-hidden="true">
+              <span style="--swatch:#2f302f"><i>01</i></span>
+              <span style="--swatch:#555654"><i>02</i></span>
+              <span style="--swatch:#7c7d7a"><i>03</i></span>
+              <span style="--swatch:#a7a8a4"><i>04</i></span>
+              <span style="--swatch:#d6d6d2"><i>05</i></span>
+            </div>
+
+            <p class="pen-drag-hint">
+              <svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M2 10h16M6 6l-4 4 4 4M14 6l4 4-4 4"/></svg>
+              <span data-i18n-en="Drag to inspect" data-i18n-th="ลากเพื่อดูมิติ">Drag to inspect</span>
+            </p>
+          </div>
+
+          <aside class="pen-info-panel" aria-live="polite">
+            <p class="pen-info-index">01 / Overview</p>
+            <h2 data-pen-info-title>One object.<br>Five visible parts.</h2>
+            <p data-pen-info-copy>A neutral-grey mockup establishes the overall proportion before colour, materials and production details are developed.</p>
+            <dl>
+              <div><dt data-i18n-en="Status" data-i18n-th="สถานะ">Status</dt><dd data-pen-info-status>Visual prototype</dd></div>
+              <div><dt data-i18n-en="Interaction" data-i18n-th="การโต้ตอบ">Interaction</dt><dd data-pen-info-action>Drag / Select a mode</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="pen-parts-section" id="components">
+        <div class="pen-parts-heading">
+          <p class="eyebrow"><span></span> <span data-i18n-en="External anatomy" data-i18n-th="โครงสร้างภายนอก">External anatomy</span></p>
+          <h2 data-i18n-en="Five parts. One clear silhouette." data-i18n-th="ห้าส่วนประกอบ หนึ่งรูปทรงที่ชัดเจน">Five parts. One clear silhouette.</h2>
+        </div>
+        <div class="pen-parts-list">
+          <button type="button" data-part-jump="pusher"><small>01</small><strong>Pusher</strong><span data-i18n-en="Starts the retract mechanism" data-i18n-th="เริ่มการทำงานของกลไกกด">Starts the retract mechanism</span></button>
+          <button type="button" data-part-jump="clip"><small>02</small><strong>Clip</strong><span data-i18n-en="Retention and visual accent" data-i18n-th="ยึดเก็บและสร้างจุดเด่นทางสายตา">Retention and visual accent</span></button>
+          <button type="button" data-part-jump="barrel"><small>03</small><strong>Barrel</strong><span data-i18n-en="The main structural housing" data-i18n-th="โครงสร้างหลักที่รวมทุกชิ้นส่วน">The main structural housing</span></button>
+          <button type="button" data-part-jump="grip"><small>04</small><strong>Grip</strong><span data-i18n-en="Control, comfort and orientation" data-i18n-th="ควบคุมทิศทางและเพิ่มความถนัด">Control, comfort and orientation</span></button>
+          <button type="button" data-part-jump="cone"><small>05</small><strong>Cone</strong><span data-i18n-en="Guides the writing point" data-i18n-th="ประคองและนำหัวเขียน">Guides the writing point</span></button>
+        </div>
+      </section>
+
+      <section class="pen-mechanism-section" id="mechanism">
+        <div>
+          <p class="eyebrow light"><span></span> <span data-i18n-en="Inside the barrel" data-i18n-th="ภายในตัวด้าม">Inside the barrel</span></p>
+          <h2><span data-i18n-en="The quiet mechanism" data-i18n-th="กลไกที่ซ่อนอยู่">The quiet mechanism</span><br><em data-i18n-en="behind one click." data-i18n-th="เบื้องหลังหนึ่งจังหวะกด">behind one click.</em></h2>
+        </div>
+        <div class="pen-mechanism-grid">
+          <article><span>01</span><h3>Cam / Ratchet</h3><p data-i18n-en="Locks the refill in writing or resting position." data-i18n-th="ล็อกไส้ปากกาให้อยู่ในตำแหน่งเขียนหรือพัก">Locks the refill in writing or resting position.</p></article>
+          <article><span>02</span><h3>Spring</h3><p data-i18n-en="Returns the refill with controlled tension." data-i18n-th="ส่งไส้ปากกากลับด้วยแรงตึงที่พอดี">Returns the refill with controlled tension.</p></article>
+          <article><span>03</span><h3>Ink Refill</h3><p data-i18n-en="Stores ink and connects the mechanism to the tip." data-i18n-th="เก็บหมึกและเชื่อมกลไกเข้ากับหัวเขียน">Stores ink and connects the mechanism to the tip.</p></article>
+          <article><span>04</span><h3>Ballpoint Tip</h3><p data-i18n-en="Transfers ink through a rolling ball onto paper." data-i18n-th="ส่งหมึกผ่านลูกบอลขนาดเล็กลงสู่พื้นผิวกระดาษ">Transfers ink through a rolling ball onto paper.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top compact">
+        <p data-i18n-en="Object Study 01 / Visual prototype" data-i18n-th="Object Study 01 / ต้นแบบเชิงภาพ">Object Study 01 / Visual prototype</p>
+        <a class="icon-link" href="home.html#profile"><span data-i18n-en="Meet the designer" data-i18n-th="รู้จักนักออกแบบ">Meet the designer</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Somchai Sompiew</p>
+        <a href="mailto:Somchai.s1113@gmail.com">Somchai.s1113@gmail.com</a>
+        <a class="icon-link" href="#overview"><span data-i18n-en="Back to top" data-i18n-th="กลับขึ้นด้านบน">Back to top</span><svg class="ui-icon ui-icon--up" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M10 17V3M4 9l6-6 6 6"/></svg></a>
+      </div>
+    </footer>
+
+    <div class="page-transition" aria-hidden="true"><span>SOMCHAI / SOMPIEW</span></div>
+  </body>
+</html>
