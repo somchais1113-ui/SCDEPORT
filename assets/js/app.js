@@ -60,6 +60,10 @@
     const resolvedCategoryLabel = category ? categoryLabel(category) : project.sector;
     const sectorLabel = currentLanguage() === "th" && project.sectorTh ? project.sectorTh : project.sector;
     const projectNumber = String(project.order).padStart(2, "0");
+    const brand = project.brandLabel || project.brand || "";
+    const brandMarkup = brand
+      ? `<span class="project-brand-label">${portfolio.escapeHtml(brand)} Brand</span>`
+      : "";
 
     return `
       <article class="project-card" style="--card-index: ${Number(index) || 0}">
@@ -78,6 +82,7 @@
           <div class="project-meta">
             <div>
               <p>${projectNumber} / ${portfolio.escapeHtml(sectorLabel)}</p>
+              ${brandMarkup}
               <h3>${portfolio.escapeHtml(project.title)}</h3>
             </div>
             <p class="project-card-summary">${portfolio.escapeHtml(translated(project.summary, project.summaryTh || project.summary))}</p>
@@ -88,14 +93,54 @@
     `;
   }
 
+  function groupedDisplayMarkup(projects) {
+    const grouped = new Map();
+
+    projects.forEach(function (project) {
+      const key = project.brand || "other-display";
+      if (!grouped.has(key)) {
+        grouped.set(key, {
+          id: key,
+          label: project.brandLabel || project.brand || translated("Other Display", "งานดิสเพลย์อื่น ๆ"),
+          order: Number(project.brandOrder) || 999,
+          projects: []
+        });
+      }
+      grouped.get(key).projects.push(project);
+    });
+
+    return Array.from(grouped.values())
+      .sort(function (a, b) { return a.order - b.order; })
+      .map(function (group, groupIndex) {
+        return `
+          <section class="project-brand-group" aria-labelledby="home-brand-${portfolio.escapeHtml(group.id)}">
+            <header class="project-brand-group__header">
+              <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
+              <div>
+                <h3 id="home-brand-${portfolio.escapeHtml(group.id)}">${portfolio.escapeHtml(group.label)}</h3>
+                <a class="icon-link" href="category.html?category=display-retail#brand-${encodeURIComponent(group.id)}">${translated("View Display category", "ดูหมวด Display")} ${northeastIcon()}</a>
+              </div>
+            </header>
+            <div class="project-brand-grid">
+              ${group.projects.map(projectMarkup).join("")}
+            </div>
+          </section>`;
+      })
+      .join("");
+  }
+
   function renderProjects(categoryId) {
     const visibleProjects = categoryId === allCategoryId
       ? portfolio.projects
       : portfolio.projects.filter((project) => project.category === categoryId);
 
-    grid.innerHTML = visibleProjects.length
-      ? visibleProjects.map(projectMarkup).join("")
-      : `<p class="notice">${translated("No projects in this category yet.", "ยังไม่มีโปรเจกต์ในหมวดนี้")}</p>`;
+    if (!visibleProjects.length) {
+      grid.innerHTML = `<p class="notice">${translated("No projects in this category yet.", "ยังไม่มีโปรเจกต์ในหมวดนี้")}</p>`;
+    } else if (categoryId === "display-retail") {
+      grid.innerHTML = groupedDisplayMarkup(visibleProjects);
+    } else {
+      grid.innerHTML = visibleProjects.map(projectMarkup).join("");
+    }
 
     if (filterSummary) {
       const category = portfolio.categoryById(categoryId);

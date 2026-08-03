@@ -14,8 +14,17 @@
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
-  function card(project) {
-    const number = String(project.order).padStart(2, "0");
+  function brandLabel(project) {
+    return project.brandLabel || project.brand || "";
+  }
+
+  function card(project, index) {
+    const number = String(index + 1).padStart(2, "0");
+    const brand = brandLabel(project);
+    const brandMarkup = brand
+      ? `<span class="category-project-card__brand">${portfolio.escapeHtml(brand)} Brand</span>`
+      : "";
+
     return `
       <article class="category-project-card">
         <a href="project.html?id=${encodeURIComponent(project.slug)}">
@@ -23,13 +32,71 @@
             <img src="${portfolio.escapeHtml(project.cover)}" alt="${portfolio.escapeHtml(project.coverAlt)}" width="1200" height="900" loading="lazy" decoding="async" draggable="false">
           </figure>
           <div class="category-project-card__meta">
-            <p>${number} / ${portfolio.escapeHtml(project.year)}</p>
-            <h2>${portfolio.escapeHtml(project.title)}</h2>
+            <div>
+              <p>${number} / ${portfolio.escapeHtml(project.year)}</p>
+              ${brandMarkup}
+              <h2>${portfolio.escapeHtml(project.title)}</h2>
+            </div>
             <span class="icon-link">View case ${icon()}</span>
           </div>
           <p class="category-project-card__summary">${portfolio.escapeHtml(project.summary)}</p>
         </a>
       </article>`;
+  }
+
+  function defaultProjectList(projects) {
+    return `
+      <section class="category-page-projects category-page-shell" aria-label="${portfolio.escapeHtml(category.label)} projects">
+        ${projects.length ? projects.map(card).join("") : '<p class="notice">No projects in this category yet.</p>'}
+      </section>`;
+  }
+
+  function displayBrandGroups(projects) {
+    const grouped = new Map();
+
+    projects.forEach(function (project) {
+      const key = project.brand || "other-display";
+      if (!grouped.has(key)) {
+        grouped.set(key, {
+          id: key,
+          label: brandLabel(project) || "Other Display",
+          order: Number(project.brandOrder) || 999,
+          projects: []
+        });
+      }
+      grouped.get(key).projects.push(project);
+    });
+
+    const groups = Array.from(grouped.values())
+      .sort(function (a, b) { return a.order - b.order; });
+
+    const navigation = groups.map(function (group, index) {
+      return `<a href="#brand-${portfolio.escapeHtml(group.id)}"><span>${String(index + 1).padStart(2, "0")}</span>${portfolio.escapeHtml(group.label)}</a>`;
+    }).join("");
+
+    const sections = groups.map(function (group, index) {
+      const projectWord = group.projects.length === 1 ? "project" : "projects";
+      return `
+        <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-labelledby="brand-title-${portfolio.escapeHtml(group.id)}">
+          <header class="display-brand-group__header">
+            <p>${String(index + 1).padStart(2, "0")} / Brand group</p>
+            <div>
+              <h2 id="brand-title-${portfolio.escapeHtml(group.id)}">${portfolio.escapeHtml(group.label)}</h2>
+              <p>${String(group.projects.length).padStart(2, "0")} ${projectWord}. A dedicated image set and project structure for the ${portfolio.escapeHtml(group.label)} brand.</p>
+            </div>
+          </header>
+          <div class="category-page-projects category-page-projects--brand">
+            ${group.projects.map(card).join("")}
+          </div>
+        </section>`;
+    }).join("");
+
+    return `
+      <nav class="category-page-brand-nav category-page-shell" aria-label="Display brands">
+        <p>Browse by brand</p>
+        <div>${navigation}</div>
+      </nav>
+      <div class="display-brand-groups">${sections}</div>`;
   }
 
   if (!category) {
@@ -52,17 +119,23 @@
     address.innerHTML = `<a href="home.html">Home</a><span>/</span><a href="home.html#work">Work</a><span>/</span><strong>${portfolio.escapeHtml(category.label)}</strong>`;
   }
 
+  const categoryContent = category.id === "display-retail"
+    ? displayBrandGroups(projects)
+    : defaultProjectList(projects);
+
+  const categoryDescription = category.id === "display-retail"
+    ? "Display projects are organised by brand, so Quantum and Kioku remain visually and structurally independent while staying within one discipline."
+    : "A focused view of the work, visual system and production thinking in this discipline.";
+
   view.innerHTML = `
     <section class="category-page-hero category-page-shell">
       <p class="eyebrow"><span></span> Work / Selected category</p>
       <div class="category-page-heading">
         <h1>${portfolio.escapeHtml(category.label)}</h1>
-        <p>${String(projects.length).padStart(2, "0")} selected ${projects.length === 1 ? "project" : "projects"}. A focused view of the work, visual system and production thinking in this discipline.</p>
+        <p>${String(projects.length).padStart(2, "0")} selected ${projects.length === 1 ? "project" : "projects"}. ${categoryDescription}</p>
       </div>
     </section>
-    <section class="category-page-projects category-page-shell" aria-label="${portfolio.escapeHtml(category.label)} projects">
-      ${projects.length ? projects.map(card).join("") : '<p class="notice">No projects in this category yet.</p>'}
-    </section>`;
+    ${categoryContent}`;
 
   if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
 })();

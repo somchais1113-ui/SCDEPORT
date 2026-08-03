@@ -1,3 +1,7 @@
+Display / Kioku Brand
+Project folder: kioku-display-system
+Replace the demo images with the Kioku artwork using the exact filenames listed below.
+
 cover-1200x900.webp
 gallery-01-1440x1080.webp
 gallery-02-1100x825.webp

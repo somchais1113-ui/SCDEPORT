@@ -33,9 +33,14 @@
   portfolio.setPageMeta(project.title, project.summary);
 
   const category = portfolio.categoryById(project.category);
+  const projectBrand = project.brandLabel || project.brand || "";
   if (addressField) {
     const categoryLabel = category ? (category.label || project.sector) : project.sector;
-    addressField.innerHTML = `<a href="home.html">Home</a><span>/</span><a href="home.html#work">Work</a><span>/</span><span>${portfolio.escapeHtml(categoryLabel)}</span><span>/</span><strong>${portfolio.escapeHtml(project.title)}</strong>`;
+    const categoryHref = `category.html?category=${encodeURIComponent(project.category)}`;
+    const brandPath = projectBrand
+      ? `<span>/</span><a href="${categoryHref}#brand-${encodeURIComponent(project.brand)}">${portfolio.escapeHtml(projectBrand)}</a>`
+      : "";
+    addressField.innerHTML = `<a href="home.html">Home</a><span>/</span><a href="home.html#work">Work</a><span>/</span><a href="${categoryHref}">${portfolio.escapeHtml(categoryLabel)}</a>${brandPath}<span>/</span><strong>${portfolio.escapeHtml(project.title)}</strong>`;
   }
 
   const scope = Array.isArray(project.scope)
@@ -80,7 +85,7 @@
   view.innerHTML = `
     <div class="project-shell">
       <div class="case-heading">
-      <p class="eyebrow"><span></span> ${portfolio.escapeHtml(project.sector)} · ${portfolio.escapeHtml(project.year)}</p>
+      <p class="eyebrow"><span></span> ${portfolio.escapeHtml(project.sector)}${projectBrand ? ` · ${portfolio.escapeHtml(projectBrand)} Brand` : ""} · ${portfolio.escapeHtml(project.year)}</p>
       <h1>${portfolio.escapeHtml(project.title)}</h1>
       <p class="case-summary">${portfolio.escapeHtml(project.summary)}</p>
     </div>
