@@ -471,27 +471,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-
-/* v40 — others display inline card */
-.project-card--empty a,
-.project-card__static {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.project-image--empty {
-  aspect-ratio: 4 / 3;
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9));
-}
-
-.project-card--empty .view-pill {
-  display: none;
-}
-
-.project-brand-placeholder,
-.display-brand-placeholder {
-  display: none;
-}

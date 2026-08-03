@@ -22,7 +22,7 @@
     return [
       { id: "quantum", label: "Quantum", order: 1 },
       { id: "kioku", label: "Kioku", order: 2 },
-      { id: "other-display", label: "Others Display", order: 3, empty: true }
+      { id: "future-brand", label: "Future Brand", order: 3, empty: true }
     ];
   }
 
@@ -73,7 +73,7 @@
     });
 
     projects.forEach(function (project) {
-      const key = project.brand || "other-display";
+      const key = project.brand || "future-brand";
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
@@ -87,7 +87,6 @@
     });
 
     const groups = Array.from(grouped.values())
-      .filter(function (group) { return group.projects.length; })
       .sort(function (a, b) { return a.order - b.order; });
 
     const navigation = groups.map(function (group, index) {
@@ -96,7 +95,9 @@
 
     const sections = groups.map(function (group, index) {
       const projectWord = group.projects.length === 1 ? "project" : "projects";
-      const content = group.projects.map(card).join("");
+      const content = group.projects.length
+        ? group.projects.map(card).join("")
+        : `<div class="display-brand-placeholder"><p>Reserved for a future display brand group.</p></div>`;
       return `
         <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-label="${portfolio.escapeHtml(group.label)}">
           <header class="display-brand-group__header display-brand-group__header--compact">

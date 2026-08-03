@@ -34,7 +34,7 @@
     return [
       { id: "quantum", label: "Quantum", labelTh: "ควอนตัม", order: 1 },
       { id: "kioku", label: "Kioku", labelTh: "คิโอคุ", order: 2 },
-      { id: "other-display", label: translated("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
+      { id: "future-brand", label: translated("Future Brand", "แบรนด์ถัดไป"), order: 3, empty: true }
     ];
   }
 
@@ -101,25 +101,6 @@
     `;
   }
 
-  function emptyDisplayCard(group, index) {
-    const projectNumber = String(index).padStart(2, "0");
-    return `
-      <article class="project-card project-card--empty" style="--card-index: ${Number(index) || 0}">
-        <div class="project-card__static">
-          <div class="project-image project-image--empty" aria-hidden="true"></div>
-          <div class="project-meta">
-            <div>
-              <p>${projectNumber} / ${translated("Display & Retail", "ดิสเพลย์และพื้นที่ขาย")}</p>
-              <span class="project-brand-label">${portfolio.escapeHtml(group.label)}</span>
-            </div>
-            <p class="project-card-summary">${translated("Reserved for future display work outside the current named brand groups.", "พื้นที่สำรองสำหรับงานดิสเพลย์อื่น ๆ ที่จะเพิ่มในภายหลัง")}</p>
-            <p class="project-meta-category">${translated("Display", "ดิสเพลย์")}</p>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
   function groupedDisplayMarkup(projects) {
     const grouped = new Map();
 
@@ -134,7 +115,7 @@
     });
 
     projects.forEach(function (project) {
-      const key = project.brand || "other-display";
+      const key = project.brand || "future-brand";
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
@@ -150,13 +131,16 @@
     return Array.from(grouped.values())
       .sort(function (a, b) { return a.order - b.order; })
       .map(function (group, groupIndex) {
+        const placeholder = group.projects.length
+          ? ""
+          : `<div class="project-brand-placeholder"><p>${translated("Reserved for an upcoming display brand group.", "เว้นพื้นที่ไว้สำหรับกลุ่มแบรนด์ Display ถัดไป")}</p></div>`;
         return `
           <section class="project-brand-group" aria-label="${portfolio.escapeHtml(group.label)}">
             <header class="project-brand-group__header">
               <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
             </header>
             <div class="project-brand-grid">
-              ${group.projects.length ? group.projects.map(projectMarkup).join("") : emptyDisplayCard(group, groupIndex + 4)}
+              ${group.projects.length ? group.projects.map(projectMarkup).join("") : placeholder}
             </div>
           </section>`;
       })
