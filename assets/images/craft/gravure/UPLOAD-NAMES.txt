@@ -1,0 +1,11 @@
+Gravure (GR) — Craft & Process image slots
+-------------------------------------------------
+Overwrite each file below with your own photo.
+Keep the exact filename and the exact pixel size,
+otherwise the layout will shift. Ratio 4:3 (1400x1050).
+
+cover-1400x1050.webp          Process overview
+example-01-1400x1050.webp     Engraved cylinder
+example-02-1400x1050.webp     Doctor blade setting
+example-03-1400x1050.webp     Film web on press
+example-04-1400x1050.webp     Laminated pouch
