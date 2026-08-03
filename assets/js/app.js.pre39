@@ -30,14 +30,6 @@
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
-  function displayBrandGroupsSeed() {
-    return [
-      { id: "quantum", label: "Quantum", labelTh: "ควอนตัม", order: 1 },
-      { id: "kioku", label: "Kioku", labelTh: "คิโอคุ", order: 2 },
-      { id: "future-brand", label: translated("Future Brand", "แบรนด์ถัดไป"), order: 3, empty: true }
-    ];
-  }
-
   function requestedCategoryId() {
     const categoryId = new URLSearchParams(window.location.search).get("category");
     return portfolio.categoryById(categoryId) ? categoryId : allCategoryId;
@@ -104,25 +96,14 @@
   function groupedDisplayMarkup(projects) {
     const grouped = new Map();
 
-    displayBrandGroupsSeed().forEach(function (group) {
-      grouped.set(group.id, {
-        id: group.id,
-        label: group.label,
-        order: group.order,
-        projects: [],
-        empty: Boolean(group.empty)
-      });
-    });
-
     projects.forEach(function (project) {
-      const key = project.brand || "future-brand";
+      const key = project.brand || "other-display";
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
           label: project.brandLabel || project.brand || translated("Other Display", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
-          projects: [],
-          empty: false
+          projects: []
         });
       }
       grouped.get(key).projects.push(project);
@@ -131,16 +112,14 @@
     return Array.from(grouped.values())
       .sort(function (a, b) { return a.order - b.order; })
       .map(function (group, groupIndex) {
-        const placeholder = group.projects.length
-          ? ""
-          : `<div class="project-brand-placeholder"><p>${translated("Reserved for an upcoming display brand group.", "เว้นพื้นที่ไว้สำหรับกลุ่มแบรนด์ Display ถัดไป")}</p></div>`;
         return `
           <section class="project-brand-group" aria-label="${portfolio.escapeHtml(group.label)}">
             <header class="project-brand-group__header">
               <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
+              <a class="icon-link" href="category.html?category=display-retail#brand-${encodeURIComponent(group.id)}">${translated("View Display category", "ดูหมวด Display")} ${northeastIcon()}</a>
             </header>
             <div class="project-brand-grid">
-              ${group.projects.length ? group.projects.map(projectMarkup).join("") : placeholder}
+              ${group.projects.map(projectMarkup).join("")}
             </div>
           </section>`;
       })

@@ -18,14 +18,6 @@
     return project.brandLabel || project.brand || "";
   }
 
-  function displayBrandGroupsSeed() {
-    return [
-      { id: "quantum", label: "Quantum", order: 1 },
-      { id: "kioku", label: "Kioku", order: 2 },
-      { id: "future-brand", label: "Future Brand", order: 3, empty: true }
-    ];
-  }
-
   function card(project, index) {
     const number = String(index + 1).padStart(2, "0");
     const brand = brandLabel(project);
@@ -62,25 +54,14 @@
   function displayBrandGroups(projects) {
     const grouped = new Map();
 
-    displayBrandGroupsSeed().forEach(function (group) {
-      grouped.set(group.id, {
-        id: group.id,
-        label: group.label,
-        order: group.order,
-        projects: [],
-        empty: Boolean(group.empty)
-      });
-    });
-
     projects.forEach(function (project) {
-      const key = project.brand || "future-brand";
+      const key = project.brand || "other-display";
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
           label: brandLabel(project) || "Other Display",
           order: Number(project.brandOrder) || 999,
-          projects: [],
-          empty: false
+          projects: []
         });
       }
       grouped.get(key).projects.push(project);
@@ -95,9 +76,6 @@
 
     const sections = groups.map(function (group, index) {
       const projectWord = group.projects.length === 1 ? "project" : "projects";
-      const content = group.projects.length
-        ? group.projects.map(card).join("")
-        : `<div class="display-brand-placeholder"><p>Reserved for a future display brand group.</p></div>`;
       return `
         <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-label="${portfolio.escapeHtml(group.label)}">
           <header class="display-brand-group__header display-brand-group__header--compact">
@@ -105,7 +83,7 @@
             <p>${String(group.projects.length).padStart(2, "0")} ${projectWord}. Dedicated display work for ${portfolio.escapeHtml(group.label)}.</p>
           </header>
           <div class="category-page-projects category-page-projects--brand">
-            ${content}
+            ${group.projects.map(card).join("")}
           </div>
         </section>`;
     }).join("");
