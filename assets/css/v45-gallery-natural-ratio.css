@@ -1,0 +1,90 @@
+/* ==========================================================================
+   v45 — Project gallery: natural image ratio
+   --------------------------------------------------------------------------
+   ปัญหาที่แก้ (Bug):
+   บนมือถือจะเห็น "เส้นบาง ๆ สีเทาอ่อน" คั่นระหว่างภาพ พร้อมช่องว่างสีขาว
+
+   สาเหตุ (Root cause):
+   1) .case-gallery-item ถูกบังคับ aspect-ratio ตายตัว (16/10, 4/3, 4/5)
+   2) รูปภาพภายในใช้ object-fit: contain  ->  เมื่อสัดส่วนภาพจริงไม่ตรงกับ
+      สัดส่วนกล่อง ภาพจะถูก "ใส่กรอบ" เหลือแถบขาวด้านบน-ล่าง (letterbox)
+   3) .case-gallery-item มี border: 1px solid rgba(27, 28, 26, 0.08)
+      ขอบล่างของกล่องบน + ขอบบนของกล่องล่าง จึงลอยอยู่กลางพื้นที่ว่างสีขาว
+      และถูกมองเห็นเป็น "เส้นแปลกปลอม" 2 เส้น
+
+   วิธีแก้:
+   ปล่อยให้ความสูงของกล่องเท่ากับสัดส่วนจริงของภาพ (ยกเลิก aspect-ratio
+   เฉพาะ breakpoint มือถือ ซึ่งเป็นคอลัมน์เดียวอยู่แล้ว)
+   -> ไม่มีแถบขาว, ไม่มีเส้นลอย, และเส้นขอบกลับไปแนบกับภาพตามที่ตั้งใจไว้
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  /* กล่องภาพ: ความสูงอิงสัดส่วนภาพจริง แทนการบังคับ aspect-ratio */
+  .case-gallery-item,
+  .case-gallery-item--hero,
+  .case-gallery-item--wide,
+  .case-gallery-item--half,
+  .case-gallery-item--third,
+  .case-gallery-item--medium,
+  .case-gallery-item--portrait,
+  .case-gallery-item--detail {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  /* ปุ่มเปิด lightbox: เดิม height: 100% อ้างอิงกล่องที่สูงคงที่
+     เมื่อกล่องเป็น auto แล้ว ต้องเปลี่ยนเป็น auto ด้วย ไม่งั้นจะยุบตัว */
+  .case-gallery-item > a,
+  .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* รูปภาพ: เต็มความกว้าง ความสูงตามสัดส่วนไฟล์จริง
+     (attribute width/height ใน HTML ยังทำหน้าที่จองพื้นที่กัน Layout Shift) */
+  .case-gallery-item img,
+  .case-gallery-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* ไม่มีผลแล้ว เพราะกล่องพอดีภาพ แต่คงไว้กันเคสภาพเสีย */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   (ทางเลือกเสริม) หากต้องการให้เดสก์ท็อปใช้สัดส่วนภาพจริงด้วย
+   ให้ลบเครื่องหมายคอมเมนต์ของบล็อกด้านล่าง
+   ผลลัพธ์: ยังคงจังหวะคอลัมน์เดิม (hero/wide เต็มแถว, half = 6 คอลัมน์)
+   แต่ความสูงของแต่ละภาพจะไม่เท่ากัน (ลุค masonry)
+   --------------------------------------------------------------------------
+@media (min-width: 721px) {
+  .case-gallery-item,
+  .case-gallery-item--hero,
+  .case-gallery-item--wide,
+  .case-gallery-item--half,
+  .case-gallery-item--third,
+  .case-gallery-item--medium,
+  .case-gallery-item--portrait,
+  .case-gallery-item--detail {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .case-gallery-item > a,
+  .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .case-gallery-item img,
+  .case-gallery-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+   -------------------------------------------------------------------------- */
