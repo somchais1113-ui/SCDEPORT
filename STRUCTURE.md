@@ -8,6 +8,7 @@ index.html (landing page)
 home.html (main portfolio)
   ↓ choose a category filter
 filtered project grid
+  ↓ Display projects are separated into Quantum / Kioku brand groups
   ↓ open a project
 project.html?id=<project-slug>
   ↓ shared.js matches the slug with data/projects.js
@@ -40,12 +41,13 @@ Somchai-Sompiew-Portfolio/
 │   └── images/
 │       ├── hero/
 │       │   └── writing-culture.webp
-│       └── projects/<category>/<project>/
+│       └── projects/<category>/<brand>/<project>/  # Brand layer is used for Display
 ├── docs/
 │   ├── CODE_OVERVIEW_TH.md
 │   ├── MOTION_UPDATE_TH.md
 │   ├── NEUTRAL_GALLERY_UPDATE_TH.md
-│   └── UPLOAD_GUIDE_TH.md
+│   ├── UPLOAD_GUIDE_TH.md
+│   └── DISPLAY_BRAND_STRUCTURE_TH.md
 ├── favicon.svg
 ├── site.webmanifest
 └── robots.txt
@@ -64,7 +66,7 @@ Somchai-Sompiew-Portfolio/
 | Shared content helpers and dynamic metadata | `assets/js/shared.js` |
 | Project-grid behaviour and category filtering | `assets/js/app.js` |
 | Project-detail and gallery rendering | `assets/js/project.js` |
-| Image files | `assets/images/projects/<category>/<project>/` |
+| Image files | `assets/images/projects/<category>/<project>/` or `assets/images/projects/display-retail/<brand>/<project>/` |
 
 ## Preview the code
 

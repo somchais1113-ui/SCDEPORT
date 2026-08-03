@@ -4,6 +4,7 @@
   - cover: image shown on the homepage
   - gallery: images shown on the project page
   - slug: unique project id used in project.html?id=<slug>
+  - brand / brandLabel: optional brand grouping inside a category
 */
 
 window.PORTFOLIO_PROJECTS = [
@@ -290,92 +291,194 @@ window.PORTFOLIO_PROJECTS = [
     demo: true
   },
   {
-    slug: "open-shelf",
+    slug: "quantum-display-system",
     order: 4,
     category: "display-retail",
-    title: "Open Shelf",
+    brand: "quantum",
+    brandLabel: "Quantum",
+    brandLabelTh: "ควอนตัม",
+    brandOrder: 1,
+    title: "Quantum Display System",
     sector: "Display & Retail",
     sectorTh: "ดิสเพลย์และพื้นที่ขาย",
     year: "2026",
-    cover: "assets/images/projects/display-retail/open-shelf/cover-1200x900.webp",
-    coverAlt: "Modular cobalt retail display on a white background",
+    cover: "assets/images/projects/display-retail/quantum/quantum-display-system/cover-1200x900.webp",
+    coverAlt: "Quantum modular retail display system on a clean white background",
     summary:
-      "A flexible retail fixture that turns product browsing into a clear, light and approachable rhythm.",
+      "A structured display system developed specifically for the Quantum brand and its retail environment.",
     summaryTh:
-      "ระบบดิสเพลย์ที่ยืดหยุ่น เปลี่ยนการเลือกชมสินค้าให้ชัดเจน เบาสบาย และเข้าถึงง่าย",
+      "ระบบดิสเพลย์ที่พัฒนาสำหรับแบรนด์ Quantum โดยเฉพาะ เพื่อให้ภาพลักษณ์และการใช้งานในพื้นที่ขายมีความชัดเจน",
     challenge:
-      "Organise several product stories in a compact footprint without making the overall fixture feel crowded.",
+      "Create a recognisable display language for Quantum while keeping product presentation clear, flexible and easy to expand.",
     solution:
-      "An open frame, varied shelf heights and focused colour moments guide attention while leaving room for the products.",
-    scope: ["Retail concept", "Display design", "Spatial graphics", "Fixture direction"],
-    direction: "Open / Modular / Approachable",
+      "A modular fixture system, controlled visual hierarchy and consistent brand cues keep every Quantum touchpoint connected.",
+    scope: ["Retail concept", "Display design", "Brand application", "Fixture direction"],
+    direction: "Structured / Modular / Quantum",
     gallery: [
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-01-1440x1080.webp",
-        alt: "Open Shelf overview",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-01-1440x1080.webp",
+        alt: "Quantum Display System overview",
         layout: "hero",
         width: 1440,
         height: 1080
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-02-1100x825.webp",
-        alt: "Open Shelf detail view 01",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-02-1100x825.webp",
+        alt: "Quantum Display System detail view 01",
         layout: "half",
         width: 1100,
         height: 825
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-03-1100x825.webp",
-        alt: "Open Shelf detail view 02",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-03-1100x825.webp",
+        alt: "Quantum Display System detail view 02",
         layout: "half",
         width: 1100,
         height: 825
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-04-1400x1100.webp",
-        alt: "Open Shelf detail view 03",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-04-1400x1100.webp",
+        alt: "Quantum Display System detail view 03",
         layout: "half",
         width: 1400,
         height: 1100
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-05-1400x1100.webp",
-        alt: "Open Shelf detail view 04",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-05-1400x1100.webp",
+        alt: "Quantum Display System detail view 04",
         layout: "half",
         width: 1400,
         height: 1100
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-06-1400x1100.webp",
-        alt: "Open Shelf system view",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-06-1400x1100.webp",
+        alt: "Quantum Display System system view",
         layout: "wide",
         width: 1400,
         height: 1100
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-07-1600x900.webp",
-        alt: "Open Shelf wide view 01",
-        layout: "wide",
-        width: 1600,
-        height: 900
-      },
-      {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-08-1600x900.webp",
-        alt: "Open Shelf wide view 02",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-07-1600x900.webp",
+        alt: "Quantum Display System wide view 01",
         layout: "wide",
         width: 1600,
         height: 900
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-09-1400x1100.webp",
-        alt: "Open Shelf detail view 05",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-08-1600x900.webp",
+        alt: "Quantum Display System wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-09-1400x1100.webp",
+        alt: "Quantum Display System detail view 05",
         layout: "half",
         width: 1400,
         height: 1100
       },
       {
-        src: "assets/images/projects/display-retail/open-shelf/gallery-10-1200x1500.webp",
-        alt: "Open Shelf portrait detail",
+        src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-10-1200x1500.webp",
+        alt: "Quantum Display System portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
+      }
+    ],
+    demo: true
+  },
+  {
+    slug: "kioku-display-system",
+    order: 5,
+    category: "display-retail",
+    brand: "kioku",
+    brandLabel: "Kioku",
+    brandLabelTh: "คิโอคุ",
+    brandOrder: 2,
+    title: "Kioku Display System",
+    sector: "Display & Retail",
+    sectorTh: "ดิสเพลย์และพื้นที่ขาย",
+    year: "2026",
+    cover: "assets/images/projects/display-retail/kioku/kioku-display-system/cover-1200x900.webp",
+    coverAlt: "Kioku branded retail display system on a clean white background",
+    summary:
+      "A distinct display direction developed for Kioku, separated clearly from the Quantum retail system.",
+    summaryTh:
+      "แนวทางดิสเพลย์ที่พัฒนาสำหรับแบรนด์ Kioku โดยแยกอัตลักษณ์และชุดภาพออกจากระบบของ Quantum อย่างชัดเจน",
+    challenge:
+      "Build a dedicated retail presentation for Kioku without blending its visual identity with other display brands.",
+    solution:
+      "A separate project structure, brand-specific hierarchy and focused image set keep the Kioku presentation independent and easy to manage.",
+    scope: ["Retail concept", "Display design", "Brand application", "Fixture direction"],
+    direction: "Focused / Distinct / Kioku",
+    gallery: [
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-01-1440x1080.webp",
+        alt: "Kioku Display System overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-02-1100x825.webp",
+        alt: "Kioku Display System detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-03-1100x825.webp",
+        alt: "Kioku Display System detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-04-1400x1100.webp",
+        alt: "Kioku Display System detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-05-1400x1100.webp",
+        alt: "Kioku Display System detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-06-1400x1100.webp",
+        alt: "Kioku Display System system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-07-1600x900.webp",
+        alt: "Kioku Display System wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-08-1600x900.webp",
+        alt: "Kioku Display System wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-09-1400x1100.webp",
+        alt: "Kioku Display System detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-10-1200x1500.webp",
+        alt: "Kioku Display System portrait detail",
         layout: "portrait",
         width: 1200,
         height: 1500
@@ -385,7 +488,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     slug: "make-it-move",
-    order: 5,
+    order: 6,
     category: "campaign",
     title: "Make It Move",
     sector: "Campaign",
@@ -479,7 +582,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     slug: "off-grid-studies",
-    order: 6,
+    order: 7,
     category: "other-creative",
     title: "Off Grid Studies",
     sector: "Other Creative",

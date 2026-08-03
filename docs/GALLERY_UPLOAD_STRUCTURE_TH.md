@@ -5,7 +5,8 @@
 ตัวอย่าง:
 
 ```text
-assets/images/projects/display-retail/open-shelf/
+assets/images/projects/display-retail/quantum/quantum-display-system/
+assets/images/projects/display-retail/kioku/kioku-display-system/
 ├── cover-1200x900.webp
 ├── gallery-01-1440x1080.webp
 ├── gallery-02-1100x825.webp

@@ -9,12 +9,13 @@ A lightweight portfolio for graphic and packaging design, prepared for GitHub Pa
 - Neutral gallery palette using warm white, graphite and restrained grey-green accents
 - Editorial motion: masked image reveals, staggered typography, scroll reveals and quiet page transitions
 - Motion respects `prefers-reduced-motion`
-- Six categories: Advertising, Packaging Design, Product Design, Display & Retail, Campaign and Other Creative
-- Category filter → project → three-image gallery flow
+- Six categories: Advertising, Packaging Design, Product Design, Display, Campaign and Other Creative
+- Category filter → project → ten-image gallery flow
 - Animated filter changes and responsive mobile navigation
 - Responsive desktop, tablet and mobile layouts
 - WebP mockup images and lazy loading
 - Thai upload and code guides in `docs/`
+- Display projects grouped by brand, with separate Quantum and Kioku folders and sections
 - One-file responsive preview tool at `PREVIEW.html`
 
 ## Main structure
@@ -41,7 +42,8 @@ Somchai-Sompiew-Portfolio/
     ├── CODE_OVERVIEW_TH.md
     ├── MOTION_UPDATE_TH.md
     ├── NEUTRAL_GALLERY_UPDATE_TH.md
-    └── UPLOAD_GUIDE_TH.md
+    ├── UPLOAD_GUIDE_TH.md
+    └── DISPLAY_BRAND_STRUCTURE_TH.md
 ```
 
 ## Preview
