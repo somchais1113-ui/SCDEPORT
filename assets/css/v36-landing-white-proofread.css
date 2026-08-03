@@ -1,0 +1,29 @@
+/* v36 landing background and copy-review release */
+
+.landing-page,
+.landing-page .landing {
+  background-color: #ffffff;
+}
+
+.landing-page .landing {
+  background-image: none;
+}
+
+/* Keep the architectural guide lines visible, but quiet on white. */
+.landing-page .landing::before,
+.landing-page .landing::after {
+  background: rgba(27, 28, 26, 0.12);
+}
+
+.landing-page .landing-frame {
+  border-color: rgba(27, 28, 26, 0.15);
+}
+
+.landing-page .frame-corner::before,
+.landing-page .frame-corner::after {
+  background: rgba(27, 28, 26, 0.72);
+}
+
+.landing-page .landing-role > span {
+  background: rgba(255, 255, 255, 0.84);
+}
