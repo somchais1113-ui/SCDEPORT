@@ -63,8 +63,11 @@
           const itemClass = "case-gallery-item case-gallery-item--" + layout;
           const slot = String(index + 1).padStart(2, "0");
 
+          const fetchPriority = index === 0 ? 'fetchpriority="high"' : '';
+          const loadingMode = index < 4 || optional ? 'loading="eager"' : 'loading="lazy"';
+
           return `
-            <figure class="${itemClass}" data-gallery-slot="${slot}" data-gallery-optional="${optional}">
+            <figure class="${itemClass}" data-gallery-slot="${slot}" data-gallery-optional="${optional}" data-gallery-state="loading">
               <button class="case-gallery-trigger" type="button" data-lightbox-trigger data-lightbox-src="${portfolio.escapeHtml(source)}" data-lightbox-alt="${portfolio.escapeHtml(alt)}" aria-label="Preview image ${index + 1} in full view">
                 <img
                   data-gallery-image
@@ -72,7 +75,8 @@
                   alt="${portfolio.escapeHtml(alt)}"
                   width="${imageWidth}"
                   height="${imageHeight}"
-                  ${index === 0 ? 'fetchpriority="high"' : (optional ? 'loading="eager"' : 'loading="lazy"')}
+                  ${fetchPriority}
+                  ${loadingMode}
                   decoding="async"
                 >
               </button>
@@ -122,13 +126,21 @@
   }
 
   view.querySelectorAll("[data-gallery-image]").forEach(function (image) {
+    const figure = image.closest(".case-gallery-item");
+
+    function markLoaded() {
+      if (figure) figure.dataset.galleryState = "loaded";
+    }
+
+    image.addEventListener("load", markLoaded, { once: true });
     image.addEventListener("error", function () {
       removeUnavailableGalleryImage(image);
       refreshLightboxItems();
     }, { once: true });
 
-    if (image.complete && image.naturalWidth === 0) {
-      removeUnavailableGalleryImage(image);
+    if (image.complete) {
+      if (image.naturalWidth > 0) markLoaded();
+      else removeUnavailableGalleryImage(image);
     }
   });
 

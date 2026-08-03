@@ -4861,3 +4861,26 @@ body.lightbox-open {
     letter-spacing: -0.028em;
   }
 }
+
+
+/* v44 — Safari mobile gallery loading stability */
+.case-gallery-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.case-gallery-trigger img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-gallery-item[data-gallery-state="loading"] {
+  border-color: transparent;
+}
+
+.case-gallery-item[data-gallery-state="loaded"] {
+  border-color: rgba(27, 28, 26, 0.08);
+}
