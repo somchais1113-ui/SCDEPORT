@@ -4731,3 +4731,133 @@ body.lightbox-open {
     animation: none;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   v33 typography art direction — more breathing room, calmer hierarchy
+   -------------------------------------------------------------------------- */
+.landing-page .landing-title-wrap h1 {
+  line-height: 0.86;
+  letter-spacing: -0.048em;
+}
+
+.landing-page .landing-title-line.serif {
+  letter-spacing: -0.046em;
+}
+
+.landing-page .landing-role {
+  gap: 10px;
+}
+
+.landing-page .landing-role > span {
+  letter-spacing: 0.015em;
+}
+
+.case-heading h1 {
+  max-width: 12ch;
+  line-height: 0.94;
+  letter-spacing: -0.046em;
+}
+
+.case-summary {
+  line-height: 1.58;
+  letter-spacing: -0.006em;
+}
+
+.approach-title h2 {
+  line-height: 0.98;
+  letter-spacing: -0.047em;
+}
+
+.approach-title .approach-deck,
+.approach-list p {
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.approach-list h3 {
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+}
+
+.pen-preview-heading h2 {
+  line-height: 0.99;
+  letter-spacing: -0.047em;
+}
+
+.pen-preview-intro p,
+.about-copy p,
+.project-meta p,
+.footer-directory p {
+  line-height: 1.68;
+}
+
+.next-project a {
+  line-height: 0.95;
+  letter-spacing: -0.048em;
+}
+
+.home-page .footer-contact-head h2,
+.portfolio-footer .footer-contact-head h2 {
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+}
+
+.page-context__path {
+  letter-spacing: 0.055em;
+}
+
+/* Image copy deterrence — visual layer only, not DRM. */
+.protected-image,
+.protected-image-zone img,
+.project-lightbox img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.image-protection-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 180;
+  max-width: min(320px, calc(100vw - 40px));
+  padding: 11px 15px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  background: rgba(18,19,18,0.92);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.35;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(0.2,0.75,0,1);
+  backdrop-filter: blur(12px);
+}
+
+.image-protection-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 820px) {
+  .landing-page .landing-title-wrap h1 {
+    line-height: 0.89;
+    letter-spacing: -0.04em;
+  }
+
+  .case-heading h1,
+  .approach-title h2,
+  .pen-preview-heading h2 {
+    line-height: 1;
+    letter-spacing: -0.038em;
+  }
+
+  .home-page .footer-contact-head h2,
+  .portfolio-footer .footer-contact-head h2 {
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+  }
+}

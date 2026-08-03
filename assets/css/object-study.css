@@ -1444,3 +1444,37 @@ body.object-study-page[data-language="th"] .study-intro h1 em {
     transition: none !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   v33 object-study typography refinement
+   -------------------------------------------------------------------------- */
+.study-intro h1 {
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.study-intro p,
+.study-info p,
+.pen-parts-heading p,
+.pen-mechanism-copy p {
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.study-info h2 {
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.anatomy-label strong,
+.exploded-sequence article strong,
+.material-card strong {
+  letter-spacing: -0.012em;
+}
+
+.pen-parts-heading h2,
+.pen-mechanism-copy h2 {
+  line-height: 1;
+  letter-spacing: -0.038em;
+}

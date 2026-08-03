@@ -53,6 +53,8 @@
           const requestedLayout = typeof image === "string" ? "" : image.layout;
           const layout = allowedLayouts.has(requestedLayout) ? requestedLayout : (index === 0 ? "hero" : "half");
           const optional = typeof image === "string" ? false : Boolean(image.optional);
+          const imageWidth = typeof image === "string" ? 1600 : Number(image.width) || 1600;
+          const imageHeight = typeof image === "string" ? 1000 : Number(image.height) || 1000;
           const itemClass = "case-gallery-item case-gallery-item--" + layout;
           const slot = String(index + 1).padStart(2, "0");
 
@@ -63,8 +65,8 @@
                   data-gallery-image
                   src="${portfolio.escapeHtml(source)}"
                   alt="${portfolio.escapeHtml(alt)}"
-                  width="1600"
-                  height="1000"
+                  width="${imageWidth}"
+                  height="${imageHeight}"
                   ${index === 0 ? 'fetchpriority="high"' : (optional ? 'loading="eager"' : 'loading="lazy"')}
                   decoding="async"
                 >

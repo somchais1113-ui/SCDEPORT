@@ -1959,3 +1959,36 @@ body.home-page[data-language="th"] .project-card-summary {
     justify-self: start;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   v33 home typography refinement
+   -------------------------------------------------------------------------- */
+.home-page .hero-name-title {
+  line-height: 0.93;
+  letter-spacing: -0.026em;
+}
+
+.home-page .hero-name-statement {
+  line-height: 1.5;
+  letter-spacing: -0.004em;
+}
+
+.home-page .about-section--refined h2 {
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.home-page .about-lead {
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+}
+
+.home-page .about-copy p {
+  line-height: 1.7;
+}
+
+.profile-capabilities article strong {
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
