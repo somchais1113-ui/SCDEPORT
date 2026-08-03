@@ -77,10 +77,13 @@
     const sections = groups.map(function (group, index) {
       const projectWord = group.projects.length === 1 ? "project" : "projects";
       return `
-        <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-label="${portfolio.escapeHtml(group.label)}">
-          <header class="display-brand-group__header display-brand-group__header--compact">
+        <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-labelledby="brand-title-${portfolio.escapeHtml(group.id)}">
+          <header class="display-brand-group__header">
             <p>${String(index + 1).padStart(2, "0")} / Brand group</p>
-            <p>${String(group.projects.length).padStart(2, "0")} ${projectWord}. Dedicated display work for ${portfolio.escapeHtml(group.label)}.</p>
+            <div>
+              <h2 id="brand-title-${portfolio.escapeHtml(group.id)}">${portfolio.escapeHtml(group.label)}</h2>
+              <p>${String(group.projects.length).padStart(2, "0")} ${projectWord}. A dedicated image set and project structure for the ${portfolio.escapeHtml(group.label)} brand.</p>
+            </div>
           </header>
           <div class="category-page-projects category-page-projects--brand">
             ${group.projects.map(card).join("")}

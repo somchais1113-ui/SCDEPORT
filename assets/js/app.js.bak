@@ -113,10 +113,13 @@
       .sort(function (a, b) { return a.order - b.order; })
       .map(function (group, groupIndex) {
         return `
-          <section class="project-brand-group" aria-label="${portfolio.escapeHtml(group.label)}">
+          <section class="project-brand-group" aria-labelledby="home-brand-${portfolio.escapeHtml(group.id)}">
             <header class="project-brand-group__header">
               <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
-              <a class="icon-link" href="category.html?category=display-retail#brand-${encodeURIComponent(group.id)}">${translated("View Display category", "ดูหมวด Display")} ${northeastIcon()}</a>
+              <div>
+                <h3 id="home-brand-${portfolio.escapeHtml(group.id)}">${portfolio.escapeHtml(group.label)}</h3>
+                <a class="icon-link" href="category.html?category=display-retail#brand-${encodeURIComponent(group.id)}">${translated("View Display category", "ดูหมวด Display")} ${northeastIcon()}</a>
+              </div>
             </header>
             <div class="project-brand-grid">
               ${group.projects.map(projectMarkup).join("")}
