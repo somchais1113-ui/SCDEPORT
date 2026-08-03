@@ -147,11 +147,11 @@
       grouped.get(key).projects.push(project);
     });
 
-    return Array.from(grouped.values())
+    const sections = Array.from(grouped.values())
       .sort(function (a, b) { return a.order - b.order; })
       .map(function (group, groupIndex) {
         return `
-          <section class="project-brand-group" aria-label="${portfolio.escapeHtml(group.label)}">
+          <section class="project-brand-group project-brand-group--display" aria-label="${portfolio.escapeHtml(group.label)}">
             <header class="project-brand-group__header">
               <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
             </header>
@@ -161,6 +161,8 @@
           </section>`;
       })
       .join("");
+
+    return `<div class="display-brand-groups display-brand-groups--home">${sections}</div>`;
   }
 
   function renderProjects(categoryId) {
