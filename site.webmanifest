@@ -3,6 +3,6 @@
   "short_name": "Somchai Portfolio",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f7f7f4",
-  "theme_color": "#f7f7f4"
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }
