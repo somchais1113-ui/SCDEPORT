@@ -30,15 +30,73 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/advertising/urban-signals/gallery-01-1440x1080.webp",
-        alt: "Urban Signals advertising system overview"
+        alt: "Urban Signals overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/advertising/urban-signals/gallery-02-1100x825.webp",
-        alt: "Close view of the Urban Signals poster and billboard composition"
+        alt: "Urban Signals detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/advertising/urban-signals/gallery-03-1100x825.webp",
-        alt: "Close view of the Urban Signals digital advertising format"
+        alt: "Urban Signals detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-04-1400x1100.webp",
+        alt: "Urban Signals detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-05-1400x1100.webp",
+        alt: "Urban Signals detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-06-1400x1100.webp",
+        alt: "Urban Signals system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-07-1600x900.webp",
+        alt: "Urban Signals wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-08-1600x900.webp",
+        alt: "Urban Signals wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-09-1400x1100.webp",
+        alt: "Urban Signals detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/advertising/urban-signals/gallery-10-1200x1500.webp",
+        alt: "Urban Signals portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
@@ -66,15 +124,73 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/packaging-design/good-daily/gallery-01-1440x1080.webp",
-        alt: "Good Daily packaging family overview"
+        alt: "Good Daily overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/packaging-design/good-daily/gallery-02-1100x825.webp",
-        alt: "Close view of Good Daily cartons and containers"
+        alt: "Good Daily detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/packaging-design/good-daily/gallery-03-1100x825.webp",
-        alt: "Good Daily packaging range and colour-system detail"
+        alt: "Good Daily detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-04-1400x1100.webp",
+        alt: "Good Daily detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-05-1400x1100.webp",
+        alt: "Good Daily detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-06-1400x1100.webp",
+        alt: "Good Daily system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-07-1600x900.webp",
+        alt: "Good Daily wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-08-1600x900.webp",
+        alt: "Good Daily wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-09-1400x1100.webp",
+        alt: "Good Daily detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/packaging-design/good-daily/gallery-10-1200x1500.webp",
+        alt: "Good Daily portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
@@ -102,15 +218,73 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/product-design/everyday-forms/gallery-01-1440x1080.webp",
-        alt: "Everyday Forms product family overview"
+        alt: "Everyday Forms overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/product-design/everyday-forms/gallery-02-1100x825.webp",
-        alt: "Close view of Everyday Forms materials and product proportions"
+        alt: "Everyday Forms detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/product-design/everyday-forms/gallery-03-1100x825.webp",
-        alt: "Everyday Forms writing and lifestyle object detail"
+        alt: "Everyday Forms detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-04-1400x1100.webp",
+        alt: "Everyday Forms detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-05-1400x1100.webp",
+        alt: "Everyday Forms detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-06-1400x1100.webp",
+        alt: "Everyday Forms system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-07-1600x900.webp",
+        alt: "Everyday Forms wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-08-1600x900.webp",
+        alt: "Everyday Forms wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-09-1400x1100.webp",
+        alt: "Everyday Forms detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/product-design/everyday-forms/gallery-10-1200x1500.webp",
+        alt: "Everyday Forms portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
@@ -138,15 +312,73 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/display-retail/open-shelf/gallery-01-1440x1080.webp",
-        alt: "Open Shelf modular retail display overview"
+        alt: "Open Shelf overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/display-retail/open-shelf/gallery-02-1100x825.webp",
-        alt: "Close view of the Open Shelf fixture and shelf levels"
+        alt: "Open Shelf detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/display-retail/open-shelf/gallery-03-1100x825.webp",
-        alt: "Open Shelf modular construction and colour detail"
+        alt: "Open Shelf detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-04-1400x1100.webp",
+        alt: "Open Shelf detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-05-1400x1100.webp",
+        alt: "Open Shelf detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-06-1400x1100.webp",
+        alt: "Open Shelf system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-07-1600x900.webp",
+        alt: "Open Shelf wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-08-1600x900.webp",
+        alt: "Open Shelf wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-09-1400x1100.webp",
+        alt: "Open Shelf detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/display-retail/open-shelf/gallery-10-1200x1500.webp",
+        alt: "Open Shelf portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
@@ -174,15 +406,73 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/campaign/make-it-move/gallery-01-1440x1080.webp",
-        alt: "Make It Move cross-channel campaign overview"
+        alt: "Make It Move overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/campaign/make-it-move/gallery-02-1100x825.webp",
-        alt: "Close view of Make It Move print and event assets"
+        alt: "Make It Move detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/campaign/make-it-move/gallery-03-1100x825.webp",
-        alt: "Make It Move digital campaign and graphic-system detail"
+        alt: "Make It Move detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-04-1400x1100.webp",
+        alt: "Make It Move detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-05-1400x1100.webp",
+        alt: "Make It Move detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-06-1400x1100.webp",
+        alt: "Make It Move system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-07-1600x900.webp",
+        alt: "Make It Move wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-08-1600x900.webp",
+        alt: "Make It Move wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-09-1400x1100.webp",
+        alt: "Make It Move detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/campaign/make-it-move/gallery-10-1200x1500.webp",
+        alt: "Make It Move portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
@@ -210,74 +500,79 @@ window.PORTFOLIO_PROJECTS = [
     gallery: [
       {
         src: "assets/images/projects/other-creative/off-grid-studies/gallery-01-1440x1080.webp",
-        alt: "Off Grid Studies editorial and material experiment overview"
+        alt: "Off Grid Studies overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
       },
       {
         src: "assets/images/projects/other-creative/off-grid-studies/gallery-02-1100x825.webp",
-        alt: "Close view of Off Grid Studies material and editorial samples"
+        alt: "Off Grid Studies detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
       },
       {
         src: "assets/images/projects/other-creative/off-grid-studies/gallery-03-1100x825.webp",
-        alt: "Off Grid Studies paper-form and colour exploration detail"
+        alt: "Off Grid Studies detail view 02",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-04-1400x1100.webp",
+        alt: "Off Grid Studies detail view 03",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-05-1400x1100.webp",
+        alt: "Off Grid Studies detail view 04",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-06-1400x1100.webp",
+        alt: "Off Grid Studies system view",
+        layout: "wide",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-07-1600x900.webp",
+        alt: "Off Grid Studies wide view 01",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-08-1600x900.webp",
+        alt: "Off Grid Studies wide view 02",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-09-1400x1100.webp",
+        alt: "Off Grid Studies detail view 05",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/other-creative/off-grid-studies/gallery-10-1200x1500.webp",
+        alt: "Off Grid Studies portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
       }
     ],
     demo: true
   }
 ];
 
-/*
-  FLEXIBLE GALLERY SYSTEM
-  Every project is prepared for up to 10 gallery images.
-  Upload files as gallery-01-1440x1080.webp ... gallery-10-1200x1500.webp in each project folder.
-  Missing optional files are ignored automatically on the project page.
-*/
-(function prepareFlexibleGalleries() {
-  const layoutSequence = [
-    "hero",
-    "half",
-    "half",
-    "medium",
-    "third",
-    "third",
-    "third",
-    "wide",
-    "half",
-    "half"
-  ];
 
-  window.PORTFOLIO_PROJECTS.forEach(function (project) {
-    const existingGallery = Array.isArray(project.gallery) ? project.gallery : [];
-    const baseFolder = String(project.cover || "").replace(/\/cover\.[^/.]+$/, "");
-    const totalSlots = Math.max(10, existingGallery.length);
-
-    project.gallery = Array.from({ length: totalSlots }, function (_, index) {
-      const existingImage = existingGallery[index];
-      const number = String(index + 1).padStart(2, "0");
-      const fallbackLayout = layoutSequence[index] || "half";
-
-      if (existingImage) {
-        if (typeof existingImage === "string") {
-          return {
-            src: existingImage,
-            alt: project.title + " project image " + number,
-            layout: fallbackLayout,
-            optional: false
-          };
-        }
-
-        return Object.assign({}, existingImage, {
-          layout: existingImage.layout || fallbackLayout,
-          optional: Boolean(existingImage.optional)
-        });
-      }
-
-      return {
-        src: baseFolder + "/gallery-" + number + ".webp",
-        alt: project.title + " project image " + number,
-        layout: fallbackLayout,
-        optional: true
-      };
-    });
-  });
-})();
+/* Each project uses ten explicitly named gallery files. */
 
