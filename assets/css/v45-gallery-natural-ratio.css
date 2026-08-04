@@ -88,3 +88,133 @@
   }
 }
    -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   v48 — Balance side-by-side desktop gallery items
+   --------------------------------------------------------------------------
+   Goal:
+   - make paired left/right images read more like the other project groups
+   - allow a portrait card to sit beside a landscape card with matching height
+   - keep mobile behaviour untouched
+   -------------------------------------------------------------------------- */
+@media (min-width: 721px) {
+  .case-cover {
+    grid-auto-flow: row dense;
+  }
+
+  .case-gallery-item--half,
+  .case-gallery-item--third,
+  .case-gallery-item--medium,
+  .case-gallery-item--portrait,
+  .case-gallery-item--detail {
+    align-self: stretch;
+  }
+
+  .case-gallery-item--half .case-gallery-trigger,
+  .case-gallery-item--third .case-gallery-trigger,
+  .case-gallery-item--medium .case-gallery-trigger,
+  .case-gallery-item--portrait .case-gallery-trigger,
+  .case-gallery-item--detail .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .case-gallery-item--half .case-gallery-trigger img,
+  .case-gallery-item--third .case-gallery-trigger img,
+  .case-gallery-item--medium .case-gallery-trigger img,
+  .case-gallery-item--portrait .case-gallery-trigger img,
+  .case-gallery-item--detail .case-gallery-trigger img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   v51 — Editorial and Character project-specific gallery correction
+   -------------------------------------------------------------------------- */
+@media (min-width: 721px) {
+  /* Editorial Design: paired images finish on the same baseline. */
+  .case-cover--margins-and-matter .case-gallery-item--half {
+    align-self: stretch;
+  }
+
+  .case-cover--margins-and-matter .case-gallery-item--half .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .case-cover--margins-and-matter .case-gallery-item--half .case-gallery-trigger img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*
+     Character Design: the two source ratios are 1400:1100 and 1200:1500.
+     Matching the grid-column ratio to those source ratios makes both rendered
+     images resolve to exactly the same natural height without stretching,
+     cropping, or forcing a fixed pixel height.
+  */
+  .case-cover--pocket-parade {
+    grid-template-columns: minmax(0, 1.272727fr) minmax(0, 0.8fr);
+    column-gap: clamp(30px, 2.8vw, 46px);
+    row-gap: clamp(24px, 2vw, 34px);
+    align-items: start;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--hero,
+  .case-cover--pocket-parade .case-gallery-item--wide {
+    grid-column: 1 / -1;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--half {
+    grid-column: 1;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--portrait {
+    grid-column: 2;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--half,
+  .case-cover--pocket-parade .case-gallery-item--portrait {
+    aspect-ratio: auto;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    align-self: start;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--half .case-gallery-trigger,
+  .case-cover--pocket-parade .case-gallery-item--portrait .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--half .case-gallery-trigger img,
+  .case-cover--pocket-parade .case-gallery-item--portrait .case-gallery-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-cover--pocket-parade {
+    grid-template-columns: 1fr;
+  }
+
+  .case-cover--pocket-parade .case-gallery-item--hero,
+  .case-cover--pocket-parade .case-gallery-item--wide,
+  .case-cover--pocket-parade .case-gallery-item--half,
+  .case-cover--pocket-parade .case-gallery-item--portrait {
+    grid-column: auto;
+  }
+}

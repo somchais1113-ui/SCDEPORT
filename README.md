@@ -9,7 +9,9 @@ A lightweight portfolio for graphic and packaging design, prepared for GitHub Pa
 - Neutral gallery palette using warm white, graphite and restrained grey-green accents
 - Editorial motion: masked image reveals, staggered typography, scroll reveals and quiet page transitions
 - Motion respects `prefers-reduced-motion`
-- Six categories: Advertising, Packaging Design, Product Design, Display, Campaign and Other Creative
+- Eight categories: Advertising, Packaging Design, Product Design, Display, Campaign, Editorial Design, Character Design and Other Creative
+- Editorial Design includes the “Margins & Matter” sample project with a cover and five gallery views
+- Character Design includes the “Pocket Parade” sample project with a cover and four gallery views
 - Category filter → project → ten-image gallery flow
 - Animated filter changes and responsive mobile navigation
 - Responsive desktop, tablet and mobile layouts

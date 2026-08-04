@@ -674,8 +674,128 @@ window.PORTFOLIO_PROJECTS = [
     ],
     demo: true
   }
+  ,
+  {
+    slug: "margins-and-matter",
+    order: 8,
+    category: "editorial-design",
+    title: "Margins & Matter",
+    sector: "Editorial Design",
+    sectorTh: "ออกแบบสื่อบรรณาธิการ",
+    year: "2026",
+    cover: "assets/images/projects/editorial-design/margins-and-matter/cover-1200x900.webp",
+    coverAlt: "Editorial design presentation with magazine cover and spreads on a clean white background",
+    summary:
+      "A restrained editorial identity built around architectural photography, quiet typography and clear spatial rhythm.",
+    summaryTh:
+      "งานออกแบบสื่อบรรณาธิการที่วางโครงด้วยภาพสถาปัตยกรรม จังหวะของพื้นที่ว่าง และระบบตัวอักษรที่นิ่งแต่ชัดเจน",
+    challenge:
+      "Create a printed editorial system that feels premium and thoughtful without becoming visually heavy.",
+    solution:
+      "A calm palette, modular page architecture and carefully paced image-to-type relationships shape a consistent editorial experience.",
+    scope: ["Editorial design", "Art direction", "Publication system", "Print mockup"],
+    direction: "Quiet / Structured / Refined",
+    gallery: [
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-01-1440x1080.webp",
+        alt: "Margins & Matter overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
+      },
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-02-1100x825.webp",
+        alt: "Margins & Matter detail view 01",
+        layout: "half",
+        width: 1100,
+        height: 825
+      },
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-04-1400x1100.webp",
+        alt: "Margins & Matter detail view 02",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-07-1600x900.webp",
+        alt: "Margins & Matter studio wall presentation",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      },
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-10-1200x1500.webp",
+        alt: "Margins & Matter portrait detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
+      },
+      {
+        src: "assets/images/projects/editorial-design/margins-and-matter/gallery-11-1200x900.webp",
+        alt: "Margins & Matter print mockup detail",
+        layout: "half",
+        width: 1200,
+        height: 900
+      }
+    ],
+    demo: true
+  },
+  {
+    slug: "pocket-parade",
+    order: 9,
+    category: "character-design",
+    title: "Pocket Parade",
+    sector: "Character Design",
+    sectorTh: "ออกแบบคาแรกเตอร์",
+    year: "2026",
+    cover: "assets/images/projects/character-design/pocket-parade/cover-1200x900.webp",
+    coverAlt: "Character design lineup with a family of original illustrated characters",
+    summary:
+      "An original character family developed through lineup, expressions, world-building and prop studies.",
+    summaryTh:
+      "ชุดคาแรกเตอร์ต้นฉบับที่พัฒนาตั้งแต่ไลน์อัปตัวละคร อารมณ์ สีประจำโลก และรายละเอียดของพร็อปประกอบ",
+    challenge:
+      "Build a distinct cast with individual personalities while keeping the entire world coherent and approachable.",
+    solution:
+      "Shared colour logic, rounded forms and role-specific props create a memorable ensemble with strong visual harmony.",
+    scope: ["Character design", "World building", "Expression study", "Visual development"],
+    direction: "Warm / Playful / Cohesive",
+    gallery: [
+      {
+        src: "assets/images/projects/character-design/pocket-parade/gallery-01-1440x1080.webp",
+        alt: "Pocket Parade overview",
+        layout: "hero",
+        width: 1440,
+        height: 1080
+      },
+      {
+        src: "assets/images/projects/character-design/pocket-parade/gallery-04-1400x1100.webp",
+        alt: "Pocket Parade pose studies",
+        layout: "half",
+        width: 1400,
+        height: 1100
+      },
+      {
+        src: "assets/images/projects/character-design/pocket-parade/gallery-10-1200x1500.webp",
+        alt: "Pocket Parade poster detail",
+        layout: "portrait",
+        width: 1200,
+        height: 1500
+      },
+      {
+        src: "assets/images/projects/character-design/pocket-parade/gallery-07-1600x900.webp",
+        alt: "Pocket Parade world building board",
+        layout: "wide",
+        width: 1600,
+        height: 900
+      }
+    ],
+    demo: true
+  }
+
 ];
 
 
-/* Each project uses ten explicitly named gallery files. */
+/* Projects use explicitly named gallery files for the homepage and project page. */
 

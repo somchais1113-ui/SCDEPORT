@@ -60,8 +60,8 @@
           const optional = typeof image === "string" ? false : Boolean(image.optional);
           const imageWidth = typeof image === "string" ? 1600 : Number(image.width) || 1600;
           const imageHeight = typeof image === "string" ? 1000 : Number(image.height) || 1000;
-          const itemClass = "case-gallery-item case-gallery-item--" + layout;
           const slot = String(index + 1).padStart(2, "0");
+          const itemClass = "case-gallery-item case-gallery-item--" + layout + " case-gallery-item--slot-" + slot;
 
           const fetchPriority = index === 0 ? 'fetchpriority="high"' : '';
           const loadingMode = index < 4 || optional ? 'loading="eager"' : 'loading="lazy"';
@@ -94,7 +94,7 @@
       <p class="case-summary">${portfolio.escapeHtml(project.summary)}</p>
     </div>
 
-    <div class="case-cover">${gallery}</div>
+    <div class="case-cover case-cover--${portfolio.escapeHtml(project.slug)}">${gallery}</div>
 
     <div class="case-information">
       <div>
