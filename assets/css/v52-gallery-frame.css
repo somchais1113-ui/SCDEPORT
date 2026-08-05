@@ -1,0 +1,134 @@
+/* ==========================================================================
+   v52 — Project gallery: frame follows the real image ratio (Desktop + Tablet)
+   --------------------------------------------------------------------------
+   ปัญหาที่แก้ (Bugs)
+   1) ภาพทับกัน (overlap)
+      - .case-gallery-item--half ถูก v48 สั่ง align-self: stretch
+        ขณะที่ main.css ยังบังคับ aspect-ratio: 4/3 อยู่
+      - เมื่ออยู่แถวเดียวกับ --portrait (4/5) ความสูงแถว = 651px
+        ตัว --half จึงถูกยืดสูง 651px แล้ว aspect-ratio คำนวณความกว้างกลับ
+        เป็น 651 x 4/3 = 868px ล้นคอลัมน์ของตัวเอง (629px) ไปทับการ์ดข้าง ๆ
+
+   2) ขอบขาวสองข้าง (pillarbox)
+      - กรอบถูกล็อก aspect-ratio ตายตัว (hero 16/9, wide 2/1, half 4/3)
+        แต่ไฟล์ภาพจริงคือ 4:3 (1.333) และ 1400x1100 (1.273)
+      - เมื่อ object-fit: contain ภาพจึงถูกใส่กรอบ เหลือแถบขาวซ้าย-ขวา
+        hero ~144px/ข้าง, wide ~196px/ข้าง
+
+   3) บางภาพไม่มีขอบขาวแต่ถูกครอบตัด
+      - v48 ตั้ง object-fit: cover เฉพาะ half/third/medium/portrait/detail
+        ทำให้ระบบไม่สอดคล้องกันทั้งหน้า
+
+   วิธีแก้ (Approach: Justified Rows)
+   - เปลี่ยน .case-cover จาก CSS Grid เป็น Flexbox แบบ "justified row"
+   - แต่ละกรอบใช้ flex-grow เท่ากับ "สัดส่วนภาพจริง" (--gallery-ratio)
+     โดย flex-basis: 0
+     => ความกว้างของทุกชิ้นในแถวจะแปรผันตามสัดส่วนภาพพอดี
+     => ทุกชิ้นในแถวเดียวกันได้ "ความสูงเท่ากันอัตโนมัติ"
+     => ภาพเต็มกรอบพอดีทุกใบ ไม่มีแถบขาว ไม่มีการครอบตัด ไม่มีการทับกัน
+   - การขึ้นแถวใหม่ควบคุมด้วย .case-gallery-rowbreak ที่แทรกโดย
+     assets/js/v52-gallery-frame.js
+
+   หมายเหตุ: โหมดมือถือ (<= 720px) ยังใช้ตรรกะเดิมของ v45 ซึ่งทำงานถูกต้องอยู่แล้ว
+   ========================================================================== */
+
+@media (min-width: 721px) {
+  .case-cover {
+    /* เพดานความสูงของภาพที่กินเต็มแถว (hero / wide / medium)
+       ค่าเริ่มต้น = ไม่จำกัด เพื่อให้ภาพใหญ่ "เต็มความกว้าง" ตามที่ต้องการ
+       (ความกว้างสูงสุดของแกลเลอรีถูกจำกัดที่ 1280px อยู่แล้ว
+        ภาพ 4:3 จึงสูงไม่เกิน 960px)
+
+       หากต้องการให้ภาพใหญ่ไม่สูงเกินหน้าจอ (แลกกับการมีขอบว่างซ้าย-ขวา)
+       ให้เปลี่ยนเป็น: min(88svh, 940px) */
+    --case-frame-max-height: 4000px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: clamp(16px, 1.8vw, 22px);
+  }
+
+  /* กรอบภาพ: ความกว้างแปรผันตามสัดส่วนภาพจริง, ยกเลิกการล็อกสัดส่วนแบบเดิม */
+  .case-cover > .case-gallery-item {
+    flex: var(--gallery-ratio, 1.3333) 1 0;
+    min-width: 0;      /* จำเป็น: กัน flex-basis:0 ถูก min-content ของ <img> เบียด */
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto; /* ยกเลิก 16/9, 2/1, 4/3, 4/5 ที่เป็นต้นเหตุแถบขาว */
+    align-self: flex-start; /* ยกเลิก stretch จาก v48 ที่ทำให้ภาพล้นคอลัมน์ */
+  }
+
+  /* ภาพที่กินเต็มแถว: จำกัดความสูงสูงสุด แล้วจัดกึ่งกลาง
+     (กรอบหดตามภาพ ไม่ใช่ภาพหดในกรอบ จึงไม่เกิดแถบขาวภายในการ์ด) */
+  .case-cover > .case-gallery-item--hero,
+  .case-cover > .case-gallery-item--wide,
+  .case-cover > .case-gallery-item--medium {
+    max-width: min(
+      100%,
+      calc(var(--gallery-ratio, 1.3333) * var(--case-frame-max-height))
+    );
+    margin-inline: auto; /* auto margin ใน flex = จัดกึ่งกลาง */
+  }
+
+  /* ตัวคั่นแถว: บังคับ flex ขึ้นบรรทัดใหม่ โดยไม่กินความสูง */
+  .case-cover > .case-gallery-rowbreak {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  /* ปุ่ม/ลิงก์เปิด lightbox: ความสูงตามภาพ ไม่ใช่ 100% ของกรอบคงที่ */
+  .case-cover .case-gallery-item > a,
+  .case-cover .case-gallery-item .case-gallery-trigger {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+  }
+
+  /* รูปภาพ: กว้างเต็มกรอบ สูงตามสัดส่วนไฟล์จริง
+     specificity (0,4,0) เพื่อชนะกฎ object-fit: cover ของ v48 */
+  .case-cover .case-gallery-item > a img,
+  .case-cover .case-gallery-item .case-gallery-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain; /* กรอบพอดีภาพแล้ว ค่านี้จึงไม่มีผลต่อการตัดภาพ */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Fallback: หาก JavaScript ไม่ทำงาน (--gallery-ratio ไม่ถูกเซ็ต)
+   ให้ทุกชิ้นกว้างเท่ากันแทน ยังคงอ่านได้และไม่ทับกัน
+   -------------------------------------------------------------------------- */
+@media (min-width: 721px) {
+  .case-cover:not([data-gallery-layout="justified"]) > .case-gallery-item {
+    flex: 1 1 calc(50% - 22px);
+  }
+
+  .case-cover:not([data-gallery-layout="justified"]) > .case-gallery-item--hero,
+  .case-cover:not([data-gallery-layout="justified"]) > .case-gallery-item--wide,
+  .case-cover:not([data-gallery-layout="justified"]) > .case-gallery-item--medium {
+    flex-basis: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   มือถือ: คอลัมน์เดียว ความสูงตามสัดส่วนภาพจริง (คงพฤติกรรมเดิมของ v45)
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .case-cover {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .case-cover > .case-gallery-rowbreak {
+    display: none;
+  }
+}
