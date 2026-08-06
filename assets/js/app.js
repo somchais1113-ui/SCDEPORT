@@ -86,6 +86,13 @@
               decoding="async"
             >
             <span class="view-pill icon-link">${translated("View case", "ดูโปรเจกต์")} ${northeastIcon()}</span>
+            <span class="project-hover-overlay" aria-hidden="true">
+              <span class="project-hover-copy">
+                <span class="project-hover-title">${portfolio.escapeHtml(project.title)}</span>
+                <span class="project-hover-meta">${portfolio.escapeHtml(sectorLabel)} / ${portfolio.escapeHtml(project.year)}</span>
+                <span class="project-hover-arrow">${northeastIcon()}</span>
+              </span>
+            </span>
           </div>
           <div class="project-meta">
             <div>
