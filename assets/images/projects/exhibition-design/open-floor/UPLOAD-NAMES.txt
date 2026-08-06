@@ -1,0 +1,21 @@
+Exhibition Design / Open Floor
+Project folder: assets/images/projects/exhibition-design/open-floor/
+
+ไฟล์ทั้งหมดในโฟลเดอร์นี้เป็นภาพ Placeholder
+ให้แทนที่ด้วยผลงานจริง โดยใช้ "ชื่อไฟล์เดิมทุกตัวอักษร" ไม่ต้องแก้โค้ด
+
+cover-1200x900.webp
+gallery-01-1440x1080.webp
+gallery-02-1100x825.webp
+gallery-03-1100x825.webp
+gallery-04-1400x1100.webp
+gallery-05-1400x1100.webp
+gallery-06-1400x1100.webp
+gallery-07-1600x900.webp
+gallery-08-1600x900.webp
+gallery-09-1400x1100.webp
+gallery-10-1200x1500.webp
+
+หมายเหตุ
+- ใช้ไฟล์ WebP ขนาดไม่เกิน 300 KB ต่อภาพ
+- หากมีภาพไม่ครบ ให้ลบบรรทัดของภาพนั้นออกจาก gallery ใน data/projects.js

@@ -28,8 +28,8 @@ Somchai-Sompiew-Portfolio/
 ├── project.html                    # Reusable project detail page
 ├── 404.html
 ├── data/
-│   ├── categories.js               # Category ids, labels and folder names
-│   └── projects.js                 # All project content and image paths
+│   ├── categories.js               # Category ids, labels and folder names (10 categories)
+│   └── projects.js                 # All project content, Thai copy and image paths
 ├── assets/
 │   ├── css/
 │   │   └── main.css                # Layout, neutral palette and animation styles
@@ -37,7 +37,8 @@ Somchai-Sompiew-Portfolio/
 │   │   ├── shared.js               # Shared data access, escaping and metadata
 │   │   ├── motion.js               # Intro, scroll reveal and page transitions
 │   │   ├── app.js                  # Filters, cards, URL state and mobile menu
-│   │   └── project.js              # Project page and gallery renderer
+│   │   ├── category.js             # Category page renderer (TH / EN aware)
+│   │   └── project.js              # Project page and gallery renderer (TH / EN aware)
 │   └── images/
 │       ├── hero/
 │       │   └── writing-culture.webp
@@ -66,6 +67,7 @@ Somchai-Sompiew-Portfolio/
 | Shared content helpers and dynamic metadata | `assets/js/shared.js` |
 | Project-grid behaviour and category filtering | `assets/js/app.js` |
 | Project-detail and gallery rendering | `assets/js/project.js` |
+| Landing hero type fit (mobile / tablet / desktop) | `assets/css/v53-landing-type-fit.css` |
 | Image files | `assets/images/projects/<category>/<project>/` or `assets/images/projects/display-retail/<brand>/<project>/` |
 
 ## Preview the code
@@ -88,3 +90,30 @@ Then open:
 ```text
 http://localhost:8080/PREVIEW.html
 ```
+
+
+## Language (TH / EN)
+
+The toggle lives in the page header and is wired up by `setupLanguageToggle()`
+in `assets/js/motion.js`. A page only gets a working toggle when it contains
+buttons marked `data-language="th"` and `data-language="en"`.
+
+Static text is translated through `data-i18n-en` / `data-i18n-th` attributes.
+Content rendered by JavaScript listens for the `portfolio:languagechange`
+event and re-renders itself: `app.js` (home grid), `category.js` (category
+page) and `project.js` (project detail and gallery).
+
+Project copy carries a Thai twin for every visible field:
+
+| English field | Thai field |
+| --- | --- |
+| `sector` | `sectorTh` |
+| `summary` | `summaryTh` |
+| `challenge` | `challengeTh` |
+| `solution` | `solutionTh` |
+| `scope` | `scopeTh` |
+| `direction` | `directionTh` |
+| `brandLabel` | `brandLabelTh` |
+
+If a Thai field is missing the site falls back to the English one, so a new
+project never breaks the toggle.

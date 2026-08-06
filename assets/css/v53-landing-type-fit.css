@@ -1,0 +1,128 @@
+/* ==========================================================================
+   v53 — Landing hero typography fit (mobile / tablet / desktop)
+   --------------------------------------------------------------------------
+   ปัญหาที่แก้
+   หัวเรื่อง SOMCHAI / SOMPIEW ใช้ฟอนต์ SpecialGothicExpandedOne ซึ่งกว้างมาก
+   วัดจากไฟล์ฟอนต์จริง (unitsPerEm 1000) ได้ความกว้างของคำดังนี้
+
+     SOMCHAI = 5.937 em   (หัก letter-spacing -0.014em แล้วเหลือ 5.839 em)
+     SOMPIEW = 6.115 em   (หัก letter-spacing -0.004em แล้วเหลือ 6.087 em)
+
+   เมื่อนำไปเทียบกับความกว้างคอลัมน์ที่ .landing-stage จัดสรรให้จริง
+   พบว่าข้อความล้นกรอบเกือบทุกช่วงความกว้างจอ
+
+     390 px   ล้น  ~17 px
+     768 px   ล้น  ~96 px
+     900 px   ล้น ~110 px      <-- ช่วง tablet เสียหายหนักที่สุด
+     1024 px  ล้น  ~21 px
+     1440 px  ล้น  ~30 px
+
+   เนื่องจาก .landing-title-line ตั้ง overflow: hidden ไว้ (ใช้กับอนิเมชัน
+   เลื่อนตัวอักษรขึ้น) ส่วนที่ล้นจึงถูกตัด และไปเบียดคอลัมน์ภาพด้านขวา
+
+   วิธีแก้
+   1) เพิ่มสัดส่วนคอลัมน์ซ้าย (ตัวหนังสือ) ให้กว้างขึ้น
+   2) ผูกขนาดตัวอักษรกับ "ความกว้างคอลัมน์จริง" ด้วย Container Query (cqw)
+      แทนการอิงความกว้างจอ (vw) เพียงอย่างเดียว
+        - เพดาน 15.2cqw คำนวณจาก 96cqw / 6.174em (บรรทัด SOMPIEW ซึ่งกว้างสุด)
+          เผื่อ safety margin ไว้ประมาณ 2%
+        - ใช้ min() คู่กับ clamp() เดิม ขนาดจึงไม่เกินดีไซน์ต้นทาง
+   3) เปลี่ยนระยะเยื้อง (indent) ของบรรทัด SOMPIEW และแถบสาขางาน
+      ให้อิงคอลัมน์เดียวกัน (4cqw) เพื่อให้การคำนวณข้างต้นเป็นจริงเสมอ
+
+   หมายเหตุความเข้ากันได้
+   Container query รองรับใน Chrome 105+, Safari 16+, Firefox 110+
+   โค้ดส่วน cqw ถูกครอบด้วย @supports หากเบราว์เซอร์เก่าไม่รองรับ
+   จะย้อนไปใช้ค่าเดิมของเว็บโดยไม่พัง
+
+   การปรับค่า
+   แก้ที่ --landing-title-cap ค่าเดียว
+     เล็กลง (ปลอดภัยสุด) : 14.4cqw
+     ค่าเริ่มต้น          : 15.2cqw
+     ใหญ่ขึ้น (ตึงขึ้น)   : 15.8cqw
+   ========================================================================== */
+
+/* -------------------------------------------------- 1. สัดส่วนคอลัมน์ */
+
+.landing-page .landing-stage {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+}
+
+@media (max-width: 980px) {
+  .landing-page .landing-stage {
+    grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  }
+}
+
+/* ≤700px เว็บสลับเป็นคอลัมน์เดียวอยู่แล้ว (v35) จึงไม่แตะต้อง */
+
+/* -------------------------------------------------- 2. ขนาดตัวอักษรที่พอดีเสมอ */
+
+@supports (container-type: inline-size) {
+  .landing-page .landing-title-wrap {
+    container-type: inline-size;
+    container-name: landing-title;
+  }
+
+  .landing-page .landing-title-wrap h1 {
+    --landing-title-cap: 15.2cqw;
+
+    /* ใช้ค่าที่เล็กกว่าเสมอ ระหว่างขนาดตามดีไซน์เดิม กับเพดานที่พอดีคอลัมน์ */
+    font-size: min(clamp(54px, 7.6vw, 130px), var(--landing-title-cap));
+  }
+
+  /* ระยะเยื้องอิงคอลัมน์เดียวกัน เพื่อให้เพดานด้านบนคำนวณได้ตรง */
+  .landing-page .landing-title-line.serif,
+  .landing-page .landing-role {
+    padding-left: 4cqw;
+  }
+
+  @media (max-width: 980px) {
+    .landing-page .landing-title-wrap h1 {
+      font-size: min(clamp(60px, 10vw, 90px), var(--landing-title-cap));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .landing-page .landing-title-wrap h1 {
+      /* บรรทัดเดียวคอลัมน์เต็ม เพดานจึงผ่อนได้เล็กน้อย */
+      --landing-title-cap: 15.6cqw;
+
+      font-size: min(clamp(49px, 14.6vw, 68px), var(--landing-title-cap));
+    }
+
+    .landing-page .landing-title-line.serif,
+    .landing-page .landing-role {
+      padding-left: 3cqw;
+    }
+  }
+}
+
+/* -------------------------------------------------- 3. กันการชนของหัว-ท้ายหน้า */
+
+/* กันชื่อ/แท็กไลน์บนหัวหน้าเบียดกันเมื่อจอแคบลง */
+.landing-page .landing-header > *,
+.landing-page .landing-footer > * {
+  min-width: 0;
+}
+
+.landing-page .landing-wordmark {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+/* .landing-counter (พิกัด 13°45′N / 100°30′E) วางแบบ absolute ที่มุมขวาล่าง
+   จึงกันพื้นที่ให้รายการสุดท้ายของ footer ไม่เลื่อนไปอยู่ใต้ตัวเลข */
+@media (min-width: 981px) {
+  .landing-page .landing-footer > :last-child {
+    margin-right: clamp(0px, 5vw, 92px);
+  }
+}
+
+/* -------------------------------------------------- 4. เผื่อกรณีฟอนต์โหลดช้า */
+
+/* ถ้า SpecialGothicExpanded ยังโหลดไม่เสร็จ ฟอนต์สำรองจะแคบกว่า
+   จึงล็อกไม่ให้ตัวอักษรตัดบรรทัดกลางคำระหว่างรอ */
+.landing-page .landing-title-line > span {
+  white-space: nowrap;
+}
