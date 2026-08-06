@@ -1,0 +1,329 @@
+/* ========================================================================== 
+   v54 — Landing page mobile reconstruction
+   Scope: index.html / .landing-page only, <= 700px
+   Desktop and every internal portfolio page remain untouched.
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  html,
+  body.landing-page {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #ffffff;
+  }
+
+  .landing-page .landing {
+    --landing-edge: 14px;
+    display: block;
+    min-height: 100svh;
+    padding: var(--landing-edge);
+    background: #ffffff;
+  }
+
+  .landing-page .landing::before,
+  .landing-page .landing::after,
+  .landing-page .landing-drawing {
+    display: none !important;
+  }
+
+  .landing-page .landing-frame {
+    inset: 6px;
+    border-color: rgba(27, 28, 26, 0.16);
+  }
+
+  .landing-page .frame-corner {
+    width: 21px;
+    height: 21px;
+  }
+
+  /* Mobile must remain usable even when the entrance script is delayed. */
+  .motion-enabled .landing-page .landing-reveal,
+  .motion-enabled .landing-page .landing-title-line > span,
+  .motion-enabled .landing-page .landing-image-mask,
+  .motion-enabled .landing-page .landing-frame {
+    opacity: 1 !important;
+    clip-path: none !important;
+    transform: none !important;
+    transition-delay: 0ms !important;
+  }
+
+  .landing-page .landing-header {
+    display: grid;
+    min-height: 50px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px 13px;
+    border-bottom: 1px solid rgba(27, 28, 26, 0.24);
+  }
+
+  .landing-page .landing-wordmark {
+    font-size: 10px;
+    line-height: 1.02;
+  }
+
+  .landing-page .landing-header > p,
+  .landing-page .landing-header-actions > p {
+    display: none;
+  }
+
+  .landing-page .landing-header-actions {
+    display: flex;
+    min-width: 0;
+    justify-content: flex-end;
+  }
+
+  .landing-page .language-toggle {
+    min-height: 42px;
+    padding: 3px;
+  }
+
+  .landing-page .language-toggle button {
+    min-width: 36px;
+    min-height: 34px;
+  }
+
+  .landing-page .landing-stage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 25px 10px 0;
+  }
+
+  .landing-page .landing-title-wrap {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .landing-page .landing-index {
+    gap: 10px;
+    margin: 0 0 16px;
+    font-size: 8px;
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+  }
+
+  .landing-page .landing-index > .landing-index-mark {
+    width: 18px;
+    flex-basis: 18px;
+  }
+
+  .landing-page .landing-title-wrap h1 {
+    width: 100%;
+    font-size: clamp(49px, 15.3vw, 61px) !important;
+    line-height: 0.87 !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .landing-page .landing-title-line {
+    padding-right: 0.03em;
+  }
+
+  .landing-page .landing-title-line.serif {
+    padding-left: 13px !important;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  /* Show every category. No horizontal strip, no clipped final pill. */
+  .landing-page .landing-role {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin: 18px 0 0;
+    padding: 0 !important;
+    overflow: visible;
+  }
+
+  .landing-page .landing-role > span {
+    display: flex;
+    min-width: 0;
+    min-height: 35px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 9px;
+    border: 1px solid rgba(27, 28, 26, 0.24);
+    border-radius: 999px;
+    color: #292a28;
+    font-size: 9px;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* The project carousel is a real content block in normal document flow. */
+  .landing-page .landing-visual {
+    position: relative;
+    display: block !important;
+    width: 100%;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3;
+    align-self: stretch;
+    justify-self: stretch;
+    margin: 0;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .landing-page .landing-image-mask {
+    position: absolute;
+    inset: 0 0 25px;
+    display: block !important;
+    overflow: hidden;
+    border: 1px solid rgba(27, 28, 26, 0.10);
+    background: #e8e9e7;
+    clip-path: none !important;
+  }
+
+  .landing-page .landing-image-mask::before {
+    inset: 7px;
+    border-color: rgba(255, 255, 255, 0.44);
+  }
+
+  .landing-page .landing-image-mask .landing-slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: none;
+    transform: none !important;
+  }
+
+  .landing-page .landing-image-mask .landing-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .landing-page .landing-image-index {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .landing-page .landing-carousel-controls {
+    right: auto;
+    bottom: 38px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .landing-page .landing-carousel-controls button {
+    width: 34px;
+    height: 34px;
+    background: rgba(27, 28, 26, 0.78);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+  }
+
+  .landing-page .landing-visual figcaption {
+    bottom: 0;
+    min-height: 18px;
+    align-items: end;
+    gap: 10px;
+    font-size: 7px;
+    line-height: 1.2;
+    letter-spacing: 0.11em;
+  }
+
+  .landing-page .landing-visual figcaption > span:first-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Remove the large black footer slab. Keep one clear primary action. */
+  .landing-page .landing-footer {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    align-items: center;
+    margin: 22px 0 0;
+    padding: 14px 10px 17px;
+    border-top: 1px solid rgba(27, 28, 26, 0.24);
+    background: transparent !important;
+  }
+
+  .landing-page .landing-footer > p {
+    display: none;
+  }
+
+  .landing-page .landing-enter {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+    grid-template-columns: 22px minmax(0, 1fr) 24px;
+    column-gap: 14px;
+    justify-self: stretch;
+    padding: 12px 17px;
+    border: 1px solid #111211;
+    border-radius: 999px;
+    background: #111211;
+    box-shadow: none;
+  }
+
+  .landing-page .landing-enter::after {
+    inset: 3px;
+    border-color: rgba(255, 255, 255, 0.34);
+  }
+
+  .landing-page .landing-enter span {
+    font-size: clamp(16px, 4.8vw, 19px);
+    letter-spacing: -0.02em;
+  }
+
+  .landing-page .landing-enter i {
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.12);
+  }
+
+  .landing-page .landing-secondary {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 7px;
+    justify-self: start;
+    margin: 0 0 0 4px;
+    padding: 4px 0;
+    color: #666863;
+    font-size: 11px;
+  }
+
+  .landing-page .landing-counter {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .landing-page .landing {
+    --landing-edge: 11px;
+  }
+
+  .landing-page .landing-stage,
+  .landing-page .landing-header,
+  .landing-page .landing-footer {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .landing-page .landing-title-wrap h1 {
+    font-size: clamp(45px, 15.1vw, 54px) !important;
+  }
+
+  .landing-page .landing-role > span {
+    min-height: 33px;
+    padding-inline: 7px;
+    font-size: 8.5px;
+  }
+}

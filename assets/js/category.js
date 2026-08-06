@@ -10,19 +10,47 @@
   const requestedId = params.get("category") || params.get("id") || "advertising";
   const category = portfolio.categoryById(requestedId);
 
+  /* ----------------------------------------------------------------
+     Language helpers — the toggle in the header dispatches
+     "portfolio:languagechange" (see assets/js/motion.js)
+     ---------------------------------------------------------------- */
+  function currentLanguage() {
+    return document.body.dataset.language === "th" ? "th" : "en";
+  }
+
+  function t(english, thai) {
+    return currentLanguage() === "th" ? thai : english;
+  }
+
+  function categoryLabel(item) {
+    if (!item) return "";
+    return currentLanguage() === "th" && item.labelTh ? item.labelTh : item.label;
+  }
+
+  function brandLabel(project) {
+    if (currentLanguage() === "th" && project.brandLabelTh) return project.brandLabelTh;
+    return project.brandLabel || project.brand || "";
+  }
+
+  function projectSummary(project) {
+    return currentLanguage() === "th" && project.summaryTh ? project.summaryTh : project.summary;
+  }
+
+  function projectWord(count) {
+    if (currentLanguage() === "th") return "โปรเจกต์";
+    return count === 1 ? "project" : "projects";
+  }
+
   function icon() {
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
-  function brandLabel(project) {
-    return project.brandLabel || project.brand || "";
-  }
-
+  /* Brand groups shown on the Display category page. */
   function displayBrandGroupsSeed() {
     return [
-      { id: "quantum", label: "Quantum", order: 1 },
-      { id: "kioku", label: "Kioku", order: 2 },
-      { id: "other-display", label: "Others Display", order: 3, empty: true }
+      { id: "quantum", label: t("Quantum", "ควอนตัม"), order: 1 },
+      { id: "kioku", label: t("Kioku", "คิโอคุ"), order: 2 },
+      { id: "other-display", label: t("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
     ];
   }
 
@@ -30,7 +58,7 @@
     const number = String(index + 1).padStart(2, "0");
     const brand = brandLabel(project);
     const brandMarkup = brand
-      ? `<span class="category-project-card__brand">${portfolio.escapeHtml(brand)} Brand</span>`
+      ? `<span class="category-project-card__brand">${portfolio.escapeHtml(brand)} ${t("Brand", "แบรนด์")}</span>`
       : "";
 
     return `
@@ -45,17 +73,18 @@
               ${brandMarkup}
               <h2>${portfolio.escapeHtml(project.title)}</h2>
             </div>
-            <span class="icon-link">View case ${icon()}</span>
+            <span class="icon-link">${t("View case", "ดูโปรเจกต์")} ${icon()}</span>
           </div>
-          <p class="category-project-card__summary">${portfolio.escapeHtml(project.summary)}</p>
+          <p class="category-project-card__summary">${portfolio.escapeHtml(projectSummary(project))}</p>
         </a>
       </article>`;
   }
 
   function defaultProjectList(projects) {
+    const empty = `<p class="notice">${t("No projects in this category yet.", "ยังไม่มีโปรเจกต์ในหมวดนี้")}</p>`;
     return `
-      <section class="category-page-projects category-page-shell" aria-label="${portfolio.escapeHtml(category.label)} projects">
-        ${projects.length ? projects.map(card).join("") : '<p class="notice">No projects in this category yet.</p>'}
+      <section class="category-page-projects category-page-shell" aria-label="${portfolio.escapeHtml(categoryLabel(category))}">
+        ${projects.length ? projects.map(card).join("") : empty}
       </section>`;
   }
 
@@ -77,12 +106,14 @@
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
-          label: brandLabel(project) || "Other Display",
+          label: brandLabel(project) || t("Other Display", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
           projects: [],
           empty: false
         });
       }
+      // Keep the seeded Thai/English label in sync with the current language.
+      grouped.get(key).label = brandLabel(project) || grouped.get(key).label;
       grouped.get(key).projects.push(project);
     });
 
@@ -95,35 +126,43 @@
     }).join("");
 
     const sections = groups.map(function (group, index) {
-      const projectWord = group.projects.length === 1 ? "project" : "projects";
-      const content = group.projects.map(card).join("");
+      const count = String(group.projects.length).padStart(2, "0");
+      const line = currentLanguage() === "th"
+        ? `${count} โปรเจกต์ · งานดิสเพลย์เฉพาะของแบรนด์ ${group.label}`
+        : `${count} ${projectWord(group.projects.length)}. Dedicated display work for ${group.label}.`;
+
       return `
         <section class="display-brand-group category-page-shell" id="brand-${portfolio.escapeHtml(group.id)}" aria-label="${portfolio.escapeHtml(group.label)}">
           <header class="display-brand-group__header display-brand-group__header--compact">
-            <p>${String(index + 1).padStart(2, "0")} / Brand group</p>
-            <p>${String(group.projects.length).padStart(2, "0")} ${projectWord}. Dedicated display work for ${portfolio.escapeHtml(group.label)}.</p>
+            <p>${String(index + 1).padStart(2, "0")} / ${t("Brand group", "กลุ่มแบรนด์")}</p>
+            <p>${portfolio.escapeHtml(line)}</p>
           </header>
           <div class="category-page-projects category-page-projects--brand">
-            ${content}
+            ${group.projects.map(card).join("")}
           </div>
         </section>`;
     }).join("");
 
     return `
-      <nav class="category-page-brand-nav category-page-shell" aria-label="Display brands">
-        <p>Browse by brand</p>
+      <nav class="category-page-brand-nav category-page-shell" aria-label="${t("Display brands", "แบรนด์ดิสเพลย์")}">
+        <p>${t("Browse by brand", "เลือกดูตามแบรนด์")}</p>
         <div>${navigation}</div>
       </nav>
       <div class="display-brand-groups">${sections}</div>`;
   }
 
-  if (!category) {
+  function renderNotFound() {
     view.innerHTML = `
       <section class="category-page-hero category-page-shell">
-        <p class="eyebrow"><span></span> Category not found</p>
-        <h1>Nothing in this category.</h1>
-        <a class="button-link icon-link" href="home.html#work"><span>Return to all work</span>${icon()}</a>
+        <p class="eyebrow"><span></span> ${t("Category not found", "ไม่พบหมวดหมู่นี้")}</p>
+        <h1>${t("Nothing in this category.", "ยังไม่มีผลงานในหมวดนี้")}</h1>
+        <a class="button-link icon-link" href="home.html#work"><span>${t("Return to all work", "กลับไปดูผลงานทั้งหมด")}</span>${icon()}</a>
       </section>`;
+  }
+
+  if (!category) {
+    renderNotFound();
+    document.addEventListener("portfolio:languagechange", renderNotFound);
     return;
   }
 
@@ -131,29 +170,56 @@
     return project.category === category.id;
   });
 
-  portfolio.setPageMeta(category.label, "Selected " + category.label + " projects by Somchai Sompiew.");
+  function render() {
+    const label = categoryLabel(category);
 
-  if (address) {
-    address.innerHTML = `<a href="home.html">Home</a><span>/</span><a href="home.html#work">Work</a><span>/</span><strong>${portfolio.escapeHtml(category.label)}</strong>`;
+    portfolio.setPageMeta(label, t(
+      "Selected " + category.label + " projects by Somchai Sompiew.",
+      "ผลงาน" + label + "คัดสรร โดย Somchai Sompiew"
+    ));
+
+    if (address) {
+      address.innerHTML =
+        `<a href="home.html">${t("Home", "หน้าหลัก")}</a><span>/</span>` +
+        `<a href="home.html#work">${t("Work", "ผลงาน")}</a><span>/</span>` +
+        `<strong>${portfolio.escapeHtml(label)}</strong>`;
+    }
+
+    const isDisplay = category.id === "display-retail";
+
+    const categoryContent = isDisplay
+      ? displayBrandGroups(projects)
+      : defaultProjectList(projects);
+
+    const categoryDescription = isDisplay
+      ? t(
+          "Display projects are organised by brand, so Quantum and Kioku remain visually and structurally independent while staying within one discipline.",
+          "งานดิสเพลย์ถูกจัดกลุ่มตามแบรนด์ เพื่อให้ Quantum และ Kioku แยกกันชัดเจนทั้งด้านภาพและโครงสร้าง แม้จะอยู่ในศาสตร์เดียวกัน"
+        )
+      : t(
+          "A focused view of the work, visual system and production thinking in this discipline.",
+          "มุมมองเฉพาะของผลงาน ระบบภาพ และแนวคิดด้านการผลิตในศาสตร์นี้"
+        );
+
+    const countLine = currentLanguage() === "th"
+      ? `${String(projects.length).padStart(2, "0")} โปรเจกต์คัดสรร · ${categoryDescription}`
+      : `${String(projects.length).padStart(2, "0")} selected ${projectWord(projects.length)}. ${categoryDescription}`;
+
+    view.innerHTML = `
+      <section class="category-page-hero category-page-shell">
+        <p class="eyebrow"><span></span> ${t("Work / Selected category", "ผลงาน / หมวดหมู่ที่เลือก")}</p>
+        <div class="category-page-heading">
+          <h1>${portfolio.escapeHtml(label)}</h1>
+          <p>${portfolio.escapeHtml(countLine)}</p>
+        </div>
+      </section>
+      ${categoryContent}`;
+
+    if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
   }
 
-  const categoryContent = category.id === "display-retail"
-    ? displayBrandGroups(projects)
-    : defaultProjectList(projects);
+  render();
 
-  const categoryDescription = category.id === "display-retail"
-    ? "Display projects are organised by brand, so Quantum and Kioku remain visually and structurally independent while staying within one discipline."
-    : "A focused view of the work, visual system and production thinking in this discipline.";
-
-  view.innerHTML = `
-    <section class="category-page-hero category-page-shell">
-      <p class="eyebrow"><span></span> Work / Selected category</p>
-      <div class="category-page-heading">
-        <h1>${portfolio.escapeHtml(category.label)}</h1>
-        <p>${String(projects.length).padStart(2, "0")} selected ${projects.length === 1 ? "project" : "projects"}. ${categoryDescription}</p>
-      </div>
-    </section>
-    ${categoryContent}`;
-
-  if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
+  // Re-render whenever the TH / EN toggle changes the site language.
+  document.addEventListener("portfolio:languagechange", render);
 })();

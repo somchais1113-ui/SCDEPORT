@@ -13,3 +13,5 @@ gallery-07-1600x900.webp
 gallery-08-1600x900.webp
 gallery-09-1400x1100.webp
 gallery-10-1200x1500.webp
+gallery-11-1400x1100.webp   <-- เพิ่มใหม่ (v53) ยังเป็น Placeholder
+gallery-12-1200x1500.webp   <-- เพิ่มใหม่ (v53) ยังเป็น Placeholder

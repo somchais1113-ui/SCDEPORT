@@ -16,134 +16,100 @@
   const lightboxNextButton = document.querySelector("[data-lightbox-next]");
   const addressField = document.querySelector('[data-page-address="project"]');
 
-  if (!view || !portfolio || !project) {
+  /* ----------------------------------------------------------------
+     Language helpers — the header toggle dispatches
+     "portfolio:languagechange" (see assets/js/motion.js)
+     ---------------------------------------------------------------- */
+  function currentLanguage() {
+    return document.body.dataset.language === "th" ? "th" : "en";
+  }
+
+  function t(english, thai) {
+    return currentLanguage() === "th" ? thai : english;
+  }
+
+  function pick(english, thai) {
+    return currentLanguage() === "th" && thai ? thai : english;
+  }
+
+  function notFound() {
     if (view) {
       view.innerHTML = `
         <div class="project-not-found">
-          <p class="eyebrow"><span></span> Project not found</p>
-          <h1>Nothing on<br>this shelf.</h1>
-          <a class="button-link icon-link" href="home.html#work"><span>Return to work</span>${northeastIcon}</a>
+          <p class="eyebrow"><span></span> ${t("Project not found", "ไม่พบโปรเจกต์นี้")}</p>
+          <h1>${t("Nothing on<br>this shelf.", "ยังไม่มีผลงาน<br>ในหน้านี้")}</h1>
+          <a class="button-link icon-link" href="home.html#work"><span>${t("Return to work", "กลับไปดูผลงาน")}</span>${northeastIcon}</a>
         </div>
       `;
     }
-    document.title = "Project not found | Somchai Sompiew";
+    document.title = t("Project not found", "ไม่พบโปรเจกต์") + " | Somchai Sompiew";
+  }
+
+  if (!view || !portfolio || !project) {
+    notFound();
+    document.addEventListener("portfolio:languagechange", notFound);
     return;
   }
 
-  portfolio.setPageMeta(project.title, project.summary);
-
   const category = portfolio.categoryById(project.category);
-  const projectBrand = project.brandLabel || project.brand || "";
-  if (addressField) {
-    const categoryLabel = category ? (category.label || project.sector) : project.sector;
-    const categoryHref = `category.html?category=${encodeURIComponent(project.category)}`;
-    const brandPath = projectBrand
-      ? `<span>/</span><a href="${categoryHref}#brand-${encodeURIComponent(project.brand)}">${portfolio.escapeHtml(projectBrand)}</a>`
-      : "";
-    addressField.innerHTML = `<a href="home.html">Home</a><span>/</span><a href="home.html#work">Work</a><span>/</span><a href="${categoryHref}">${portfolio.escapeHtml(categoryLabel)}</a>${brandPath}<span>/</span><strong>${portfolio.escapeHtml(project.title)}</strong>`;
+
+  function categoryLabel() {
+    if (!category) return pick(project.sector, project.sectorTh);
+    return pick(category.label, category.labelTh) || project.sector;
   }
 
-  const scope = Array.isArray(project.scope)
-    ? project.scope.map((item) => `<li>${portfolio.escapeHtml(item)}</li>`).join("")
-    : "";
-
-  const gallery = Array.isArray(project.gallery)
-    ? project.gallery
-        .map(function (image, index) {
-          const source = typeof image === "string" ? image : image.src;
-          const alt = typeof image === "string"
-            ? `${project.coverAlt}, view ${index + 1}`
-            : image.alt || `${project.coverAlt}, view ${index + 1}`;
-
-          const requestedLayout = typeof image === "string" ? "" : image.layout;
-          const layout = allowedLayouts.has(requestedLayout) ? requestedLayout : (index === 0 ? "hero" : "half");
-          const optional = typeof image === "string" ? false : Boolean(image.optional);
-          const imageWidth = typeof image === "string" ? 1600 : Number(image.width) || 1600;
-          const imageHeight = typeof image === "string" ? 1000 : Number(image.height) || 1000;
-          const slot = String(index + 1).padStart(2, "0");
-          const itemClass = "case-gallery-item case-gallery-item--" + layout + " case-gallery-item--slot-" + slot;
-
-          const fetchPriority = index === 0 ? 'fetchpriority="high"' : '';
-          const loadingMode = index < 4 || optional ? 'loading="eager"' : 'loading="lazy"';
-
-          return `
-            <figure class="${itemClass}" data-gallery-slot="${slot}" data-gallery-optional="${optional}" data-gallery-state="loading">
-              <button class="case-gallery-trigger" type="button" data-lightbox-trigger data-lightbox-src="${portfolio.escapeHtml(source)}" data-lightbox-alt="${portfolio.escapeHtml(alt)}" aria-label="Preview image ${index + 1} in full view">
-                <img
-                  data-gallery-image
-                  src="${portfolio.escapeHtml(source)}"
-                  alt="${portfolio.escapeHtml(alt)}"
-                  width="${imageWidth}"
-                  height="${imageHeight}"
-                  ${fetchPriority}
-                  ${loadingMode}
-                  decoding="async"
-                >
-              </button>
-            </figure>
-          `;
-        })
-        .join("")
-    : "";
-
-  view.innerHTML = `
-    <div class="project-shell">
-      <div class="case-heading">
-      <p class="eyebrow"><span></span> ${portfolio.escapeHtml(project.sector)}${projectBrand ? ` · ${portfolio.escapeHtml(projectBrand)} Brand` : ""} · ${portfolio.escapeHtml(project.year)}</p>
-      <h1>${portfolio.escapeHtml(project.title)}</h1>
-      <p class="case-summary">${portfolio.escapeHtml(project.summary)}</p>
-    </div>
-
-    <div class="case-cover case-cover--${portfolio.escapeHtml(project.slug)}">${gallery}</div>
-
-    <div class="case-information">
-      <div>
-        <small>Challenge</small>
-        <p>${portfolio.escapeHtml(project.challenge)}</p>
-      </div>
-      <div>
-        <small>Solution</small>
-        <p>${portfolio.escapeHtml(project.solution)}</p>
-      </div>
-      <div>
-        <small>Scope</small>
-        <ul>${scope}</ul>
-      </div>
-      <div>
-        <small>Creative direction</small>
-        <p>${portfolio.escapeHtml(project.direction)}</p>
-      </div>
-    </div>
-
-      ${project.demo ? '<p class="demo-note">Demo project content. Replace this information and imagery with your actual work before publishing.</p>' : ""}
-    </div>
-  `;
-
-  function removeUnavailableGalleryImage(image) {
-    const figure = image.closest(".case-gallery-item");
-    if (!figure) return;
-    figure.remove();
+  function projectBrand() {
+    return pick(project.brandLabel || project.brand || "", project.brandLabelTh);
   }
 
-  view.querySelectorAll("[data-gallery-image]").forEach(function (image) {
-    const figure = image.closest(".case-gallery-item");
+  /* ----------------------------------------------------------------
+     Gallery markup
+     ---------------------------------------------------------------- */
+  function galleryMarkup() {
+    if (!Array.isArray(project.gallery)) return "";
 
-    function markLoaded() {
-      if (figure) figure.dataset.galleryState = "loaded";
-    }
+    return project.gallery
+      .map(function (image, index) {
+        const source = typeof image === "string" ? image : image.src;
+        const alt = typeof image === "string"
+          ? `${project.coverAlt}, view ${index + 1}`
+          : image.alt || `${project.coverAlt}, view ${index + 1}`;
 
-    image.addEventListener("load", markLoaded, { once: true });
-    image.addEventListener("error", function () {
-      removeUnavailableGalleryImage(image);
-      refreshLightboxItems();
-    }, { once: true });
+        const requestedLayout = typeof image === "string" ? "" : image.layout;
+        const layout = allowedLayouts.has(requestedLayout) ? requestedLayout : (index === 0 ? "hero" : "half");
+        const optional = typeof image === "string" ? false : Boolean(image.optional);
+        const imageWidth = typeof image === "string" ? 1600 : Number(image.width) || 1600;
+        const imageHeight = typeof image === "string" ? 1000 : Number(image.height) || 1000;
+        const slot = String(index + 1).padStart(2, "0");
+        const itemClass = "case-gallery-item case-gallery-item--" + layout + " case-gallery-item--slot-" + slot;
 
-    if (image.complete) {
-      if (image.naturalWidth > 0) markLoaded();
-      else removeUnavailableGalleryImage(image);
-    }
-  });
+        const fetchPriority = index === 0 ? 'fetchpriority="high"' : "";
+        const loadingMode = index < 4 || optional ? 'loading="eager"' : 'loading="lazy"';
+        const previewLabel = t("Preview image " + (index + 1) + " in full view", "ดูภาพที่ " + (index + 1) + " แบบเต็มจอ");
 
+        return `
+          <figure class="${itemClass}" data-gallery-slot="${slot}" data-gallery-optional="${optional}" data-gallery-state="loading">
+            <button class="case-gallery-trigger" type="button" data-lightbox-trigger data-lightbox-src="${portfolio.escapeHtml(source)}" data-lightbox-alt="${portfolio.escapeHtml(alt)}" aria-label="${portfolio.escapeHtml(previewLabel)}">
+              <img
+                data-gallery-image
+                src="${portfolio.escapeHtml(source)}"
+                alt="${portfolio.escapeHtml(alt)}"
+                width="${imageWidth}"
+                height="${imageHeight}"
+                ${fetchPriority}
+                ${loadingMode}
+                decoding="async"
+              >
+            </button>
+          </figure>
+        `;
+      })
+      .join("");
+  }
+
+  /* ----------------------------------------------------------------
+     Lightbox
+     ---------------------------------------------------------------- */
   let lightboxItems = [];
   let activeLightboxIndex = -1;
   let lightboxScrollY = 0;
@@ -205,13 +171,12 @@
     updateLightbox(activeLightboxIndex + direction);
   }
 
-  refreshLightboxItems();
-
-  lightboxItems.forEach(function (trigger) {
-    trigger.addEventListener("click", function () {
-      refreshLightboxItems();
-      openLightbox(lightboxItems.indexOf(trigger));
-    });
+  /* Delegated click handling survives every re-render of the gallery. */
+  view.addEventListener("click", function (event) {
+    const trigger = event.target.closest("[data-lightbox-trigger]");
+    if (!trigger) return;
+    refreshLightboxItems();
+    openLightbox(lightboxItems.indexOf(trigger));
   });
 
   lightboxCloseButtons.forEach(function (button) {
@@ -235,18 +200,125 @@
     }
   });
 
-  if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
+  /* ----------------------------------------------------------------
+     Render
+     ---------------------------------------------------------------- */
+  function bindGalleryFallbacks() {
+    view.querySelectorAll("[data-gallery-image]").forEach(function (image) {
+      const figure = image.closest(".case-gallery-item");
 
-  const nextProject = portfolio.nextProject(project.slug);
+      function markLoaded() {
+        if (figure) figure.dataset.galleryState = "loaded";
+      }
 
-  if (nextSection && nextProject) {
+      function removeUnavailable() {
+        if (figure) figure.remove();
+        refreshLightboxItems();
+      }
+
+      image.addEventListener("load", markLoaded, { once: true });
+      image.addEventListener("error", removeUnavailable, { once: true });
+
+      if (image.complete) {
+        if (image.naturalWidth > 0) markLoaded();
+        else removeUnavailable();
+      }
+    });
+  }
+
+  function render() {
+    const brand = projectBrand();
+    const label = categoryLabel();
+
+    portfolio.setPageMeta(project.title, pick(project.summary, project.summaryTh));
+
+    if (addressField) {
+      const categoryHref = `category.html?category=${encodeURIComponent(project.category)}`;
+      const brandPath = brand
+        ? `<span>/</span><a href="${categoryHref}#brand-${encodeURIComponent(project.brand)}">${portfolio.escapeHtml(brand)}</a>`
+        : "";
+      addressField.innerHTML =
+        `<a href="home.html">${t("Home", "หน้าหลัก")}</a><span>/</span>` +
+        `<a href="home.html#work">${t("Work", "ผลงาน")}</a><span>/</span>` +
+        `<a href="${categoryHref}">${portfolio.escapeHtml(label)}</a>${brandPath}` +
+        `<span>/</span><strong>${portfolio.escapeHtml(project.title)}</strong>`;
+    }
+
+    const scopeItems = currentLanguage() === "th" && Array.isArray(project.scopeTh)
+      ? project.scopeTh
+      : project.scope;
+
+    const scope = Array.isArray(scopeItems)
+      ? scopeItems.map((item) => `<li>${portfolio.escapeHtml(item)}</li>`).join("")
+      : "";
+
+    const sectorLabel = pick(project.sector, project.sectorTh);
+    const brandLine = brand ? ` · ${portfolio.escapeHtml(brand)} ${t("Brand", "แบรนด์")}` : "";
+
+    const demoNote = project.demo
+      ? `<p class="demo-note">${t(
+          "Demo project content. Replace this information and imagery with your actual work before publishing.",
+          "เนื้อหาชุดตัวอย่าง กรุณาแทนที่ข้อมูลและภาพทั้งหมดด้วยผลงานจริงก่อนเผยแพร่"
+        )}</p>`
+      : "";
+
+    view.innerHTML = `
+      <div class="project-shell">
+        <div class="case-heading">
+        <p class="eyebrow"><span></span> ${portfolio.escapeHtml(sectorLabel)}${brandLine} · ${portfolio.escapeHtml(project.year)}</p>
+        <h1>${portfolio.escapeHtml(project.title)}</h1>
+        <p class="case-summary">${portfolio.escapeHtml(pick(project.summary, project.summaryTh))}</p>
+      </div>
+
+      <div class="case-cover case-cover--${portfolio.escapeHtml(project.slug)}">${galleryMarkup()}</div>
+
+      <div class="case-information">
+        <div>
+          <small>${t("Challenge", "โจทย์")}</small>
+          <p>${portfolio.escapeHtml(pick(project.challenge, project.challengeTh))}</p>
+        </div>
+        <div>
+          <small>${t("Solution", "แนวทางแก้")}</small>
+          <p>${portfolio.escapeHtml(pick(project.solution, project.solutionTh))}</p>
+        </div>
+        <div>
+          <small>${t("Scope", "ขอบเขตงาน")}</small>
+          <ul>${scope}</ul>
+        </div>
+        <div>
+          <small>${t("Creative direction", "ทิศทางสร้างสรรค์")}</small>
+          <p>${portfolio.escapeHtml(pick(project.direction, project.directionTh))}</p>
+        </div>
+      </div>
+
+        ${demoNote}
+      </div>
+    `;
+
+    bindGalleryFallbacks();
+    refreshLightboxItems();
+
+    if (window.SCGalleryFrame) window.SCGalleryFrame.refresh();
+    if (window.PortfolioMotion) window.PortfolioMotion.refresh(view);
+
+    renderNextProject();
+  }
+
+  function renderNextProject() {
+    const next = portfolio.nextProject(project.slug);
+    if (!nextSection || !next) return;
+
     nextSection.hidden = false;
     nextSection.innerHTML = `
-      <p>Next project</p>
-      <a href="project.html?id=${encodeURIComponent(nextProject.slug)}">
-        ${portfolio.escapeHtml(nextProject.title)} <span class="icon-link">${northeastIcon}</span>
+      <p>${t("Next project", "โปรเจกต์ถัดไป")}</p>
+      <a href="project.html?id=${encodeURIComponent(next.slug)}">
+        ${portfolio.escapeHtml(next.title)} <span class="icon-link">${northeastIcon}</span>
       </a>
     `;
     if (window.PortfolioMotion) window.PortfolioMotion.refresh(nextSection);
   }
+
+  render();
+
+  document.addEventListener("portfolio:languagechange", render);
 })();
