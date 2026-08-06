@@ -256,3 +256,81 @@ SOMPIEW  6.115 em   หัก letter-spacing -0.004em แล้วเหลื�
 
 อัปเดต cache-busting เป็น `?v=531` และ `build-version` เป็น `v53.1-landing-mobile-fix`
 หากเปิดแล้วยังเห็นของเดิม ให้ hard refresh หรือรอ CDN ของ Vercel อัปเดต
+
+---
+
+# บันทึกการแก้ไข v53.2 (ถอนการแก้แนวตั้งของ v53.1 ออก)
+
+## ปัญหา
+
+หลังดีพลอย v53.1 หน้า Landing บนมือถือแย่ลงกว่าเดิม รูป Hero หายไปทั้งภาพ
+เหลือแต่ caption ที่ไปชนกับแถวแท็บสาขางาน และช่องว่างขาวใหญ่กว่าเดิม
+
+## สาเหตุ
+
+v53.1 เข้าใจผิดว่า "ช่องว่างขาวด้านบน" กับ "บล็อกดำท้ายหน้า" เป็นบั๊กคนละตัวกับ
+บั๊กคอลัมน์ ความจริงทั้งสองเป็นอาการต่อเนื่องของบั๊กเดียว
+
+```text
+2 คอลัมน์บน mobile -> เนื้อหาหดสั้นมาก -> grid ยืดแถวเฉลี่ยกัน
+                                          +- ช่องว่างขาวด้านบน
+                                          +- ปุ่มดำถูกดึงสูง
+```
+
+เมื่อแก้บั๊กคอลัมน์แล้ว อาการทั้งสองหายไปเอง แต่ v53.1 ยังไปแก้ซ้ำอีกชั้นด้วย
+
+```css
+.landing-page .landing       { grid-template-rows: auto 1fr auto; }
+.landing-page .landing-stage { align-content: start; align-items: start; }
+```
+
+ทำให้แถวเปลี่ยนจาก "ยืดตามพื้นที่" เป็น "สูงตามเนื้อหา"
+
+`.landing-visual` พึ่งการยืดของแถวเป็นตัวกำหนดความสูง เพราะ `.landing-image-mask`
+เป็น `position: absolute` จึงไม่มีเนื้อหาในโฟลว์ที่จะดันความสูงขึ้นมา
+พอแถวไม่ยืด รูปจึงเหลือความสูงเกือบศูนย์
+
+## สิ่งที่แก้
+
+ลบบล็อก "ส่วนที่ 3 สัดส่วนแนวตั้งบน mobile" ออกจาก `v53-landing-type-fit.css`
+ทั้งหมด 54 บรรทัด พฤติกรรมแนวตั้งบนมือถือกลับไปเป็นของ `v35-production-fix.css`
+ตามเดิม ซึ่งไม่เคยมีปัญหามาก่อน
+
+**กฎเหล็กที่เขียนกำกับไว้ในไฟล์แล้ว**
+
+> ไฟล์นี้แตะได้เฉพาะแกนนอน คือ `grid-template-columns`, `font-size` และ
+> `padding-left` เท่านั้น ห้ามแตะ `grid-template-rows`, `align-content`,
+> `align-items`, `align-self` หรือความสูงใด ๆ บน mobile โดยเด็ดขาด
+
+## ผลการตรวจสอบ
+
+ประกาศทั้งหมดของ v53 ที่ยังทำงานที่ 390px เหลือเพียงเท่านี้
+
+```text
+.landing-stage            {grid-template-columns}  1fr
+.landing-title-wrap h1    {font-size}              min(clamp(49px,14.6vw,68px), 15.6cqw)
+.landing-title-line.serif {padding-left}           3cqw
+.landing-role             {padding-left}           3cqw
+.landing-title-wrap       {container-type}         inline-size
+.landing-title-line > span{white-space}            nowrap
+.landing-header > *       {min-width}              0
+.landing-footer > *       {min-width}              0
+.landing-wordmark         {overflow-wrap/word-break}
+```
+
+และคุณสมบัติที่ควบคุมความสูงกลับไปมาจาก v35 / main.css ทั้งหมดแล้ว
+
+| คุณสมบัติ | ค่าที่ชนะที่ 390px | มาจาก |
+| --- | --- | --- |
+| `.landing { grid-template-rows }` | `auto auto auto` | v35 |
+| `.landing-stage { align-items }` | `center` | v35 |
+| `.landing-stage { align-content }` | `center` | main.css |
+| `.landing-visual { aspect-ratio }` | `4/3` | v35 |
+| `.landing-visual { height }` | `auto` | v35 |
+| `.landing-enter { width }` | `100%` | v35 |
+
+ไม่มีรายการใดมาจาก v53 อีกแล้ว
+
+## หมายเหตุเรื่องแคช
+
+อัปเดตเป็น `?v=532` และ `build-version` เป็น `v53.2-landing-revert-vertical`
