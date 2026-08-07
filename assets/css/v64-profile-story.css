@@ -223,6 +223,24 @@ body.profile-page[data-language="th"] time {
   font-weight: 500;
 }
 
+.profile-portrait-frame--empty img,
+.profile-portrait-placeholder-icon {
+  width: 30%;
+  height: auto;
+  margin-top: 0;
+  filter: none;
+  opacity: 0.42;
+}
+
+.profile-portrait-placeholder-label {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Metrics */
 .profile-metrics {
   display: grid;
@@ -766,25 +784,14 @@ body.profile-page[data-language="th"] time {
   font-size: 14px;
 }
 
-/* Motion */
+/* Motion — hero fades in on load; everything below the fold reveals on
+   scroll via the shared .reveal-item system (see motion.js revealGroups) */
 .motion-enabled .profile-page .profile-hero__copy,
-.motion-enabled .profile-page .profile-hero__portrait,
-.motion-enabled .profile-page .profile-metrics article,
-.motion-enabled .profile-page .profile-section-heading,
-.motion-enabled .profile-page .profile-timeline__item,
-.motion-enabled .profile-page .profile-outcome-card,
-.motion-enabled .profile-page .profile-leadership-grid article,
-.motion-enabled .profile-page .profile-capability-map article,
-.motion-enabled .profile-page .profile-education__lead,
-.motion-enabled .profile-page .profile-education__list,
-.motion-enabled .profile-page .profile-close__grid {
+.motion-enabled .profile-page .profile-hero__portrait {
   animation: profile-reveal 720ms both cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .motion-enabled .profile-page .profile-hero__portrait { animation-delay: 90ms; }
-.motion-enabled .profile-page .profile-metrics article:nth-child(2) { animation-delay: 55ms; }
-.motion-enabled .profile-page .profile-metrics article:nth-child(3) { animation-delay: 110ms; }
-.motion-enabled .profile-page .profile-metrics article:nth-child(4) { animation-delay: 165ms; }
 
 @keyframes profile-reveal {
   from { opacity: 0; transform: translateY(22px); }
@@ -1104,8 +1111,12 @@ body.profile-page[data-language="th"] time {
   }
 
   .profile-leadership-grid article {
-    min-height: 320px;
+    min-height: 0;
     padding: 26px 0 34px;
+  }
+
+  .profile-leadership-grid small {
+    margin-bottom: 22px;
   }
 
   .profile-leadership-grid article + article,

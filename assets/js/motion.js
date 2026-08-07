@@ -30,7 +30,16 @@
     [".pen-side-menu button", 38],
     [".pen-parts-heading > *", 55],
     [".pen-parts-list button", 45],
-    [".pen-mechanism-grid article", 55]
+    [".pen-mechanism-grid article", 55],
+    [".profile-metrics article", 55],
+    [".profile-section-heading", 0],
+    [".profile-statement__grid > *", 0],
+    [".profile-timeline__item", 60],
+    [".profile-outcome-card", 90],
+    [".profile-leadership-grid article", 55],
+    [".profile-capability-map article", 55],
+    [".profile-education__list article", 55],
+    [".profile-close__grid > *", 0]
   ];
 
   function markRevealElements(scope) {
