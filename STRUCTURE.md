@@ -28,7 +28,7 @@ Somchai-Sompiew-Portfolio/
 ├── project.html                    # Reusable project detail page
 ├── 404.html
 ├── data/
-│   ├── categories.js               # Category ids, labels and folder names (10 categories)
+│   ├── categories.js               # Category ids, labels and folder names (11 categories)
 │   └── projects.js                 # All project content, Thai copy and image paths
 ├── assets/
 │   ├── css/

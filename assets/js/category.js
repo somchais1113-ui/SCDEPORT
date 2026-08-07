@@ -60,11 +60,16 @@
     const brandMarkup = brand
       ? `<span class="category-project-card__brand">${portfolio.escapeHtml(brand)} ${t("Brand", "แบรนด์")}</span>`
       : "";
+    const cardTag = currentLanguage() === "th" && project.cardTagTh ? project.cardTagTh : project.cardTag;
+    const cardTagMarkup = cardTag
+      ? `<span class="project-format-badge">${portfolio.escapeHtml(cardTag)}</span>`
+      : "";
 
     return `
       <article class="category-project-card">
         <a href="project.html?id=${encodeURIComponent(project.slug)}">
           <figure class="category-project-card__image">
+            ${cardTagMarkup}
             <img src="${portfolio.escapeHtml(project.cover)}" alt="${portfolio.escapeHtml(project.coverAlt)}" width="1200" height="900" loading="lazy" decoding="async" draggable="false">
           </figure>
           <div class="category-project-card__meta">

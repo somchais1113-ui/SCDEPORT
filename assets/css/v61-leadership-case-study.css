@@ -1,0 +1,92 @@
+/* v61 — Leadership Case Study
+   Adds a signpost badge for the new "Leadership Case Study" category
+   (so it reads distinctly from craft/design work in the grid and category
+   pages) and an Impact block on the project detail page for real
+   business metrics (conversion, CSAT, revenue, etc.). */
+
+/* ---------------------------------------------------------------
+   Badge — shown on thumbnails in the home grid and category grid
+   --------------------------------------------------------------- */
+.project-format-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 11px;
+  border: 1px solid rgba(27, 28, 26, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.category-project-card__image {
+  position: relative;
+}
+
+/* Badge variant used inline on the project detail page (not absolute). */
+.project-format-badge--case {
+  position: static;
+  margin-top: 14px;
+  backdrop-filter: none;
+}
+
+/* ---------------------------------------------------------------
+   Impact block — real business metrics on the project detail page
+   --------------------------------------------------------------- */
+.case-impact {
+  grid-column: 1 / -1;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.case-impact small {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-impact__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 24px 4vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-impact__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-impact__list span {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.case-impact__list strong {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+@media (max-width: 820px) {
+  .case-impact__list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract kanban-style board with four workflow columns">
+  <rect width="1200" height="900" fill="#f4f4f2"/>
+  <!-- four pipeline columns -->
+  <g stroke="#1b1c1a" stroke-width="1.4" fill="none">
+    <!-- column 1 -->
+    <line x1="140" y1="150" x2="140" y2="750" stroke="rgba(27,28,26,0.16)"/>
+    <rect x="90" y="150" width="230" height="46" rx="4"/>
+    <rect x="90" y="222" width="230" height="120" rx="4"/>
+    <rect x="90" y="368" width="230" height="86" rx="4"/>
+    <!-- column 2 -->
+    <line x1="430" y1="150" x2="430" y2="750" stroke="rgba(27,28,26,0.16)"/>
+    <rect x="380" y="150" width="230" height="46" rx="4"/>
+    <rect x="380" y="222" width="230" height="150" rx="4"/>
+    <!-- column 3 -->
+    <line x1="720" y1="150" x2="720" y2="750" stroke="rgba(27,28,26,0.16)"/>
+    <rect x="670" y="150" width="230" height="46" rx="4"/>
+    <rect x="670" y="222" width="230" height="96" rx="4"/>
+    <rect x="670" y="344" width="230" height="60" rx="4"/>
+    <rect x="670" y="430" width="230" height="60" rx="4"/>
+    <!-- column 4 -->
+    <rect x="960" y="150" width="150" height="46" rx="4"/>
+    <rect x="960" y="222" width="150" height="140" rx="4"/>
+  </g>
+  <g fill="#1b1c1a">
+    <circle cx="115" cy="173" r="4"/>
+    <circle cx="405" cy="173" r="4"/>
+    <circle cx="695" cy="173" r="4"/>
+    <circle cx="985" cy="173" r="4"/>
+  </g>
+</svg>

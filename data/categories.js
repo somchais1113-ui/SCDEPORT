@@ -16,5 +16,6 @@ window.PORTFOLIO_CATEGORIES = [
   { id: "campaign", label: "Campaign", labelTh: "แคมเปญ", folder: "campaign" },
   { id: "editorial-design", label: "Editorial Design", labelTh: "ออกแบบสื่อบรรณาธิการ", folder: "editorial-design" },
   { id: "character-design", label: "Character Design", labelTh: "ออกแบบคาแรกเตอร์", folder: "character-design" },
-  { id: "other-creative", label: "Other Creative", labelTh: "งานสร้างสรรค์", folder: "other-creative" }
+  { id: "other-creative", label: "Other Creative", labelTh: "งานสร้างสรรค์", folder: "other-creative" },
+  { id: "leadership-case-study", label: "Leadership Case Study", labelTh: "กรณีศึกษาการบริหารทีม", folder: "leadership-case-study" }
 ];

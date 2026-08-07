@@ -262,10 +262,33 @@
         )}</p>`
       : "";
 
+    const cardTag = pick(project.cardTag, project.cardTagTh);
+    const cardTagMarkup = cardTag
+      ? `<span class="project-format-badge project-format-badge--case">${portfolio.escapeHtml(cardTag)}</span>`
+      : "";
+
+    const impactMarkup = Array.isArray(project.impact) && project.impact.length
+      ? `
+        <div class="case-impact">
+          <small>${t("Impact", "ผลลัพธ์")}</small>
+          <ul class="case-impact__list">
+            ${project.impact
+              .map(function (item) {
+                const label = pick(item.label, item.labelTh);
+                const value = pick(item.value, item.valueTh || item.value);
+                return `<li><span>${portfolio.escapeHtml(label)}</span><strong>${portfolio.escapeHtml(value)}</strong></li>`;
+              })
+              .join("")}
+          </ul>
+        </div>
+      `
+      : "";
+
     view.innerHTML = `
       <div class="project-shell">
         <div class="case-heading">
         <p class="eyebrow"><span></span> ${portfolio.escapeHtml(sectorLabel)}${brandLine} · ${portfolio.escapeHtml(project.year)}</p>
+        ${cardTagMarkup}
         <h1>${portfolio.escapeHtml(project.title)}</h1>
         <p class="case-summary">${portfolio.escapeHtml(pick(project.summary, project.summaryTh))}</p>
       </div>
@@ -289,6 +312,7 @@
           <small>${t("Creative direction", "ทิศทางสร้างสรรค์")}</small>
           <p>${portfolio.escapeHtml(pick(project.direction, project.directionTh))}</p>
         </div>
+        ${impactMarkup}
       </div>
 
         ${demoNote}
