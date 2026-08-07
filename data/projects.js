@@ -1010,31 +1010,31 @@ window.PORTFOLIO_PROJECTS = [
     demo: true
   },
   {
-    slug: "team-workflow-web-platform",
+    slug: "product-packaging-team-system",
     order: 12,
     category: "leadership-case-study",
-    title: "[ชื่อโปรเจกต์เว็บของคุณ / Your Web Project Name]",
+    title: "[ชื่อโปรเจกต์ผลิตภัณฑ์ / บรรจุภัณฑ์ของคุณ / Your Product or Packaging Project Name]",
     sector: "Design Leadership",
     sectorTh: "การนำทีมออกแบบ",
     year: "2026",
-    cover: "assets/images/projects/leadership-case-study/team-workflow-web-platform/cover-1200x900.svg",
+    cover: "assets/images/projects/leadership-case-study/product-packaging-team-system/cover-1200x900.svg",
     coverAlt: "Abstract diagram of a team workflow pipeline with stages moving from brief to delivery",
     cardTag: "Leadership Case Study",
     cardTagTh: "กรณีศึกษาการบริหารทีม",
-    summary: "A clear brief-to-delivery system that helped a 2–3 person team ship a web platform faster, with measurable impact on conversion, satisfaction and revenue.",
-    summaryTh: "ระบบทำงานที่ชัดเจนตั้งแต่รับบรีฟจนถึงส่งมอบ ช่วยให้ทีมขนาด 2–3 คนสร้างเว็บแพลตฟอร์มได้เร็วขึ้น พร้อมผลลัพธ์ที่วัดผลได้ต่อ Conversion ความพึงพอใจ และรายได้",
-    challenge: "[Add your real challenge here — e.g. a small team needed to ship a web platform on a tight timeline while staying aligned with Marketing and Sales targets, with no shared system for tracking progress.]",
-    challengeTh: "[ใส่โจทย์จริงของคุณ เช่น ทีมขนาดเล็กต้องส่งมอบเว็บแพลตฟอร์มให้ทันกำหนดเวลา พร้อมประสานงานกับฝ่ายการตลาดและฝ่ายขายให้ตรงเป้าหมายธุรกิจ โดยยังไม่มีระบบกลางในการติดตามความคืบหน้า]",
-    solution: "[Add your real approach here — e.g. set up a five-stage Trello pipeline (Brief → Assignment → Design Review → Production → Delivery) with a clear owner and output for every stage, so priorities and progress stayed visible to the whole team.]",
-    solutionTh: "[ใส่แนวทางจริงที่คุณใช้ เช่น วางระบบ Pipeline บน Trello เป็น 5 ขั้นตอน (รับบรีฟ → มอบหมายงาน → รีวิวดีไซน์ → Production → ส่งมอบ) กำหนดผู้รับผิดชอบและผลลัพธ์ของแต่ละขั้นให้ชัดเจน เพื่อให้ทั้งทีมเห็นลำดับความสำคัญและความคืบหน้าตรงกัน]",
-    scope: ["Team leadership (2–3 people)", "Workflow & pipeline design", "Design direction", "Stakeholder coordination"],
-    scopeTh: ["บริหารทีม (2–3 คน)", "ออกแบบระบบ Pipeline การทำงาน", "กำกับทิศทางดีไซน์", "ประสานงานกับผู้เกี่ยวข้อง"],
-    direction: "Systematic / Transparent / Business-aligned",
-    directionTh: "เป็นระบบ / โปร่งใส / สอดคล้องเป้าหมายธุรกิจ",
+    summary: "A clear brief-to-delivery system that helped a 2–3 person design team lead a product and packaging project with more clarity, with measurable impact on conversion, satisfaction and revenue.",
+    summaryTh: "ระบบทำงานที่ชัดเจนตั้งแต่รับบรีฟจนถึงส่งมอบ ช่วยให้ทีมออกแบบขนาด 2–3 คนนำโปรเจกต์ออกแบบผลิตภัณฑ์และบรรจุภัณฑ์ได้อย่างมีทิศทาง พร้อมผลลัพธ์ที่วัดผลได้ต่อ Conversion ความพึงพอใจ และรายได้",
+    challenge: "[Add your real challenge here — e.g. a small design team needed to deliver several product or packaging SKUs on a tight timeline, while staying aligned with Marketing, Sales and production constraints, with no shared system for tracking progress.]",
+    challengeTh: "[ใส่โจทย์จริงของคุณ เช่น ทีมออกแบบขนาดเล็กต้องส่งมอบงานออกแบบผลิตภัณฑ์หรือบรรจุภัณฑ์หลาย SKU ให้ทันเวลา พร้อมประสานงานกับฝ่ายการตลาด ฝ่ายขาย และข้อจำกัดด้านการผลิตให้สอดคล้องกัน โดยยังไม่มีระบบกลางในการติดตามความคืบหน้า]",
+    solution: "[Add your real approach here — e.g. set up a five-stage Trello pipeline (Brief → Assignment → Design Review → Production → Delivery) with a clear owner and output for every stage, connecting design decisions to print and production feasibility from the start.]",
+    solutionTh: "[ใส่แนวทางจริงที่คุณใช้ เช่น วางระบบ Pipeline บน Trello เป็น 5 ขั้นตอน (รับบรีฟ → มอบหมายงาน → รีวิวดีไซน์ → Production → ส่งมอบ) กำหนดผู้รับผิดชอบและผลลัพธ์ของแต่ละขั้นให้ชัดเจน พร้อมเชื่อมการตัดสินใจด้านดีไซน์กับความเป็นไปได้ด้านการพิมพ์และการผลิตตั้งแต่ต้น]",
+    scope: ["Team leadership (2–3 people)", "Product & packaging design direction", "Workflow & pipeline design", "Production coordination"],
+    scopeTh: ["บริหารทีม (2–3 คน)", "กำกับทิศทางออกแบบผลิตภัณฑ์และบรรจุภัณฑ์", "ออกแบบระบบ Pipeline การทำงาน", "ประสานงานด้านการผลิต"],
+    direction: "Systematic / Transparent / Production-aware",
+    directionTh: "เป็นระบบ / โปร่งใส / เข้าใจข้อจำกัดการผลิต",
     impact: [
       {
-        label: "Conversion rate",
-        labelTh: "อัตราการเปลี่ยนเป็นลูกค้า",
+        label: "Conversion / sell-through rate",
+        labelTh: "อัตราการเปลี่ยนเป็นลูกค้า / อัตราขายออก",
         value: "[ใส่ตัวเลขจริง เช่น 2.1% → 3.4% / add your real before → after figure]"
       },
       {
@@ -1050,21 +1050,21 @@ window.PORTFOLIO_PROJECTS = [
     ],
     gallery: [
       {
-        src: "assets/images/projects/leadership-case-study/team-workflow-web-platform/gallery-01-1440x1080.svg",
+        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-01-1440x1080.svg",
         alt: "Five-stage workflow pipeline from brief to delivery",
         layout: "hero",
         width: 1440,
         height: 1080
       },
       {
-        src: "assets/images/projects/leadership-case-study/team-workflow-web-platform/gallery-02-1600x900.svg",
+        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-02-1600x900.svg",
         alt: "Abstract kanban-style board representing the team's task pipeline",
         layout: "wide",
         width: 1600,
         height: 900
       },
       {
-        src: "assets/images/projects/leadership-case-study/team-workflow-web-platform/gallery-03-1100x825.svg",
+        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-03-1100x825.svg",
         alt: "Abstract panel representing conversion, satisfaction and revenue impact",
         layout: "half",
         width: 1100,
