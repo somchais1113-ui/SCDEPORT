@@ -35,8 +35,10 @@
     [".profile-section-heading", 0],
     [".profile-statement__grid > *", 0],
     [".profile-timeline__item", 60],
+    [".profile-compact-timeline__item", 45],
     [".profile-outcome-card", 90],
     [".profile-leadership-grid article", 55],
+    [".profile-practice__grid article", 45],
     [".profile-capability-map article", 55],
     [".profile-education__list article", 55],
     [".profile-close__grid > *", 0]
