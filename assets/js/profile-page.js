@@ -51,5 +51,17 @@
     }
   });
 
+
+  // V68: keep work-history detail optional and compact. Only one role expands at a time.
+  const jobDetails = Array.from(document.querySelectorAll(".profile-job-detail"));
+  jobDetails.forEach(function (detail) {
+    detail.addEventListener("toggle", function () {
+      if (!detail.open) return;
+      jobDetails.forEach(function (other) {
+        if (other !== detail && other.open) other.open = false;
+      });
+    });
+  });
+
   closeMenu();
 })();
