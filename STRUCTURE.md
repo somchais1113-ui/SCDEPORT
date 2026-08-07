@@ -117,3 +117,10 @@ Project copy carries a Thai twin for every visible field:
 
 If a Thai field is missing the site falls back to the English one, so a new
 project never breaks the toggle.
+
+
+## Profile page
+
+| Page | File |
+|---|---|
+| Career story, leadership, outcomes and education | `profile.html` |
