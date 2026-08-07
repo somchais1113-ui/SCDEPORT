@@ -1,0 +1,19 @@
+/* v59 — Mobile hero name alignment
+   Scope: home.html only, mobile viewport
+   Keeps the existing type size, spacing and styling while centering both name lines. */
+@media (max-width: 640px) {
+  .home-page .hero-name-title {
+    text-align: center;
+  }
+
+  .home-page .hero-name-line {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .home-page .hero-name-line--outline {
+    margin-top: 0.2em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

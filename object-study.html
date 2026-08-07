@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f7f7f4">
     <meta name="description" content="Interactive ballpoint pen anatomy study by Somchai Sompiew.">
     <title>Object Study 01 | Somchai Sompiew</title>
-    <meta name="build-version" content="v56-main-cover-hover-credits">
+    <meta name="build-version" content="v57-object-study-visual-refine">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>document.documentElement.classList.add("motion-enabled");</script>
     <link rel="stylesheet" href="assets/css/main.css?v=531">
@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="assets/css/v37-display-brand-groups.css?v=531">
     <link rel="stylesheet" href="assets/css/object-study.css?v=531">
     <link rel="stylesheet" href="assets/css/v56-main-cover-credits.css?v=560">
+    <link rel="stylesheet" href="assets/css/v57-object-study-visual-refine.css?v=570">
     <script src="assets/js/shared.js?v=531" defer></script>
     <script src="assets/js/motion.js?v=531" defer></script>
     <script src="assets/js/pen-study.js?v=531" defer></script>
       <script src="assets/js/image-protection.js?v=531" defer></script>
   </head>
-  <body data-build="v56-main-cover-hover-credits" class="object-study-page" data-pen-mode="overview">
+  <body data-build="v57-object-study-visual-refine" class="object-study-page" data-pen-mode="overview">
     <a class="skip-link" href="#study-content" data-i18n-en="Skip to object study" data-i18n-th="ข้ามไปยังส่วนศึกษาผลิตภัณฑ์">Skip to object study</a>
 
     <header class="site-header">
@@ -76,6 +77,56 @@
           <p data-i18n-en="A clean visual study of how Pusher, Clip, Barrel, Grip and Cone work together as one useful writing tool." data-i18n-th="การศึกษารูปทรงอย่างเป็นระบบ เพื่อให้เห็นว่า Pusher, Clip, Barrel, Grip และ Cone ทำงานร่วมกันเป็นอุปกรณ์การเขียนหนึ่งชิ้นได้อย่างไร">
             A clean visual study of how Pusher, Clip, Barrel, Grip and Cone work together as one useful writing tool.
           </p>
+        </div>
+      </section>
+
+      <section class="study-category-select" aria-labelledby="study-category-title">
+        <div class="study-category-select__heading">
+          <div>
+            <p class="eyebrow"><span></span><span data-i18n-en="Visual index" data-i18n-th="ดัชนีภาพ">Visual index</span></p>
+            <h2 id="study-category-title">
+              <span data-i18n-en="One object." data-i18n-th="หนึ่งผลิตภัณฑ์">One object.</span>
+              <em data-i18n-en="Different details." data-i18n-th="หลายมุมมองรายละเอียด">Different details.</em>
+            </h2>
+          </div>
+          <p data-i18n-en="Choose a visual category to enter the study. Each preview now shows the product direction before opening the interactive stage." data-i18n-th="เลือกหมวดภาพเพื่อเข้าสู่การศึกษา แต่ละหมวดแสดงทิศทางของผลิตภัณฑ์ก่อนเปิดพื้นที่โต้ตอบ">
+            Choose a visual category to enter the study. Each preview now shows the product direction before opening the interactive stage.
+          </p>
+        </div>
+
+        <div class="study-category-grid" aria-label="Object study categories">
+          <button class="study-category-card study-category-card--form" type="button" data-mode-jump="overview">
+            <span class="study-category-card__visual" aria-hidden="true">
+              <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+            </span>
+            <span class="study-category-card__copy">
+              <small>01</small>
+              <span><strong data-i18n-en="Form &amp; Proportion" data-i18n-th="รูปทรงและสัดส่วน">Form &amp; Proportion</strong><b data-i18n-en="Read the complete silhouette as a 2.5D product object." data-i18n-th="มองรูปทรงโดยรวมในฐานะวัตถุผลิตภัณฑ์แบบ 2.5D">Read the complete silhouette as a 2.5D product object.</b></span>
+            </span>
+          </button>
+
+          <button class="study-category-card study-category-card--anatomy" type="button" data-mode-jump="anatomy">
+            <span class="study-category-card__visual" aria-hidden="true">
+              <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+              <span class="study-category-markers"><i></i><i></i><i></i></span>
+            </span>
+            <span class="study-category-card__copy">
+              <small>02</small>
+              <span><strong data-i18n-en="Anatomy &amp; Structure" data-i18n-th="ส่วนประกอบและโครงสร้าง">Anatomy &amp; Structure</strong><b data-i18n-en="Inspect the five external components and their relationships." data-i18n-th="สำรวจส่วนประกอบภายนอกทั้งห้าและความสัมพันธ์ของแต่ละชิ้น">Inspect the five external components and their relationships.</b></span>
+            </span>
+          </button>
+
+          <button class="study-category-card study-category-card--cmf" type="button" data-mode-jump="colour">
+            <span class="study-category-card__visual" aria-hidden="true">
+              <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+              <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+              <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="" width="1672" height="941" draggable="false">
+            </span>
+            <span class="study-category-card__copy">
+              <small>03</small>
+              <span><strong data-i18n-en="Colour, Material &amp; Finish" data-i18n-th="สี วัสดุ และพื้นผิว">Colour, Material &amp; Finish</strong><b data-i18n-en="Compare atmosphere, surface and colour direction without losing form." data-i18n-th="เปรียบเทียบบรรยากาศ พื้นผิว และทิศทางสี โดยยังคงรูปทรงเดิม">Compare atmosphere, surface and colour direction without losing form.</b></span>
+            </span>
+          </button>
         </div>
       </section>
 
@@ -171,7 +222,9 @@
             <section class="stage-mode stage-mode--colour" data-mode-panel="colour" aria-hidden="true" hidden>
               <div class="colour-product">
                 <div class="colour-glow" aria-hidden="true"></div>
+                <div class="colour-product__caption"><small data-i18n-en="CMF preview" data-i18n-th="ตัวอย่าง CMF">CMF preview</small><strong data-i18n-en="Select a neutral value" data-i18n-th="เลือกค่าสีกลาง">Select a neutral value</strong></div>
                 <img src="assets/images/object-study/neutral-grey-ballpoint-transparent.png" alt="Pen colour system study" width="1672" height="941" draggable="false">
+                <span class="colour-product__tint" aria-hidden="true"></span>
               </div>
               <div class="colour-controls" role="group" aria-label="Neutral colour values">
                 <button type="button" class="is-active" data-colour="#2f302f" aria-pressed="true" style="--swatch:#2f302f"><i>01</i><span>#2F302F</span></button>

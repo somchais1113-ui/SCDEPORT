@@ -4,6 +4,7 @@
   const body = document.body;
   const stage = document.querySelector("[data-study-stage]");
   const modeButtons = Array.from(document.querySelectorAll("[data-mode-button]"));
+  const modeJumps = Array.from(document.querySelectorAll("[data-mode-jump]"));
   const modePanels = Array.from(document.querySelectorAll("[data-mode-panel]"));
   const partButtons = Array.from(document.querySelectorAll("[data-pen-part]"));
   const partJumps = Array.from(document.querySelectorAll("[data-part-jump]"));
@@ -249,6 +250,15 @@
   modeButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       setMode(button.dataset.modeButton);
+    });
+  });
+
+  modeJumps.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const mode = button.dataset.modeJump;
+      setMode(mode);
+      const shell = document.querySelector(".study-shell");
+      if (shell) shell.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
     });
   });
 

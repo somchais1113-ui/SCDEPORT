@@ -1,0 +1,839 @@
+/* V58 — Design leadership narrative
+   Reframes the lower half of the home page around team leadership,
+   workflow operations and production-aware creative direction.
+*/
+
+/* ------------------------------------------------------------
+   Leadership approach cards
+------------------------------------------------------------ */
+.home-page .leadership-approach {
+  min-height: 0;
+}
+
+.home-page .leadership-cards article {
+  min-height: clamp(430px, 31vw, 520px);
+}
+
+.home-page .leadership-cards h3 {
+  margin-top: 34px;
+  padding-top: 0;
+}
+
+.leadership-visual {
+  position: relative;
+  min-height: 136px;
+  margin: 42px 0 0;
+  padding: 14px;
+  border: 1px solid rgba(27, 28, 26, 0.18);
+  border-radius: 13px;
+  background:
+    linear-gradient(rgba(27, 28, 26, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 28, 26, 0.025) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.42);
+  background-size: 18px 18px;
+  overflow: hidden;
+}
+
+.leadership-visual::after {
+  position: absolute;
+  inset: auto -16% -60% 30%;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(141, 147, 137, 0.11);
+  filter: blur(20px);
+  content: "";
+  pointer-events: none;
+}
+
+.leadership-visual > small {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.leadership-visual i,
+.leadership-visual b,
+.leadership-visual em,
+.leadership-visual strong,
+.leadership-visual u {
+  font-style: normal;
+  text-decoration: none;
+}
+
+.leadership-visual--align i {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.68fr 1fr auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 27px;
+  border-top: 1px solid rgba(27, 28, 26, 0.1);
+  font-size: 8px;
+}
+
+.leadership-visual--align i:first-of-type {
+  border-top: 0;
+}
+
+.leadership-visual--align b {
+  font-size: 8px;
+  letter-spacing: 0.04em;
+}
+
+.leadership-visual--align em {
+  color: var(--muted);
+}
+
+.leadership-visual--align strong {
+  min-width: 38px;
+  padding: 4px 6px;
+  border: 1px solid rgba(27, 28, 26, 0.18);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 6px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.leadership-visual--progress i {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  font-size: 7px;
+}
+
+.leadership-visual--progress i em {
+  position: relative;
+  display: block;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(27, 28, 26, 0.09);
+  overflow: hidden;
+}
+
+.leadership-visual--progress i em::after {
+  display: block;
+  width: var(--progress);
+  height: 100%;
+  border-radius: inherit;
+  background: #747a70;
+  content: "";
+}
+
+.leadership-visual--feedback i {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 45px 1fr 20px;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  border-top: 1px solid rgba(27, 28, 26, 0.1);
+  font-size: 7px;
+}
+
+.leadership-visual--feedback i:first-of-type {
+  border-top: 0;
+}
+
+.leadership-visual--feedback em {
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(27, 28, 26, 0.08);
+  overflow: hidden;
+}
+
+.leadership-visual--feedback u {
+  display: block;
+  width: var(--score);
+  height: 100%;
+  border-radius: inherit;
+  background: #747a70;
+}
+
+.leadership-visual--feedback strong {
+  color: var(--muted);
+  font-size: 7px;
+  text-align: right;
+}
+
+/* ------------------------------------------------------------
+   Team operating system
+------------------------------------------------------------ */
+.leadership-workflow {
+  padding: clamp(84px, 9vw, 144px) 3vw;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.leadership-workflow__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.48fr);
+  align-items: end;
+  gap: clamp(48px, 8vw, 150px);
+  margin-bottom: clamp(42px, 5vw, 76px);
+}
+
+.leadership-workflow__heading h2 {
+  max-width: 960px;
+  margin: clamp(30px, 3.4vw, 54px) 0 0;
+  font-size: clamp(54px, 6.2vw, 108px);
+  font-weight: 540;
+  line-height: 0.88;
+  letter-spacing: -0.062em;
+}
+
+.leadership-workflow__heading h2 span,
+.leadership-workflow__heading h2 em {
+  display: block;
+}
+
+.leadership-workflow__heading h2 em {
+  margin-top: 0.06em;
+  color: transparent;
+  font-family: "SC Special Gothic", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.7em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  -webkit-text-stroke: 1.2px var(--ink);
+}
+
+.leadership-workflow__heading > p {
+  max-width: 430px;
+  margin: 0 0 0.2em;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.workflow-system {
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.workflow-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.workflow-rail::before {
+  position: absolute;
+  top: 37px;
+  right: 10%;
+  left: 10%;
+  height: 1px;
+  background: var(--line-strong);
+  content: "";
+  pointer-events: none;
+}
+
+.workflow-rail button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: 154px;
+  align-content: space-between;
+  gap: 14px;
+  padding: 22px clamp(14px, 1.8vw, 28px);
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: rgba(247, 247, 244, 0.96);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.workflow-rail button:last-child {
+  border-right: 0;
+}
+
+.workflow-rail button::after {
+  position: absolute;
+  top: 33px;
+  right: clamp(14px, 1.8vw, 28px);
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+  background: var(--surface);
+  content: "";
+  transition: background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.workflow-rail button:hover,
+.workflow-rail button:focus-visible,
+.workflow-rail button[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.workflow-rail button[aria-selected="true"]::after,
+.workflow-rail button:hover::after,
+.workflow-rail button:focus-visible::after {
+  border-color: var(--surface);
+  background: var(--surface);
+  transform: scale(1.22);
+}
+
+.workflow-rail button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.workflow-rail small {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+.workflow-rail strong {
+  align-self: end;
+  font-size: clamp(15px, 1.25vw, 21px);
+  font-weight: 550;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.workflow-rail span {
+  color: currentColor;
+  font-size: 9px;
+  opacity: 0.62;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.workflow-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(280px, 0.62fr);
+  min-height: 410px;
+}
+
+.workflow-panels {
+  position: relative;
+  min-width: 0;
+  border-right: 1px solid var(--line-strong);
+}
+
+.workflow-panel {
+  display: grid;
+  min-height: 410px;
+  align-content: center;
+  padding: clamp(42px, 5vw, 78px);
+  animation: workflow-panel-in 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.workflow-panel[hidden] {
+  display: none;
+}
+
+@keyframes workflow-panel-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.workflow-panel__label {
+  margin: 0 0 clamp(32px, 4vw, 58px);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workflow-panel h3 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(34px, 3.8vw, 68px);
+  font-weight: 530;
+  line-height: 0.98;
+  letter-spacing: -0.048em;
+}
+
+.workflow-panel > p:not(.workflow-panel__label) {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.72;
+}
+
+.workflow-output {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
+  margin-top: clamp(38px, 4vw, 62px);
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.workflow-output span {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workflow-output strong {
+  font-size: 11px;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+}
+
+.workflow-evidence {
+  display: grid;
+  align-content: center;
+  padding: clamp(34px, 4vw, 60px);
+  background:
+    linear-gradient(rgba(27, 28, 26, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 28, 26, 0.028) 1px, transparent 1px),
+    var(--surface-soft);
+  background-size: 24px 24px;
+}
+
+.workflow-evidence > p {
+  margin: 0 0 32px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workflow-evidence > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.workflow-evidence > div b {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.workflow-evidence > small {
+  display: block;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+/* ------------------------------------------------------------
+   Production knowledge entry
+------------------------------------------------------------ */
+.home-page .craft-entry--leadership {
+  grid-template-columns: minmax(310px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(46px, 7vw, 130px);
+  padding-block: clamp(82px, 8vw, 132px);
+  background: var(--surface-soft);
+}
+
+.home-page .craft-entry--leadership .craft-entry__copy h2 {
+  max-width: 680px;
+  margin: clamp(30px, 3.2vw, 50px) 0 20px;
+  font-size: clamp(42px, 4.4vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.046em;
+}
+
+.home-page .craft-entry--leadership .craft-entry__copy > p:not(.eyebrow) {
+  max-width: 610px;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.craft-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.craft-process-tile {
+  position: relative;
+  display: flex;
+  min-height: clamp(250px, 22vw, 360px);
+  flex-direction: column;
+  padding: clamp(18px, 2vw, 30px);
+  border-left: 1px solid var(--line-strong);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.craft-process-tile:first-child {
+  border-left: 0;
+}
+
+.craft-process-tile::after {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  content: "↗";
+  font-size: 13px;
+  opacity: 0.45;
+}
+
+.craft-process-tile:hover,
+.craft-process-tile:focus-visible {
+  background: var(--ink);
+  color: var(--surface);
+  transform: translateY(-4px);
+}
+
+.craft-process-tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.craft-process-tile small {
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.craft-process-tile strong {
+  margin-top: auto;
+  font-size: clamp(16px, 1.45vw, 24px);
+  font-weight: 540;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+.craft-process-tile span {
+  margin-top: 12px;
+  font-size: 9px;
+  line-height: 1.5;
+  opacity: 0.62;
+}
+
+/* ------------------------------------------------------------
+   Object study becomes a compact selected experiment
+------------------------------------------------------------ */
+@media (min-width: 961px) {
+  .home-page .pen-preview-section {
+    padding-top: clamp(62px, 5.5vw, 90px);
+    padding-bottom: clamp(58px, 5vw, 84px);
+  }
+
+  .home-page .pen-preview-heading {
+    margin-bottom: 26px;
+  }
+
+  .home-page .pen-preview-stage {
+    min-height: clamp(310px, 26vw, 410px);
+  }
+
+  .home-page .pen-preview-model {
+    width: min(78%, 1210px);
+  }
+}
+
+.home-page .pen-preview-heading h2 {
+  max-width: 980px;
+}
+
+.home-page .pen-preview-intro p {
+  max-width: 430px;
+}
+
+/* ------------------------------------------------------------
+   Management profile close
+------------------------------------------------------------ */
+.about-section--leadership .about-large {
+  max-width: 900px;
+}
+
+.management-positioning {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.management-positioning span {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.management-positioning p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+/* Thai display copy */
+body.home-page[data-language="th"] .leadership-workflow__heading h2 {
+  font-size: clamp(44px, 5vw, 82px);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+}
+
+body.home-page[data-language="th"] .leadership-workflow__heading h2 em {
+  line-height: 1.12;
+}
+
+body.home-page[data-language="th"] .workflow-panel h3 {
+  font-size: clamp(30px, 3.1vw, 54px);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+body.home-page[data-language="th"] .craft-entry--leadership .craft-entry__copy h2 {
+  font-size: clamp(36px, 3.8vw, 62px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* ------------------------------------------------------------
+   Responsive
+------------------------------------------------------------ */
+@media (max-width: 1180px) {
+  .home-page .leadership-cards article {
+    grid-template-columns: 38px minmax(190px, 0.72fr) minmax(200px, 0.84fr) minmax(220px, 1.15fr);
+    align-items: center;
+  }
+
+  .leadership-visual {
+    min-height: 120px;
+    margin: 0;
+  }
+
+  .home-page .leadership-cards h3 {
+    margin: 0;
+  }
+
+  .home-page .craft-entry--leadership {
+    grid-template-columns: 1fr;
+  }
+
+  .craft-process-grid {
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    overflow-x: auto;
+  }
+
+  .craft-process-tile {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 960px) {
+  .leadership-workflow__heading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .leadership-workflow__heading > p {
+    max-width: 640px;
+  }
+
+  .workflow-rail {
+    grid-template-columns: repeat(5, minmax(148px, 1fr));
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .workflow-rail::before {
+    display: none;
+  }
+
+  .workflow-rail button {
+    min-height: 132px;
+  }
+
+  .workflow-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-panels {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .workflow-panel {
+    min-height: 380px;
+  }
+
+  .workflow-evidence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+  }
+
+  .workflow-evidence > p,
+  .workflow-evidence > small {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-page .leadership-cards article {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 18px;
+    padding: 26px 0;
+  }
+
+  .home-page .leadership-cards article > span {
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+
+  .leadership-visual,
+  .home-page .leadership-cards h3,
+  .home-page .leadership-cards p {
+    grid-column: 2;
+  }
+
+  .leadership-visual {
+    min-height: 132px;
+    margin: 0 0 8px;
+  }
+
+  .leadership-workflow {
+    padding-inline: 20px;
+  }
+
+  .leadership-workflow__heading h2 {
+    font-size: clamp(48px, 14vw, 76px);
+  }
+
+  .workflow-panel {
+    min-height: 0;
+    padding: 40px 24px;
+  }
+
+  .workflow-panel h3 {
+    font-size: clamp(32px, 9.5vw, 50px);
+  }
+
+  .workflow-output {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .workflow-evidence {
+    grid-template-columns: 1fr;
+    padding: 34px 24px;
+  }
+
+  .workflow-evidence > p,
+  .workflow-evidence > small {
+    grid-column: auto;
+  }
+
+  .home-page .craft-entry--leadership {
+    padding-inline: 20px;
+  }
+
+  .craft-process-grid {
+    grid-template-columns: repeat(5, minmax(190px, 1fr));
+    margin-inline: -20px;
+    padding-inline: 20px;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .craft-process-tile {
+    min-height: 230px;
+  }
+
+  .management-positioning {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .leadership-visual {
+    padding: 12px;
+  }
+
+  .leadership-workflow {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .leadership-workflow__heading h2 em {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .workflow-system {
+    margin-inline: -20px;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .workflow-rail {
+    padding-left: 20px;
+  }
+
+  .workflow-rail button {
+    min-width: 146px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workflow-panel,
+  .workflow-rail button,
+  .craft-process-tile {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Final cascade fixes after browser QA. */
+.home-page .craft-process-grid .craft-process-tile span {
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  color: currentColor;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  opacity: 0.62;
+}
+
+.home-page .about-section--leadership .about-copy {
+  display: block;
+  padding-top: 0;
+}
+
+.home-page .about-section--leadership .about-summary {
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.72fr);
+}
+
+@media (max-width: 760px) {
+  .home-page .about-section--leadership .about-summary {
+    grid-template-columns: 1fr;
+  }
+}
