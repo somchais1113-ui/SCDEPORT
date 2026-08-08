@@ -1,0 +1,98 @@
+/* ==========================================================================
+   V71 — Profile review pass (client feedback, four screenshots)
+   Loaded LAST on the Profile page, after v70. Touches only what was flagged:
+   Experience type scale, Education heading/type scale, the outlined
+   headline, the hero portrait, and the hero meta row. Nothing else in
+   v34–v70 is edited.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Experience (02) — year labels were the same 12px across every card and
+      read as an afterthought; the FORM / DESIGN / PRODUCTION / LEADERSHIP
+      phase row was smaller (9px) than every other label on the page.
+   -------------------------------------------------------------------------- */
+.profile-work-timeline--editorial .profile-work-timeline__item time {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.profile-career-track--editorial span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* A little more air around the phase row now that the label carries more
+   visual weight, so it doesn't crowd the timeline cards directly below it. */
+.profile-career-track--editorial {
+  margin-bottom: 32px !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Education (04) — "Art → Design → Management" sat right at the edge of
+      its column (886px column vs. 886px of text), so it tipped onto a
+      second line under slightly different font metrics. Institution names
+      and qualification titles are bumped up from v69's compact sizing.
+   -------------------------------------------------------------------------- */
+@media (min-width: 981px) {
+  .profile-education--editorial .profile-editorial-heading h2 {
+    max-width: none;
+    font-size: clamp(40px, 4.3vw, 66px);
+    white-space: nowrap;
+  }
+}
+
+.profile-education-card__school {
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.profile-education--editorial .profile-education-card h3 {
+  font-size: clamp(24px, 2.15vw, 34px);
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero headline — the second line ("& design leadership.") was an
+      outlined / transparent treatment. Filled solid, matching the first
+      line's weight and colour.
+   -------------------------------------------------------------------------- */
+.profile-editorial-hero h1 em {
+  color: var(--ink);
+  font-style: normal;
+  -webkit-text-fill-color: currentColor;
+  -webkit-text-stroke: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Hero meta row — now carries three facts (Current / Based / Corporate)
+      instead of two, so the grid gains a third column. The original
+      860px cap was sized for two facts; removed so all three get even room
+      inside the same column the rest of the hero copy already uses.
+   -------------------------------------------------------------------------- */
+.profile-editorial-hero__meta {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: none;
+}
+
+@media (max-width: 680px) {
+  .profile-editorial-hero__meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero portrait — real photo in place of the placeholder frame. The
+      empty-state rules (small centred icon at 30% width) don't apply to a
+      full portrait, so this variant fills the arch frame edge-to-edge.
+   -------------------------------------------------------------------------- */
+.profile-portrait-frame--photo {
+  background: var(--profile-soft);
+}
+
+.profile-portrait-frame--photo img {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: none;
+}
