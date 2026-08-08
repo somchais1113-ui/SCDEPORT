@@ -1,0 +1,147 @@
+/* ==========================================================================
+   V70 — Alignment unification + robustness guards
+   Loaded LAST on every page so it wins the cascade without editing v34–v69.
+
+   Problem it fixes (measured at 1440px before this file existed):
+     header 43.2  |  .shell 46.1  |  .craft-page .shell 56.0  |  .project-shell 80.0
+   Four competing gutter systems meant the left content edge stepped between
+   the header, the body and the footer on six of seven pages.
+
+   Solution: one token, --gutter, used by every horizontal boundary.
+   ========================================================================== */
+
+:root {
+  /* Single source of truth for the page gutter.
+     Change this one value to re-tune the whole site's left/right rhythm. */
+  --gutter: clamp(24px, 3.2vw, 56px);
+
+  /* Widest the centred content column is allowed to grow. */
+  --content-max: 1680px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Header / footer — previously `padding: 3vw` with no min or max, which
+      collapsed to 11.7px on a 390px phone while the body sat at 20px.
+   -------------------------------------------------------------------------- */
+.site-header,
+footer,
+.portfolio-footer {
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   2. Shared shell — craft pages used a 6vw variant, everything else 3.2vw.
+   -------------------------------------------------------------------------- */
+.shell,
+.craft-page .shell {
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   3. Project case pages — `.project-shell` was centred at a fixed 1280px,
+      which pushed case content 80px in on a 1440px screen while the footer
+      below it stayed at 43.2px. Now it shares the page gutter and only
+      caps its width, so the left edge always lines up.
+   -------------------------------------------------------------------------- */
+.project-shell {
+  width: 100%;
+  max-width: calc(var(--content-max) - (var(--gutter) * 2));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. Profile page — v64 declared its own --profile-pad (3.2vw, unclamped at
+      the low end differently). Point it at the shared token instead.
+   -------------------------------------------------------------------------- */
+.profile-page {
+  --profile-pad: var(--gutter);
+  --profile-max: var(--content-max);
+}
+
+/* --------------------------------------------------------------------------
+   5. -webkit-text-stroke safety net.
+      `color: transparent` + stroke means that in any engine without stroke
+      support the outlined headline disappears completely. Paint the text
+      first, then only go transparent where the stroke is guaranteed to draw.
+   -------------------------------------------------------------------------- */
+.profile-editorial-hero h1 em,
+.home-page .hero-name-line--outline,
+.landing-page .landing-title-line.serif {
+  color: var(--ink);
+  -webkit-text-fill-color: currentColor;
+}
+
+@supports (-webkit-text-stroke: 1px currentColor) {
+  .profile-editorial-hero h1 em,
+  .home-page .hero-name-line--outline,
+  .landing-page .landing-title-line.serif {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Brand-group headers on the Display category now show the brand name,
+      so give the name room to sit beside the index number.
+   -------------------------------------------------------------------------- */
+.project-brand-group__header p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+}
+
+.project-brand-group__header .project-brand-group__name {
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Content sections that carried their own bare `3vw` inline padding.
+      3vw has no minimum and no maximum, so it drifted away from the clamped
+      --gutter at both ends of the viewport range (11.7px on a 390px phone,
+      43.2px at 1440 versus the shell's 46.1px). Vertical padding is left
+      exactly as authored — only the horizontal value is normalised.
+   -------------------------------------------------------------------------- */
+.hero,
+.intro-strip p,
+.work-section,
+.approach-title,
+.about-section,
+.project-hero,
+.next-project,
+.pen-preview-section,
+.craft-entry,
+.leadership-workflow {
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   8. Page-scoped overrides that outrank the rules above.
+      `.home-page footer` (0,1,1) beat `.portfolio-footer` (0,1,0), and the
+      object-study / category pages ship their own *-shell wrappers. These are
+      matched at equal-or-higher specificity so the shared gutter still wins.
+
+      The landing cover (index.html) is deliberately excluded: it is a
+      full-screen composition with its own optical margin, not a content page.
+   -------------------------------------------------------------------------- */
+.home-page footer,
+.home-page .portfolio-footer {
+  padding-inline: var(--gutter);
+}
+
+.object-study-page .study-intro,
+.object-study-page .study-category-select,
+.object-study-page .study-shell,
+.object-study-page .pen-parts-section,
+.object-study-page .pen-mechanism-section {
+  padding-inline: var(--gutter);
+}
+
+.category-page .category-page-shell,
+.category-page .category-page-hero,
+.category-page .category-page-brand-nav {
+  padding-inline: var(--gutter);
+}

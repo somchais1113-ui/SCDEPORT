@@ -28,7 +28,7 @@ Somchai-Sompiew-Portfolio/
 ├── project.html                    # Reusable project detail page
 ├── 404.html
 ├── data/
-│   ├── categories.js               # Category ids, labels and folder names (10 categories)
+│   ├── categories.js               # Category ids, labels and folder names (11 categories)
 │   └── projects.js                 # All project content, Thai copy and image paths
 ├── assets/
 │   ├── css/
@@ -117,3 +117,10 @@ Project copy carries a Thai twin for every visible field:
 
 If a Thai field is missing the site falls back to the English one, so a new
 project never breaks the toggle.
+
+
+## Profile page
+
+| Page | File |
+|---|---|
+| Career story, leadership, outcomes and education | `profile.html` |

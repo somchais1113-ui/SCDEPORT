@@ -30,11 +30,13 @@
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
+  /* Brand names are proper nouns and are never transliterated or translated —
+     "Quantum" and "Kioku" must read identically in both languages. */
   function displayBrandGroupsSeed() {
     return [
-      { id: "quantum", label: "Quantum", labelTh: "ควอนตัม", order: 1 },
-      { id: "kioku", label: "Kioku", labelTh: "คิโอคุ", order: 2 },
-      { id: "other-display", label: translated("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
+      { id: "quantum", label: "Quantum", order: 1 },
+      { id: "kioku", label: "Kioku", order: 2 },
+      { id: "other-display", label: translated("Other Displays", "งานดิสเพลย์อื่น ๆ"), order: 3, empty: true }
     ];
   }
 
@@ -72,11 +74,16 @@
     const brandMarkup = brand
       ? `<span class="project-brand-label">${portfolio.escapeHtml(brand)} Brand</span>`
       : "";
+    const cardTag = currentLanguage() === "th" && project.cardTagTh ? project.cardTagTh : project.cardTag;
+    const cardTagMarkup = cardTag
+      ? `<span class="project-format-badge">${portfolio.escapeHtml(cardTag)}</span>`
+      : "";
 
     return `
       <article class="project-card" style="--card-index: ${Number(index) || 0}">
         <a href="project.html?id=${encodeURIComponent(project.slug)}">
           <div class="project-image">
+            ${cardTagMarkup}
             <img
               src="${portfolio.escapeHtml(project.cover)}"
               alt="${portfolio.escapeHtml(project.coverAlt)}"
@@ -145,7 +152,7 @@
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
-          label: project.brandLabel || project.brand || translated("Other Display", "งานดิสเพลย์อื่น ๆ"),
+          label: project.brandLabel || project.brand || translated("Other Displays", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
           projects: [],
           empty: false
@@ -160,7 +167,10 @@
         return `
           <section class="project-brand-group project-brand-group--display" aria-label="${portfolio.escapeHtml(group.label)}">
             <header class="project-brand-group__header">
-              <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
+              <p>
+                <span>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</span>
+                <span class="project-brand-group__name">${portfolio.escapeHtml(group.label)}</span>
+              </p>
             </header>
             <div class="project-brand-grid">
               ${group.projects.length ? group.projects.map(projectMarkup).join("") : emptyDisplayCard(group, groupIndex + 4)}

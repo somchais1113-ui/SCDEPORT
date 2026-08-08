@@ -100,8 +100,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "good-daily",
@@ -194,8 +193,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "everyday-forms",
@@ -288,8 +286,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "signature-system",
@@ -382,8 +379,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "quantum-display-system",
@@ -391,7 +387,6 @@ window.PORTFOLIO_PROJECTS = [
     category: "display-retail",
     brand: "quantum",
     brandLabel: "Quantum",
-    brandLabelTh: "ควอนตัม",
     brandOrder: 1,
     title: "Quantum Display System",
     sector: "Display & Retail",
@@ -494,8 +489,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "kioku-display-system",
@@ -503,7 +497,6 @@ window.PORTFOLIO_PROJECTS = [
     category: "display-retail",
     brand: "kioku",
     brandLabel: "Kioku",
-    brandLabelTh: "คิโอคุ",
     brandOrder: 2,
     title: "Kioku Display System",
     sector: "Display & Retail",
@@ -606,8 +599,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "open-floor",
@@ -700,8 +692,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "make-it-move",
@@ -794,8 +785,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "margins-and-matter",
@@ -860,8 +850,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 900
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "pocket-parade",
@@ -912,8 +901,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1600,
         height: 900
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "off-grid-studies",
@@ -1006,7 +994,6 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   }
 ];

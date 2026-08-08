@@ -1,0 +1,486 @@
+/* V68 — HR-first profile story. Profile page only. */
+
+/* 01 — Hero: establish role, value and scope before chronology. */
+.profile-page .profile-hero--hr {
+  min-height: min(700px, calc(100svh - var(--header-height) - 58px));
+  padding-top: clamp(46px, 5vw, 78px);
+  padding-bottom: clamp(50px, 5.5vw, 86px);
+}
+
+.profile-page .profile-hero--hr h1 {
+  margin-top: clamp(32px, 3.8vw, 58px);
+  margin-bottom: clamp(24px, 2.6vw, 38px);
+  font-size: clamp(64px, 7.35vw, 124px);
+}
+
+.profile-page .profile-hero--hr .profile-hero__intro {
+  max-width: 890px;
+  margin-bottom: clamp(24px, 2.6vw, 36px);
+  font-size: clamp(18px, 1.55vw, 25px);
+}
+
+.profile-page .profile-hero--hr .profile-hero__role > div {
+  min-height: 82px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* Snapshot stays scannable rather than reading as four achievement cards. */
+.profile-page .profile-metrics--hr article {
+  min-height: 154px;
+  padding-top: 25px;
+  padding-bottom: 24px;
+}
+
+.profile-page .profile-metrics--hr strong {
+  margin-bottom: 20px;
+  font-size: clamp(44px, 4.35vw, 70px);
+}
+
+.profile-page .profile-metrics--hr .profile-metric-flow {
+  font-size: clamp(21px, 2.05vw, 34px);
+  line-height: .94;
+  letter-spacing: -.055em;
+}
+
+/* 02 — What I bring: one compact editorial capability view. */
+.profile-bring {
+  padding-top: clamp(72px, 7.4vw, 116px);
+  padding-bottom: clamp(74px, 7.6vw, 120px);
+}
+
+.profile-bring__head {
+  margin-bottom: clamp(36px, 4vw, 58px);
+}
+
+.profile-bring__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.profile-bring__grid article {
+  min-height: 190px;
+  padding: 20px clamp(18px, 1.8vw, 30px) 24px;
+}
+
+.profile-bring__grid article + article {
+  border-left: 1px solid var(--line);
+}
+
+.profile-bring__grid article > span {
+  display: block;
+  margin-bottom: clamp(42px, 4.2vw, 66px);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.profile-bring__grid h3 {
+  margin: 0 0 9px;
+  font-size: clamp(21px, 1.85vw, 30px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.profile-bring__grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* 03 — Selected impact: retain the black visual band, but make the evidence immediate. */
+.profile-page .profile-outcomes--hr {
+  padding-top: clamp(72px, 7.5vw, 116px);
+  padding-bottom: clamp(78px, 8vw, 126px);
+}
+
+.profile-page .profile-outcomes--hr .profile-section-heading {
+  margin-bottom: clamp(34px, 3.8vw, 54px);
+}
+
+.profile-page .profile-outcomes--hr .profile-section-heading h2 {
+  font-size: clamp(48px, 5.25vw, 86px);
+}
+
+.profile-impact-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+  border-top: 1px solid rgba(255,255,255,.24);
+  border-bottom: 1px solid rgba(255,255,255,.24);
+}
+
+.profile-impact-rail > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: end;
+  min-height: 104px;
+  padding: 19px 24px 20px 0;
+}
+
+.profile-impact-rail > div + div {
+  padding-left: 24px;
+  border-left: 1px solid rgba(255,255,255,.18);
+}
+
+.profile-impact-rail strong {
+  color: #fff;
+  font-size: clamp(34px, 3vw, 52px);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.profile-impact-rail span {
+  max-width: 200px;
+  color: rgba(255,255,255,.58);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+@media (min-width: 1181px) {
+  .profile-page .profile-outcomes--hr .profile-outcome-card {
+    grid-template-rows: clamp(330px, 31vw, 470px) auto;
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card figure {
+    min-height: 330px;
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card__copy {
+    padding: clamp(24px, 2.1vw, 34px);
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card__copy > span {
+    margin-bottom: 18px;
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card__copy h3 {
+    font-size: clamp(28px, 2.55vw, 44px);
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card__copy p {
+    margin-bottom: clamp(24px, 2.6vw, 38px);
+    font-size: 14px;
+  }
+  .profile-page .profile-outcomes--hr .profile-outcome-card__copy > strong {
+    font-size: clamp(40px, 4.1vw, 68px);
+  }
+}
+
+/* 04 — Career: overview first, responsibilities on demand. */
+.profile-experience--hr {
+  padding-top: clamp(76px, 7.8vw, 122px);
+  padding-bottom: clamp(78px, 8vw, 126px);
+}
+
+.profile-experience--hr .profile-section-heading--compact {
+  margin-bottom: clamp(38px, 4vw, 60px);
+}
+
+.profile-experience--hr .profile-career-track {
+  margin-bottom: clamp(34px, 3.7vw, 54px);
+}
+
+.profile-work-timeline--accordion .profile-work-timeline__item {
+  padding-bottom: 24px;
+}
+
+.profile-work-timeline--accordion .profile-work-timeline__item time {
+  margin-bottom: 22px;
+}
+
+.profile-work-timeline--accordion .profile-work-timeline__item h3 {
+  min-height: 2.25em;
+  margin-bottom: 12px;
+}
+
+.profile-work-timeline__keywords {
+  min-height: 3.1em;
+  color: var(--muted);
+  font-size: 11.5px !important;
+  line-height: 1.48 !important;
+}
+
+.profile-job-detail {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-job-detail summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 0 0;
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.profile-job-detail summary::-webkit-details-marker { display: none; }
+
+.profile-job-detail summary b {
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 240ms ease;
+}
+
+.profile-job-detail[open] summary b { transform: rotate(45deg); }
+
+.profile-job-detail > div {
+  padding-top: 16px;
+}
+
+.profile-job-detail > div > p {
+  min-height: 0 !important;
+  color: var(--ink-soft) !important;
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+}
+
+.profile-job-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.profile-job-detail__grid p {
+  display: block;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.profile-job-detail__grid p:first-child { border-top: 0; padding-top: 0; }
+
+.profile-job-detail__grid strong,
+.profile-job-detail__grid span {
+  display: block;
+}
+
+.profile-job-detail__grid strong {
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.profile-job-detail__grid span {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+/* 05 — Education remains separate and shorter than career. */
+.profile-education--hr {
+  padding-top: clamp(68px, 7vw, 108px);
+  padding-bottom: clamp(66px, 6.8vw, 104px);
+}
+
+.profile-education--hr .profile-education__head {
+  margin-bottom: clamp(34px, 3.6vw, 52px);
+}
+
+.profile-education--hr .profile-education__head h2 {
+  font-size: clamp(44px, 4.7vw, 76px);
+}
+
+.profile-education--hr .profile-education-card {
+  min-height: 212px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.profile-education--hr .profile-education-card__meta {
+  margin-bottom: clamp(28px, 3vw, 42px);
+}
+
+.profile-education--hr .profile-education-card h3 {
+  font-size: clamp(22px, 2vw, 32px);
+}
+
+.profile-education--hr .profile-learning-strip {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* 06 — Management approach: compact, practical, evidence-led. */
+.profile-practice--hr {
+  padding-top: clamp(72px, 7.4vw, 116px);
+  padding-bottom: clamp(72px, 7.4vw, 116px);
+}
+
+.profile-practice--hr .profile-practice__grid article {
+  min-height: 205px;
+  padding-top: 20px;
+  padding-bottom: 22px;
+}
+
+.profile-practice--hr .profile-practice__grid article > span {
+  margin-bottom: clamp(38px, 3.8vw, 58px);
+}
+
+/* 07 — Closing: concise destination, not another biography section. */
+.profile-page .profile-close--hr {
+  padding-top: clamp(62px, 6.4vw, 98px);
+  padding-bottom: clamp(68px, 7vw, 108px);
+}
+
+.profile-page .profile-close--hr h2 {
+  font-size: clamp(50px, 5.7vw, 94px);
+}
+
+@media (max-width: 1080px) {
+  .profile-bring__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-bring__grid article:nth-child(3) { border-top: 1px solid var(--line); border-left: 0; }
+  .profile-bring__grid article:nth-child(4) { border-top: 1px solid var(--line); }
+
+  .profile-impact-rail > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+}
+
+@media (max-width: 680px) {
+  .profile-page .profile-hero--hr {
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .profile-page .profile-hero--hr h1 {
+    margin: 32px 0 22px;
+    font-size: clamp(49px, 14.6vw, 68px);
+  }
+
+  .profile-page .profile-hero--hr .profile-hero__intro {
+    margin-bottom: 22px;
+    font-size: 16px;
+  }
+
+  .profile-page .profile-hero--hr .profile-hero__role {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-page .profile-hero--hr .profile-hero__role > div {
+    min-height: 0;
+    padding: 14px 0;
+  }
+
+  .profile-page .profile-hero--hr .profile-hero__role > div + div {
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .profile-page .profile-metrics--hr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .profile-page .profile-metrics--hr article,
+  .profile-page .profile-metrics--hr article:nth-child(3),
+  .profile-page .profile-metrics--hr article:nth-child(4) {
+    min-width: 0;
+    min-height: 126px;
+    padding: 20px 16px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .profile-page .profile-metrics--hr article:nth-child(odd) { border-left: 0; }
+  .profile-page .profile-metrics--hr article:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .profile-page .profile-metrics--hr strong { margin-bottom: 15px; font-size: 44px; }
+  .profile-page .profile-metrics--hr .profile-metric-flow { font-size: 18px; }
+
+  .profile-bring {
+    padding-top: 64px;
+    padding-bottom: 68px;
+  }
+
+  .profile-bring__grid { grid-template-columns: 1fr; }
+  .profile-bring__grid article,
+  .profile-bring__grid article:nth-child(3),
+  .profile-bring__grid article:nth-child(4) {
+    display: grid;
+    grid-template-columns: 34px minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 10px;
+    align-items: start;
+    min-height: 0;
+    padding: 17px 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+  .profile-bring__grid article:first-child { border-top: 0; }
+  .profile-bring__grid article > span { margin: 2px 0 0; }
+  .profile-bring__grid h3 { margin: 0; font-size: 18px; }
+  .profile-bring__grid p { font-size: 11.5px; }
+
+  .profile-page .profile-outcomes--hr {
+    padding-top: 66px;
+    padding-bottom: 72px;
+  }
+
+  .profile-impact-rail {
+    grid-template-columns: 1fr;
+    margin-bottom: 14px;
+  }
+
+  .profile-impact-rail > div,
+  .profile-impact-rail > div + div {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    min-height: 0;
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,.16);
+    border-left: 0;
+  }
+  .profile-impact-rail > div:first-child { border-top: 0; }
+  .profile-impact-rail strong { font-size: 34px; }
+  .profile-impact-rail span { max-width: none; }
+
+  .profile-experience--hr {
+    padding-top: 68px;
+    padding-bottom: 70px;
+  }
+
+  .profile-work-timeline--accordion .profile-work-timeline__item,
+  .profile-work-timeline--accordion .profile-work-timeline__item + .profile-work-timeline__item,
+  .profile-work-timeline--accordion .profile-work-timeline__item:nth-child(3),
+  .profile-work-timeline--accordion .profile-work-timeline__item:nth-child(4) {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .profile-work-timeline--accordion .profile-work-timeline__item time { margin-bottom: 8px; }
+  .profile-work-timeline--accordion .profile-work-timeline__item h3 { min-height: 0; margin-bottom: 7px; }
+  .profile-work-timeline__keywords { min-height: 0; }
+  .profile-job-detail { margin-top: 13px; }
+  .profile-job-detail summary { padding-top: 12px; }
+
+  .profile-education--hr {
+    padding-top: 64px;
+    padding-bottom: 62px;
+  }
+
+  .profile-education--hr .profile-education__grid { grid-template-columns: 1fr; }
+  .profile-education--hr .profile-education-card,
+  .profile-education--hr .profile-education-card + .profile-education-card {
+    min-height: 0;
+    padding: 20px 0 22px;
+    border-left: 0;
+  }
+  .profile-education--hr .profile-education-card + .profile-education-card { border-top: 1px solid var(--line); }
+  .profile-education--hr .profile-education-card__meta { margin-bottom: 26px; }
+
+  .profile-practice--hr { padding-top: 66px; padding-bottom: 68px; }
+
+  .profile-page .profile-close--hr { padding-top: 60px; padding-bottom: 66px; }
+}

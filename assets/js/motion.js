@@ -30,7 +30,23 @@
     [".pen-side-menu button", 38],
     [".pen-parts-heading > *", 55],
     [".pen-parts-list button", 45],
-    [".pen-mechanism-grid article", 55]
+    [".pen-mechanism-grid article", 55],
+    [".profile-metrics article", 55],
+    [".profile-section-heading", 0],
+    [".profile-statement__grid > *", 0],
+    [".profile-timeline__item", 60],
+    [".profile-compact-timeline__item", 45],
+    /* v69 renamed the timeline and education markup; without these two the
+       new Profile sections never receive their scroll reveal. */
+    [".profile-work-timeline__item", 60],
+    [".profile-education-card", 55],
+    [".profile-outcome-card", 90],
+    [".profile-leadership-grid article", 55],
+    [".profile-practice__grid article", 45],
+    [".profile-capability-map article", 55],
+    [".profile-education__list article", 55],
+    [".profile-education__grid article", 55],
+    [".profile-close__grid > *", 0]
   ];
 
   function markRevealElements(scope) {

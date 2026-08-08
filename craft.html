@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="assets/css/v35-production-fix.css?v=531">
     <link rel="stylesheet" href="assets/css/craft.css?v=531">
     <link rel="stylesheet" href="assets/css/v56-main-cover-credits.css?v=560">
+    <link rel="stylesheet" href="assets/css/v70-alignment-unify.css?v=700">
     <script src="data/craft.js?v=531" defer></script>
-    <script src="assets/js/motion.js?v=531" defer></script>
+    <script src="assets/js/site-version.js?v=700" defer></script>
+    <script src="assets/js/motion.js?v=650" defer></script>
     <script src="assets/js/craft.js?v=531" defer></script>
     <script src="assets/js/image-protection.js?v=531" defer></script>
   </head>
   <body data-build="v56-main-cover-hover-credits" class="craft-page">
-    <a class="skip-link" href="#craft-content">Skip to content</a>
+    <a class="skip-link" href="#craft-content" data-i18n-en="Skip to content" data-i18n-th="ข้ามไปยังเนื้อหา">Skip to content</a>
 
     <header class="site-header">
       <a class="wordmark" href="home.html" aria-label="Somchai Sompiew portfolio home">
@@ -29,19 +31,19 @@
         <span>/ SOMPIEW</span>
       </a>
       <nav class="project-nav" aria-label="Craft page navigation">
-        <a class="icon-link" href="home.html#work"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span>All work</span></a>
+        <a class="icon-link" href="home.html#work"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span data-i18n-en="All work" data-i18n-th="ผลงานทั้งหมด">All work</span></a>
         <div class="language-toggle" role="group" aria-label="Language">
           <button type="button" data-language="th" aria-pressed="false">TH</button>
           <span aria-hidden="true">/</span>
           <button type="button" data-language="en" aria-pressed="true">EN</button>
         </div>
-        <a class="nav-contact icon-link" href="mailto:Somchai.s1113@gmail.com"><span>Start a project</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+        <a class="nav-contact icon-link" href="mailto:Somchai.s1113@gmail.com"><span data-i18n-en="Start a project" data-i18n-th="เริ่มโปรเจกต์">Start a project</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
       </nav>
     </header>
 
     <section class="page-context shell" aria-label="Current page location">
-      <p class="page-context__path"><a href="home.html">Home</a><span>/</span><strong>Craft &amp; Process</strong></p>
-      <a class="page-context__home icon-link stroke-flow-button" href="home.html"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span>Back to homepage</span></a>
+      <p class="page-context__path"><a href="home.html" data-i18n-en="Home" data-i18n-th="หน้าหลัก">Home</a><span>/</span><strong data-i18n-en="Craft &amp; Process" data-i18n-th="งานฝีมือและกระบวนการผลิต">Craft &amp; Process</strong></p>
+      <a class="page-context__home icon-link stroke-flow-button" href="home.html"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span data-i18n-en="Back to homepage" data-i18n-th="กลับหน้าหลัก">Back to homepage</span></a>
     </section>
 
     <main id="craft-content" data-craft-list></main>
@@ -65,12 +67,12 @@
         </section>
         <section>
           <span data-i18n-en="Studio / Address" data-i18n-th="สตูดิโอ / ที่อยู่">Studio / Address</span>
-          <strong data-i18n-en="Bangkok, Thailand" data-i18n-th="กรุงเทพมหานคร ประเทศไทย">Bangkok, Thailand</strong>
+          <strong data-i18n-en="Samut Prakan, Thailand" data-i18n-th="สมุทรปราการ ประเทศไทย">Samut Prakan, Thailand</strong>
           <p data-i18n-en="Full studio address can be added here." data-i18n-th="เพิ่มรายละเอียดที่อยู่สตูดิโอได้ในส่วนนี้">Full studio address can be added here.</p>
           <div class="footer-credit" aria-label="Site credits">
             <p data-i18n-en="Designed &amp; developed by Somchai Sompiew" data-i18n-th="ออกแบบและพัฒนาเว็บไซต์โดย Somchai Sompiew">Designed &amp; developed by Somchai Sompiew</p>
             <p data-i18n-en="© 2026 Somchai Sompiew. All rights reserved." data-i18n-th="© 2026 Somchai Sompiew. สงวนลิขสิทธิ์">© 2026 Somchai Sompiew. All rights reserved.</p>
-            <p data-i18n-en="Site version 56" data-i18n-th="เว็บไซต์เวอร์ชัน 56">Site version 56</p>
+            <p data-site-version data-i18n-en="Site version 70" data-i18n-th="เว็บไซต์เวอร์ชัน 70">Site version 70</p>
           </div>
         </section>
         <section>
@@ -80,7 +82,7 @@
         </section>
         <section>
           <span data-i18n-en="Working Area" data-i18n-th="พื้นที่รับงาน">Working Area</span>
-          <strong data-i18n-en="Bangkok &middot; Worldwide" data-i18n-th="กรุงเทพฯ &middot; ร่วมงานทั่วโลก">Bangkok &middot; Worldwide</strong>
+          <strong data-i18n-en="Samut Prakan &middot; Worldwide" data-i18n-th="สมุทรปราการ &middot; ร่วมงานทั่วโลก">Samut Prakan &middot; Worldwide</strong>
           <p data-i18n-en="Asia &middot; Europe &middot; Remote collaboration" data-i18n-th="เอเชีย &middot; ยุโรป &middot; ทำงานร่วมกันทางไกล">Asia &middot; Europe &middot; Remote collaboration</p>
         </section>
       </div>

@@ -48,9 +48,10 @@
   /* Brand groups shown on the Display category page. */
   function displayBrandGroupsSeed() {
     return [
-      { id: "quantum", label: t("Quantum", "ควอนตัม"), order: 1 },
-      { id: "kioku", label: t("Kioku", "คิโอคุ"), order: 2 },
-      { id: "other-display", label: t("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
+      /* Brand names stay in Latin script in both languages. */
+      { id: "quantum", label: "Quantum", order: 1 },
+      { id: "kioku", label: "Kioku", order: 2 },
+      { id: "other-display", label: t("Other Displays", "งานดิสเพลย์อื่น ๆ"), order: 3, empty: true }
     ];
   }
 
@@ -60,11 +61,16 @@
     const brandMarkup = brand
       ? `<span class="category-project-card__brand">${portfolio.escapeHtml(brand)} ${t("Brand", "แบรนด์")}</span>`
       : "";
+    const cardTag = currentLanguage() === "th" && project.cardTagTh ? project.cardTagTh : project.cardTag;
+    const cardTagMarkup = cardTag
+      ? `<span class="project-format-badge">${portfolio.escapeHtml(cardTag)}</span>`
+      : "";
 
     return `
       <article class="category-project-card">
         <a href="project.html?id=${encodeURIComponent(project.slug)}">
           <figure class="category-project-card__image">
+            ${cardTagMarkup}
             <img src="${portfolio.escapeHtml(project.cover)}" alt="${portfolio.escapeHtml(project.coverAlt)}" width="1200" height="900" loading="lazy" decoding="async" draggable="false">
           </figure>
           <div class="category-project-card__meta">
@@ -106,7 +112,7 @@
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
-          label: brandLabel(project) || t("Other Display", "งานดิสเพลย์อื่น ๆ"),
+          label: brandLabel(project) || t("Other Displays", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
           projects: [],
           empty: false

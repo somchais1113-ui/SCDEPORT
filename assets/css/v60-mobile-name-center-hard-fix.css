@@ -1,0 +1,29 @@
+/* v60 — Mobile hero name true-centre fix
+   The previous auto-margin rule could be neutralised by max-content sizing.
+   This version centres each line through the title's grid alignment instead. */
+@media (max-width: 820px) {
+  .home-page .hero-name-title {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    overflow: visible;
+  }
+
+  .home-page .hero-name-title .hero-name-line,
+  .home-page .hero-name-title .hero-name-line--solid,
+  .home-page .hero-name-title .hero-name-line--outline {
+    width: max-content !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    justify-self: center !important;
+    text-align: center !important;
+  }
+
+  .home-page .hero-name-title .hero-name-line--outline {
+    margin-top: 0.2em !important;
+  }
+}
