@@ -1,0 +1,158 @@
+/* ==========================================================================
+   V73 — Sitewide legibility pass
+   Loaded LAST on every page. Raises the smallest text that people actually
+   read — labels, captions, breadcrumbs, card meta — without touching the
+   large display type (headlines, numerals) that was never the complaint.
+
+   Scope decision: the Landing page's (index.html) ultra-compact editorial
+   type (7–9px counters, footnotes, role tags) is left as-is. That page is a
+   single bespoke cover composition, not a content page people read line by
+   line, and its scale is intentional art direction rather than an oversight
+   — the same way a magazine cover's colophon runs smaller than its body
+   copy. Everywhere someone actually reads sentences, sizes come up.
+
+   Also left as-is: single-glyph index badges ("01", "SS"), and secondary
+   <small> annotations that sit next to a larger primary label — bumping
+   those tends to clutter a hierarchy rather than clarify it.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Shared chrome — every page, so this is the highest-leverage fix.
+   -------------------------------------------------------------------------- */
+.language-toggle button,
+.language-toggle > span {
+  font-size: 12px;
+}
+
+.page-context__path {
+  font-size: 12px;
+}
+
+.page-context__home {
+  font-size: 12px;
+}
+
+.footer-bottom {
+  font-size: 12px;
+}
+
+.footer-directory section > span {
+  font-size: 10.5px;
+}
+
+.footer-directory section p,
+.footer-directory section .footer-credit p {
+  font-size: 12px;
+}
+
+.portfolio-footer .footer-label,
+.home-page .footer-contact-head .footer-label {
+  font-size: 11px;
+}
+
+.about-location {
+  font-size: 11.5px;
+}
+
+.eyebrow {
+  font-size: 11.5px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Home page — project grid, hero carousel, brand-group navigation.
+   -------------------------------------------------------------------------- */
+.filter-summary {
+  font-size: 11.5px;
+}
+
+.project-meta p {
+  font-size: 11px;
+}
+
+.hero-disciplines > span {
+  font-size: 12px;
+}
+
+.hero-carousel-index,
+.home-page .hero-carousel-caption,
+.hero-carousel-project-link {
+  font-size: 11px;
+}
+
+.category-project-card__brand,
+.project-brand-group__header > p,
+.category-page-brand-nav > p,
+.category-page-brand-nav a span,
+.display-brand-group__header > p {
+  font-size: 11px;
+}
+
+/* Design-leadership dashboard ("Five connected stages") — text-dense and
+   fully informational, not decorative. */
+.workflow-rail span,
+.workflow-panel__label,
+.workflow-output span,
+.workflow-evidence > p,
+.workflow-evidence > div b,
+.management-positioning span {
+  font-size: 11px;
+}
+
+.workflow-rail small,
+.workflow-evidence > small {
+  font-size: 10.5px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Craft & Process.
+   -------------------------------------------------------------------------- */
+.craft-next b,
+.craft-next > p,
+.craft-spec dt,
+.craft-example figcaption b {
+  font-size: 11.5px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Object Study — the interactive labels are the primary way someone
+      reads this page, so they get the same floor as everywhere else.
+   -------------------------------------------------------------------------- */
+.study-modes > p,
+.study-modes button span,
+.exploded-sequence article strong,
+.exploded-sequence article p,
+.material-card p,
+.material-product > span,
+.mode-note,
+.pen-parts-list span,
+.pen-mechanism-grid span,
+.anatomy-mobile-list span,
+.study-category-card__copy b {
+  font-size: 11px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Profile — the few labels the earlier review passes (v71/v72) didn't
+      already cover.
+   -------------------------------------------------------------------------- */
+.profile-editorial-hero__meta span {
+  font-size: 10.5px;
+}
+
+.profile-outcome-grid--editorial .profile-outcome-card__copy > span {
+  font-size: 10.5px;
+}
+
+.profile-principles-strip span {
+  font-size: 10.5px;
+}
+
+.profile-impact-rail span {
+  font-size: 11.5px;
+}
+
+@media (max-width: 1180px) {
+  .profile-outcomes--editorial .profile-impact-rail span {
+    font-size: 10px;
+  }
+}

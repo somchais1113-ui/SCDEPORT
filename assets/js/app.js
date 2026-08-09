@@ -69,6 +69,10 @@
     const category = portfolio.categoryById(project.category);
     const resolvedCategoryLabel = category ? categoryLabel(category) : project.sector;
     const sectorLabel = currentLanguage() === "th" && project.sectorTh ? project.sectorTh : project.sector;
+    const sectorNoteText = currentLanguage() === "th" && project.sectorNoteTh ? project.sectorNoteTh : project.sectorNote;
+    const sectorNoteMarkup = sectorNoteText
+      ? `<span class="project-meta-note">${portfolio.escapeHtml(sectorNoteText)}</span>`
+      : "";
     const projectNumber = String(project.order).padStart(2, "0");
     const brand = project.brandLabel || project.brand || "";
     const brandMarkup = brand
@@ -104,6 +108,7 @@
           <div class="project-meta">
             <div>
               <p>${projectNumber} / ${portfolio.escapeHtml(sectorLabel)}</p>
+              ${sectorNoteMarkup}
               ${brandMarkup}
               <h3>${portfolio.escapeHtml(project.title)}</h3>
             </div>

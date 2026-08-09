@@ -1,0 +1,64 @@
+/* ==========================================================================
+   V75 — Client review round 4
+   Loaded LAST on every page, after v74.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Craft & Process — image frames leaving blank space below the photo.
+      Root cause: .craft-row and .craft-example-grid are both CSS grids,
+      which stretch every item to match the tallest one in its row by
+      default. The spec column (or a longer caption) is routinely taller
+      than the image, so the image's own box got stretched right along
+      with it — but the <img> inside keeps its natural width:100%/height:
+      auto ratio, so the stretched extra space rendered as blank frame
+      below the photo. Opting the row out of stretch fixes every process
+      (Offset, Gravure, Flexo, Silkscreen, Engraving), both in the row list
+      and the "Selected examples" grid on each process's own page — the
+      images now size to themselves instead of to their tallest sibling.
+      A fixed aspect-ratio + object-fit is added as a backstop so any
+      future photo that isn't exactly 4:3 still fills the frame edge-to-
+      edge rather than leaving a gap or letterboxing.
+   -------------------------------------------------------------------------- */
+.craft-row {
+  align-items: start;
+}
+
+.craft-example-grid {
+  align-items: start;
+}
+
+.craft-row__figure img,
+.craft-example img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   2. Home — "One team." / "Five connected stages." sat with a large,
+      unintended gap between the two lines. The heading's line-height is
+      set below 1 to pull the lines together, but the typefaces used here
+      carry generous built-in leading that a sub-1 line-height doesn't
+      fully collapse, so ~80px of invisible space remained between the
+      rendered lines despite the small explicit margin. Pulling the second
+      line up with a negative margin (sized relative to its own font, so
+      it scales the same way across breakpoints) closes that gap to a
+      normal, intentional-looking line spacing.
+   -------------------------------------------------------------------------- */
+.leadership-workflow__heading h2 em {
+  margin-top: -0.85em;
+}
+
+/* --------------------------------------------------------------------------
+   3. Home — project card second sector line ("License Characters" under
+      "Campaign > License Products"). New, so no existing rule to override.
+   -------------------------------------------------------------------------- */
+.project-meta-note {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}

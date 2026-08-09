@@ -1,0 +1,272 @@
+/* ==========================================================================
+   V74 — Full sitewide type-scale increase
+   Loaded LAST on every page, after v73. Requested directly: the intended
+   reader is roughly 35-45, and nothing should be small enough that someone
+   has to lean toward the screen. Short label/meta text also picks up more
+   weight here, since bold is what actually helps a small caps label read
+   at a glance -- the "should be bold" half of the request.
+
+   Policy: every reading-text selector between 11px and 15.5px steps up
+   one type-scale notch (roughly +1.5-2px, collapsing adjacent half-sizes
+   into a cleaner shared scale). 16px+ is left alone -- WCAG's comfortable-
+   reading baseline for body copy, no reason to push past it. Large display
+   headlines (18px+) were never part of the complaint and stay untouched.
+   The site's own logotype (.wordmark / .landing-wordmark) is excluded --
+   that is a brand mark, not reading content, and enlarging it would throw
+   off the header's balance against the nav beside it.
+
+   Mobile-only overrides (rules that only apply inside a narrower @media
+   query) are bumped inside that SAME query here, not as flat globals --
+   several selectors below already shrink further under ~700-1080px, and
+   overriding them as flat rules would have both broken that responsive
+   step-down and, at desktop widths, fought the (also-updated) base rule
+   for the same property. Every @media condition below is copied verbatim
+   from the file it came from.
+
+   Selector text is copied verbatim from the rule being overridden so
+   specificity always matches or exceeds the original (see the v66/v72 h2
+   lesson: a same-text selector loaded later always wins a tie; a simpler
+   selector loaded later can still lose to an older, more specific one).
+   ========================================================================== */
+
+/* -- from craft.css -- */
+.craft-index a { font-size: 15px; }
+.craft-spec dd { font-size: 15px; }
+.craft-close { font-size: 16px; }
+.craft-more { font-size: 15px; }
+.craft-draft-note { font-size: 14px; }
+.craft-example figcaption { font-size: 15px; }
+.craft-entry__copy p { font-size: 16px; }
+.craft-entry__marks span { font-size: 14px; }
+.landing-secondary { font-size: 14px; }
+
+/* -- from main.css -- */
+.site-nav,
+.project-nav { font-size: 15px; }
+.eyebrow { font-size: 14px; }
+.circle-link span { font-size: 14px; font-weight: 500; }
+.section-note { font-size: 16px; }
+.filter-row button { font-size: 14px; }
+.filter-summary { font-size: 14px; }
+.view-pill { font-size: 13px; }
+.project-meta p { font-size: 13.5px; }
+.approach-list p { font-size: 15px; }
+.about-copy > p { font-size: 16px; }
+.service-list span { font-size: 15px; }
+.footer-top p { font-size: 15px; }
+.footer-bottom { font-size: 14px; }
+.notice { font-size: 16px; }
+.case-information small { font-size: 13.5px; font-weight: 500; }
+.case-information p,
+.case-information li { font-size: 16px; }
+.demo-note { font-size: 13px; }
+.next-project p { font-size: 14px; }
+.landing-carousel-controls button { font-size: 16px; }
+.landing-page .landing-enter { font-size: 14px; }
+.landing-enter { font-size: 15px; }
+.landing-page .landing-enter { font-size: 13px; }
+.landing-page .landing-enter { font-size: 14px; }
+.pen-preview-intro p { font-size: 16px; }
+.pen-preview-intro .icon-link { font-size: 14px; }
+.pen-preview-hotspot span { font-size: 15px; }
+.about-summary > p { font-size: 16px; }
+.about-principle strong { font-size: 16px; }
+.profile-capabilities span { font-size: 13px; font-weight: 500; }
+.project-lightbox__figure figcaption { font-size: 15px; }
+.page-context__path { font-size: 14px; }
+.page-context__home { font-size: 14px; }
+.image-protection-toast { font-size: 14px; }
+
+/* -- from object-study.css -- */
+.anatomy-label strong { font-size: 13px; }
+.material-card strong { font-size: 16px; }
+.study-info__body > p { font-size: 14px; }
+.pen-mechanism-grid p { font-size: 13px; }
+
+/* -- from ui-controls.css -- */
+.home-page .hero-carousel-index { font-size: 13px; }
+.hero-carousel-editorial > p:first-child { font-size: 13px; }
+.hero-carousel-project-link { font-size: 14px; }
+.home-page .about-copy > p { font-size: 15px; }
+.home-page .footer-contact-head .footer-contact-cta { font-size: 14px; }
+.footer-directory section > span { font-size: 13px; }
+.footer-directory section p { font-size: 14px; }
+.portfolio-footer .footer-label { font-size: 13.5px; }
+.portfolio-footer .footer-contact-cta { font-size: 14px; }
+
+/* -- from v35-production-fix.css -- */
+.category-page-heading p { font-size: 16px; }
+.category-project-card__meta p,
+.category-project-card__summary { font-size: 14px; }
+.category-project-card__meta .icon-link { font-size: 14px; }
+.category-project-card__summary { font-size: 16px; }
+
+/* -- from v37-display-brand-groups.css -- */
+.project-brand-group__header .icon-link { font-size: 14px; }
+.category-page-brand-nav a { font-size: 15px; }
+.display-brand-group__header div > p { font-size: 16px; }
+.display-brand-group__header--compact > p:last-child { font-size: 14px; }
+.category-page-projects--brand .category-project-card__summary { font-size: 15px; }
+.project-brand-placeholder p,
+.display-brand-placeholder p { font-size: 16px; }
+
+/* -- from v40-display-brand-groups-others-inline.css -- */
+.project-brand-group__header .icon-link { font-size: 14px; }
+.category-page-brand-nav a { font-size: 15px; }
+.display-brand-group__header div > p { font-size: 16px; }
+.display-brand-group__header--compact > p:last-child { font-size: 14px; }
+.category-page-projects--brand .category-project-card__summary { font-size: 15px; }
+.project-brand-placeholder p,
+.display-brand-placeholder p { font-size: 16px; }
+
+/* -- from v57-object-study-visual-refine.css -- */
+.study-category-select__heading > p { font-size: 15px; }
+.study-category-card::after { font-size: 14px; }
+.colour-product__caption strong { font-size: 15px; }
+
+/* -- from v58-design-leadership.css -- */
+.leadership-workflow__heading > p { font-size: 16px; }
+.workflow-output strong { font-size: 13px; }
+.workflow-evidence > div { font-size: 14px; }
+.home-page .craft-entry--leadership .craft-entry__copy > p:not(.eyebrow) { font-size: 16px; }
+.craft-process-tile::after { font-size: 15px; }
+.craft-process-tile small { font-size: 13px; }
+.management-positioning p { font-size: 14px; }
+
+/* -- from v61-leadership-case-study.css -- */
+.case-impact__list span { font-size: 14px; font-weight: 500; }
+
+/* -- from v62-leadership-visual-refinements.css -- */
+.visual-placeholder figcaption { font-size: 13px; }
+
+/* -- from v69-profile-editorial-compact.css -- */
+.profile-editorial-heading > p { font-size: 15px; }
+.profile-outcome-grid--editorial .profile-outcome-card__copy p { font-size: 14px; }
+.profile-education--editorial .profile-education-card p { font-size: 13.5px; }
+.profile-principles-strip strong { font-size: 13.5px; }
+.profile-close-editorial__actions p { font-size: 15px; }
+
+/* -- from v71-profile-review.css -- */
+.profile-work-timeline--editorial .profile-work-timeline__item time { font-size: 16px; }
+.profile-career-track--editorial span { font-size: 13px; }
+.profile-education-card__school { font-size: 13.5px; }
+
+/* -- from v72-profile-review-3.css -- */
+.profile-work-timeline--editorial .profile-work-timeline__company { font-size: 14px; }
+.profile-quickfacts span { font-size: 13.5px; font-weight: 500; }
+.profile-capability-line { font-size: 14px; }
+.profile-learning-block__label { font-size: 13px; }
+.profile-learning-block__item strong { font-size: 16px; }
+.profile-learning-block__item span { font-size: 14px; font-weight: 500; }
+
+/* -- from v73-legibility.css -- */
+.language-toggle button,
+.language-toggle > span { font-size: 14px; font-weight: 500; }
+.page-context__path { font-size: 14px; }
+.page-context__home { font-size: 14px; }
+.footer-bottom { font-size: 14px; }
+.footer-directory section p,
+.footer-directory section .footer-credit p { font-size: 14px; }
+.portfolio-footer .footer-label,
+.home-page .footer-contact-head .footer-label { font-size: 13px; }
+.about-location { font-size: 13.5px; }
+.eyebrow { font-size: 13.5px; }
+.filter-summary { font-size: 13.5px; }
+.project-meta p { font-size: 13px; }
+.hero-disciplines > span { font-size: 14px; font-weight: 500; }
+.hero-carousel-index,
+.home-page .hero-carousel-caption,
+.hero-carousel-project-link { font-size: 13px; }
+.category-project-card__brand,
+.project-brand-group__header > p,
+.category-page-brand-nav > p,
+.category-page-brand-nav a span,
+.display-brand-group__header > p { font-size: 13px; }
+.workflow-rail span,
+.workflow-panel__label,
+.workflow-output span,
+.workflow-evidence > p,
+.workflow-evidence > div b,
+.management-positioning span { font-size: 13px; font-weight: 500; }
+.craft-next b,
+.craft-next > p,
+.craft-spec dt,
+.craft-example figcaption b { font-size: 13.5px; font-weight: 500; }
+.study-modes > p,
+.study-modes button span,
+.exploded-sequence article strong,
+.exploded-sequence article p,
+.material-card p,
+.material-product > span,
+.mode-note,
+.pen-parts-list span,
+.pen-mechanism-grid span,
+.anatomy-mobile-list span,
+.study-category-card__copy b { font-size: 13px; font-weight: 500; }
+.profile-impact-rail span { font-size: 13.5px; font-weight: 500; }
+
+/* -- mobile-scoped overrides (kept inside their original @media condition) -- */
+
+@media (max-width: 620px) {
+  .craft-index b { font-size: 13px; font-weight: 500; }
+}
+
+@media (max-width: 900px) {
+  .menu-button { font-size: 14px; }
+}
+
+@media (max-width: 680px) {
+  .pen-preview-hotspot span { font-size: 13px; font-weight: 500; }
+  .profile-editorial-hero__intro { font-size: 16px; }
+  .profile-quickfacts article:last-child strong { font-size: 16px; }
+  .profile-editorial-heading > p { font-size: 14px; }
+  .profile-close-editorial__actions p { font-size: 14px; }
+}
+
+@media (max-width: 1080px) {
+  .page-context__path { font-size: 13.5px; }
+  .page-context__home { font-size: 14px; }
+}
+
+@media (max-width: 560px) {
+  .hero-disciplines > span { font-size: 13px; font-weight: 500; }
+  .hero-name-statement { font-size: 16px; }
+  .menu-button { font-size: 13px; }
+  .hero-name-statement { font-size: 16px; }
+  .home-page .hero-name-bottom .circle-link span { font-size: 13px; font-weight: 500; }
+  .filter-row button { font-size: 13px; }
+  .home-page .approach-list p { font-size: 16px; }
+  .page-context__home { font-size: 13px; }
+}
+
+@media (max-width: 999px) {
+  .home-page .hero-name-statement { font-size: 16px; }
+}
+
+@media (max-width: 820px) {
+  .hero-name-statement { font-size: 16px; }
+  .home-page .hero-name-bottom .circle-link span { font-size: 14px; font-weight: 500; }
+  .section-note { font-size: 16px; }
+  .approach-deck { font-size: 16px; }
+  .home-page .approach-list p { font-size: 16px; }
+}
+
+@media (max-width: 1100px) {
+  .home-page .approach-list p { font-size: 16px; }
+}
+
+@media (max-width: 700px) {
+  .project-nav { font-size: 13px; }
+  .hero-name-statement { font-size: 16px; }
+  .home-page .hero-name-bottom .circle-link span { font-size: 13px; font-weight: 500; }
+  .filter-row button { font-size: 13px; }
+  .approach-deck { font-size: 16px; }
+  .home-page .approach-list p { font-size: 16px; }
+  .landing-page .landing-secondary { font-size: 13px; }
+}
+
+@media (max-width: 640px) {
+  .project-brand-group__header .icon-link { font-size: 13px; }
+  .project-brand-group__header .icon-link { font-size: 13px; }
+}
+
