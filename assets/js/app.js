@@ -30,11 +30,13 @@
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
+  /* Brand names are proper nouns and are never transliterated or translated -
+     "Quantum" and "Kioku" must read identically in both languages. */
   function displayBrandGroupsSeed() {
     return [
-      { id: "quantum", label: "Quantum", labelTh: "ควอนตัม", order: 1 },
-      { id: "kioku", label: "Kioku", labelTh: "คิโอคุ", order: 2 },
-      { id: "other-display", label: translated("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
+      { id: "quantum", label: "Quantum", order: 1 },
+      { id: "kioku", label: "Kioku", order: 2 },
+      { id: "other-display", label: translated("Other Displays", "งานดิสเพลย์อื่น ๆ"), order: 3, empty: true }
     ];
   }
 
@@ -67,6 +69,10 @@
     const category = portfolio.categoryById(project.category);
     const resolvedCategoryLabel = category ? categoryLabel(category) : project.sector;
     const sectorLabel = currentLanguage() === "th" && project.sectorTh ? project.sectorTh : project.sector;
+    const sectorNoteText = currentLanguage() === "th" && project.sectorNoteTh ? project.sectorNoteTh : project.sectorNote;
+    const sectorNoteMarkup = sectorNoteText
+      ? `<span class="project-meta-note">${portfolio.escapeHtml(sectorNoteText)}</span>`
+      : "";
     const projectNumber = String(project.order).padStart(2, "0");
     const brand = project.brandLabel || project.brand || "";
     const brandMarkup = brand
@@ -90,7 +96,7 @@
               loading="lazy"
               decoding="async"
             >
-            <span class="view-pill icon-link">${translated("View case", "ดูโปรเจกต์")} ${northeastIcon()}</span>
+            <span class="view-pill icon-link">${translated("View project", "ดูโปรเจกต์")} ${northeastIcon()}</span>
             <span class="project-hover-overlay" aria-hidden="true">
               <span class="project-hover-copy">
                 <span class="project-hover-title">${portfolio.escapeHtml(project.title)}</span>
@@ -102,6 +108,7 @@
           <div class="project-meta">
             <div>
               <p>${projectNumber} / ${portfolio.escapeHtml(sectorLabel)}</p>
+              ${sectorNoteMarkup}
               ${brandMarkup}
               <h3>${portfolio.escapeHtml(project.title)}</h3>
             </div>
@@ -124,7 +131,7 @@
               <p>${projectNumber} / ${translated("Display & Retail", "ดิสเพลย์และพื้นที่ขาย")}</p>
               <span class="project-brand-label">${portfolio.escapeHtml(group.label)}</span>
             </div>
-            <p class="project-card-summary">${translated("Reserved for future display work outside the current named brand groups.", "พื้นที่สำรองสำหรับงานดิสเพลย์อื่น ๆ ที่จะเพิ่มในภายหลัง")}</p>
+            <p class="project-card-summary">${translated("Reserved for display work outside the current named brand groups.", "พื้นที่สำหรับงานดิสเพลย์อื่น ๆ นอกเหนือจากกลุ่มแบรนด์ปัจจุบัน")}</p>
             <p class="project-meta-category">${translated("Display", "ดิสเพลย์")}</p>
           </div>
         </div>
@@ -150,7 +157,7 @@
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
-          label: project.brandLabel || project.brand || translated("Other Display", "งานดิสเพลย์อื่น ๆ"),
+          label: project.brandLabel || project.brand || translated("Other Displays", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
           projects: [],
           empty: false
@@ -165,7 +172,10 @@
         return `
           <section class="project-brand-group project-brand-group--display" aria-label="${portfolio.escapeHtml(group.label)}">
             <header class="project-brand-group__header">
-              <p>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</p>
+              <p>
+                <span>${String(groupIndex + 1).padStart(2, "0")} / ${translated("Brand group", "กลุ่มแบรนด์")}</span>
+                <span class="project-brand-group__name">${portfolio.escapeHtml(group.label)}</span>
+              </p>
             </header>
             <div class="project-brand-grid">
               ${group.projects.length ? group.projects.map(projectMarkup).join("") : emptyDisplayCard(group, groupIndex + 4)}

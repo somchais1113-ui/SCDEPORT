@@ -11,7 +11,7 @@
   const category = portfolio.categoryById(requestedId);
 
   /* ----------------------------------------------------------------
-     Language helpers — the toggle in the header dispatches
+     Language helpers - the toggle in the header dispatches
      "portfolio:languagechange" (see assets/js/motion.js)
      ---------------------------------------------------------------- */
   function currentLanguage() {
@@ -48,9 +48,10 @@
   /* Brand groups shown on the Display category page. */
   function displayBrandGroupsSeed() {
     return [
-      { id: "quantum", label: t("Quantum", "ควอนตัม"), order: 1 },
-      { id: "kioku", label: t("Kioku", "คิโอคุ"), order: 2 },
-      { id: "other-display", label: t("Others Display", "ดิสเพลย์อื่น ๆ"), order: 3, empty: true }
+      /* Brand names stay in Latin script in both languages. */
+      { id: "quantum", label: "Quantum", order: 1 },
+      { id: "kioku", label: "Kioku", order: 2 },
+      { id: "other-display", label: t("Other Displays", "งานดิสเพลย์อื่น ๆ"), order: 3, empty: true }
     ];
   }
 
@@ -78,7 +79,7 @@
               ${brandMarkup}
               <h2>${portfolio.escapeHtml(project.title)}</h2>
             </div>
-            <span class="icon-link">${t("View case", "ดูโปรเจกต์")} ${icon()}</span>
+            <span class="icon-link">${t("View project", "ดูโปรเจกต์")} ${icon()}</span>
           </div>
           <p class="category-project-card__summary">${portfolio.escapeHtml(projectSummary(project))}</p>
         </a>
@@ -111,7 +112,7 @@
       if (!grouped.has(key)) {
         grouped.set(key, {
           id: key,
-          label: brandLabel(project) || t("Other Display", "งานดิสเพลย์อื่น ๆ"),
+          label: brandLabel(project) || t("Other Displays", "งานดิสเพลย์อื่น ๆ"),
           order: Number(project.brandOrder) || 999,
           projects: [],
           empty: false
@@ -198,12 +199,12 @@
 
     const categoryDescription = isDisplay
       ? t(
-          "Display projects are organised by brand, so Quantum and Kioku remain visually and structurally independent while staying within one discipline.",
-          "งานดิสเพลย์ถูกจัดกลุ่มตามแบรนด์ เพื่อให้ Quantum และ Kioku แยกกันชัดเจนทั้งด้านภาพและโครงสร้าง แม้จะอยู่ในศาสตร์เดียวกัน"
+          "Display projects are grouped by brand so Quantum and Kioku keep their own visual and structural approach within the same category.",
+          "งานดิสเพลย์จัดกลุ่มตามแบรนด์ เพื่อให้ Quantum และ Kioku ใช้แนวทางด้านภาพและโครงสร้างของตัวเองภายในหมวดเดียวกัน"
         )
       : t(
-          "A focused view of the work, visual system and production thinking in this discipline.",
-          "มุมมองเฉพาะของผลงาน ระบบภาพ และแนวคิดด้านการผลิตในศาสตร์นี้"
+          "Projects in this category, including visual development and production details.",
+          "โปรเจกต์ในหมวดนี้ ครอบคลุมทั้งการพัฒนางานภาพและรายละเอียดด้านการผลิต"
         );
 
     const countLine = currentLanguage() === "th"
@@ -212,7 +213,7 @@
 
     view.innerHTML = `
       <section class="category-page-hero category-page-shell">
-        <p class="eyebrow"><span></span> ${t("Work / Selected category", "ผลงาน / หมวดหมู่ที่เลือก")}</p>
+        <p class="eyebrow"><span></span> ${t("Work / Category", "ผลงาน / หมวดหมู่")}</p>
         <div class="category-page-heading">
           <h1>${portfolio.escapeHtml(label)}</h1>
           <p>${portfolio.escapeHtml(countLine)}</p>

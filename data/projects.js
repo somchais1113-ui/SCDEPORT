@@ -19,16 +19,16 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     cover: "assets/images/projects/advertising/urban-signals/cover-1200x900.webp",
     coverAlt: "Advertising system with poster, billboard and digital screen on a white background",
-    summary: "An adaptable advertising system built to stay recognisable across print, outdoor and digital formats.",
-    summaryTh: "ระบบโฆษณาที่ยืดหยุ่น แต่ยังรักษาภาพจำเดียวกันได้ทั้งสื่อสิ่งพิมพ์ สื่อนอกบ้าน และดิจิทัล",
-    challenge: "Create a bold campaign language that can hold attention at different scales without relying on dense messaging.",
-    challengeTh: "สร้างภาษาแคมเปญที่โดดเด่นพอจะดึงความสนใจได้ในทุกขนาดสื่อ โดยไม่ต้องพึ่งข้อความจำนวนมาก",
-    solution: "High-contrast colour, repeated geometry and generous space create one clear visual rhythm from poster to screen.",
-    solutionTh: "ใช้สีคอนทราสต์สูง รูปทรงเรขาคณิตที่ซ้ำอย่างมีจังหวะ และพื้นที่ว่างที่เพียงพอ เพื่อสร้างจังหวะภาพเดียวกันตั้งแต่โปสเตอร์จนถึงหน้าจอ",
+    summary: "An advertising system designed to stay consistent across print, outdoor and digital formats.",
+    summaryTh: "ระบบงานโฆษณาที่รักษาภาพเดียวกันได้ทั้งสื่อสิ่งพิมพ์ สื่อนอกบ้าน และดิจิทัล",
+    challenge: "Create a campaign style that works at different sizes without depending on long or dense copy.",
+    challengeTh: "สร้างรูปแบบแคมเปญที่ทำงานได้ในหลายขนาดสื่อ โดยไม่ต้องพึ่งข้อความจำนวนมาก",
+    solution: "High-contrast colour, repeated geometry and open space keep the visual style consistent from posters to screens.",
+    solutionTh: "ใช้สีคอนทราสต์สูง รูปทรงเรขาคณิตซ้ำ และพื้นที่ว่าง เพื่อให้รูปแบบภาพสอดคล้องกันตั้งแต่โปสเตอร์จนถึงหน้าจอ",
     scope: ["Art direction", "Advertising system", "Digital and OOH", "Campaign toolkit"],
     scopeTh: ["กำกับศิลป์", "ระบบงานโฆษณา", "สื่อดิจิทัลและสื่อนอกบ้าน", "ชุดเครื่องมือแคมเปญ"],
-    direction: "Direct / Graphic / Scalable",
-    directionTh: "ตรงประเด็น / กราฟิกชัด / ขยายต่อได้",
+    direction: "Graphic / High contrast / Scalable",
+    directionTh: "กราฟิก / คอนทราสต์สูง / ขยายต่อได้",
     gallery: [
       {
         src: "assets/images/projects/advertising/urban-signals/gallery-01-1440x1080.webp",
@@ -100,8 +100,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "good-daily",
@@ -113,16 +112,16 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     cover: "assets/images/projects/packaging-design/good-daily/cover-1200x900.webp",
     coverAlt: "A coordinated packaging family in white, cobalt, red and lime",
-    summary: "A modular packaging family designed for clarity, shelf recognition and consistent range growth.",
-    summaryTh: "ระบบบรรจุภัณฑ์แบบโมดูลาร์ที่อ่านง่าย โดดเด่นบนชั้นวาง และพร้อมเติบโตไปกับกลุ่มสินค้า",
-    challenge: "Build a broad product family that feels energetic while remaining easy to scan and organise at retail.",
-    challengeTh: "สร้างกลุ่มสินค้าที่กว้างและดูมีพลัง แต่ยังอ่านง่ายและจัดเรียงบนชั้นวางได้อย่างเป็นระบบ",
-    solution: "A restrained base, strong colour blocks and shared graphic rules connect different formats without making them identical.",
-    solutionTh: "วางพื้นฐานให้เรียบ ใช้บล็อกสีที่ชัดเจน และกติกากราฟิกร่วมกัน เพื่อเชื่อมบรรจุภัณฑ์หลายรูปแบบเข้าด้วยกันโดยไม่ทำให้เหมือนกันไปหมด",
+    summary: "A modular packaging range designed for easy shelf recognition and consistent expansion across products.",
+    summaryTh: "ระบบบรรจุภัณฑ์แบบโมดูลาร์ที่ช่วยให้มองเห็นสินค้าได้ง่ายบนชั้นวาง และขยายต่อไปยังสินค้าในกลุ่มเดียวกันได้",
+    challenge: "Build a broad product range that feels energetic while staying easy to scan and organise on shelf.",
+    challengeTh: "สร้างกลุ่มสินค้าที่มีหลายรายการและดูมีพลัง แต่ยังอ่านง่ายและจัดเรียงบนชั้นวางได้ดี",
+    solution: "A simple base, strong colour blocks and shared graphic rules keep different pack formats in the same range without making them identical.",
+    solutionTh: "ใช้พื้นฐานที่เรียบ บล็อกสีเด่น และกติกากราฟิกร่วมกัน เพื่อให้บรรจุภัณฑ์หลายรูปแบบอยู่ในกลุ่มเดียวกันโดยไม่ต้องเหมือนกันทั้งหมด",
     scope: ["Packaging design", "Range architecture", "Identity system", "Art direction"],
     scopeTh: ["ออกแบบบรรจุภัณฑ์", "วางโครงสร้างกลุ่มสินค้า", "ระบบอัตลักษณ์", "กำกับศิลป์"],
-    direction: "Clear / Energetic / Systematic",
-    directionTh: "ชัดเจน / มีพลัง / เป็นระบบ",
+    direction: "Modular / Colour / Retail",
+    directionTh: "โมดูลาร์ / ใช้สีเป็นหลัก / สำหรับพื้นที่ขาย",
     gallery: [
       {
         src: "assets/images/projects/packaging-design/good-daily/gallery-01-1440x1080.webp",
@@ -194,8 +193,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "everyday-forms",
@@ -207,16 +205,16 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     cover: "assets/images/projects/product-design/everyday-forms/cover-1200x900.webp",
     coverAlt: "A family of writing and lifestyle products on a clean white background",
-    summary: "A compact collection of useful everyday objects shaped by one calm, recognisable form language.",
-    summaryTh: "กลุ่มผลิตภัณฑ์ในชีวิตประจำวันที่ใช้งานง่าย เชื่อมกันด้วยภาษารูปทรงที่สงบและจดจำได้",
-    challenge: "Give small daily objects a shared personality without reducing the usefulness of each individual item.",
-    challengeTh: "ทำให้ของใช้ชิ้นเล็กในชีวิตประจำวันมีบุคลิกร่วมกัน โดยไม่ลดทอนประโยชน์ใช้สอยของแต่ละชิ้น",
-    solution: "Rounded proportions, precise colour accents and a consistent material approach create a clear product family.",
-    solutionTh: "ใช้สัดส่วนโค้งมน สีเน้นที่แม่นยำ และแนวทางวัสดุที่สอดคล้องกัน เพื่อสร้างกลุ่มผลิตภัณฑ์ที่อ่านออกว่าเป็นครอบครัวเดียวกัน",
+    summary: "A compact collection of everyday products built around one consistent form language.",
+    summaryTh: "กลุ่มผลิตภัณฑ์ในชีวิตประจำวันที่ใช้ภาษารูปทรงเดียวกัน เพื่อให้แต่ละชิ้นอยู่ในกลุ่มเดียวกัน",
+    challenge: "Give small everyday products a shared visual character without affecting how each item is used.",
+    challengeTh: "ทำให้ผลิตภัณฑ์ชิ้นเล็กในชีวิตประจำวันมีลักษณะร่วมกัน โดยไม่กระทบการใช้งานของแต่ละชิ้น",
+    solution: "Rounded proportions, small colour accents and a consistent material approach keep the products in the same family.",
+    solutionTh: "ใช้สัดส่วนโค้งมน สีเน้นบางจุด และแนวทางวัสดุที่สอดคล้องกัน เพื่อให้ผลิตภัณฑ์ทั้งหมดอยู่ในกลุ่มเดียวกัน",
     scope: ["Product concept", "Form language", "CMF direction", "Visualisation"],
     scopeTh: ["แนวคิดผลิตภัณฑ์", "ภาษารูปทรง", "แนวทาง CMF", "งานภาพจำลอง"],
-    direction: "Useful / Calm / Distinctive",
-    directionTh: "ใช้งานได้จริง / สงบ / มีเอกลักษณ์",
+    direction: "Functional / Compact / Consistent",
+    directionTh: "ใช้งานได้ / กระชับ / สอดคล้องกัน",
     gallery: [
       {
         src: "assets/images/projects/product-design/everyday-forms/gallery-01-1440x1080.webp",
@@ -288,8 +286,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "signature-system",
@@ -301,16 +298,16 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     cover: "assets/images/projects/ci-design/signature-system/cover-1200x900.webp",
     coverAlt: "Corporate identity system with logo sheet, stationery and signage on a clean white background",
-    summary: "A corporate identity system that holds one brand voice across documents, signage, uniforms and digital touchpoints.",
-    summaryTh: "ระบบอัตลักษณ์องค์กรที่รักษาเสียงของแบรนด์ให้เป็นหนึ่งเดียว ตั้งแต่งานเอกสาร ป้าย เครื่องแบบ ไปจนถึงสื่อดิจิทัล",
-    challenge: "Unify a growing organisation whose materials had drifted apart, without making day-to-day application harder for internal teams.",
-    challengeTh: "รวมภาพลักษณ์ขององค์กรที่เติบโตขึ้นและเริ่มกระจัดกระจายให้กลับมาเป็นระบบเดียวกัน โดยที่ทีมภายในยังนำไปใช้งานประจำวันได้ง่าย",
-    solution: "One logo construction, a documented clear-space and colour system, and ready-made templates make correct usage the easiest option.",
-    solutionTh: "กำหนดโครงสร้างโลโก้เพียงชุดเดียว ระบุพื้นที่ว่างและระบบสีอย่างชัดเจน พร้อมเทมเพลตสำเร็จรูป เพื่อให้การใช้งานที่ถูกต้องเป็นทางเลือกที่ง่ายที่สุด",
+    summary: "A corporate identity system used across documents, signage, uniforms and digital applications.",
+    summaryTh: "ระบบอัตลักษณ์องค์กรสำหรับใช้งานบนเอกสาร ป้าย เครื่องแบบ และสื่อดิจิทัล",
+    challenge: "Bring inconsistent brand materials back into one system without making day-to-day use harder for internal teams.",
+    challengeTh: "จัดสื่อแบรนด์ที่เริ่มไม่สอดคล้องกันให้กลับมาอยู่ในระบบเดียว โดยที่ทีมภายในยังใช้งานในแต่ละวันได้ง่าย",
+    solution: "One logo construction, documented spacing and colour rules, and ready-made templates make the identity easier to use correctly.",
+    solutionTh: "กำหนดโครงสร้างโลโก้ชุดเดียว กติกาพื้นที่ว่างและสี พร้อมเทมเพลตสำเร็จรูป เพื่อให้ทีมใช้อัตลักษณ์ได้ถูกต้องและง่ายขึ้น",
     scope: ["Logo system", "Brand guideline", "Stationery and signage", "Digital application"],
     scopeTh: ["ระบบโลโก้", "คู่มืออัตลักษณ์", "งานเอกสารและป้าย", "การใช้งานบนสื่อดิจิทัล"],
-    direction: "Consistent / Documented / Practical",
-    directionTh: "สม่ำเสมอ / มีคู่มือชัดเจน / ใช้งานได้จริง",
+    direction: "Consistent / Documented / Easy to use",
+    directionTh: "สม่ำเสมอ / มีคู่มือ / ใช้งานง่าย",
     gallery: [
       {
         src: "assets/images/projects/ci-design/signature-system/gallery-01-1440x1080.webp",
@@ -382,8 +379,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "quantum-display-system",
@@ -391,24 +387,23 @@ window.PORTFOLIO_PROJECTS = [
     category: "display-retail",
     brand: "quantum",
     brandLabel: "Quantum",
-    brandLabelTh: "ควอนตัม",
     brandOrder: 1,
-    title: "Quantum Display System",
+    title: "Quantum Display",
     sector: "Display & Retail",
     sectorTh: "ดิสเพลย์และพื้นที่ขาย",
     year: "2026",
     cover: "assets/images/projects/display-retail/quantum/quantum-display-system/cover-1200x900.webp",
     coverAlt: "Quantum modular retail display system on a clean white background",
-    summary: "A structured display system developed specifically for the Quantum brand and its retail environment.",
-    summaryTh: "ระบบดิสเพลย์ที่พัฒนาสำหรับแบรนด์ Quantum โดยเฉพาะ เพื่อให้ภาพลักษณ์และการใช้งานในพื้นที่ขายมีความชัดเจน",
-    challenge: "Create a recognisable display language for Quantum while keeping product presentation clear, flexible and easy to expand.",
-    challengeTh: "สร้างภาษาดิสเพลย์ที่จดจำได้สำหรับ Quantum โดยยังนำเสนอสินค้าได้ชัดเจน ยืดหยุ่น และขยายต่อได้ง่าย",
-    solution: "A modular fixture system, controlled visual hierarchy and consistent brand cues keep every Quantum touchpoint connected.",
-    solutionTh: "ใช้ระบบชั้นวางแบบโมดูลาร์ ควบคุมลำดับการมองเห็น และคงสัญญะของแบรนด์ให้ต่อเนื่องในทุกจุดสัมผัสของ Quantum",
+    summary: "A display system developed for Quantum and adapted to its retail environment.",
+    summaryTh: "ระบบดิสเพลย์ที่พัฒนาสำหรับ Quantum โดยคำนึงถึงทั้งภาพลักษณ์แบรนด์และการใช้งานในพื้นที่ขาย",
+    challenge: "Create a recognisable display style for Quantum while keeping product presentation easy to read, flexible and expandable.",
+    challengeTh: "สร้างรูปแบบดิสเพลย์ที่จดจำได้สำหรับ Quantum โดยยังจัดสินค้าให้อ่านง่าย ปรับเปลี่ยนได้ และขยายต่อได้",
+    solution: "A modular fixture system, controlled visual hierarchy and consistent brand elements keep each Quantum display related to the same brand.",
+    solutionTh: "ใช้ระบบชั้นวางแบบโมดูลาร์ ควบคุมลำดับการมอง และใช้องค์ประกอบแบรนด์ร่วมกัน เพื่อให้ดิสเพลย์ของ Quantum อยู่ในรูปแบบเดียวกัน",
     scope: ["Retail concept", "Display design", "Brand application", "Fixture direction"],
     scopeTh: ["แนวคิดพื้นที่ขาย", "ออกแบบดิสเพลย์", "การใช้งานอัตลักษณ์แบรนด์", "แนวทางโครงสร้างชั้นวาง"],
-    direction: "Structured / Modular / Quantum",
-    directionTh: "เป็นระบบ / โมดูลาร์ / ตัวตน Quantum",
+    direction: "Modular / Branded / Retail",
+    directionTh: "โมดูลาร์ / แบรนด์ / พื้นที่ขาย",
     gallery: [
       {
         src: "assets/images/projects/display-retail/quantum/quantum-display-system/gallery-01-1440x1080.webp",
@@ -494,8 +489,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "kioku-display-system",
@@ -503,24 +497,23 @@ window.PORTFOLIO_PROJECTS = [
     category: "display-retail",
     brand: "kioku",
     brandLabel: "Kioku",
-    brandLabelTh: "คิโอคุ",
     brandOrder: 2,
-    title: "Kioku Display System",
+    title: "Kioku Display",
     sector: "Display & Retail",
     sectorTh: "ดิสเพลย์และพื้นที่ขาย",
     year: "2026",
     cover: "assets/images/projects/display-retail/kioku/kioku-display-system/cover-1200x900.webp",
     coverAlt: "Kioku branded retail display system on a clean white background",
-    summary: "A distinct display direction developed for Kioku, separated clearly from the Quantum retail system.",
-    summaryTh: "แนวทางดิสเพลย์ที่พัฒนาสำหรับแบรนด์ Kioku โดยแยกอัตลักษณ์และชุดภาพออกจากระบบของ Quantum อย่างชัดเจน",
-    challenge: "Build a dedicated retail presentation for Kioku without blending its visual identity with other display brands.",
-    challengeTh: "สร้างการนำเสนอในพื้นที่ขายเฉพาะของ Kioku โดยไม่ให้อัตลักษณ์ปะปนกับแบรนด์ดิสเพลย์อื่น",
-    solution: "A separate project structure, brand-specific hierarchy and focused image set keep the Kioku presentation independent and easy to manage.",
-    solutionTh: "แยกโครงสร้างโปรเจกต์ ลำดับการมองเห็นเฉพาะแบรนด์ และชุดภาพของตัวเอง เพื่อให้งานของ Kioku เป็นอิสระและดูแลต่อได้ง่าย",
+    summary: "A separate display direction developed for Kioku, with its own visual approach apart from Quantum.",
+    summaryTh: "แนวทางดิสเพลย์สำหรับ Kioku ที่ใช้รูปแบบภาพของตัวเอง แยกจากระบบของ Quantum",
+    challenge: "Build a retail presentation for Kioku without mixing its visual identity with the other display brands.",
+    challengeTh: "สร้างการนำเสนอในพื้นที่ขายของ Kioku โดยไม่ให้อัตลักษณ์ปะปนกับแบรนด์ดิสเพลย์อื่น",
+    solution: "A separate project structure, brand-specific hierarchy and its own image set keep the Kioku work independent and easier to manage.",
+    solutionTh: "แยกโครงสร้างโปรเจกต์ ลำดับการมองเฉพาะแบรนด์ และชุดภาพของตัวเอง เพื่อให้งาน Kioku แยกเป็นอิสระและจัดการต่อได้ง่าย",
     scope: ["Retail concept", "Display design", "Brand application", "Fixture direction"],
     scopeTh: ["แนวคิดพื้นที่ขาย", "ออกแบบดิสเพลย์", "การใช้งานอัตลักษณ์แบรนด์", "แนวทางโครงสร้างชั้นวาง"],
-    direction: "Focused / Distinct / Kioku",
-    directionTh: "เฉพาะเจาะจง / แตกต่างชัด / ตัวตน Kioku",
+    direction: "Independent / Branded / Retail",
+    directionTh: "แยกอิสระ / แบรนด์ / พื้นที่ขาย",
     gallery: [
       {
         src: "assets/images/projects/display-retail/kioku/kioku-display-system/gallery-01-1440x1080.webp",
@@ -606,25 +599,24 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "open-floor",
     order: 7,
     category: "exhibition-design",
     title: "Open Floor",
-    sector: "Exhibition",
+    sector: "Exhibition Design",
     sectorTh: "นิทรรศการ",
     year: "2026",
     cover: "assets/images/projects/exhibition-design/open-floor/cover-1200x900.webp",
     coverAlt: "Exhibition booth design with modular panels, signage and product display on a clean white background",
-    summary: "A modular exhibition layout built around a clear visitor route, readable graphics and reusable structures.",
-    summaryTh: "ผังนิทรรศการแบบโมดูลาร์ที่วางจากเส้นทางการเดินชมที่ชัดเจน กราฟิกที่อ่านง่าย และโครงสร้างที่ถอดประกอบนำกลับมาใช้ใหม่ได้",
-    challenge: "Tell a full brand story inside a limited booth footprint while keeping the space open enough for visitors to move and talk.",
-    challengeTh: "เล่าเรื่องของแบรนด์ให้ครบภายในพื้นที่บูธที่จำกัด แต่ยังเปิดโล่งพอให้ผู้ชมเดินชมและพูดคุยได้สะดวก",
-    solution: "One circulation line, layered sightlines and a set of repeatable panel modules keep the build fast, flexible and easy to re-stage.",
-    solutionTh: "กำหนดเส้นทางเดินหลักเพียงเส้นเดียว จัดระดับการมองเห็นเป็นชั้น และใช้แผงโมดูลที่ซ้ำได้ ทำให้ติดตั้งเร็ว ปรับเปลี่ยนง่าย และนำไปจัดซ้ำในงานอื่นได้",
+    summary: "A modular exhibition layout based on an easy visitor route, readable graphics and reusable structures.",
+    summaryTh: "ผังนิทรรศการแบบโมดูลาร์ที่วางจากเส้นทางเดินชมที่เข้าใจง่าย กราฟิกที่อ่านได้สะดวก และโครงสร้างที่นำกลับมาใช้ใหม่ได้",
+    challenge: "Present the brand within a limited booth area while keeping enough open space for visitors to move and talk.",
+    challengeTh: "นำเสนอแบรนด์ภายในพื้นที่บูธที่จำกัด โดยยังเหลือพื้นที่เปิดให้ผู้ชมเดินชมและพูดคุยได้สะดวก",
+    solution: "One main circulation route, layered sightlines and repeatable panel modules make the booth faster to build, easier to adjust and possible to use again.",
+    solutionTh: "กำหนดเส้นทางเดินหลัก จัดระดับการมองเป็นชั้น และใช้แผงโมดูลซ้ำ เพื่อให้ติดตั้งเร็ว ปรับเปลี่ยนง่าย และนำกลับไปใช้ในงานอื่นได้",
     scope: ["Exhibition concept", "Spatial layout", "Graphic application", "Fabrication direction"],
     scopeTh: ["แนวคิดนิทรรศการ", "ผังการใช้พื้นที่", "การวางกราฟิกในพื้นที่", "แนวทางงานผลิตและติดตั้ง"],
     direction: "Open / Modular / Reusable",
@@ -700,29 +692,30 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "make-it-move",
     order: 8,
     category: "campaign",
     title: "Make It Move",
-    sector: "Campaign",
-    sectorTh: "แคมเปญ",
+    sector: "Campaign > License Products",
+    sectorTh: "แคมเปญ > สินค้าลิขสิทธิ์",
+    sectorNote: "License Characters",
+    sectorNoteTh: "คาแรกเตอร์ลิขสิทธิ์",
     year: "2026",
     cover: "assets/images/projects/campaign/make-it-move/cover-1200x900.webp",
     coverAlt: "Campaign toolkit with poster, laptop, printed matter and event pass",
-    summary: "A connected campaign toolkit designed to stay coherent from digital launch to physical event.",
-    summaryTh: "ชุดเครื่องมือแคมเปญที่รักษาภาพจำเดียวกัน ตั้งแต่การเปิดตัวออนไลน์ไปจนถึงกิจกรรมจริง",
-    challenge: "Translate one energetic idea across digital, print and event formats without losing clarity or becoming repetitive.",
-    challengeTh: "แปลไอเดียเดียวที่มีพลังให้ทำงานได้ทั้งบนสื่อดิจิทัล สิ่งพิมพ์ และงานอีเวนต์ โดยไม่เสียความชัดเจนและไม่ซ้ำจนน่าเบื่อ",
-    solution: "Scale shifts, cropped forms and a controlled palette give each output variety while preserving one campaign voice.",
-    solutionTh: "เปลี่ยนสเกล ครอปรูปทรง และคุมชุดสีให้อยู่ในกรอบเดียวกัน ทำให้แต่ละสื่อมีความหลากหลายแต่ยังพูดด้วยเสียงเดียวกัน",
+    summary: "A campaign toolkit designed for use from digital launch materials to physical events.",
+    summaryTh: "ชุดสื่อแคมเปญที่ใช้ต่อเนื่องตั้งแต่การเปิดตัวออนไลน์ไปจนถึงงานอีเวนต์",
+    challenge: "Apply one energetic idea across digital, print and event formats without making every output look the same.",
+    challengeTh: "นำไอเดียเดียวไปใช้กับสื่อดิจิทัล สิ่งพิมพ์ และงานอีเวนต์ โดยไม่ทำให้ทุกชิ้นดูซ้ำกัน",
+    solution: "Changes in scale, cropped forms and a controlled palette give each format some variation while keeping the campaign consistent.",
+    solutionTh: "ปรับสเกล ครอปรูปทรง และคุมชุดสี เพื่อให้แต่ละสื่อแตกต่างกันได้ แต่ยังอยู่ในแคมเปญเดียวกัน",
     scope: ["Campaign identity", "Key visual", "Digital toolkit", "Event collateral"],
     scopeTh: ["อัตลักษณ์แคมเปญ", "คีย์วิชวล", "ชุดสื่อดิจิทัล", "สื่อประกอบงานอีเวนต์"],
-    direction: "Connected / Energetic / Flexible",
-    directionTh: "เชื่อมโยงกัน / มีพลัง / ยืดหยุ่น",
+    direction: "Energetic / Flexible / Cross-format",
+    directionTh: "มีพลัง / ยืดหยุ่น / ใช้ได้หลายสื่อ",
     gallery: [
       {
         src: "assets/images/projects/campaign/make-it-move/gallery-01-1440x1080.webp",
@@ -794,29 +787,28 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "margins-and-matter",
     order: 9,
     category: "editorial-design",
     title: "Margins & Matter",
-    sector: "Editorial Design",
-    sectorTh: "ออกแบบสื่อบรรณาธิการ",
+    sector: "Catalogue & Print",
+    sectorTh: "แคตตาล็อกและสื่อสิ่งพิมพ์",
     year: "2026",
     cover: "assets/images/projects/editorial-design/margins-and-matter/cover-1200x900.webp",
     coverAlt: "Editorial design presentation with magazine cover and spreads on a clean white background",
-    summary: "A restrained editorial identity built around architectural photography, quiet typography and clear spatial rhythm.",
-    summaryTh: "งานออกแบบสื่อบรรณาธิการที่วางโครงด้วยภาพสถาปัตยกรรม จังหวะของพื้นที่ว่าง และระบบตัวอักษรที่นิ่งแต่ชัดเจน",
-    challenge: "Create a printed editorial system that feels premium and thoughtful without becoming visually heavy.",
-    challengeTh: "สร้างระบบสิ่งพิมพ์เชิงบรรณาธิการที่ดูพรีเมียมและมีความคิด โดยไม่ทำให้หน้ากระดาษดูหนักเกินไป",
-    solution: "A calm palette, modular page architecture and carefully paced image-to-type relationships shape a consistent editorial experience.",
-    solutionTh: "ใช้ชุดสีที่นิ่ง วางโครงหน้าแบบโมดูลาร์ และคุมจังหวะระหว่างภาพกับตัวอักษร เพื่อให้ประสบการณ์การอ่านต่อเนื่องเป็นหนึ่งเดียว",
+    summary: "An editorial system built around architectural photography, restrained typography and measured use of space.",
+    summaryTh: "งานออกแบบสื่อบรรณาธิการที่ใช้ภาพสถาปัตยกรรม ตัวอักษรที่เรียบ และการจัดพื้นที่ว่างเป็นองค์ประกอบหลัก",
+    challenge: "Create a printed editorial system that feels premium without making the pages visually heavy.",
+    challengeTh: "สร้างระบบสิ่งพิมพ์เชิงบรรณาธิการที่ดูพรีเมียม โดยไม่ทำให้หน้ากระดาษดูหนัก",
+    solution: "A restrained palette, modular page structure and consistent spacing between image and type keep the publication visually consistent.",
+    solutionTh: "ใช้ชุดสีที่เรียบ โครงหน้าแบบโมดูลาร์ และระยะระหว่างภาพกับตัวอักษรที่สม่ำเสมอ เพื่อให้ทั้งเล่มอยู่ในรูปแบบเดียวกัน",
     scope: ["Editorial design", "Art direction", "Publication system", "Print mockup"],
     scopeTh: ["ออกแบบสื่อบรรณาธิการ", "กำกับศิลป์", "ระบบรูปเล่ม", "งานจำลองสิ่งพิมพ์"],
-    direction: "Quiet / Structured / Refined",
-    directionTh: "เรียบนิ่ง / เป็นระบบ / ประณีต",
+    direction: "Editorial / Structured / Restrained",
+    directionTh: "บรรณาธิการ / มีโครงสร้าง / เรียบ",
     gallery: [
       {
         src: "assets/images/projects/editorial-design/margins-and-matter/gallery-01-1440x1080.webp",
@@ -860,8 +852,7 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 900
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "pocket-parade",
@@ -873,16 +864,16 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     cover: "assets/images/projects/character-design/pocket-parade/cover-1200x900.webp",
     coverAlt: "Character design lineup with a family of original illustrated characters",
-    summary: "An original character family developed through lineup, expressions, world-building and prop studies.",
-    summaryTh: "ชุดคาแรกเตอร์ต้นฉบับที่พัฒนาตั้งแต่ไลน์อัปตัวละคร อารมณ์ สีประจำโลก และรายละเอียดของพร็อปประกอบ",
-    challenge: "Build a distinct cast with individual personalities while keeping the entire world coherent and approachable.",
-    challengeTh: "สร้างกลุ่มตัวละครที่มีบุคลิกเฉพาะตัว แต่ยังคงโลกทั้งใบให้กลมกลืนและเข้าถึงง่าย",
-    solution: "Shared colour logic, rounded forms and role-specific props create a memorable ensemble with strong visual harmony.",
-    solutionTh: "ใช้ตรรกะของสีร่วมกัน รูปทรงโค้งมน และพร็อปที่บอกบทบาทของแต่ละตัว เพื่อสร้างกลุ่มตัวละครที่จดจำได้และอยู่ร่วมกันอย่างกลมกลืน",
+    summary: "An original character family developed through lineup, expression, world and prop studies.",
+    summaryTh: "ชุดคาแรกเตอร์ต้นฉบับที่พัฒนาผ่านไลน์อัป สีหน้า โลกของตัวละคร และการศึกษาพร็อป",
+    challenge: "Build a cast with individual personalities while keeping the characters and their world visually related.",
+    challengeTh: "สร้างกลุ่มตัวละครที่มีบุคลิกต่างกัน แต่ยังให้ตัวละครและโลกของเรื่องอยู่ในรูปแบบภาพเดียวกัน",
+    solution: "Shared colour rules, rounded forms and role-specific props give the characters individual roles while keeping them in the same family.",
+    solutionTh: "ใช้กติกาสีร่วมกัน รูปทรงโค้งมน และพร็อปที่บอกบทบาท เพื่อให้แต่ละตัวมีหน้าที่ต่างกันแต่ยังอยู่ในกลุ่มเดียวกัน",
     scope: ["Character design", "World building", "Expression study", "Visual development"],
     scopeTh: ["ออกแบบคาแรกเตอร์", "สร้างโลกของเรื่อง", "ศึกษาอารมณ์และท่าทาง", "พัฒนางานภาพ"],
-    direction: "Warm / Playful / Cohesive",
-    directionTh: "อบอุ่น / สนุก / กลมกลืน",
+    direction: "Warm / Playful / Rounded",
+    directionTh: "อบอุ่น / สนุก / รูปทรงโค้งมน",
     gallery: [
       {
         src: "assets/images/projects/character-design/pocket-parade/gallery-01-1440x1080.webp",
@@ -912,29 +903,28 @@ window.PORTFOLIO_PROJECTS = [
         width: 1600,
         height: 900
       }
-    ],
-    demo: true
+    ]
   },
   {
     slug: "off-grid-studies",
     order: 11,
     category: "other-creative",
     title: "Off Grid Studies",
-    sector: "Other Creative",
-    sectorTh: "งานสร้างสรรค์",
+    sector: "Offgrid Study > Other Design",
+    sectorTh: "Offgrid Study > งานออกแบบอื่น ๆ",
     year: "2026",
     cover: "assets/images/projects/other-creative/off-grid-studies/cover-1200x900.webp",
     coverAlt: "Editorial, material and paper-form experiments on a white background",
-    summary: "Editorial, material and form experiments collected into one open-ended creative study.",
-    summaryTh: "การทดลองด้านบรรณาธิการ วัสดุ และรูปทรง ที่รวมกันเป็นพื้นที่ศึกษาความคิดสร้างสรรค์แบบเปิด",
-    challenge: "Create a useful home for exploratory work that does not belong to one commercial design discipline.",
-    challengeTh: "สร้างพื้นที่รองรับงานทดลองที่ไม่ได้อยู่ในศาสตร์การออกแบบเชิงพาณิชย์สาขาใดสาขาหนึ่ง",
-    solution: "A flexible study format lets different materials and approaches coexist while shared colour creates continuity.",
-    solutionTh: "ใช้รูปแบบการนำเสนอที่ยืดหยุ่น ให้วัสดุและวิธีคิดที่ต่างกันอยู่ร่วมกันได้ โดยมีชุดสีร่วมเป็นตัวเชื่อม",
+    summary: "Editorial, material and form experiments collected as an ongoing design study.",
+    summaryTh: "การทดลองด้านงานบรรณาธิการ วัสดุ และรูปทรง ที่รวบรวมไว้เป็นงานศึกษาด้านการออกแบบต่อเนื่อง",
+    challenge: "Create a place for experimental work that does not fit into one commercial design category.",
+    challengeTh: "สร้างพื้นที่สำหรับงานทดลองที่ไม่ได้อยู่ในหมวดงานออกแบบเชิงพาณิชย์เพียงหมวดเดียว",
+    solution: "A flexible study format allows different materials and approaches to sit together, with shared colour used as a common link.",
+    solutionTh: "ใช้รูปแบบการนำเสนอที่ยืดหยุ่น เพื่อให้วัสดุและวิธีคิดที่ต่างกันอยู่ร่วมกันได้ โดยใช้ชุดสีร่วมเป็นตัวเชื่อม",
     scope: ["Creative direction", "Editorial", "Material studies", "Form exploration"],
     scopeTh: ["กำกับความคิดสร้างสรรค์", "งานบรรณาธิการ", "ศึกษาวัสดุ", "สำรวจรูปทรง"],
-    direction: "Curious / Material / Experimental",
-    directionTh: "ช่างสงสัย / เน้นวัสดุ / เชิงทดลอง",
+    direction: "Material / Editorial / Experimental",
+    directionTh: "วัสดุ / บรรณาธิการ / เชิงทดลอง",
     gallery: [
       {
         src: "assets/images/projects/other-creative/off-grid-studies/gallery-01-1440x1080.webp",
@@ -1006,71 +996,6 @@ window.PORTFOLIO_PROJECTS = [
         width: 1200,
         height: 1500
       }
-    ],
-    demo: true
-  },
-  {
-    slug: "product-packaging-team-system",
-    order: 12,
-    category: "leadership-case-study",
-    title: "[ชื่อโปรเจกต์ผลิตภัณฑ์ / บรรจุภัณฑ์ของคุณ / Your Product or Packaging Project Name]",
-    sector: "Design Leadership",
-    sectorTh: "การนำทีมออกแบบ",
-    year: "2026",
-    cover: "assets/images/projects/leadership-case-study/product-packaging-team-system/cover-1200x900.svg",
-    coverAlt: "Abstract diagram of a team workflow pipeline with stages moving from brief to delivery",
-    cardTag: "Leadership Case Study",
-    cardTagTh: "กรณีศึกษาการบริหารทีม",
-    summary: "A clear brief-to-delivery system that helped a 2–3 person design team lead a product and packaging project with more clarity, with measurable impact on conversion, satisfaction and revenue.",
-    summaryTh: "ระบบทำงานที่ชัดเจนตั้งแต่รับบรีฟจนถึงส่งมอบ ช่วยให้ทีมออกแบบขนาด 2–3 คนนำโปรเจกต์ออกแบบผลิตภัณฑ์และบรรจุภัณฑ์ได้อย่างมีทิศทาง พร้อมผลลัพธ์ที่วัดผลได้ต่อ Conversion ความพึงพอใจ และรายได้",
-    challenge: "[Add your real challenge here — e.g. a small design team needed to deliver several product or packaging SKUs on a tight timeline, while staying aligned with Marketing, Sales and production constraints, with no shared system for tracking progress.]",
-    challengeTh: "[ใส่โจทย์จริงของคุณ เช่น ทีมออกแบบขนาดเล็กต้องส่งมอบงานออกแบบผลิตภัณฑ์หรือบรรจุภัณฑ์หลาย SKU ให้ทันเวลา พร้อมประสานงานกับฝ่ายการตลาด ฝ่ายขาย และข้อจำกัดด้านการผลิตให้สอดคล้องกัน โดยยังไม่มีระบบกลางในการติดตามความคืบหน้า]",
-    solution: "[Add your real approach here — e.g. set up a five-stage Trello pipeline (Brief → Assignment → Design Review → Production → Delivery) with a clear owner and output for every stage, connecting design decisions to print and production feasibility from the start.]",
-    solutionTh: "[ใส่แนวทางจริงที่คุณใช้ เช่น วางระบบ Pipeline บน Trello เป็น 5 ขั้นตอน (รับบรีฟ → มอบหมายงาน → รีวิวดีไซน์ → Production → ส่งมอบ) กำหนดผู้รับผิดชอบและผลลัพธ์ของแต่ละขั้นให้ชัดเจน พร้อมเชื่อมการตัดสินใจด้านดีไซน์กับความเป็นไปได้ด้านการพิมพ์และการผลิตตั้งแต่ต้น]",
-    scope: ["Team leadership (2–3 people)", "Product & packaging design direction", "Workflow & pipeline design", "Production coordination"],
-    scopeTh: ["บริหารทีม (2–3 คน)", "กำกับทิศทางออกแบบผลิตภัณฑ์และบรรจุภัณฑ์", "ออกแบบระบบ Pipeline การทำงาน", "ประสานงานด้านการผลิต"],
-    direction: "Systematic / Transparent / Production-aware",
-    directionTh: "เป็นระบบ / โปร่งใส / เข้าใจข้อจำกัดการผลิต",
-    impact: [
-      {
-        label: "Conversion / sell-through rate",
-        labelTh: "อัตราการเปลี่ยนเป็นลูกค้า / อัตราขายออก",
-        value: "[ใส่ตัวเลขจริง เช่น 2.1% → 3.4% / add your real before → after figure]"
-      },
-      {
-        label: "Customer satisfaction (CSAT)",
-        labelTh: "ความพึงพอใจลูกค้า (CSAT)",
-        value: "[ใส่ตัวเลขจริง เช่น 3.6 → 4.5 จาก 5 / add your real before → after figure]"
-      },
-      {
-        label: "Revenue impact",
-        labelTh: "ผลกระทบต่อรายได้",
-        value: "[ใส่ตัวเลขจริง เช่น +12% เทียบช่วงก่อนหน้า / add your real figure]"
-      }
-    ],
-    gallery: [
-      {
-        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-01-1440x1080.svg",
-        alt: "Five-stage workflow pipeline from brief to delivery",
-        layout: "hero",
-        width: 1440,
-        height: 1080
-      },
-      {
-        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-02-1600x900.svg",
-        alt: "Abstract kanban-style board representing the team's task pipeline",
-        layout: "wide",
-        width: 1600,
-        height: 900
-      },
-      {
-        src: "assets/images/projects/leadership-case-study/product-packaging-team-system/gallery-03-1100x825.svg",
-        alt: "Abstract panel representing conversion, satisfaction and revenue impact",
-        layout: "half",
-        width: 1100,
-        height: 825
-      }
-    ],
-    demo: true
+    ]
   }
 ];

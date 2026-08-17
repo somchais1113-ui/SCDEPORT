@@ -17,7 +17,7 @@
   const addressField = document.querySelector('[data-page-address="project"]');
 
   /* ----------------------------------------------------------------
-     Language helpers — the header toggle dispatches
+     Language helpers - the header toggle dispatches
      "portfolio:languagechange" (see assets/js/motion.js)
      ---------------------------------------------------------------- */
   function currentLanguage() {
@@ -37,7 +37,7 @@
       view.innerHTML = `
         <div class="project-not-found">
           <p class="eyebrow"><span></span> ${t("Project not found", "ไม่พบโปรเจกต์นี้")}</p>
-          <h1>${t("Nothing on<br>this shelf.", "ยังไม่มีผลงาน<br>ในหน้านี้")}</h1>
+          <h1>${t("Page not<br>found.", "ไม่พบ<br>หน้านี้")}</h1>
           <a class="button-link icon-link" href="home.html#work"><span>${t("Return to work", "กลับไปดูผลงาน")}</span>${northeastIcon}</a>
         </div>
       `;
@@ -270,7 +270,7 @@
     const impactMarkup = Array.isArray(project.impact) && project.impact.length
       ? `
         <div class="case-impact">
-          <small>${t("Impact", "ผลลัพธ์")}</small>
+          <small>${t("Results", "ผลลัพธ์")}</small>
           <ul class="case-impact__list">
             ${project.impact
               .map(function (item) {

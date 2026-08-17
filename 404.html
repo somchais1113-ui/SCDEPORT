@@ -3,29 +3,163 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Page not found - Somchai Sompiew design portfolio.">
+    <meta name="robots" content="noindex">
     <title>Page not found | Somchai Sompiew</title>
-    <meta name="build-version" content="v37-display-brand-groups">
-    <script>document.documentElement.classList.add("motion-enabled");</script>
-    <link rel="stylesheet" href="assets/css/main.css?v=531">
-    <link rel="stylesheet" href="assets/css/ui-controls.css?v=531">
-    <link rel="stylesheet" href="assets/css/v34-responsive-refine.css?v=531">
-    <link rel="stylesheet" href="assets/css/v35-production-fix.css?v=531">
-    <link rel="stylesheet" href="assets/css/v37-display-brand-groups.css?v=531">
-    <script src="assets/js/motion.js?v=650" defer></script>
-      <script src="assets/js/image-protection.js?v=531" defer></script>
+    <meta name="build-version" content="v70-alignment-unify">
+
+    <!--
+      GitHub Pages serves this file for ANY unmatched path, including deep ones
+      such as /SCDEPORT/work/anything. Relative asset paths would resolve
+      against that deep path and 404, leaving this page completely unstyled.
+      The critical CSS is therefore inlined, and outbound links are rewritten
+      at runtime against SITE_BASE (see the script at the bottom).
+    -->
+    <style>
+      :root {
+        --ink: #14140f;
+        --muted: #6d6d64;
+        --line: rgba(20, 20, 15, 0.14);
+        --surface: #ffffff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--surface);
+        color: var(--ink);
+        font-family: Arial, "Noto Sans Thai", "Leelawadee UI", Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .error-context {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px clamp(24px, 3.2vw, 56px);
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .error-context p { margin: 0; }
+      .error-context a { color: inherit; text-decoration: none; }
+      .error-context a:hover { color: var(--ink); }
+      .error-context span { margin: 0 8px; }
+
+      .error-page {
+        max-width: 1680px;
+        margin-inline: auto;
+        padding: clamp(64px, 12vw, 160px) clamp(24px, 3.2vw, 56px) clamp(80px, 10vw, 140px);
+      }
+
+      .error-page .eyebrow {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0 0 clamp(24px, 3vw, 40px);
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .error-page .eyebrow i {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ink);
+      }
+
+      .error-page h1 {
+        max-width: 900px;
+        margin: 0 0 clamp(20px, 2.4vw, 32px);
+        font-size: clamp(46px, 8vw, 112px);
+        font-weight: 500;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+      }
+
+      .error-page > p {
+        max-width: 520px;
+        margin: 0 0 clamp(32px, 4vw, 52px);
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .button-link {
+        display: inline-flex;
+        gap: 14px;
+        align-items: center;
+        padding: 14px 22px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .button-link:hover { background: var(--ink); color: var(--surface); }
+
+      .button-link svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
   </head>
-  <body data-build="v37-display-brand-groups">
-    <section class="page-context shell page-context--error" aria-label="Current page location">
-      <p class="page-context__path"><a href="home.html">Home</a><span>/</span><strong>404</strong></p>
-      <a class="page-context__home icon-link stroke-flow-button" href="home.html"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M17 10H3M9 4l-6 6 6 6"/></svg><span>Back to homepage</span></a>
-    </section>
+  <body>
+    <nav class="error-context" aria-label="Current page location">
+      <p><a data-site-link="index.html" href="index.html">Home</a><span>/</span><strong>404</strong></p>
+      <a data-site-link="home.html" href="home.html">Back to portfolio</a>
+    </nav>
 
     <main class="error-page">
-      <p class="eyebrow"><span></span> Error 404</p>
-      <h1>Nothing on<br>this shelf.</h1>
-      <p>The page may have moved or the address may be incorrect.</p>
-      <a class="button-link icon-link" href="home.html"><span>Return home</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg></a>
+      <p class="eyebrow"><i aria-hidden="true"></i> <span>Error 404</span></p>
+      <h1>Page not<br>found.</h1>
+      <p>The page may have moved, or the address may be incorrect.</p>
+      <a class="button-link" data-site-link="home.html" href="home.html">
+        <span>Return home</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>
+      </a>
     </main>
-    <div class="page-transition" aria-hidden="true"><span>SOMCHAI / SOMPIEW</span></div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* Resolve the site root as actually served.
+           GitHub Pages *project* site  -> "/<repo-name>/"
+           GitHub Pages *user* site     -> "/"
+           Custom domain / local files  -> "/"
+           Hard-code this string if you ever rename the repository. */
+        var SITE_BASE = (function () {
+          var host = window.location.hostname;
+          var segments = window.location.pathname.split("/").filter(Boolean);
+          if (host.indexOf("github.io") !== -1 && segments.length > 0) {
+            return "/" + segments[0] + "/";
+          }
+          return "/";
+        })();
+
+        document.querySelectorAll("[data-site-link]").forEach(function (link) {
+          link.setAttribute("href", SITE_BASE + link.dataset.siteLink);
+        });
+      })();
+    </script>
   </body>
 </html>

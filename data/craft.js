@@ -8,7 +8,7 @@
   - examples  : 4 work examples shown on craft-detail.html?id=<slug>
   - spec      : the four production parameters shown as evidence
 
-  IMPORTANT — the figures in `spec` are general industry reference points,
+  IMPORTANT - the figures in `spec` are general industry reference points,
   NOT confirmed production data. Check every one of them against real shop
   experience before setting `draft: false` and publishing.
 
@@ -25,10 +25,10 @@ window.PORTFOLIO_CRAFT = [
     titleTh: "ออฟเซ็ต",
     subtitle: "Plate & Blanket Litho",
     subtitleTh: "เพลทและผ้ายาง",
-    quote: "Sharp, consistent colour from the first sheet to the last.",
-    quoteTh: "คมชัด สีสม่ำเสมอทุกแผ่น ตั้งแต่ใบแรกจนใบสุดท้าย",
-    close: "Built for brand colour control across long production runs.",
-    closeTh: "ควบคุมสีให้ตรงกับ Brand Guideline ได้แม่นยำตลอดทั้งรอบผลิต",
+    quote: "Sharp, consistent colour across the full print run.",
+    quoteTh: "งานพิมพ์คมชัดและควบคุมสีให้สม่ำเสมอตลอดรอบผลิต",
+    close: "Useful when brand colour needs to stay consistent across longer runs.",
+    closeTh: "เหมาะกับงานที่ต้องควบคุมสีแบรนด์ให้สม่ำเสมอในรอบผลิตที่ยาวขึ้น",
     spec: [
       {
         label: "Mechanism", labelTh: "กลไก",
@@ -68,10 +68,10 @@ window.PORTFOLIO_CRAFT = [
     titleTh: "กราเวียร์",
     subtitle: "Engraved Cylinder",
     subtitleTh: "ทรงกระบอกแกะสลัก",
-    quote: "Deep, even ink laydown built to survive long, fast runs.",
-    quoteTh: "เนื้อหมึกลึกและสม่ำเสมอ ทนทานตลอด Run ที่ยาวและเร็ว",
-    close: "Holds identical colour from the first metre to the millionth.",
-    closeTh: "รักษาสีให้เหมือนเดิมตั้งแต่เมตรแรกจนเมตรสุดท้ายของ Run ยาว",
+    quote: "Even ink coverage for long, high-speed runs.",
+    quoteTh: "ให้ชั้นหมึกสม่ำเสมอ เหมาะกับ Run ที่ยาวและใช้ความเร็วสูง",
+    close: "Well suited to colour consistency across long runs.",
+    closeTh: "เหมาะกับงานที่ต้องรักษาความสม่ำเสมอของสีใน Run ยาว",
     spec: [
       {
         label: "Mechanism", labelTh: "กลไก",
@@ -112,10 +112,10 @@ window.PORTFOLIO_CRAFT = [
     titleTh: "เฟล็กโซ",
     subtitle: "Photopolymer Plate",
     subtitleTh: "เพลทโฟโต้พอลิเมอร์",
-    quote: "Fast, flexible printing across almost any packaging substrate.",
-    quoteTh: "พิมพ์เร็ว ยืดหยุ่นกับวัสดุบรรจุภัณฑ์แทบทุกชนิด",
-    close: "Keeps mid-volume runs on cost without giving up print quality.",
-    closeTh: "ควบคุมต้นทุน Run ขนาดกลางได้ โดยไม่เสียคุณภาพงานพิมพ์",
+    quote: "Fast, flexible printing across a wide range of packaging materials.",
+    quoteTh: "พิมพ์ได้รวดเร็วและรองรับวัสดุบรรจุภัณฑ์ได้หลายประเภท",
+    close: "A practical option for mid-volume runs with good print quality.",
+    closeTh: "เป็นตัวเลือกที่เหมาะกับ Run ขนาดกลาง โดยยังรักษาคุณภาพงานพิมพ์ได้ดี",
     spec: [
       {
         label: "Mechanism", labelTh: "กลไก",
@@ -155,10 +155,10 @@ window.PORTFOLIO_CRAFT = [
     titleTh: "สกรีน",
     subtitle: "Mesh & Squeegee",
     subtitleTh: "ตาข่ายและยางปาด",
-    quote: "Bold, opaque colour on surfaces other processes can't touch.",
-    quoteTh: "สีเข้มข้น ทึบแสง บนพื้นผิวที่ระบบอื่นพิมพ์ไม่ได้",
-    close: "Opens up glass, rigid plastic and ceramic as real brand surfaces.",
-    closeTh: "เปิดโอกาสใช้แก้ว พลาสติกแข็ง และเซรามิกเป็นพื้นผิวแบรนด์ได้จริง",
+    quote: "Opaque colour on glass, plastic, ceramic and other rigid surfaces.",
+    quoteTh: "ให้สีทึบแสงบนแก้ว พลาสติก เซรามิก และพื้นผิวแข็งอื่น ๆ",
+    close: "Useful when the brand needs to print directly onto rigid materials.",
+    closeTh: "เหมาะกับงานที่ต้องพิมพ์แบรนด์ลงบนวัสดุแข็งโดยตรง",
     spec: [
       {
         label: "Mechanism", labelTh: "กลไก",
@@ -199,10 +199,10 @@ window.PORTFOLIO_CRAFT = [
     titleTh: "แกะสลัก",
     subtitle: "Direct Die Cut",
     subtitleTh: "แม่พิมพ์สลักโดยตรง",
-    quote: "Precision fine enough to feel, not just see.",
-    quoteTh: "รายละเอียดคมกริบ สัมผัสได้ ไม่ใช่แค่มองเห็น",
-    close: "Adds a tactile signature to luxury and limited packaging.",
-    closeTh: "เพิ่มลายเซ็นสัมผัสให้งานบรรจุภัณฑ์ระดับลักชัวรีและงาน Limited",
+    quote: "Fine detail with a tactile finish.",
+    quoteTh: "รายละเอียดคมและมีผิวสัมผัสที่รับรู้ได้",
+    close: "Often used for premium cards and limited packaging.",
+    closeTh: "มักใช้กับการ์ดพรีเมียมและบรรจุภัณฑ์ผลิตจำนวนจำกัด",
     spec: [
       {
         label: "Mechanism", labelTh: "กลไก",

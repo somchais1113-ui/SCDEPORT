@@ -47,13 +47,13 @@
 
   function draftNotice() {
     return `<p class="craft-draft-note">${bilingual(
-      "Draft — production figures on this page are general industry reference points and still need checking against real experience.",
+      "Draft: production figures on this page are general industry reference points and still need checking against real experience.",
       "ฉบับร่าง ตัวเลขการผลิตในหน้านี้เป็นค่าอ้างอิงทั่วไปของอุตสาหกรรม ยังต้องตรวจสอบกับประสบการณ์จริงก่อนเผยแพร่"
     )}</p>`;
   }
 
   /* ---------------------------------------------------------------------
-     LIST PAGE — craft.html
+     LIST PAGE - craft.html
      --------------------------------------------------------------------- */
   function renderList(mount) {
     const index = data
@@ -101,12 +101,12 @@
       <section class="craft-hero shell">
         ${eyebrow("Craft & Process", "งานฝีมือและกระบวนการผลิต")}
         <h1>
-          ${bilingual("Ten years on the", "สิบปีบนพื้นโรงพิมพ์")}
-          <em data-i18n-en="production floor." data-i18n-th="">production floor.</em>
+          ${bilingual("10+ years in", "ประสบการณ์กว่า 10 ปีใน")}
+          <em data-i18n-en="print production." data-i18n-th="">print production.</em>
         </h1>
         <p class="craft-deck">${bilingual(
-          "Every packaging decision has to hold up against the machine that prints it. This is the production knowledge behind the work — from plate to cylinder, screen to die.",
-          "ทุกการตัดสินใจด้านบรรจุภัณฑ์ต้องทนต่อเครื่องพิมพ์จริง นี่คือความรู้เชิงการผลิตเบื้องหลังงานทั้งหมด ตั้งแต่เพลท ทรงกระบอก สกรีน ไปจนถึงแม่พิมพ์"
+          "Packaging decisions depend on the printing process. This section covers the production knowledge behind the work, from plates and cylinders to screens and dies.",
+          "งานบรรจุภัณฑ์ต้องคำนึงถึงกระบวนการพิมพ์ ส่วนนี้รวบรวมความรู้ด้านการผลิตที่ใช้กับงาน ตั้งแต่เพลทและทรงกระบอก ไปจนถึงสกรีนและแม่พิมพ์"
         )}</p>
         <nav class="craft-index" aria-label="Jump to a print process">${index}</nav>
       </section>
@@ -116,7 +116,7 @@
   }
 
   /* ---------------------------------------------------------------------
-     DETAIL PAGE — craft-detail.html?id=<slug>
+     DETAIL PAGE - craft-detail.html?id=<slug>
      --------------------------------------------------------------------- */
   function renderDetail(mount) {
     const slug = new URLSearchParams(window.location.search).get("id");

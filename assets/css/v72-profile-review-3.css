@@ -1,0 +1,162 @@
+/* ==========================================================================
+   V72 — Profile review pass, round 3 (six screenshots)
+   Loaded LAST on the Profile page, after v71. Touches only what was flagged.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Responsibilities — now always open (HTML has the `open` attribute on
+      every <details>), so the disclosure triangle/"+" no longer means
+      anything. Restyle the <summary> as a plain section label instead of
+      a button, and drop the rotating "+" glyph.
+      Company names ("D.H.A. SIAMWALLA CO., LTD. · BANGKOK") sized up from
+      9px to 12px — they were smaller than almost every other label on the
+      page despite being fairly important identifying text.
+   -------------------------------------------------------------------------- */
+.profile-job-detail summary {
+  cursor: default;
+  pointer-events: none;
+}
+
+.profile-job-detail summary b {
+  display: none;
+}
+
+.profile-work-timeline--editorial .profile-work-timeline__company {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   2. Phase-track dots (FORM / DESIGN / PRODUCTION / LEADERSHIP) vs. the
+      per-role dots in the timeline below were offset by 22px — the top row
+      never got the same "sit at the column edge" treatment the bottom row
+      received in v69, so dots 2–4 landed under the label text instead of
+      on the divider line the timeline dots use. Both now sit flush left.
+   -------------------------------------------------------------------------- */
+.profile-work-timeline--editorial .profile-work-timeline__item + .profile-work-timeline__item::before {
+  left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. Quickfacts stat labels and the skills line were near-illegible at
+      9.5–10px. Bumped to a size that still reads as a caption but doesn't
+      need a squint.
+   -------------------------------------------------------------------------- */
+.profile-quickfacts span {
+  font-size: 11.5px;
+}
+
+.profile-capability-line {
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Selected learning → rebuilt as "Certifications & continuing education":
+      each entry now carries a one-line description of what it actually
+      covers, not just a bare course title, at a size that matches the rest
+      of the page's captions rather than sitting near-invisible at 9.5px.
+   -------------------------------------------------------------------------- */
+.profile-education--editorial .profile-learning-block {
+  max-width: var(--profile-content);
+  margin-inline: auto;
+  padding-top: 20px;
+}
+
+.profile-learning-block__label {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-learning-block__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px clamp(24px, 3vw, 48px);
+}
+
+.profile-learning-block__item {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-learning-block__item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-learning-block__item span {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+  .profile-learning-block__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Closing section — the headline used to sit in its own grid column to
+      the right of the "WHAT I TAKE ON" label, starting ~250px in from the
+      shared page edge (every other headline on this page starts flush at
+      that edge). That narrow column also only left room for the text to
+      wrap onto 4–5 short lines. Restructured so the eyebrow and headline
+      share one flush-left column — the same pattern every other section
+      on this page already uses — with the supporting copy and CTA in a
+      second column, matching .profile-editorial-heading exactly.
+   -------------------------------------------------------------------------- */
+.profile-page main > .profile-close--editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.55fr);
+  gap: clamp(42px, 6vw, 96px);
+  align-items: end;
+}
+
+.profile-close-editorial__heading .eyebrow {
+  margin: 0;
+}
+
+/* Specificity note: an older, pre-editorial rule — .profile-page .profile-close h2
+   { font-size: clamp(56px, 6.5vw, 108px) } in v66 — still matches this element
+   (the section keeps the base .profile-close class for backward compatibility).
+   That rule is (0,2,1) specificity; matching it here (rather than the simpler
+   .profile-close-editorial__heading h2, which loses to it) is what actually wins
+   the cascade. */
+.profile-page .profile-close-editorial__heading h2 {
+  max-width: 780px;
+  margin: clamp(18px, 2vw, 28px) 0 0;
+  font-size: clamp(34px, 3.3vw, 52px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.profile-close-editorial__actions {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .profile-page main > .profile-close--editorial {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .profile-page .profile-close-editorial__heading h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .profile-page .profile-close-editorial__heading h2 {
+    font-size: clamp(30px, 8.5vw, 40px);
+  }
+}
