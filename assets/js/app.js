@@ -30,7 +30,11 @@
     return '<svg class="ui-icon" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="M5 15 15 5M7 5h8v8"/></svg>';
   }
 
+<<<<<<< HEAD
   /* Brand names are proper nouns and are never transliterated or translated -
+=======
+  /* Brand names are proper nouns and are never transliterated or translated —
+>>>>>>> 3ab943a3a700828fc62d15441bf1c41b068ce6e3
      "Quantum" and "Kioku" must read identically in both languages. */
   function displayBrandGroupsSeed() {
     return [

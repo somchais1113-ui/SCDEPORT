@@ -270,7 +270,11 @@
     const impactMarkup = Array.isArray(project.impact) && project.impact.length
       ? `
         <div class="case-impact">
+<<<<<<< HEAD
           <small>${t("Results", "ผลลัพธ์")}</small>
+=======
+          <small>${t("Impact", "ผลลัพธ์")}</small>
+>>>>>>> 3ab943a3a700828fc62d15441bf1c41b068ce6e3
           <ul class="case-impact__list">
             ${project.impact
               .map(function (item) {
