@@ -89,7 +89,7 @@
               <dl class="craft-spec">${specRows(process)}</dl>
               <p class="craft-close">${bilingual(process.close, process.closeTh)}</p>
               <a class="craft-more icon-link stroke-flow-button" href="craft-detail.html?id=${encodeURIComponent(process.slug)}">
-                ${bilingual("See 4 examples", "ดูตัวอย่างงาน 4 ชิ้น")}
+                ${bilingual("Explore the process", "ดูรายละเอียดกระบวนการ")}
                 ${northeastIcon}
               </a>
             </div>
@@ -101,12 +101,12 @@
       <section class="craft-hero shell">
         ${eyebrow("Craft & Process", "งานฝีมือและกระบวนการผลิต")}
         <h1>
-          ${bilingual("10+ years in", "ประสบการณ์กว่า 10 ปีใน")}
-          <em data-i18n-en="print production." data-i18n-th="">print production.</em>
+          ${bilingual("Design informed by", "ออกแบบด้วยความเข้าใจ")}
+          <em data-i18n-en="print production." data-i18n-th="กระบวนการผลิต">print production.</em>
         </h1>
         <p class="craft-deck">${bilingual(
-          "Packaging decisions depend on the printing process. This section covers the production knowledge behind the work, from plates and cylinders to screens and dies.",
-          "งานบรรจุภัณฑ์ต้องคำนึงถึงกระบวนการพิมพ์ ส่วนนี้รวบรวมความรู้ด้านการผลิตที่ใช้กับงาน ตั้งแต่เพลทและทรงกระบอก ไปจนถึงสกรีนและแม่พิมพ์"
+          "An overview of printing and surface engraving, with diagrams explaining the mechanisms and design decisions to discuss with production partners.",
+          "ความรู้เกี่ยวกับการพิมพ์และการสลักผิว พร้อมแผนภาพอธิบายหลักการและประเด็นที่ควรตกลงร่วมกับผู้ผลิตก่อนทำอาร์ตเวิร์ก"
         )}</p>
         <nav class="craft-index" aria-label="Jump to a print process">${index}</nav>
       </section>
@@ -138,9 +138,9 @@
     const address = document.querySelector('[data-page-address="craft-detail"]');
     if (address) {
       address.innerHTML =
-        `<a href="home.html">Home</a><span>/</span>` +
-        `<a href="craft.html">Craft &amp; Process</a><span>/</span>` +
-        `<strong>${escapeHtml(process.title)}</strong>`;
+        `<a href="home.html">${bilingual("Home", "หน้าหลัก")}</a><span>/</span>` +
+        `<a href="craft.html">${bilingual("Craft & Process", "ความรู้ด้านงานพิมพ์และการผลิต")}</a><span>/</span>` +
+        `<strong>${bilingual(process.title, process.titleTh)}</strong>`;
     }
 
     const examples = process.examples
@@ -149,7 +149,7 @@
           <figure class="craft-example">
             <img
               src="${escapeHtml(example.src)}"
-              alt="${escapeHtml(example.alt)}"
+              alt="${escapeHtml(example.alt)}" data-alt-en="${escapeHtml(example.alt)}" data-alt-th="${escapeHtml(example.altTh)}"
               width="${Number(example.width) || 1400}"
               height="${Number(example.height) || 1050}"
               ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}
@@ -157,7 +157,7 @@
             >
             <figcaption>
               <b>${String(i + 1).padStart(2, "0")}</b>
-              ${bilingual(example.caption, example.captionTh)}
+              <div>${bilingual(example.caption, example.captionTh)}<p class="craft-example__description">${bilingual(example.description, example.descriptionTh)}</p></div>
             </figcaption>
           </figure>`;
       })
@@ -181,8 +181,15 @@
       </section>
 
       <section class="craft-examples shell" aria-label="Examples">
-        ${eyebrow("Selected examples", "ตัวอย่างงานคัดสรร")}
+        ${eyebrow("Process explained", "อธิบายกระบวนการ")}
+        <p class="craft-reference-note">${bilingual("Explanatory diagrams, not photographs of completed projects. Simplified and not to scale.", "ภาพประกอบเพื่ออธิบายหลักการ ไม่ใช่ภาพถ่ายผลงานจริง โดยลดทอนรายละเอียดและไม่อ้างอิงสัดส่วนเครื่องจักร")}</p>
         <div class="craft-example-grid">${examples}</div>
+      </section>
+
+      <section class="craft-sources shell">
+        <h2>${bilingual("Technical references", "แหล่งอ้างอิงทางเทคนิค")}</h2>
+        <ul>${process.sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a></li>`).join("")}</ul>
+        <p>${bilingual("Actual settings and costs depend on the job, materials and equipment. Agree these with the production partner.", "ค่าตั้งงานและต้นทุนจริงขึ้นอยู่กับชิ้นงาน วัสดุ และเครื่องจักร ควรตกลงรายละเอียดร่วมกับผู้ผลิต")}</p>
       </section>
 
       <section class="craft-next shell">
@@ -195,6 +202,12 @@
       </section>
     `;
   }
+
+  function updateImageLanguage() {
+    const th = document.body.dataset.language === "th";
+    document.querySelectorAll("[data-alt-en][data-alt-th]").forEach(img => { img.alt = th ? img.dataset.altTh : img.dataset.altEn; });
+  }
+  document.addEventListener("portfolio:languagechange", updateImageLanguage);
 
   const listMount = document.querySelector("[data-craft-list]");
   const detailMount = document.querySelector("[data-craft-detail]");
@@ -213,10 +226,11 @@
       language = "en";
     }
     if (language === "th") {
-      mount.querySelectorAll("[data-i18n-en][data-i18n-th]").forEach(function (element) {
+      document.querySelectorAll("[data-i18n-en][data-i18n-th]").forEach(function (element) {
         if (element.dataset.i18nTh) element.textContent = element.dataset.i18nTh;
       });
     }
+    updateImageLanguage();
     if (window.PortfolioMotion) window.PortfolioMotion.refresh(mount);
   }
 })();

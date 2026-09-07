@@ -77,7 +77,7 @@
             <div>
               <p>${number} / ${portfolio.escapeHtml(project.year)}</p>
               ${brandMarkup}
-              <h2>${portfolio.escapeHtml(project.title)}</h2>
+              <h2>${portfolio.escapeHtml(currentLanguage() === "th" && project.titleTh ? project.titleTh : project.title)}</h2>
             </div>
             <span class="icon-link">${t("View project", "ดูโปรเจกต์")} ${icon()}</span>
           </div>

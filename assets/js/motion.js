@@ -168,7 +168,7 @@
     }
 
     if (year) year.textContent = activeSlide.dataset.carouselYear || "";
-    if (title) title.textContent = activeSlide.dataset.carouselTitle || "";
+    if (title) title.textContent = (language === "th" ? activeSlide.dataset.carouselTitleTh : activeSlide.dataset.carouselTitle) || activeSlide.dataset.carouselTitle || "";
 
     if (summary) {
       summary.textContent = language === "th"
@@ -178,7 +178,7 @@
 
     if (projectLink && activeSlide.dataset.carouselHref) {
       projectLink.setAttribute("href", activeSlide.dataset.carouselHref);
-      const projectTitle = activeSlide.dataset.carouselTitle || "project";
+      const projectTitle = (language === "th" ? activeSlide.dataset.carouselTitleTh : activeSlide.dataset.carouselTitle) || activeSlide.dataset.carouselTitle || "project";
       projectLink.setAttribute(
         "aria-label",
         language === "th" ? `ดูโปรเจกต์ ${projectTitle}` : `View ${projectTitle} project`

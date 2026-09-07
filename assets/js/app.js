@@ -99,7 +99,7 @@
             <span class="view-pill icon-link">${translated("View project", "ดูโปรเจกต์")} ${northeastIcon()}</span>
             <span class="project-hover-overlay" aria-hidden="true">
               <span class="project-hover-copy">
-                <span class="project-hover-title">${portfolio.escapeHtml(project.title)}</span>
+                <span class="project-hover-title">${portfolio.escapeHtml(currentLanguage() === "th" && project.titleTh ? project.titleTh : project.title)}</span>
                 <span class="project-hover-meta">${portfolio.escapeHtml(sectorLabel)} / ${portfolio.escapeHtml(project.year)}</span>
                 <span class="project-hover-arrow">${northeastIcon()}</span>
               </span>
@@ -110,7 +110,7 @@
               <p>${projectNumber} / ${portfolio.escapeHtml(sectorLabel)}</p>
               ${sectorNoteMarkup}
               ${brandMarkup}
-              <h3>${portfolio.escapeHtml(project.title)}</h3>
+              <h3>${portfolio.escapeHtml(currentLanguage() === "th" && project.titleTh ? project.titleTh : project.title)}</h3>
             </div>
             <p class="project-card-summary">${portfolio.escapeHtml(translated(project.summary, project.summaryTh || project.summary))}</p>
             <p class="project-meta-category">${portfolio.escapeHtml(resolvedCategoryLabel)}</p>

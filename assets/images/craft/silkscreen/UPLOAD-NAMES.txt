@@ -1,11 +1,5 @@
-Silkscreen (SC) — Craft & Process image slots
--------------------------------------------------
-Overwrite each file below with your own photo.
-Keep the exact filename and the exact pixel size,
-otherwise the layout will shift. Ratio 4:3 (1400x1050).
-
-cover-1400x1050.webp          Process overview
-example-01-1400x1050.webp     Mesh screen exposure
-example-02-1400x1050.webp     Squeegee pass
-example-03-1400x1050.webp     Ink opacity build
-example-04-1400x1050.webp     Printed rigid surface
+v76: Active process diagrams use example-01.svg through example-04.svg.
+Flexo and screen printing also use cover.svg.
+Existing WebP files are retained for history but most are no longer displayed.
+To use actual photographs, add the photo and update src, alt, caption and description in data/craft.js.
+Do not describe a reference diagram or reference photo as a completed project.

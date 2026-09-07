@@ -230,7 +230,7 @@
     const brand = projectBrand();
     const label = categoryLabel();
 
-    portfolio.setPageMeta(project.title, pick(project.summary, project.summaryTh));
+    portfolio.setPageMeta(pick(project.title, project.titleTh), pick(project.summary, project.summaryTh));
 
     if (addressField) {
       const categoryHref = `category.html?category=${encodeURIComponent(project.category)}`;
@@ -241,7 +241,7 @@
         `<a href="home.html">${t("Home", "หน้าหลัก")}</a><span>/</span>` +
         `<a href="home.html#work">${t("Work", "ผลงาน")}</a><span>/</span>` +
         `<a href="${categoryHref}">${portfolio.escapeHtml(label)}</a>${brandPath}` +
-        `<span>/</span><strong>${portfolio.escapeHtml(project.title)}</strong>`;
+        `<span>/</span><strong>${portfolio.escapeHtml(pick(project.title, project.titleTh))}</strong>`;
     }
 
     const scopeItems = currentLanguage() === "th" && Array.isArray(project.scopeTh)
@@ -289,7 +289,7 @@
         <div class="case-heading">
         <p class="eyebrow"><span></span> ${portfolio.escapeHtml(sectorLabel)}${brandLine} · ${portfolio.escapeHtml(project.year)}</p>
         ${cardTagMarkup}
-        <h1>${portfolio.escapeHtml(project.title)}</h1>
+        <h1>${portfolio.escapeHtml(pick(project.title, project.titleTh))}</h1>
         <p class="case-summary">${portfolio.escapeHtml(pick(project.summary, project.summaryTh))}</p>
       </div>
 
@@ -297,11 +297,11 @@
 
       <div class="case-information">
         <div>
-          <small>${t("Challenge", "โจทย์")}</small>
+          <small>${t("Design focus", "จุดเน้นในการออกแบบ")}</small>
           <p>${portfolio.escapeHtml(pick(project.challenge, project.challengeTh))}</p>
         </div>
         <div>
-          <small>${t("Solution", "แนวทางแก้")}</small>
+          <small>${t("Visual approach", "แนวทางภาพ")}</small>
           <p>${portfolio.escapeHtml(pick(project.solution, project.solutionTh))}</p>
         </div>
         <div>
@@ -336,7 +336,7 @@
     nextSection.innerHTML = `
       <p>${t("Next project", "โปรเจกต์ถัดไป")}</p>
       <a href="project.html?id=${encodeURIComponent(next.slug)}">
-        ${portfolio.escapeHtml(next.title)} <span class="icon-link">${northeastIcon}</span>
+        ${portfolio.escapeHtml(pick(next.title, next.titleTh))} <span class="icon-link">${northeastIcon}</span>
       </a>
     `;
     if (window.PortfolioMotion) window.PortfolioMotion.refresh(nextSection);

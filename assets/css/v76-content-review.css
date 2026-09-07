@@ -1,0 +1,26 @@
+/* v76: finished process imagery and readable explanatory copy. */
+.process-visual { margin: 2rem 0 1rem; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #f8faff; }
+.process-visual img { display: block; width: 100%; height: auto; opacity: 1; }
+.process-visual--wide { margin: 0; }
+.craft-row { align-items: start; }
+.craft-row__figure { align-self: start; }
+.craft-page .craft-spec dt { font-size: .875rem; letter-spacing: .04em; }
+.craft-page .craft-spec dd, .craft-page .craft-close, .craft-page .craft-deck { font-size: 1rem; line-height: 1.65; }
+.craft-reference-note, .craft-example__description, .craft-sources p { color: var(--muted); font-size: 1rem; line-height: 1.65; }
+.craft-reference-note { max-width: 54rem; margin: 1rem 0 1.75rem; }
+.craft-example figcaption { display: flex; align-items: baseline; gap: 1rem; font-size: 1rem; line-height: 1.55; }
+.craft-example figcaption > div { min-width: 0; }
+.craft-example__description { margin: .5rem 0 0; }
+.craft-sources { padding-block: 2rem; border-top: 1px solid var(--line); }
+.craft-sources h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+.craft-sources ul { padding-left: 1.25rem; }
+.craft-sources li { margin: .65rem 0; }
+.craft-sources a { text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; font-size: 1rem; }
+body[data-language="th"] .craft-hero h1, body[data-language="th"] .craft-detail-hero h1 { line-height: 1.4; }
+@media(max-width:620px) {
+ .craft-page .craft-index a span { display: inline; font-size: .875rem; }
+ .craft-page .craft-index { gap: 0 1rem; }
+ .craft-page .craft-index a { margin: 0; }
+ .craft-page .craft-spec { grid-template-columns: 1fr; }
+ .craft-page .craft-example-grid { grid-template-columns: 1fr; }
+}
